@@ -30,8 +30,25 @@ export const metadata: Metadata = {
   keywords: ["hair", "wigs", "raw hair", "virgin hair", "lace frontal", "hair oven", "bespoke wig", "luxury hair"],
   openGraph: {
     title: "HAIR OVEN - Exceptional Hair. Extraordinary You.",
-    description: "Where beauty meets the art of hair. Luxury hair house born in Africa, serving women globally.",
+    description: "Born in Africa, crafted without compromise. Luxury human hair and bespoke atelier. Where beauty meets the art of hair.",
+    url: "https://hairoven.com",
+    siteName: "HAIR OVEN",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "HAIR OVEN",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HAIR OVEN - Exceptional Hair. Extraordinary You.",
+    description: "Born in Africa, crafted without compromise. Luxury human hair and bespoke atelier. Where beauty meets the art of hair.",
+    images: ["/og-image.png"],
   },
 };
 
