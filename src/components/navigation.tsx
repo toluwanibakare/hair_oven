@@ -117,7 +117,7 @@ export function Navigation() {
 
           {/* Center: Logo */}
           <div className="flex-shrink-0 absolute left-1/2 -translate-x-1/2 flex justify-center items-center">
-            <Link href="/" className="block relative w-56 h-20">
+            <Link href="/" className="block relative w-40 h-16 sm:w-56 sm:h-20">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -135,14 +135,14 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="lg:hidden flex-1 flex justify-start">
+          <div className="lg:hidden flex-1 flex justify-start pl-2">
             <button className="p-2 -ml-2" onClick={() => setMobileOpen(true)} aria-label="Open menu">
-              <Menu className="w-5 h-5" />
+              <Menu className="w-6 h-6" strokeWidth={1.5} />
             </button>
           </div>
 
           {/* Right: Actions */}
-          <div className="flex items-center justify-end gap-1 sm:gap-2 flex-1">
+          <div className="flex items-center justify-end gap-1 sm:gap-2 flex-1 pr-2">
             <div className="hidden lg:flex items-center gap-7 mr-6">
               <Link href="/story" className="text-[11px] tracking-[0.16em] uppercase font-medium text-[#57534E] hover:text-[#D4AF37] transition-colors">
                 Our Story
@@ -153,7 +153,7 @@ export function Navigation() {
             </div>
 
             <motion.button whileHover={{ scale: 1.05 }} onClick={() => setSearchOpen(true)} aria-label="Search" className="w-10 h-10 grid place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors text-[#1C120E]">
-              <Search className="w-4 h-4" strokeWidth={1.5} />
+              <Search className="w-5 h-5 sm:w-4 sm:h-4" strokeWidth={1.5} />
             </motion.button>
             <Link href="/account" className="hidden sm:grid w-10 h-10 place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors text-[#1C120E]">
               <motion.div whileHover={{ scale: 1.05 }}><User className="w-4 h-4" strokeWidth={1.5} /></motion.div>
@@ -163,7 +163,7 @@ export function Navigation() {
               {wishlist.length > 0 && <span className="absolute -top-0.5 -right-0.5 bg-[#D4AF37] text-white text-[9px] w-4 h-4 grid place-items-center rounded-full font-medium">{wishlist.length}</span>}
             </Link>
             <motion.button whileHover={{ scale: 1.05 }} onClick={() => setDrawerOpen(true)} aria-label="Cart" className="w-10 h-10 grid place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors relative text-[#1C120E]">
-              <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
+              <ShoppingBag className="w-5 h-5 sm:w-4 sm:h-4" strokeWidth={1.5} />
               {cartCount > 0 && (
                 <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute -top-1 -right-1 bg-[#D4AF37] text-[#FFFCF8] text-[9px] w-5 h-5 grid place-items-center rounded-full font-medium shadow-sm">
                   {cartCount}
@@ -178,51 +178,33 @@ export function Navigation() {
       <AnimatePresence>
         {mobileOpen && (
           <>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setMobileOpen(false)} className="fixed inset-0 bg-[#1C120E]/40 backdrop-blur-sm z-50 lg:hidden" />
-            <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }} transition={{ type: "spring", damping: 30, stiffness: 300 }} className="fixed inset-y-0 left-0 w-[88%] max-w-[380px] bg-[#FFFCF8] z-50 flex flex-col lg:hidden">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setMobileOpen(false)} className="fixed inset-0 bg-[#1C120E]/40 backdrop-blur-sm z-[100] lg:hidden" />
+            <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }} transition={{ type: "spring", damping: 30, stiffness: 300 }} className="fixed inset-y-0 left-0 w-[88%] max-w-[380px] bg-[#FFFCF8] z-[100] flex flex-col lg:hidden">
               <div className="h-[72px] flex items-center justify-between px-6 border-b border-[rgba(28,18,14,0.06)]">
-                <Image src="/brand_logo.PNG" alt="Hair Oven" width={140} height={42} className="object-contain" />
+                <Image src="/brand_logo.PNG" alt="Hair Oven" width={120} height={36} className="object-contain" />
                 <button onClick={() => setMobileOpen(false)} className="w-10 h-10 grid place-items-center rounded-full hover:bg-black/5">
-                  <X className="w-5 h-5" />
+                  <X className="w-6 h-6" strokeWidth={1.5} />
                 </button>
               </div>
-              <div className="flex-1 overflow-auto p-6 space-y-7">
-                <div>
-                  <div className="text-[10px] tracking-[0.18em] uppercase text-[#D4AF37] mb-4">Shop</div>
-                  <div className="space-y-1">
-                    {shopMenu.map((i) => (
-                      <Link key={i.label} href={i.href} onClick={() => setMobileOpen(false)} className="flex items-center justify-between py-3 border-b border-[rgba(28,18,14,0.06)] last:border-0">
-                        <span className="text-[13px] tracking-[0.08em] uppercase font-medium">{i.label}</span>
-                        <ChevronRight className="w-4 h-4 text-[#D4AF37]" />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <Link href="/collections/private" onClick={() => setMobileOpen(false)} className="block text-[13px] tracking-[0.08em] uppercase font-medium">
-                    Private Collection
-                  </Link>
-                  <Link href="/collections/signature" onClick={() => setMobileOpen(false)} className="block text-[13px] tracking-[0.08em] uppercase font-medium">
-                    Signature Collection
-                  </Link>
-                  <Link href="/collections/essentials" onClick={() => setMobileOpen(false)} className="block text-[13px] tracking-[0.08em] uppercase font-medium">
-                    Essentials
-                  </Link>
-                  <Link href="/story" onClick={() => setMobileOpen(false)} className="block text-[13px] tracking-[0.08em] uppercase font-medium">
-                    Our Story
-                  </Link>
-                  <Link href="/heirloom-guide" onClick={() => setMobileOpen(false)} className="block text-[13px] tracking-[0.08em] uppercase font-medium">
-                    Heirloom Guide
-                  </Link>
-                  <Link href="/bespoke" onClick={() => setMobileOpen(false)} className="block text-[13px] tracking-[0.08em] uppercase font-medium">
-                    Private Atelier
+              <div className="flex-1 overflow-auto p-6 flex flex-col justify-between">
+                <div className="space-y-1">
+                  {shopMenu.map((i) => (
+                    <Link key={i.label} href={i.href} onClick={() => setMobileOpen(false)} className="flex items-center justify-between py-3 border-b border-[rgba(28,18,14,0.06)] last:border-0">
+                      <span className="text-[14px] tracking-[0.08em] uppercase font-medium">{i.label}</span>
+                      <ChevronRight className="w-4 h-4 text-[#D4AF37]" />
+                    </Link>
+                  ))}
+                  <Link href="/story" onClick={() => setMobileOpen(false)} className="flex items-center justify-between py-3 border-b border-[rgba(28,18,14,0.06)]">
+                    <span className="text-[14px] tracking-[0.08em] uppercase font-medium">Our Story</span>
+                    <ChevronRight className="w-4 h-4 text-[#D4AF37]" />
                   </Link>
                 </div>
-                <div className="pt-6 flex gap-3">
-                  <Link href="/account" className="flex-1 h-12 grid place-items-center border border-[#D4AF37]/30 text-[11px] tracking-[0.16em] uppercase hover:bg-[#D4AF37]/5 transition-colors">
+                
+                <div className="pt-6 flex gap-3 mt-auto">
+                  <Link href="/account" className="flex-1 h-12 grid place-items-center border border-[#D4AF37]/30 text-[12px] tracking-[0.16em] uppercase hover:bg-[#D4AF37]/5 transition-colors font-medium">
                     Account
                   </Link>
-                  <button onClick={() => { setMobileOpen(false); setDrawerOpen(true); }} className="flex-1 h-12 bg-[#D4AF37] text-[#0A0A0A] text-[11px] tracking-[0.16em] uppercase hover:bg-white transition-colors">
+                  <button onClick={() => { setMobileOpen(false); setDrawerOpen(true); }} className="flex-1 h-12 bg-[#D4AF37] text-[#0A0A0A] text-[12px] tracking-[0.16em] uppercase hover:bg-white transition-colors font-medium">
                     Bag ({cartCount})
                   </button>
                 </div>
