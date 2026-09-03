@@ -35,7 +35,7 @@ export function ScrollFeatures() {
       
       <button 
         onClick={scrollTop}
-        className={`fixed bottom-8 right-8 w-12 h-12 bg-[#D4AF37] text-[#0A0A0A] rounded-full flex items-center justify-center hover:bg-black hover:text-[#D4AF37] hover:border hover:border-[#D4AF37] transition-all duration-300 shadow-2xl z-[90] ${showScroll ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}
+        className={`fixed bottom-8 right-8 w-12 h-12 bg-[#D4AF37] text-[#2B1B12] rounded-full flex items-center justify-center hover:bg-[#2B1B12] hover:text-[#D4AF37] hover:border hover:border-[#D4AF37] transition-all duration-300 shadow-2xl z-[90] ${showScroll ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}
         aria-label="Scroll to top"
       >
         <ArrowUp size={20} strokeWidth={1.5} />

@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function StoryPage() {
   return (
     <div className="bg-[#FFFCF8]">
-      <div className="relative h-[72vh] min-h-[520px] overflow-hidden bg-[#0A0A0A]">
+      <div className="relative h-[72vh] min-h-[520px] overflow-hidden bg-[#2B1B12]">
         <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1920&auto=format&fit=crop" alt="Our Story" className="absolute inset-0 w-full h-full object-cover opacity-70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/70 via-[#2B1B12]/10 to-transparent" />
         <div className="relative h-full max-w-[1600px] mx-auto px-6 lg:px-10 flex flex-col justify-end pb-16">
           <div className="text-[11px] tracking-[0.22em] uppercase text-[#E8DDC9]">Our Story</div>
           <h1 className="font-serif text-[42px] lg:text-[64px] leading-none tracking-[-0.02em] text-white mt-3 font-light">Born from faith.<br /><span className="italic text-[#E8DDC9]">Built without compromise.</span></h1>
@@ -34,15 +34,15 @@ export default function StoryPage() {
                 { t: "We believe in GOD.", d: "HAIR OVEN was birthed through faith, prayer and a desire to follow His direction." },
               ].map((b) => (
                 <li key={b.t} className="border-l-2 border-[#E8DDC9] pl-4 py-1">
-                  <span className="font-medium text-[#1C120E]">{b.t}</span> <span className="text-[#57534E]">{b.d}</span>
+                  <span className="font-medium text-[#2B1B12]">{b.t}</span> <span className="text-[#57534E]">{b.d}</span>
                 </li>
               ))}
             </ul>
-            <p className="font-serif italic text-xl text-[#1C120E] pt-6 border-t border-[rgba(28,18,14,0.08)] mt-8">Exceptional hair. Extraordinary you. Born from faith. Inspired by women. Defined by craftsmanship. Built without compromise.</p>
+            <p className="font-serif italic text-xl text-[#2B1B12] pt-6 border-t border-[rgba(28,18,14,0.08)] mt-8">Exceptional hair. Extraordinary you. Born from faith. Inspired by women. Defined by craftsmanship. Built without compromise.</p>
           </div>
 
           <div className="mt-12 flex flex-wrap gap-3">
-            <Link href="/shop" className="h-11 px-8 bg-[#1C120E] text-white inline-flex items-center text-[11px] tracking-[0.16em] uppercase">Shop the Collection</Link>
+            <Link href="/shop" className="h-11 px-8 bg-[#2B1B12] text-white inline-flex items-center text-[11px] tracking-[0.16em] uppercase">Shop the Collection</Link>
             <Link href="/heirloom-guide" className="h-11 px-8 border border-[rgba(28,18,14,0.12)] inline-flex items-center text-[11px] tracking-[0.16em] uppercase">Explore Heirloom Guide</Link>
           </div>
         </div>

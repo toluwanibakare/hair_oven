@@ -51,16 +51,16 @@ function ShopContent() {
 
         <div className="mt-8 flex flex-wrap gap-2">
           {categories.map((c) => (
-            <button key={c} onClick={() => setCat(c)} className={`h-9 px-4 border text-[11px] tracking-[0.12em] uppercase transition-colors ${cat === c ? "bg-[#1C120E] text-white border-[#1C120E]" : "bg-[#FDF8F0] border-[rgba(28,18,14,0.12)] hover:border-[#1C120E]"}`}>
+            <button key={c} onClick={() => setCat(c)} className={`h-9 px-4 border text-[11px] tracking-[0.12em] uppercase transition-colors ${cat === c ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-[#FDF8F0] border-[rgba(28,18,14,0.12)] hover:border-[#2B1B12]"}`}>
               {c}
             </button>
           ))}
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          <button onClick={() => setCollection("all")} className={`px-4 py-2 border text-[11px] tracking-[0.12em] uppercase ${collection === "all" ? "bg-[#1C120E] text-white border-[#1C120E]" : "bg-white border-[rgba(28,18,14,0.12)]"}`}>All Collections</button>
+          <button onClick={() => setCollection("all")} className={`px-4 py-2 border text-[11px] tracking-[0.12em] uppercase ${collection === "all" ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-white border-[rgba(28,18,14,0.12)]"}`}>All Collections</button>
           {collections.map((col) => (
-            <button key={col.slug} onClick={() => setCollection(col.slug)} className={`px-4 py-2 border text-[11px] tracking-[0.12em] uppercase capitalize ${collection === col.slug ? "bg-[#1C120E] text-white border-[#1C120E]" : "bg-white border-[rgba(28,18,14,0.12)]"}`}>{col.slug}</button>
+            <button key={col.slug} onClick={() => setCollection(col.slug)} className={`px-4 py-2 border text-[11px] tracking-[0.12em] uppercase capitalize ${collection === col.slug ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-white border-[rgba(28,18,14,0.12)]"}`}>{col.slug}</button>
           ))}
         </div>
 
@@ -80,10 +80,10 @@ function ShopContent() {
             <div className="font-serif text-lg mt-2">Not sure which texture fits your lifestyle?</div>
             <Link href="/heirloom-guide" className="mt-3 inline-flex text-[11px] tracking-[0.14em] uppercase underline decoration-[#C2A47A]">Open Heirloom Guide →</Link>
           </div>
-          <div className="bg-[#1C120E] text-white p-6">
+          <div className="bg-[#2B1B12] text-white p-6">
             <div className="text-[11px] tracking-[0.14em] uppercase text-[#C2A47A]">WhatsApp Concierge</div>
             <div className="font-serif text-lg mt-2">Speak to a specialist.</div>
-            <a href="https://wa.me/2340000000000" className="mt-3 inline-flex h-9 px-5 bg-white text-black text-[11px] tracking-[0.14em] uppercase items-center">Chat on WhatsApp</a>
+            <a href="https://wa.me/2340000000000" className="mt-3 inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center">Chat on WhatsApp</a>
           </div>
           <div className="bg-white border border-[rgba(28,18,14,0.06)] p-6">
             <div className="text-[11px] tracking-[0.14em] uppercase text-[#A68B5B]">Bespoke</div>

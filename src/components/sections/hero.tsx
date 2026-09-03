@@ -12,7 +12,7 @@ export function Hero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
 
   return (
-    <section ref={ref} className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-[#0A0A0A]">
+    <section ref={ref} className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-[#2B1B12]">
       {/* Media */}
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <img
@@ -21,8 +21,8 @@ export function Hero() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Warm luxury overlay - not purple, warm brown/charcoal */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/70 via-[#2B1B12]/10 to-[#2B1B12]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2B1B12]/40 via-transparent to-transparent" />
         <div className="absolute inset-0 opacity-[0.12] mix-blend-soft-light" style={{ background: `radial-gradient(800px circle at 70% 30%, #C2A47A 0%, transparent 60%)` }} />
       </motion.div>
 
@@ -65,10 +65,10 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.75 }}
             className="mt-8 flex flex-wrap gap-3"
           >
-            <Link href="/shop" className="h-[48px] px-8 bg-white text-[#1C120E] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
+            <Link href="/shop" className="h-[48px] px-8 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
               Shop the Collection <span className="ml-2">→</span>
             </Link>
-            <Link href="/story" className="h-[48px] px-8 border border-white/30 text-white inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium backdrop-blur hover:bg-white hover:text-[#1C120E] hover:border-white transition-colors">
+            <Link href="/story" className="h-[48px] px-8 border border-white/30 text-white inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium backdrop-blur hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
               Discover Our Story
             </Link>
           </motion.div>

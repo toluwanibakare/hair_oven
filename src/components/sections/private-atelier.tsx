@@ -6,11 +6,11 @@ import { Reveal } from "@/components/reveal";
 
 export function PrivateAtelier() {
   return (
-    <section className="relative bg-[#0A0A0A] text-white overflow-hidden">
+    <section className="relative bg-[#2B1B12] text-white overflow-hidden">
       <div className="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1920&auto=format&fit=crop" alt="Atelier" className="absolute inset-0 w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2B1B12] via-[#2B1B12]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/60 via-transparent to-transparent" />
       </div>
 
       <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 items-center">
@@ -35,10 +35,10 @@ export function PrivateAtelier() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/bespoke" className="h-11 px-8 bg-white text-[#0A0A0A] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
+            <Link href="/bespoke" className="h-11 px-8 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
               Begin Your Bespoke Journey →
             </Link>
-            <a href="https://wa.me/2340000000000" className="h-11 px-8 border border-white/20 inline-flex items-center text-[11px] tracking-[0.16em] uppercase hover:bg-white hover:text-black hover:border-white transition-colors">
+            <a href="https://wa.me/2340000000000" className="h-11 px-8 border border-white/20 inline-flex items-center text-[11px] tracking-[0.16em] uppercase hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
               Consult via WhatsApp
             </a>
           </div>
@@ -47,7 +47,7 @@ export function PrivateAtelier() {
         </div>
 
         <div className="lg:col-span-6 lg:pl-10">
-          <div className="bg-white text-[#1C120E] p-8 lg:p-10 max-w-[480px] ml-auto">
+          <div className="bg-white text-[#2B1B12] p-8 lg:p-10 max-w-[480px] ml-auto">
             <div className="text-[11px] tracking-[0.16em] uppercase text-[#A68B5B]">Atelier Process</div>
             <div className="mt-4 space-y-6">
               {[

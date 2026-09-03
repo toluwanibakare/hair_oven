@@ -37,7 +37,7 @@ export function OvenVeil() {
               <div className="absolute inset-0 p-6 flex flex-col justify-between pointer-events-none">
                 <div className="flex justify-between">
                   <span className="bg-white/90 backdrop-blur text-[10px] tracking-[0.14em] uppercase px-3 py-1.5">Macro • 40× lace texture</span>
-                  <span className="bg-[#1C120E] text-white text-[10px] tracking-[0.14em] uppercase px-3 py-1.5">HD • Single-knot</span>
+                  <span className="bg-[#2B1B12] text-white text-[10px] tracking-[0.14em] uppercase px-3 py-1.5">HD • Single-knot</span>
                 </div>
                 <div className="grid grid-cols-5 gap-2">
                   {ovenVeilSteps.map((s, i) => (
@@ -53,7 +53,7 @@ export function OvenVeil() {
               <div className="flex-1 h-[96px] overflow-hidden bg-[#F5EFE6]">
                 <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=400&auto=format&fit=crop" alt="" className="w-full h-full object-cover" />
               </div>
-              <div className="flex-1 h-[96px] bg-[#1C120E] text-white p-4 flex flex-col justify-center">
+              <div className="flex-1 h-[96px] bg-[#2B1B12] text-white p-4 flex flex-col justify-center">
                 <div className="text-[10px] tracking-[0.16em] uppercase text-[#C2A47A]">Melt test</div>
                 <div className="text-sm leading-5 mt-1">Disappears against skin in daylight.</div>
               </div>
@@ -71,8 +71,8 @@ export function OvenVeil() {
                 >
                   <span className={`font-serif text-[28px] leading-none mt-1 ${active === idx ? "text-[#C2A47A]" : "text-[#A8A29E]"}`}>{step.k}</span>
                   <span className="flex-1">
-                    <span className={`block text-[12px] tracking-[0.16em] uppercase font-medium ${active === idx ? "text-[#1C120E]" : "text-[#57534E]"}`}>{step.t}</span>
-                    <span className={`block text-sm leading-6 mt-2 ${active === idx ? "text-[#1C120E]" : "text-[#78716C]"}`}>{step.d}</span>
+                    <span className={`block text-[12px] tracking-[0.16em] uppercase font-medium ${active === idx ? "text-[#2B1B12]" : "text-[#57534E]"}`}>{step.t}</span>
+                    <span className={`block text-sm leading-6 mt-2 ${active === idx ? "text-[#2B1B12]" : "text-[#78716C]"}`}>{step.d}</span>
                     {active === idx && <span className="inline-flex mt-3 h-px w-12 bg-[#C2A47A]" />}
                   </span>
                 </button>

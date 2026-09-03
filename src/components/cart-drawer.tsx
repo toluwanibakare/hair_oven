@@ -18,7 +18,7 @@ export function CartDrawer() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setDrawerOpen(false)}
-            className="fixed inset-0 bg-[#1C120E]/30 backdrop-blur-sm z-[70]"
+            className="fixed inset-0 bg-[#2B1B12]/30 backdrop-blur-sm z-[70]"
           />
           <motion.div
             initial={{ x: "100%" }}
@@ -32,7 +32,7 @@ export function CartDrawer() {
                 <div className="text-[11px] tracking-[0.18em] uppercase text-[#A68B5B]">Your Bag</div>
                 <div className="font-serif text-[18px] tracking-[-0.01em]">{cartCount === 0 ? "Empty" : `${cartCount} ${cartCount === 1 ? "item" : "items"}`}</div>
               </div>
-              <button onClick={() => setDrawerOpen(false)} className="w-10 h-10 grid place-items-center rounded-full hover:bg-black/5 transition-colors">
+              <button onClick={() => setDrawerOpen(false)} className="w-10 h-10 grid place-items-center rounded-full hover:bg-[#2B1B12]/5 transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -47,7 +47,7 @@ export function CartDrawer() {
                   <p className="text-sm text-[#78716C] mt-2 max-w-[28ch] mx-auto">Discover exceptional hair, crafted with intention.</p>
                   <button
                     onClick={() => setDrawerOpen(false)}
-                    className="mt-6 h-11 px-8 bg-[#1C120E] text-white text-[11px] tracking-[0.16em] uppercase"
+                    className="mt-6 h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase"
                   >
                     Continue Shopping
                   </button>
@@ -69,17 +69,17 @@ export function CartDrawer() {
                         </div>
                         <div className="flex items-center justify-between mt-4">
                           <div className="flex items-center border border-[rgba(28,18,14,0.12)]">
-                            <button onClick={() => updateQty(item.product.id, item.qty - 1)} className="w-8 h-8 grid place-items-center hover:bg-black/5">
+                            <button onClick={() => updateQty(item.product.id, item.qty - 1)} className="w-8 h-8 grid place-items-center hover:bg-[#2B1B12]/5">
                               <Minus className="w-3 h-3" />
                             </button>
                             <span className="w-8 text-center text-sm font-medium">{item.qty}</span>
-                            <button onClick={() => updateQty(item.product.id, item.qty + 1)} className="w-8 h-8 grid place-items-center hover:bg-black/5">
+                            <button onClick={() => updateQty(item.product.id, item.qty + 1)} className="w-8 h-8 grid place-items-center hover:bg-[#2B1B12]/5">
                               <Plus className="w-3 h-3" />
                             </button>
                           </div>
                           <div className="text-right">
                             <div className="text-sm font-medium">{formatPrice(item.product.price * item.qty)}</div>
-                            <button onClick={() => removeFromCart(item.product.id)} className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] hover:text-[#1C120E] underline underline-offset-4">
+                            <button onClick={() => removeFromCart(item.product.id)} className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] hover:text-[#2B1B12] underline underline-offset-4">
                               Remove
                             </button>
                           </div>
@@ -101,7 +101,7 @@ export function CartDrawer() {
                   <Link
                     href="/checkout"
                     onClick={() => setDrawerOpen(false)}
-                    className="h-[52px] bg-[#1C120E] text-white grid place-items-center text-[11px] tracking-[0.18em] uppercase font-medium hover:bg-[#2B1B12] transition-colors"
+                    className="h-[52px] bg-[#2B1B12] text-white grid place-items-center text-[11px] tracking-[0.18em] uppercase font-medium hover:bg-[#2B1B12] transition-colors"
                   >
                     Proceed to Checkout
                   </Link>

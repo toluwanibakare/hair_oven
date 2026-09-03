@@ -17,7 +17,7 @@ export function Founder() {
           <div className="lg:col-span-5">
             <motion.div style={{ y }} className="relative aspect-[4/5] overflow-hidden bg-[#F5EFE6]">
               <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=900&auto=format&fit=crop" alt="Hannah Oluwatosin Ogundare" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#2B1B12]/60 to-transparent">
                 <div className="text-white font-serif text-xl leading-none">Hannah Oluwatosin Ogundare</div>
                 <div className="text-[10px] tracking-[0.16em] uppercase text-white/80 mt-1">Founder, Hair Oven</div>
               </div>
@@ -40,17 +40,17 @@ export function Founder() {
                   As a child, I would weave the hair of children around my neighbourhood. My mother plaited my hair with precision. I once travelled long distances to have my cornrows done by a woman whose craftsmanship left me in awe - neatness, patience, attention to detail.
                 </p>
                 <p>
-                  My late father once told me: <em className="text-[#1C120E] font-serif italic">“I can imagine what you’ll be like on your wedding day.”</em> He imagined me hiring stylists and makeup artists from other countries. Years later, those words became part of a larger story.
+                  My late father once told me: <em className="text-[#2B1B12] font-serif italic">“I can imagine what you’ll be like on your wedding day.”</em> He imagined me hiring stylists and makeup artists from other countries. Years later, those words became part of a larger story.
                 </p>
                 <p>
                   After graduating with a 2:1 in Economics from an American university and years as an entrepreneur, I asked GOD to direct me toward what I was meant to build. That prayer led to HAIR OVEN - born through faith, passion, craftsmanship and a desire to create something meaningful in the world of hair.
                 </p>
               </div>
               <div className="mt-8 border-l-2 border-[#C2A47A] pl-6">
-                <div className="font-serif italic text-[18px] leading-6 text-[#1C120E]">“There is always a better texture, a better experience, a better way to serve.”</div>
+                <div className="font-serif italic text-[18px] leading-6 text-[#2B1B12]">“There is always a better texture, a better experience, a better way to serve.”</div>
                 <div className="text-[11px] tracking-[0.14em] uppercase text-[#78716C] mt-2">- The Hair Oven belief</div>
               </div>
-              <Link href="/story" className="mt-8 inline-flex h-11 px-8 bg-[#1C120E] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#2B1B12] transition-colors">
+              <Link href="/story" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#2B1B12] transition-colors">
                 Read Our Story →
               </Link>
             </Reveal>

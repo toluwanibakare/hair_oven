@@ -20,7 +20,7 @@ export function SocialProof() {
           {testimonials.map((t, i) => (
             <motion.div key={t.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.6 }} className="bg-white border border-[rgba(28,18,14,0.06)] p-8 flex flex-col">
               <div className="flex gap-1 text-[#C2A47A] text-sm">★★★★★</div>
-              <p className="font-serif text-[18px] leading-6 mt-4 text-[#1C120E]">“{t.text}”</p>
+              <p className="font-serif text-[18px] leading-6 mt-4 text-[#2B1B12]">“{t.text}”</p>
               <div className="mt-6 flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-[#F5EFE6] grid place-items-center text-xs font-medium text-[#78716C]">{t.name[0]}</div>
                 <div>

@@ -63,7 +63,7 @@ export function HeirloomGuide() {
                   ))}
                 </ul>
                 <div className="mt-6 h-px bg-[rgba(28,18,14,0.08)]" />
-                <a href="/heirloom-guide" className="mt-6 inline-flex h-10 px-6 border border-[rgba(28,18,14,0.12)] items-center text-[11px] tracking-[0.14em] uppercase hover:bg-[#1C120E] hover:text-white transition-colors">
+                <a href="/heirloom-guide" className="mt-6 inline-flex h-10 px-6 border border-[rgba(28,18,14,0.12)] items-center text-[11px] tracking-[0.14em] uppercase hover:bg-[#2B1B12] hover:text-white transition-colors">
                   Open Full Guide →
                 </a>
               </div>

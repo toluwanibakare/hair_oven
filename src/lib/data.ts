@@ -30,7 +30,7 @@ export const collections = [
       "Entirely unprocessed single-donor hair with fully intact cuticles. The ultimate heirloom - a lifetime companion.",
     accent: "Lifetime",
     years: "LIFETIME",
-    color: "#1C120E",
+    color: "#2B1B12",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
     priceFrom: 485000,

@@ -21,15 +21,15 @@ export function FromAfrica() {
               <p className="text-sm leading-7 text-[#57534E] mt-6 max-w-[48ch]">Born in Africa, built to serve women globally. Lagos to London, Houston to Johannesburg - same standard, same respect, same Oven Veil™. International shipping. WhatsApp consultation that actually answers.</p>
               <div className="mt-8 flex flex-wrap gap-6 text-[11px] tracking-[0.12em] uppercase">
                 <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#C2A47A]" /> Worldwide shipping</span>
-                <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#1C120E]" /> Duties calculated at checkout</span>
+                <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#2B1B12]" /> Duties calculated at checkout</span>
                 <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#78716C]" /> Studio: Lagos</span>
               </div>
-              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#1C120E] text-white text-[11px] tracking-[0.16em] uppercase items-center">Shop Global Collection →</Link>
+              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center">Shop Global Collection →</Link>
             </Reveal>
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] bg-[#1C120E] overflow-hidden p-8 lg:p-10 flex flex-col justify-between">
+            <div className="relative aspect-[4/3] bg-[#2B1B12] overflow-hidden p-8 lg:p-10 flex flex-col justify-between">
               {/* subtle map grid */}
               <div className="absolute inset-0 opacity-10">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

@@ -12,7 +12,7 @@ export function Craftsmanship() {
   const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1]);
 
   return (
-    <section ref={ref} className="bg-[#1C120E] text-[#E8DDC9] py-16 lg:py-24 overflow-hidden">
+    <section ref={ref} className="bg-[#2B1B12] text-[#E8DDC9] py-16 lg:py-24 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         <div className="max-w-[720px]">
           <Reveal>
@@ -29,10 +29,10 @@ export function Craftsmanship() {
           <div className="lg:col-span-7">
             <motion.div style={{ y, scale }} className="relative aspect-[4/3] lg:aspect-[1.4] overflow-hidden bg-[#2B1B12]">
               <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop" alt="Craftsmanship detail" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
               <div className="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
                 <div className="text-[11px] tracking-[0.16em] uppercase text-white/80">Cuticle intact • 40× magnification</div>
-                <div className="hidden sm:block text-[11px] tracking-[0.16em] uppercase bg-white text-[#1C120E] px-3 py-1.5">Inspected strand by strand</div>
+                <div className="hidden sm:block text-[11px] tracking-[0.16em] uppercase bg-white text-[#2B1B12] px-3 py-1.5">Inspected strand by strand</div>
               </div>
             </motion.div>
           </div>

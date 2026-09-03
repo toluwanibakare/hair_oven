@@ -22,10 +22,10 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-[#FFFCF8]/80 backdrop-blur-xl z-[80]" onClick={onClose} />
           <motion.div initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} className="fixed inset-x-0 top-0 z-[80] bg-[#FFFCF8] border-b border-[rgba(28,18,14,0.08)] shadow-[0_20px_60px_rgba(28,18,14,0.08)]">
             <div className="max-w-[800px] mx-auto px-6 py-8">
-              <div className="flex items-center gap-4 border-b border-[#1C120E] pb-4">
+              <div className="flex items-center gap-4 border-b border-[#2B1B12] pb-4">
                 <Search className="w-5 h-5 text-[#A68B5B]" />
                 <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search wigs, bundles, frontals..." className="flex-1 bg-transparent outline-none placeholder:text-[#A8A29E] text-[15px]" />
-                <button onClick={onClose} className="w-8 h-8 grid place-items-center rounded-full hover:bg-black/5">
+                <button onClick={onClose} className="w-8 h-8 grid place-items-center rounded-full hover:bg-[#2B1B12]/5">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -36,7 +36,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                     <div className="text-[10px] tracking-[0.18em] uppercase text-[#A68B5B] mb-4">Popular searches</div>
                     <div className="flex flex-wrap gap-2">
                       {["Bone Straight", "Oven Veil", "Deep Curly", "Bespoke", "Blunt Bob"].map((t) => (
-                        <button key={t} onClick={() => setQ(t)} className="px-4 py-2 border border-[rgba(28,18,14,0.12)] text-[12px] tracking-[0.08em] uppercase hover:bg-[#1C120E] hover:text-white transition-colors">
+                        <button key={t} onClick={() => setQ(t)} className="px-4 py-2 border border-[rgba(28,18,14,0.12)] text-[12px] tracking-[0.08em] uppercase hover:bg-[#2B1B12] hover:text-white transition-colors">
                           {t}
                         </button>
                       ))}

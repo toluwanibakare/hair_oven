@@ -14,9 +14,9 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
   const list = products.filter((p) => p.collection === slug);
 
   const themes: Record<string, { bg: string; text: string; accent: string }> = {
-    private: { bg: "bg-[#1C120E]", text: "text-[#E8DDC9]", accent: "bg-[#C2A47A]" },
+    private: { bg: "bg-[#2B1B12]", text: "text-[#E8DDC9]", accent: "bg-[#C2A47A]" },
     signature: { bg: "bg-[#2B1B12]", text: "text-[#FDF8F0]", accent: "bg-[#E8DDC9]" },
-    essentials: { bg: "bg-[#F5EFE6]", text: "text-[#1C120E]", accent: "bg-[#1C120E]" },
+    essentials: { bg: "bg-[#F5EFE6]", text: "text-[#2B1B12]", accent: "bg-[#2B1B12]" },
   };
   const theme = themes[slug] || themes.private;
 
@@ -27,7 +27,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         <div className="absolute inset-0 opacity-20">
           <img src={col.image} alt={col.name} className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
           <div className="max-w-[640px]">
             <div className="text-[10px] tracking-[0.22em] uppercase opacity-70">{col.tagline}</div>
@@ -36,7 +36,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             </h1>
             <p className="mt-6 text-sm leading-7 opacity-70 max-w-[48ch]">{col.description}</p>
             <div className="mt-8 flex flex-wrap gap-4 items-center">
-              <span className="bg-white text-[#1C120E] px-4 py-2 text-[11px] tracking-[0.16em] uppercase">{col.years}</span>
+              <span className="bg-white text-[#2B1B12] px-4 py-2 text-[11px] tracking-[0.16em] uppercase">{col.years}</span>
               <span className="text-[11px] tracking-[0.14em] uppercase opacity-60">From {new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 }).format(col.priceFrom)}</span>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             {slug === "signature" && "High-density virgin hair curated for long-term luxury. Resilient, refined, endlessly wearable."}
             {slug === "essentials" && "Dependable everyday human hair. Beautiful, versatile and crafted for rotation - without compromise on construction."}
           </p>
-          <Link href="/shop" className="mt-6 inline-flex h-10 px-6 border border-[rgba(28,18,14,0.12)] text-[11px] tracking-[0.14em] uppercase items-center hover:bg-[#1C120E] hover:text-white transition-colors">
+          <Link href="/shop" className="mt-6 inline-flex h-10 px-6 border border-[rgba(28,18,14,0.12)] text-[11px] tracking-[0.14em] uppercase items-center hover:bg-[#2B1B12] hover:text-white transition-colors">
             Shop {col.subtitle} →
           </Link>
         </div>
@@ -70,7 +70,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10 pb-16">
         <div className="border border-[rgba(28,18,14,0.08)] bg-[#FDF8F0] p-6 lg:p-8 grid md:grid-cols-3 gap-6">
           {collections.map((c) => (
-            <Link key={c.slug} href={`/collections/${c.slug}`} className={`p-6 border transition-colors ${c.slug === slug ? "bg-[#1C120E] text-white border-[#1C120E]" : "bg-white border-[rgba(28,18,14,0.08)] hover:border-[#1C120E]"}`}>
+            <Link key={c.slug} href={`/collections/${c.slug}`} className={`p-6 border transition-colors ${c.slug === slug ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-white border-[rgba(28,18,14,0.08)] hover:border-[#2B1B12]"}`}>
               <div className="text-[10px] tracking-[0.16em] uppercase opacity-60">{c.tagline}</div>
               <div className="font-serif text-lg mt-2">{c.name}</div>
               <div className={`text-xs mt-2 ${c.slug === slug ? "text-white/60" : "text-[#57534E]"}`}>{c.description}</div>

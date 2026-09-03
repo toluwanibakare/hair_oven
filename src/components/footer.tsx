@@ -84,7 +84,7 @@ export function Footer() {
               <p className="text-xs leading-5 text-white/50 mb-4">Private previews, restock alerts, editorial stories.</p>
               <form onSubmit={(e) => e.preventDefault()} className="flex border border-white/10 focus-within:border-[#D4AF37] transition-colors w-full">
                 <input placeholder="Email address" className="flex-1 min-w-0 bg-transparent px-3 py-3 text-sm placeholder:text-white/30 outline-none" />
-                <button className="px-4 shrink-0 text-[11px] tracking-[0.16em] uppercase bg-[#D4AF37] text-black hover:bg-white transition-colors">Join</button>
+                <button className="px-4 shrink-0 text-[11px] tracking-[0.16em] uppercase bg-[#D4AF37] text-[#2B1B12] hover:bg-white transition-colors">Join</button>
               </form>
               <div className="text-[10px] text-white/30 mt-3">By joining, you agree to our Privacy Policy.</div>
             </div>

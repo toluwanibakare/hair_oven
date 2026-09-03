@@ -21,7 +21,7 @@ export function BeautyWithoutElitism() {
           </div>
           <div className="lg:col-span-6 lg:border-l lg:border-[rgba(28,18,14,0.08)] lg:pl-10">
             <Reveal delay={0.14}>
-              <p className="text-[16px] leading-7 text-[#1C120E] font-light max-w-[52ch]">
+              <p className="text-[16px] leading-7 text-[#2B1B12] font-light max-w-[52ch]">
                 We created three collections not to rank women, but to respect them. The same lace. The same construction care. The same respect - whether Private, Signature or Essentials.
               </p>
               <p className="text-sm leading-6 text-[#57534E] mt-4 max-w-[52ch]">

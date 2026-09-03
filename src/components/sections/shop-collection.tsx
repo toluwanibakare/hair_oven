@@ -28,7 +28,7 @@ export function ShopCollection() {
             <div className="text-[10px] tracking-[0.22em] uppercase text-[#A68B5B]">Discovery</div>
             <h2 className="font-serif text-[36px] lg:text-[48px] leading-none tracking-[-0.02em] mt-3">Shop the Hair Oven Collection</h2>
           </div>
-          <Link href="/shop" className="hidden sm:inline-flex h-11 px-6 border border-[rgba(28,18,14,0.12)] items-center text-[11px] tracking-[0.16em] uppercase hover:bg-[#1C120E] hover:text-white hover:border-[#1C120E] transition-colors">
+          <Link href="/shop" className="hidden sm:inline-flex h-11 px-6 border border-[rgba(28,18,14,0.12)] items-center text-[11px] tracking-[0.16em] uppercase hover:bg-[#2B1B12] hover:text-white hover:border-[#2B1B12] transition-colors">
             View All Hair →
           </Link>
         </div>
@@ -36,7 +36,7 @@ export function ShopCollection() {
         {/* Category pills - editorial */}
         <div className="mt-8 flex gap-2 overflow-auto no-scrollbar pb-2">
           {categories.map((cat) => (
-            <Link key={cat} href={`/shop?cat=${encodeURIComponent(cat)}`} className="shrink-0 h-9 px-4 border border-[rgba(28,18,14,0.12)] bg-[#FDF8F0] hover:bg-[#1C120E] hover:text-white hover:border-[#1C120E] transition-colors text-[11px] tracking-[0.08em] uppercase whitespace-nowrap inline-flex items-center">
+            <Link key={cat} href={`/shop?cat=${encodeURIComponent(cat)}`} className="shrink-0 h-9 px-4 border border-[rgba(28,18,14,0.12)] bg-[#FDF8F0] hover:bg-[#2B1B12] hover:text-white hover:border-[#2B1B12] transition-colors text-[11px] tracking-[0.08em] uppercase whitespace-nowrap inline-flex items-center">
               {cat}
             </Link>
           ))}
@@ -77,11 +77,11 @@ export function ShopCollection() {
           <div className="lg:col-span-12 mt-4 grid md:grid-cols-3 gap-6">
             <div className="md:col-span-2 relative aspect-[16/9] md:aspect-[2.2] overflow-hidden bg-[#F5EFE6] group">
               <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1400&auto=format&fit=crop" alt="Editorial lifestyle" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/50 via-transparent to-transparent" />
               <div className="absolute bottom-0 p-6 lg:p-8">
                 <div className="text-[10px] tracking-[0.16em] uppercase text-white/80">Editorial</div>
                 <div className="font-serif text-white text-[24px] leading-none mt-2">Movement that feels alive.</div>
-                <Link href="/collections/signature" className="mt-4 inline-flex h-9 px-5 bg-white text-[#1C120E] text-[11px] tracking-[0.14em] uppercase items-center">Shop Signature →</Link>
+                <Link href="/collections/signature" className="mt-4 inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center">Shop Signature →</Link>
               </div>
             </div>
             <div className="bg-[#FDF8F0] border border-[rgba(28,18,14,0.06)] p-8 flex flex-col justify-center">

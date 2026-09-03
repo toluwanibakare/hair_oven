@@ -22,7 +22,7 @@ export default function ProductPage() {
     return (
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10 py-24 text-center">
         <div className="font-serif text-3xl">Product not found</div>
-        <Link href="/shop" className="mt-6 inline-flex h-11 px-8 bg-[#1C120E] text-white items-center text-[11px] tracking-[0.16em] uppercase">Back to Shop</Link>
+        <Link href="/shop" className="mt-6 inline-flex h-11 px-8 bg-[#2B1B12] text-white items-center text-[11px] tracking-[0.16em] uppercase">Back to Shop</Link>
       </div>
     );
   }
@@ -33,7 +33,7 @@ export default function ProductPage() {
     <div className="bg-[#FFFCF8]">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10 py-8 lg:py-12">
         <div className="flex gap-2 text-[11px] tracking-[0.12em] uppercase text-[#78716C]">
-          <Link href="/" className="hover:text-[#1C120E]">Home</Link> <span>/</span> <Link href="/shop" className="hover:text-[#1C120E]">Shop</Link> <span>/</span> <span className="text-[#1C120E]">{product.name}</span>
+          <Link href="/" className="hover:text-[#2B1B12]">Home</Link> <span>/</span> <Link href="/shop" className="hover:text-[#2B1B12]">Shop</Link> <span>/</span> <span className="text-[#2B1B12]">{product.name}</span>
         </div>
 
         <div className="mt-8 grid lg:grid-cols-12 gap-8 lg:gap-12">
@@ -44,18 +44,18 @@ export default function ProductPage() {
                 <button
                   key={i}
                   onClick={() => setActiveImg(i)}
-                  className={`w-[84px] h-[108px] overflow-hidden border-2 ${activeImg === i ? "border-[#1C120E]" : "border-transparent"} bg-[#F5EFE6]`}
+                  className={`w-[84px] h-[108px] overflow-hidden border-2 ${activeImg === i ? "border-[#2B1B12]" : "border-transparent"} bg-[#F5EFE6]`}
                 >
                   <img src={img} alt="" className="w-full h-full object-cover" />
                 </button>
               ))}
-              <div className="w-[84px] h-[108px] bg-[#1C120E] text-white p-3 flex flex-col justify-center text-[10px] tracking-[0.12em] uppercase leading-tight">Oven Veil™ • Invisible hairline included</div>
+              <div className="w-[84px] h-[108px] bg-[#2B1B12] text-white p-3 flex flex-col justify-center text-[10px] tracking-[0.12em] uppercase leading-tight">Oven Veil™ • Invisible hairline included</div>
             </div>
             <div className="flex-1 relative aspect-[4/5] lg:aspect-[1.05] overflow-hidden bg-[#F5EFE6]">
               <img src={product.images[activeImg]} alt={product.name} className="absolute inset-0 w-full h-full object-cover" />
-              {product.bestseller && <span className="absolute top-4 left-4 bg-[#1C120E] text-white text-[10px] tracking-[0.14em] uppercase px-3 py-1.5">Bestseller</span>}
+              {product.bestseller && <span className="absolute top-4 left-4 bg-[#2B1B12] text-white text-[10px] tracking-[0.14em] uppercase px-3 py-1.5">Bestseller</span>}
               <button onClick={() => toggleWishlist(product.id)} className="absolute top-4 right-4 w-10 h-10 grid place-items-center rounded-full bg-white/90 backdrop-blur">
-                <Heart className={`w-4 h-4 ${wished ? "fill-[#C2A47A] text-[#C2A47A]" : "text-[#1C120E]"}`} />
+                <Heart className={`w-4 h-4 ${wished ? "fill-[#C2A47A] text-[#C2A47A]" : "text-[#2B1B12]"}`} />
               </button>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function ProductPage() {
                 </div>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {product.lengths.map((l) => (
-                    <button key={l} onClick={() => setLength(l)} className={`h-9 px-4 border text-sm ${length === l ? "bg-[#1C120E] text-white border-[#1C120E]" : "bg-white border-[rgba(28,18,14,0.12)] hover:border-[#1C120E]"}`}>
+                    <button key={l} onClick={() => setLength(l)} className={`h-9 px-4 border text-sm ${length === l ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-white border-[rgba(28,18,14,0.12)] hover:border-[#2B1B12]"}`}>
                       {l}
                     </button>
                   ))}
@@ -91,7 +91,7 @@ export default function ProductPage() {
                 <div className="text-[11px] tracking-[0.16em] uppercase">Colour</div>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {product.colors.map((c) => (
-                    <button key={c} onClick={() => setColor(c)} className={`h-9 px-4 border text-sm ${color === c ? "bg-[#1C120E] text-white border-[#1C120E]" : "bg-white border-[rgba(28,18,14,0.12)] hover:border-[#1C120E]"}`}>
+                    <button key={c} onClick={() => setColor(c)} className={`h-9 px-4 border text-sm ${color === c ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-white border-[rgba(28,18,14,0.12)] hover:border-[#2B1B12]"}`}>
                       {c}
                     </button>
                   ))}
@@ -119,22 +119,22 @@ export default function ProductPage() {
 
               <div className="flex items-center gap-3">
                 <div className="flex items-center border border-[rgba(28,18,14,0.12)]">
-                  <button onClick={() => setQty(Math.max(1, qty - 1))} className="w-11 h-[48px] grid place-items-center hover:bg-black/5"><Minus className="w-4 h-4" /></button>
+                  <button onClick={() => setQty(Math.max(1, qty - 1))} className="w-11 h-[48px] grid place-items-center hover:bg-[#2B1B12]/5"><Minus className="w-4 h-4" /></button>
                   <span className="w-12 text-center font-medium">{qty}</span>
-                  <button onClick={() => setQty(qty + 1)} className="w-11 h-[48px] grid place-items-center hover:bg-black/5"><Plus className="w-4 h-4" /></button>
+                  <button onClick={() => setQty(qty + 1)} className="w-11 h-[48px] grid place-items-center hover:bg-[#2B1B12]/5"><Plus className="w-4 h-4" /></button>
                 </div>
                 <button
                   onClick={() => {
                     for (let i = 0; i < qty; i++) addToCart(product, { length, color });
                   }}
-                  className="flex-1 h-[48px] bg-[#1C120E] text-white text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#2B1B12] transition-colors"
+                  className="flex-1 h-[48px] bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#2B1B12] transition-colors"
                 >
                   Add to Bag - {formatPrice(product.price * qty)}
                 </button>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <button className="h-11 border border-[#1C120E] text-[11px] tracking-[0.16em] uppercase hover:bg-[#1C120E] hover:text-white transition-colors">Buy Now</button>
+                <button className="h-11 border border-[#2B1B12] text-[11px] tracking-[0.16em] uppercase hover:bg-[#2B1B12] hover:text-white transition-colors">Buy Now</button>
                 <a href={`https://wa.me/2340000000000?text=Hi%20HAIR%20OVEN%2C%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}`} target="_blank" className="h-11 bg-[#25D366] text-white grid place-items-center text-[11px] tracking-[0.14em] uppercase gap-2 hover:bg-[#1ebe5a] transition-colors">
                   <span className="inline-flex items-center gap-2"><MessageCircle className="w-4 h-4" /> WhatsApp</span>
                 </a>
@@ -168,7 +168,7 @@ export default function ProductPage() {
               { id: "shipping", label: "Shipping & Returns" },
               { id: "faq", label: "FAQs" },
             ].map((t) => (
-              <button key={t.id} onClick={() => setTab(t.id)} className={`py-4 text-[11px] tracking-[0.16em] uppercase whitespace-nowrap border-b-2 ${tab === t.id ? "border-[#1C120E] text-[#1C120E]" : "border-transparent text-[#78716C] hover:text-[#1C120E]"}`}>
+              <button key={t.id} onClick={() => setTab(t.id)} className={`py-4 text-[11px] tracking-[0.16em] uppercase whitespace-nowrap border-b-2 ${tab === t.id ? "border-[#2B1B12] text-[#2B1B12]" : "border-transparent text-[#78716C] hover:text-[#2B1B12]"}`}>
                 {t.label}
               </button>
             ))}
@@ -204,11 +204,11 @@ export default function ProductPage() {
             {tab === "faq" && (
               <div className="space-y-4 text-sm leading-6 text-[#57534E]">
                 <div>
-                  <div className="font-medium text-[#1C120E]">Can I colour this hair?</div>
+                  <div className="font-medium text-[#2B1B12]">Can I colour this hair?</div>
                   <div>Private & Signature are virgin and can be coloured by a professional. We recommend a strand test.</div>
                 </div>
                 <div>
-                  <div className="font-medium text-[#1C120E]">Is Oven Veil™ included?</div>
+                  <div className="font-medium text-[#2B1B12]">Is Oven Veil™ included?</div>
                   <div>Yes. Every wig features Oven Veil™ ultra-sheer lace. Frontals/closures use the same lace.</div>
                 </div>
               </div>
@@ -218,7 +218,7 @@ export default function ProductPage() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/shop" className="h-10 px-6 border border-[rgba(28,18,14,0.12)] inline-flex items-center text-[11px] tracking-[0.14em] uppercase">Continue Shopping</Link>
-          <Link href={`/collections/${product.collection}`} className="h-10 px-6 bg-[#1C120E] text-white inline-flex items-center text-[11px] tracking-[0.14em] uppercase">Explore {product.collection}</Link>
+          <Link href={`/collections/${product.collection}`} className="h-10 px-6 bg-[#2B1B12] text-white inline-flex items-center text-[11px] tracking-[0.14em] uppercase">Explore {product.collection}</Link>
         </div>
       </div>
     </div>

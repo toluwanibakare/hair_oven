@@ -30,13 +30,13 @@ export function HairOvenWoman() {
               <p className="text-sm leading-7 text-[#57534E] mt-6 max-w-[42ch]">
                 Different ages. Different races. Different colours. Different lifestyles. Different budgets.
               </p>
-              <p className="font-serif text-xl leading-tight mt-4 text-[#1C120E]">One thing remains the same: she deserves to feel beautiful.</p>
+              <p className="font-serif text-xl leading-tight mt-4 text-[#2B1B12]">One thing remains the same: she deserves to feel beautiful.</p>
               <div className="mt-6 flex flex-wrap gap-2 text-[11px] tracking-[0.12em] uppercase">
                 {["Bride", "Professional", "Mother", "Student", "Stylist", "Entrepreneur"].map((t) => (
                   <span key={t} className="px-3 py-1.5 border border-[rgba(28,18,14,0.12)] bg-white">{t}</span>
                 ))}
               </div>
-              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#1C120E] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#2B1B12] transition-colors">
+              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#2B1B12] transition-colors">
                 Shop for Her →
               </Link>
             </Reveal>
@@ -54,7 +54,7 @@ export function HairOvenWoman() {
                   className="group relative aspect-[3/4] overflow-hidden bg-[#EDE6D6]"
                 >
                   <img src={p.img} alt={p.label} className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/60 via-transparent to-transparent" />
                   <div className="absolute bottom-0 p-4">
                     <div className="text-white font-serif text-sm">{p.label}</div>
                   </div>
@@ -66,7 +66,7 @@ export function HairOvenWoman() {
                 <div className="text-[11px] tracking-[0.14em] uppercase text-[#A68B5B]">Hair enthusiast</div>
                 <div className="text-sm text-[#57534E] mt-1">For the woman who simply loves hair.</div>
               </div>
-              <div className="col-span-2 bg-[#1C120E] text-white p-4 flex items-center justify-between">
+              <div className="col-span-2 bg-[#2B1B12] text-white p-4 flex items-center justify-between">
                 <span className="text-sm">Authentic • Editorial • Not AI-generated.</span>
                 <span className="text-[10px] tracking-[0.16em] uppercase text-[#C2A47A]">Real women</span>
               </div>

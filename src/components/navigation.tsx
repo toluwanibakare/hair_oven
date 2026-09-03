@@ -38,7 +38,7 @@ export function Navigation() {
   return (
     <>
       {/* Top announce */}
-      <div className="relative z-[60] bg-[#1C120E] text-[#E8DDC9] text-center py-2 text-[10px] tracking-[0.18em] uppercase font-medium">
+      <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2 text-[10px] tracking-[0.18em] uppercase font-medium">
         <span className="hidden sm:inline">Complimentary worldwide shipping on orders over ₦500,000 - </span>WhatsApp consultation available 9AM–7PM WAT
       </div>
 
@@ -79,7 +79,7 @@ export function Navigation() {
                           key={item.label}
                         >
                           <Link href={item.href} className="group block">
-                            <div className="text-[11px] tracking-[0.12em] uppercase font-medium text-[#1C120E] group-hover:text-[#D4AF37] transition-colors">
+                            <div className="text-[11px] tracking-[0.12em] uppercase font-medium text-[#2B1B12] group-hover:text-[#D4AF37] transition-colors">
                               {item.label}
                             </div>
                             <div className="text-xs text-[#78716C] mt-1">{item.desc}</div>
@@ -98,7 +98,7 @@ export function Navigation() {
                           />
                           <div className="absolute inset-0 bg-[#D4AF37]/0 group-hover:bg-[#D4AF37]/10 transition-colors duration-500"/>
                         </div>
-                        <div className="font-serif text-[18px] leading-none text-[#1C120E]">Private Collection</div>
+                        <div className="font-serif text-[18px] leading-none text-[#2B1B12]">Private Collection</div>
                         <div className="text-[10px] tracking-[0.16em] uppercase text-[#57534E] mt-1">Raw - Unprocessed - Lifetime</div>
                       </Link>
                     </div>
@@ -152,17 +152,17 @@ export function Navigation() {
               </Link>
             </div>
 
-            <motion.button whileHover={{ scale: 1.05 }} onClick={() => setSearchOpen(true)} aria-label="Search" className="w-10 h-10 grid place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors text-[#1C120E]">
+            <motion.button whileHover={{ scale: 1.05 }} onClick={() => setSearchOpen(true)} aria-label="Search" className="w-10 h-10 grid place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors text-[#2B1B12]">
               <Search className="w-5 h-5 sm:w-4 sm:h-4" strokeWidth={1.5} />
             </motion.button>
-            <Link href="/account" className="hidden sm:grid w-10 h-10 place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors text-[#1C120E]">
+            <Link href="/account" className="hidden sm:grid w-10 h-10 place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors text-[#2B1B12]">
               <motion.div whileHover={{ scale: 1.05 }}><User className="w-4 h-4" strokeWidth={1.5} /></motion.div>
             </Link>
-            <Link href="/wishlist" className="hidden sm:grid w-10 h-10 place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors relative text-[#1C120E]">
+            <Link href="/wishlist" className="hidden sm:grid w-10 h-10 place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors relative text-[#2B1B12]">
               <motion.div whileHover={{ scale: 1.05 }}><Heart className="w-4 h-4" strokeWidth={1.5} /></motion.div>
               {wishlist.length > 0 && <span className="absolute -top-0.5 -right-0.5 bg-[#D4AF37] text-white text-[9px] w-4 h-4 grid place-items-center rounded-full font-medium">{wishlist.length}</span>}
             </Link>
-            <motion.button whileHover={{ scale: 1.05 }} onClick={() => setDrawerOpen(true)} aria-label="Cart" className="w-10 h-10 grid place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors relative text-[#1C120E]">
+            <motion.button whileHover={{ scale: 1.05 }} onClick={() => setDrawerOpen(true)} aria-label="Cart" className="w-10 h-10 grid place-items-center hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] rounded-full transition-colors relative text-[#2B1B12]">
               <ShoppingBag className="w-5 h-5 sm:w-4 sm:h-4" strokeWidth={1.5} />
               {cartCount > 0 && (
                 <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute -top-1 -right-1 bg-[#D4AF37] text-[#FFFCF8] text-[9px] w-5 h-5 grid place-items-center rounded-full font-medium shadow-sm">
@@ -178,11 +178,11 @@ export function Navigation() {
       <AnimatePresence>
         {mobileOpen && (
           <>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setMobileOpen(false)} className="fixed inset-0 bg-[#1C120E]/40 backdrop-blur-sm z-[100] lg:hidden" />
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setMobileOpen(false)} className="fixed inset-0 bg-[#2B1B12]/40 backdrop-blur-sm z-[100] lg:hidden" />
             <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }} transition={{ type: "spring", damping: 30, stiffness: 300 }} className="fixed inset-y-0 left-0 w-[88%] max-w-[380px] bg-[#FFFCF8] z-[100] flex flex-col lg:hidden">
               <div className="h-[72px] flex items-center justify-between px-6 border-b border-[rgba(28,18,14,0.06)]">
                 <Image src="/brand_logo.PNG" alt="Hair Oven" width={120} height={36} className="object-contain" />
-                <button onClick={() => setMobileOpen(false)} className="w-10 h-10 grid place-items-center rounded-full hover:bg-black/5">
+                <button onClick={() => setMobileOpen(false)} className="w-10 h-10 grid place-items-center rounded-full hover:bg-[#2B1B12]/5">
                   <X className="w-6 h-6" strokeWidth={1.5} />
                 </button>
               </div>
@@ -204,7 +204,7 @@ export function Navigation() {
                   <Link href="/account" className="flex-1 h-12 grid place-items-center border border-[#D4AF37]/30 text-[12px] tracking-[0.16em] uppercase hover:bg-[#D4AF37]/5 transition-colors font-medium">
                     Account
                   </Link>
-                  <button onClick={() => { setMobileOpen(false); setDrawerOpen(true); }} className="flex-1 h-12 bg-[#D4AF37] text-[#0A0A0A] text-[12px] tracking-[0.16em] uppercase hover:bg-white transition-colors font-medium">
+                  <button onClick={() => { setMobileOpen(false); setDrawerOpen(true); }} className="flex-1 h-12 bg-[#D4AF37] text-[#2B1B12] text-[12px] tracking-[0.16em] uppercase hover:bg-white transition-colors font-medium">
                     Bag ({cartCount})
                   </button>
                 </div>

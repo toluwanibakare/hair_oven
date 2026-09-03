@@ -15,24 +15,24 @@ export default function CheckoutPage() {
         {items.length === 0 ? (
           <div className="py-16 text-center border border-dashed border-[rgba(28,18,14,0.12)] mt-8">
             <p className="text-[#78716C]">Your bag is empty.</p>
-            <Link href="/shop" className="mt-4 inline-flex h-10 px-6 bg-[#1C120E] text-white text-[11px] tracking-[0.16em] uppercase items-center">Continue Shopping</Link>
+            <Link href="/shop" className="mt-4 inline-flex h-10 px-6 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center">Continue Shopping</Link>
           </div>
         ) : (
           <div className="mt-8 grid lg:grid-cols-12 gap-8">
             <div className="lg:col-span-7 bg-white border border-[rgba(28,18,14,0.08)] p-6 space-y-4">
               <h2 className="text-[11px] tracking-[0.16em] uppercase">Contact</h2>
-              <input placeholder="Email" className="w-full h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#1C120E]" />
+              <input placeholder="Email" className="w-full h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#2B1B12]" />
               <h2 className="text-[11px] tracking-[0.16em] uppercase pt-4">Shipping Address</h2>
               <div className="grid grid-cols-2 gap-3">
-                <input placeholder="First name" className="h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#1C120E]" />
-                <input placeholder="Last name" className="h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#1C120E]" />
+                <input placeholder="First name" className="h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#2B1B12]" />
+                <input placeholder="Last name" className="h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#2B1B12]" />
               </div>
-              <input placeholder="Address" className="w-full h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#1C120E]" />
+              <input placeholder="Address" className="w-full h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#2B1B12]" />
               <div className="grid grid-cols-2 gap-3">
-                <input placeholder="City" className="h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#1C120E]" />
-                <input placeholder="Phone (WhatsApp)" className="h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#1C120E]" />
+                <input placeholder="City" className="h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#2B1B12]" />
+                <input placeholder="Phone (WhatsApp)" className="h-11 px-4 border border-[rgba(28,18,14,0.12)] outline-none focus:border-[#2B1B12]" />
               </div>
-              <button className="w-full h-12 bg-[#1C120E] text-white text-[11px] tracking-[0.16em] uppercase">Pay {formatPrice(cartTotal)} - Demo</button>
+              <button className="w-full h-12 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase">Pay {formatPrice(cartTotal)} - Demo</button>
               <p className="text-xs text-[#78716C] text-center">This is a frontend demo. Connect your payment provider.</p>
             </div>
             <div className="lg:col-span-5 bg-[#FDF8F0] border border-[rgba(28,18,14,0.06)] p-6 h-fit">

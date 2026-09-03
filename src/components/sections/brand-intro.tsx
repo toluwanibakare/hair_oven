@@ -31,7 +31,7 @@ export function BrandIntro() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.6, delay: i * 0.08 + 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="font-serif text-[28px] sm:text-[34px] leading-none tracking-[-0.01em] text-[#1C120E] flex items-center gap-4"
+                  className="font-serif text-[28px] sm:text-[34px] leading-none tracking-[-0.01em] text-[#2B1B12] flex items-center gap-4"
                 >
                   <span className="h-px w-8 bg-[#C2A47A] hidden sm:block" />
                   {p}
@@ -44,7 +44,7 @@ export function BrandIntro() {
                 We believe hair is one of the many ways a woman expresses identity, individuality and beauty. It is not vanity - it is presence. It is the quiet confidence before you speak.
               </p>
               <p className="text-[15px] leading-7 text-[#57534E] font-light mt-4">
-                Every strand we select, every lace we ventilate, every unit we construct is guided by a single standard: <em className="font-serif italic text-[#1C120E]">the smallest details matter.</em>
+                Every strand we select, every lace we ventilate, every unit we construct is guided by a single standard: <em className="font-serif italic text-[#2B1B12]">the smallest details matter.</em>
               </p>
             </Reveal>
           </div>
@@ -62,8 +62,8 @@ export function BrandIntro() {
                 alt="Editorial hair detail"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/20 via-transparent to-transparent" />
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#2B1B12]/60 to-transparent">
                 <div className="text-[10px] tracking-[0.16em] uppercase text-white/80">The Standard</div>
                 <div className="font-serif text-white text-[18px] leading-tight mt-1">Precision • Neatness • Patience • Craftsmanship</div>
               </div>
@@ -73,7 +73,7 @@ export function BrandIntro() {
               <div className="aspect-square overflow-hidden bg-[#F5EFE6]">
                 <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop" alt="" className="w-full h-full object-cover" />
               </div>
-              <div className="bg-[#1C120E] text-[#E8DDC9] p-6 flex flex-col justify-center">
+              <div className="bg-[#2B1B12] text-[#E8DDC9] p-6 flex flex-col justify-center">
                 <div className="text-[11px] tracking-[0.16em] uppercase text-[#C2A47A]">Birthed through</div>
                 <div className="font-serif text-xl leading-tight mt-2">Faith, prayer and a desire to follow His direction.</div>
               </div>

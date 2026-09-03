@@ -65,10 +65,10 @@ export default function HeirloomGuidePage() {
               <div className="text-[11px] tracking-[0.16em] uppercase text-[#A68B5B]">Chapters</div>
               <ul className="mt-4 space-y-2 text-sm">
                 {sections.map((s) => (
-                  <li key={s.title} className="text-[#1C120E]">{s.title}</li>
+                  <li key={s.title} className="text-[#2B1B12]">{s.title}</li>
                 ))}
               </ul>
-              <Link href="/shop" className="mt-6 inline-flex h-9 px-5 bg-[#1C120E] text-white text-[11px] tracking-[0.14em] uppercase items-center">Shop Now →</Link>
+              <Link href="/shop" className="mt-6 inline-flex h-9 px-5 bg-[#2B1B12] text-white text-[11px] tracking-[0.14em] uppercase items-center">Shop Now →</Link>
             </div>
           </aside>
 
