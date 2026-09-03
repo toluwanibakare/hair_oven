@@ -47,7 +47,7 @@ export function Navigation() {
           scrolled ? "bg-[#FFFCF8]/90 backdrop-blur-xl border-[rgba(28,18,14,0.08)] shadow-[0_1px_20px_rgba(28,18,14,0.05)] py-2" : "bg-transparent border-transparent py-4"
         }`}
       >
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 h-[72px] flex items-center justify-between gap-8 relative">
+        <div className="mx-auto max-w-[1600px] px-3 sm:px-6 lg:px-10 h-[72px] flex items-center justify-between gap-4 lg:gap-8 relative">
           
           {/* Left: Desktop Links */}
           <nav className="hidden lg:flex items-center gap-8 flex-1">
@@ -75,7 +75,7 @@ export function Navigation() {
                         <motion.div
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: i * 0.05 }}
+                          transition={{ delay: i * 0.04 }}
                           key={item.label}
                         >
                           <Link href={item.href} className="group block">
@@ -99,7 +99,7 @@ export function Navigation() {
                           <div className="absolute inset-0 bg-[#D4AF37]/0 group-hover:bg-[#D4AF37]/10 transition-colors duration-500"/>
                         </div>
                         <div className="font-serif text-[18px] leading-none text-[#1C120E]">Private Collection</div>
-                        <div className="text-[10px] tracking-[0.16em] uppercase text-[#57534E] mt-1">Raw • Unprocessed • Lifetime</div>
+                        <div className="text-[10px] tracking-[0.16em] uppercase text-[#57534E] mt-1">Raw - Unprocessed - Lifetime</div>
                       </Link>
                     </div>
                   </motion.div>
@@ -135,14 +135,14 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="lg:hidden flex-1 flex justify-start pl-2">
+          <div className="lg:hidden flex-1 flex justify-start">
             <button className="p-2 -ml-2" onClick={() => setMobileOpen(true)} aria-label="Open menu">
               <Menu className="w-6 h-6" strokeWidth={1.5} />
             </button>
           </div>
 
           {/* Right: Actions */}
-          <div className="flex items-center justify-end gap-1 sm:gap-2 flex-1 pr-2">
+          <div className="flex items-center justify-end flex-1 -mr-2 sm:mr-0 gap-0 sm:gap-2">
             <div className="hidden lg:flex items-center gap-7 mr-6">
               <Link href="/story" className="text-[11px] tracking-[0.16em] uppercase font-medium text-[#57534E] hover:text-[#D4AF37] transition-colors">
                 Our Story
