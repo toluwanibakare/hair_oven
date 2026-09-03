@@ -6,12 +6,8 @@ import Link from "next/link";
 import { collections } from "@/lib/data";
 
 export function Collections() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-6%"]);
-
   return (
-    <section ref={ref} className="bg-[#FDF8F0] py-16 lg:py-24 overflow-hidden">
+    <section className="bg-[#FDF8F0] py-16 lg:py-24 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
           <div>
@@ -23,12 +19,12 @@ export function Collections() {
       </div>
 
       {/* Horizontal editorial panels */}
-      <div className="relative">
-        <motion.div style={{ x }} className="flex gap-4 lg:gap-6 px-6 lg:px-10 will-change-transform">
+      <div className="relative w-full">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 lg:gap-6 px-6 lg:px-10 pb-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {collections.map((c) => (
             <div
               key={c.slug}
-              className="group relative shrink-0 w-[84vw] sm:w-[48vw] lg:w-[36vw] max-w-[560px] aspect-[3/4.2] overflow-hidden bg-[#EDE6D6]"
+              className="group relative shrink-0 snap-center lg:snap-align-none w-[84vw] sm:w-[48vw] lg:w-[36vw] max-w-[560px] aspect-[3/4.2] overflow-hidden bg-[#EDE6D6]"
             >
               <img src={c.image} alt={c.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/70 via-[#2B1B12]/10 to-transparent" />
@@ -52,7 +48,7 @@ export function Collections() {
           ))}
 
           {/* CTA card */}
-          <div className="shrink-0 w-[84vw] sm:w-[48vw] lg:w-[28vw] max-w-[420px] aspect-[3/4.2] bg-[#2B1B12] text-[#E8DDC9] p-8 lg:p-10 flex flex-col justify-between border border-white/5">
+          <div className="shrink-0 snap-center lg:snap-align-none w-[84vw] sm:w-[48vw] lg:w-[28vw] max-w-[420px] aspect-[3/4.2] bg-[#2B1B12] text-[#E8DDC9] p-8 lg:p-10 flex flex-col justify-between border border-white/5">
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#C2A47A]">Not sure?</div>
               <div className="font-serif text-[28px] leading-none mt-3 text-white">Find your house in 60 seconds.</div>
@@ -63,7 +59,7 @@ export function Collections() {
               <a href="https://wa.me/2340000000000" className="h-11 w-full border border-white/20 grid place-items-center text-[11px] tracking-[0.16em] uppercase text-white hover:bg-white hover:text-[#2B1B12] transition-colors">Consult via WhatsApp</a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Progress hint */}
