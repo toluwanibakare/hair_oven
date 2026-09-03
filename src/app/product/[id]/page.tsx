@@ -135,7 +135,7 @@ export default function ProductPage() {
 
               <div className="grid grid-cols-2 gap-3">
                 <button className="h-11 border border-[#2B1B12] text-[11px] tracking-[0.16em] uppercase hover:bg-[#2B1B12] hover:text-white transition-colors">Buy Now</button>
-                <a href={`https://wa.me/2340000000000?text=Hi%20HAIR%20OVEN%2C%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}`} target="_blank" className="h-11 bg-[#25D366] text-white grid place-items-center text-[11px] tracking-[0.14em] uppercase gap-2 hover:bg-[#1ebe5a] transition-colors">
+                <a href={`https://wa.me/2348057388171?text=Hi%20HAIR%20OVEN%2C%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}`} target="_blank" className="h-11 bg-[#25D366] text-white grid place-items-center text-[11px] tracking-[0.14em] uppercase gap-2 hover:bg-[#1ebe5a] transition-colors">
                   <span className="inline-flex items-center gap-2"><MessageCircle className="w-4 h-4" /> WhatsApp</span>
                 </a>
               </div>

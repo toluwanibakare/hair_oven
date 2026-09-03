@@ -56,7 +56,7 @@ export function Collections() {
             </div>
             <div className="space-y-3">
               <Link href="/shop" className="h-11 w-full bg-white text-[#2B1B12] grid place-items-center text-[11px] tracking-[0.16em] uppercase">Take the Quiz</Link>
-              <a href="https://wa.me/2340000000000" className="h-11 w-full border border-white/20 grid place-items-center text-[11px] tracking-[0.16em] uppercase text-white hover:bg-white hover:text-[#2B1B12] transition-colors">Consult via WhatsApp</a>
+              <a href="https://wa.me/2348057388171" className="h-11 w-full border border-white/20 grid place-items-center text-[11px] tracking-[0.16em] uppercase text-white hover:bg-white hover:text-[#2B1B12] transition-colors">Consult via WhatsApp</a>
             </div>
           </div>
         </div>

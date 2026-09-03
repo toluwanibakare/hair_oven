@@ -10,7 +10,7 @@ export default function BespokePage() {
             <h1 className="font-serif text-[44px] lg:text-[56px] leading-none tracking-[-0.02em] mt-3 font-light">Created<br /><span className="italic text-[#E8DDC9]">around you.</span></h1>
             <p className="text-sm leading-7 text-white/60 mt-6 max-w-[48ch]">Bespoke units are created according to cranial measurements, desired density, texture, styling vision and hairline preference. One woman. One unit.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://wa.me/2340000000000?text=Hi%20HAIR%20OVEN%2C%20I%27d%20like%20to%20begin%20my%20bespoke%20journey" className="h-11 px-8 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase">Begin Your Bespoke Journey →</a>
+              <a href="https://wa.me/2348057388171?text=Hi%20HAIR%20OVEN%2C%20I%27d%20like%20to%20begin%20my%20bespoke%20journey" className="h-11 px-8 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase">Begin Your Bespoke Journey →</a>
               <Link href="/shop" className="h-11 px-8 border border-white/20 inline-flex items-center text-[11px] tracking-[0.16em] uppercase hover:bg-white hover:text-[#2B1B12] transition-colors">View Ready-to-Wear</Link>
             </div>
           </div>

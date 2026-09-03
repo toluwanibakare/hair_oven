@@ -38,7 +38,7 @@ export function PrivateAtelier() {
             <Link href="/bespoke" className="h-11 px-8 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
               Begin Your Bespoke Journey →
             </Link>
-            <a href="https://wa.me/2340000000000" className="h-11 px-8 border border-white/20 inline-flex items-center text-[11px] tracking-[0.16em] uppercase hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
+            <a href="https://wa.me/2348057388171" className="h-11 px-8 border border-white/20 inline-flex items-center text-[11px] tracking-[0.16em] uppercase hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
               Consult via WhatsApp
             </a>
           </div>
