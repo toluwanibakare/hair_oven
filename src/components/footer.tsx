@@ -25,7 +25,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#0A0A0A] text-[#E8DDC9] relative">
+    <footer className="bg-[#1C120E] text-[#E8DDC9] relative">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         <div className="py-14 lg:py-20 border-b border-white/[0.08] grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">

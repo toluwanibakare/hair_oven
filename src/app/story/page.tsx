@@ -9,7 +9,7 @@ export default function StoryPage() {
         <div className="relative h-full max-w-[1600px] mx-auto px-6 lg:px-10 flex flex-col justify-end pb-16">
           <div className="text-[11px] tracking-[0.22em] uppercase text-[#E8DDC9]">Our Story</div>
           <h1 className="font-serif text-[42px] lg:text-[64px] leading-none tracking-[-0.02em] text-white mt-3 font-light">Born from faith.<br /><span className="italic text-[#E8DDC9]">Built without compromise.</span></h1>
-          <p className="text-white/70 max-w-[48ch] mt-6 leading-7">HAIR OVEN began with God, a childhood fascination with hair, and a prayer to be directed toward what she was meant to build.</p>
+          <p className="text-white/70 max-w-[48ch] mt-6 leading-7">HAIR OVEN began with GOD, a childhood fascination with hair, and a prayer to be directed toward what I was meant to build.</p>
         </div>
       </div>
 
@@ -17,12 +17,12 @@ export default function StoryPage() {
         <div className="prose prose-neutral max-w-none">
           <div className="text-[11px] tracking-[0.18em] uppercase text-[#A68B5B]">Founder - Hannah Oluwatosin Ogundare</div>
           <h2 className="font-serif text-3xl lg:text-4xl tracking-[-0.015em] mt-4 leading-tight">“I can imagine what you’ll be like on your wedding day.”</h2>
-          <p className="text-sm text-[#78716C] mt-2">- her late father</p>
+          <p className="text-sm text-[#78716C] mt-2">- my late father</p>
 
           <div className="mt-10 space-y-6 text-[15px] leading-8 text-[#2B1B12] font-light">
-            <p>Her mother used to plait her hair. As a young girl, she would weave the hair of children around her neighbourhood. She travelled long distances to have her own cornrows done by a woman whose craftsmanship she admired - precision, neatness, patience, attention to detail. That experience taught her that the smallest details matter.</p>
-            <p>Years later, after graduating from an American university with a 2:1 in Economics and spending years as an entrepreneur, she asked God to direct her toward what she was meant to build. That prayer led to HAIR OVEN.</p>
-            <p>The brand believes:</p>
+            <p>My mother used to plait my hair. As a young girl, I would weave the hair of children around my neighbourhood. I travelled long distances to have my own cornrows done by a woman whose craftsmanship I admired - precision, neatness, patience, attention to detail. That experience taught me that the smallest details matter.</p>
+            <p>Years later, after graduating from an American university with a 2:1 in Economics and spending years as an entrepreneur, I asked GOD to direct me toward what I was meant to build. That prayer led to HAIR OVEN.</p>
+            <p>Our core beliefs at HAIR OVEN:</p>
             <ul className="list-none space-y-3 mt-6 p-0">
               {[
                 { t: "We believe in beauty.", d: "Every woman deserves to feel beautiful, confident and fully herself." },
@@ -31,7 +31,7 @@ export default function StoryPage() {
                 { t: "We believe in accessibility.", d: "Premium should never mean exclusion." },
                 { t: "We believe in women.", d: "Hair is one of the many ways a woman can express her identity, individuality and beauty." },
                 { t: "We believe in continuous improvement.", d: "There is always a better texture, a better experience, a better solution." },
-                { t: "We believe in God.", d: "HAIR OVEN was birthed through faith, prayer and a desire to follow His direction." },
+                { t: "We believe in GOD.", d: "HAIR OVEN was birthed through faith, prayer and a desire to follow His direction." },
               ].map((b) => (
                 <li key={b.t} className="border-l-2 border-[#E8DDC9] pl-4 py-1">
                   <span className="font-medium text-[#1C120E]">{b.t}</span> <span className="text-[#57534E]">{b.d}</span>

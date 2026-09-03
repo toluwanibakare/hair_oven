@@ -30,20 +30,20 @@ export function Founder() {
               <h2 className="font-serif text-[32px] lg:text-[44px] leading-[0.9] tracking-[-0.02em] mt-3">
                 A girl who loved hair.
                 <br />
-                <span className="italic font-normal">A woman who followed God.</span>
+                <span className="italic font-normal">A woman who followed GOD.</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.12}>
               <div className="mt-6 space-y-4 text-[15px] leading-7 text-[#57534E] font-light max-w-[58ch]">
                 <p>
-                  As a child, Hannah would weave the hair of children around her neighbourhood. Her mother plaited her hair with precision. She once travelled long distances to have her cornrows done by a woman whose craftsmanship left her in awe - neatness, patience, attention to detail.
+                  As a child, I would weave the hair of children around my neighbourhood. My mother plaited my hair with precision. I once travelled long distances to have my cornrows done by a woman whose craftsmanship left me in awe - neatness, patience, attention to detail.
                 </p>
                 <p>
-                  Her late father once told her: <em className="text-[#1C120E] font-serif italic">“I can imagine what you’ll be like on your wedding day.”</em> He imagined her hiring stylists and makeup artists from other countries. Years later, those words became part of a larger story.
+                  My late father once told me: <em className="text-[#1C120E] font-serif italic">“I can imagine what you’ll be like on your wedding day.”</em> He imagined me hiring stylists and makeup artists from other countries. Years later, those words became part of a larger story.
                 </p>
                 <p>
-                  After graduating with a 2:1 in Economics from an American university and years as an entrepreneur, she asked God to direct her toward what she was meant to build. That prayer led to HAIR OVEN - born through faith, passion, craftsmanship and a desire to create something meaningful in the world of hair.
+                  After graduating with a 2:1 in Economics from an American university and years as an entrepreneur, I asked GOD to direct me toward what I was meant to build. That prayer led to HAIR OVEN - born through faith, passion, craftsmanship and a desire to create something meaningful in the world of hair.
                 </p>
               </div>
               <div className="mt-8 border-l-2 border-[#C2A47A] pl-6">
