@@ -93,7 +93,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="py-8 flex flex-col md:flex-row gap-5 justify-between items-center text-[11px] tracking-[0.08em] text-white/40">
+        <div className="pt-8 pb-28 flex flex-col md:flex-row gap-5 justify-between items-center text-[11px] tracking-[0.08em] text-white/40">
           <div className="md:flex-1 flex justify-center md:justify-start order-1">
             © {new Date().getFullYear()} HAIR OVEN. All rights reserved.
           </div>
