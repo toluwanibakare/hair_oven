@@ -93,7 +93,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="pt-8 pb-28 flex flex-col md:flex-row gap-5 justify-between items-center text-[11px] tracking-[0.08em] text-white/40">
+        <div className="pt-8 pb-12 flex flex-col md:flex-row gap-5 justify-between items-center text-[11px] tracking-[0.08em] text-white/40 z-10 relative">
           <div className="md:flex-1 flex justify-center md:justify-start order-1">
             © {new Date().getFullYear()} HAIR OVEN. All rights reserved.
           </div>
@@ -107,6 +107,13 @@ export function Footer() {
               Built by TMB
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </Link>
+          </div>
+        </div>
+
+        {/* Massive Faded Background Logo */}
+        <div className="w-full flex justify-center overflow-hidden pointer-events-none select-none pb-6">
+          <div className="font-serif text-[18vw] lg:text-[14vw] leading-[0.75] tracking-[-0.04em] text-white opacity-[0.02] whitespace-nowrap">
+            HAIR OVEN
           </div>
         </div>
       </div>
