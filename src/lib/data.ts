@@ -73,12 +73,8 @@ export const products: Product[] = [
     category: "Wigs",
     price: 345000,
     originalPrice: 385000,
-    image:
-      "https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop",
-    ],
+    image: "/products/caramel-wave.jpeg",
+    images: ["/products/caramel-wave.jpeg"],
     lengths: ['18"', '20"', '22"', '24"', '26"'],
     colors: ["Espresso Brown with Caramel Dimension"],
     density: "250%",
@@ -108,12 +104,8 @@ export const products: Product[] = [
     category: "Wigs",
     price: 365000,
     originalPrice: 395000,
-    image:
-      "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
-    ],
+    image: "/products/velmorea.jpeg",
+    images: ["/products/velmorea.jpeg"],
     lengths: ['20"', '22"', '24"', '26"'],
     colors: ["Rich Espresso-Black Finish"],
     density: "250%",
@@ -142,12 +134,8 @@ export const products: Product[] = [
     category: "Wigs",
     price: 375000,
     originalPrice: 410000,
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
-    ],
+    image: "/products/adunni.png",
+    images: ["/products/adunni.png"],
     lengths: ['20"', '22"', '24"', '26"', '28"'],
     colors: ["Deep Natural-Black Finish"],
     density: "250%",
@@ -177,12 +165,8 @@ export const products: Product[] = [
     category: "Wigs",
     price: 355000,
     originalPrice: 390000,
-    image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=1200&auto=format&fit=crop",
-    ],
+    image: "/products/aurelia-barrel-curl.jpeg",
+    images: ["/products/aurelia-barrel-curl.jpeg"],
     lengths: ['18"', '20"', '22"', '24"'],
     colors: ["Precision Honey Brown & Chestnut Highlights"],
     density: "250%",
@@ -209,12 +193,8 @@ export const products: Product[] = [
     category: "Wigs",
     price: 385000,
     originalPrice: 420000,
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=1200&auto=format&fit=crop",
-    ],
+    image: "/products/honey-ash-bronzed-wave.jpeg",
+    images: ["/products/honey-ash-bronzed-wave.jpeg"],
     lengths: ['20"', '22"', '24"', '26"'],
     colors: ["Warm Honey & Ash Blonde Highlights"],
     density: "250%",

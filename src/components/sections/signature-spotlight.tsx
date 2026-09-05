@@ -21,8 +21,7 @@ const signatureUnits = [
       "Luxuriously Full with Natural Flow",
       "Sophisticated, Timeless & Effortlessly Glamorous",
     ],
-    image:
-      "https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/caramel-wave.jpeg",
     link: "/product/signature-caramel-wave-24",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring The Signature Caramel Wave.",
@@ -42,8 +41,7 @@ const signatureUnits = [
       "Signature Collection",
       "Fluid, Tangle-Free Movement with High Silhouette Retention",
     ],
-    image:
-      "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/velmorea.jpeg",
     link: "/product/signature-velmorea-24",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring The Velmoréa.",
@@ -64,8 +62,7 @@ const signatureUnits = [
       "Rich, glossy texture",
       "Statement Signature Collection piece",
     ],
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/adunni.png",
     link: "/product/signature-adunni-26",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring The Àdunnī.",
@@ -83,8 +80,7 @@ const signatureUnits = [
       "Flexible parting versatility.",
       "Precision coloring meets defined volume for an uncompromised luxury look.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/aurelia-barrel-curl.jpeg",
     link: "/product/signature-aurelia-barrel-curl-24",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring Aurelia Barrel Curl.",
@@ -103,8 +99,7 @@ const signatureUnits = [
       "Soft, cascading S-waves engineered to maintain bounce, body, and high-shine fluid movement.",
       "Private Signature Collection",
     ],
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/honey-ash-bronzed-wave.jpeg",
     link: "/product/signature-honey-ash-bronzed-wave-24",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring The Honey-Ash Bronzed Wave.",

@@ -23,7 +23,7 @@ export function CaramelWave() {
           <div className="lg:col-span-6 relative">
             <div className="aspect-[4/5] sm:aspect-[1.05] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-2xl group bg-[#2B1B12]">
               <img
-                src="https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=1200&auto=format&fit=crop"
+                src="/products/caramel-wave.jpeg"
                 alt="The Signature Caramel Wave"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
