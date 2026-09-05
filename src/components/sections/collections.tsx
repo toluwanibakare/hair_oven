@@ -1,70 +1,104 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import Link from "next/link";
-import { collections } from "@/lib/data";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+const collectionCards = [
+  {
+    title: "PRIVATE COLLECTION (RAW RESERVE)",
+    tagline: "RARE. UNTOUCHED. EXCLUSIVELY RESERVED.",
+    desc: "The absolute summit of the House. Entirely unprocessed, single-donor rare units with fully intact cuticles. Preserved as a permanent heirloom investment for those who command distinction beyond the expected.",
+    link: "/collections/private",
+    btnText: "DISCOVER PRIVATE",
+    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "SIGNATURE COLLECTION",
+    tagline: "THE HOUSE SIGNATURES.",
+    desc: "Exceptional, high-density virgin hair engineered for long-term luxury. Distinctive silhouettes and impeccably refined finishes that embody the unmistakable character of HAIR OVEN.",
+    link: "/collections/signature",
+    btnText: "DISCOVER SIGNATURE",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "ESSENTIALS",
+    tagline: "DEPENDABLE BEAUTY, FLAWLESSLY EXECUTED.",
+    desc: "High-quality, versatile human hair crafted for effortless rotation and everyday refinement. Luxury designed for seamless style shifts.",
+    link: "/collections/essentials",
+    btnText: "DISCOVER ESSENTIALS",
+    image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "THE ATELIER",
+    tagline: "A PRIVATE COMMISSION.",
+    desc: "An exclusive invitation to bring your ultimate vision to life. A private creation experience where architecture, density, texture, and our proprietary Oven Veil™ technology are tailored strictly to your silhouette.",
+    link: "/atelier",
+    btnText: "ENTER THE ATELIER",
+    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1000&auto=format&fit=crop",
+  },
+];
 
 export function Collections() {
   return (
-    <section className="bg-[#FDF8F0] py-16 lg:py-24 overflow-hidden">
+    <section className="bg-[#FFFCF8] text-[#2B1B12] py-20 lg:py-28 border-b border-[#2B1B12]/10">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
-          <div>
-            <div className="text-[10px] tracking-[0.22em] uppercase text-[#A68B5B]">The Collections</div>
-            <h2 className="font-serif text-[36px] lg:text-[48px] leading-none tracking-[-0.02em] mt-3 font-light">Three houses. One standard.</h2>
-          </div>
-          <p className="max-w-[42ch] text-sm leading-6 text-[#57534E]">Different lives, different budgets - same respect. Each collection is crafted around a distinct promise.</p>
+        <div className="text-center max-w-[760px] mx-auto mb-16">
+          <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
+            THE HOUSES OF CRAFT
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B1B12] mt-3 font-light">
+            AN EXPRESSION OF ABSOLUTE LUXURY.
+          </h2>
+          <p className="mt-4 text-sm sm:text-base text-[#57534E] leading-7">
+            From hyper-exclusive rare units preserved as lifetime investments, to everyday elegance. Each HAIR OVEN collection is defined by uncompromising design, international standards of quality, and a distinctly elevated point of view.
+          </p>
         </div>
-      </div>
 
-      {/* Horizontal editorial panels */}
-      <div className="relative w-full">
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 lg:gap-6 px-6 lg:px-10 pb-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {collections.map((c) => (
-            <div
-              key={c.slug}
-              className="group relative shrink-0 snap-center lg:snap-align-none w-[84vw] sm:w-[48vw] lg:w-[36vw] max-w-[560px] aspect-[3/4.2] overflow-hidden bg-[#EDE6D6]"
+        <div className="grid md:grid-cols-2 gap-8">
+          {collectionCards.map((card, i) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="border border-[#2B1B12]/10 bg-[#EDE6D6]/20 rounded-sm overflow-hidden flex flex-col justify-between group hover:border-[#B8860B] transition-all"
             >
-              <img src={c.image} alt={c.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/70 via-[#2B1B12]/10 to-transparent" />
-              {/* Top label */}
-              <div className="absolute top-0 inset-x-0 p-6 flex justify-between items-start">
-                <div className="text-[10px] tracking-[0.18em] uppercase text-white/80 border border-white/20 px-3 py-1.5 backdrop-blur">{c.tagline}</div>
-                <div className="text-[10px] tracking-[0.16em] uppercase bg-white text-[#2B1B12] px-3 py-1.5">{c.years}</div>
+              <div className="aspect-[16/9] relative overflow-hidden bg-[#2B1B12]">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/70 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-6 text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold">
+                  {card.tagline}
+                </div>
               </div>
-              {/* Content */}
-              <div className="absolute bottom-0 inset-x-0 p-6 lg:p-8">
-                <div className="font-serif text-white text-[26px] lg:text-[30px] leading-none">{c.name}</div>
-                <div className="text-white/70 text-sm leading-6 mt-3 max-w-[32ch]">{c.description}</div>
-                <Link
-                  href={`/collections/${c.slug}`}
-                  className="mt-6 inline-flex h-10 px-6 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center hover:bg-[#E8DDC9] transition-colors"
-                >
-                  Explore {c.subtitle} →
-                </Link>
+
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-serif text-2xl lg:text-3xl text-[#2B1B12] font-light">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#57534E] leading-6 mt-3">
+                    {card.desc}
+                  </p>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-[#2B1B12]/10">
+                  <Link
+                    href={card.link}
+                    className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#2B1B12] hover:text-[#B8860B] inline-flex items-center gap-2 transition-colors"
+                  >
+                    {card.btnText} <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-
-          {/* CTA card */}
-          <div className="shrink-0 snap-center lg:snap-align-none w-[84vw] sm:w-[48vw] lg:w-[28vw] max-w-[420px] aspect-[3/4.2] bg-[#2B1B12] text-[#E8DDC9] p-8 lg:p-10 flex flex-col justify-between border border-white/5">
-            <div>
-              <div className="text-[10px] tracking-[0.18em] uppercase text-[#C2A47A]">Not sure?</div>
-              <div className="font-serif text-[28px] leading-none mt-3 text-white">Find your house in 60 seconds.</div>
-              <p className="text-sm leading-6 text-white/60 mt-4">Answer a few questions - texture, lifestyle, budget - and we’ll guide you to the right collection.</p>
-            </div>
-            <div className="space-y-3">
-              <Link href="/shop" className="h-11 w-full bg-white text-[#2B1B12] grid place-items-center text-[11px] tracking-[0.16em] uppercase">Take the Quiz</Link>
-              <a href="https://wa.me/2348057388171" className="h-11 w-full border border-white/20 grid place-items-center text-[11px] tracking-[0.16em] uppercase text-white hover:bg-white hover:text-[#2B1B12] transition-colors">Consult via WhatsApp</a>
-            </div>
-          </div>
         </div>
-      </div>
-
-      {/* Progress hint */}
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-10 mt-6 flex items-center gap-3 text-[10px] tracking-[0.16em] uppercase text-[#A8A29E]">
-        <span>Scroll to explore</span> <span className="h-px w-12 bg-[rgba(28,18,14,0.12)]" /> <span>Drag sideways on mobile</span>
       </div>
     </section>
   );

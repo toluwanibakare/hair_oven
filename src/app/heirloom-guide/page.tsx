@@ -1,107 +1,203 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Shield, Sparkles, Truck, Heart, Ruler, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
-const sections = [
+const heirloomSections = [
   {
-    title: "Hair Quality & Collections",
-    items: [
-      { q: "What makes Private Collection ‘raw’?", a: "Single-donor, fully unprocessed with intact, aligned cuticles. Never dyed, permed or chemically coated. The hair is as it grew." },
-      { q: "Signature vs Private?", a: "Private is raw, lifetime heirloom. Signature is high-density virgin, 2–3+ years, slightly processed for curl definition but still exceptional." },
-      { q: "Essentials - is it still human hair?", a: "Yes. High-quality human hair crafted for everyday rotation, dependable beauty and accessible investment." },
+    id: "craftsmanship",
+    title: "I. THE CRAFTSMANSHIP & RESERVES",
+    icon: Shield,
+    qa: [
+      {
+        q: "What defines the HAIR OVEN standard?",
+        a: "Excellence is never accidental. Our hair is defined by uncompromising donor selection, natural cuticle alignment, dense weight distribution, and flawless structural integrity. Each piece undergoes rigorous evaluation before receiving the HAIR OVEN stamp of authenticity.",
+      },
+      {
+        q: "How do the collections differ in longevity?",
+        a: "Longevity is directly tied to the purity and origin of the hair:\n\n• The Private Collection (RAW Reserve): Entirely unprocessed single-donor hair with fully intact cuticles. With proper care, this specific collection lasts a lifetime. It is preserved as a permanent heirloom investment.\n• The Signature Collection: Exceptional, high-density virgin hair designed for long-term luxury (2 to 3+ years) under daily wear and versatile restyling.\n• The Essentials Collection: High-quality human hair crafted for dependable beauty and effortless rotation.",
+      },
+      {
+        q: "Can the hair undergo custom chemical processing?",
+        a: "Indubitably. Both our Private Collection and Signature Collection possess intact cuticles, allowing seamless lifting, custom bleaching, and specific colour transformation by a master colourist without sacrificing structural integrity.",
+      },
     ],
   },
   {
-    title: "Oven Veil™ & Construction",
-    items: [
-      { q: "What is Oven Veil™?", a: "Our proprietary ultra-sheer HD lace - single-knot ventilated, pre-plucked, micro-bleached to mimic skin pores and disappear." },
-      { q: "13×6 vs 5×5 vs closure?", a: "13×6 is ear-to-ear lace for versatile parting. 5×5 is crown area. Closures are smaller, closures are natural for middle part. Bespoke can customize size." },
-      { q: "Density - how to choose?", a: "Private up to 250% (full heirloom), Signature 220–230%, Essentials 180–200% for lightweight everyday." },
+    id: "bespoke-fit",
+    title: "II. ATELIER COMMISSIONS & PROPRIETARY FIT",
+    icon: Sparkles,
+    qa: [
+      {
+        q: "What is Oven Veil™?",
+        a: "Oven Veil™ is HAIR OVEN’s proprietary, ultra-sheer lace technology. Designed to mimic natural skin texture and melting seamlessly upon contact, it offers an entirely invisible, weightless hairline that vanishes completely under any lighting or HD lens.",
+      },
+      {
+        q: "How is an undetectable finish guaranteed?",
+        a: "Every HAIR OVEN unit is built exclusively with our Oven Veil™ base, hand-tied strands, and expertly pre-plucked natural hairlines. Internal adjustable banding ensures a custom-molded fit tailored exactly to your silhouette.",
+      },
     ],
   },
   {
-    title: "Care, Longevity & Storage",
-    items: [
-      { q: "How do I wash?", a: "Cool water, sulfate-free shampoo, condition mid to ends, air-dry on stand. Detangle gently from tips upward." },
-      { q: "How long will it last?", a: "Private: lifetime with care. Signature: 2–3+ years. Essentials: 12–18 months depending on rotation and heat." },
-      { q: "Storage?", a: "On a stand or in silk bag, away from sun and dust. Your Heirloom Guide card ships with every unit." },
+    id: "logistics",
+    title: "III. LOGISTICS & FULFILLMENT",
+    icon: Truck,
+    qa: [
+      {
+        q: "What is your global delivery reach?",
+        a: "We serve an international clientele with white-glove courier delivery within Lagos, prioritized nationwide dispatch across Nigeria, and insured express global shipping worldwide.",
+      },
+      {
+        q: "What are the expected fulfillment timelines?",
+        a: "• Ready-to-Wear & Bundles: Dispatched within 24–72 business hours following quality verification.\n• RAW & Atelier Masterpieces: Require 7–14 business days of meticulous crafting, custom hairline tailoring, and QA assessment prior to dispatch.",
+      },
     ],
   },
   {
-    title: "Cap Sizing",
-    items: [
-      { q: "How to measure?", a: "Circumference around hairline: S 54cm, M 56cm (most common), L 58cm. Bespoke uses full cranial mapping." },
-      { q: "What if between sizes?", a: "Choose the larger and use adjustable elastics. Or go bespoke for exact mapping." },
+    id: "maintenance",
+    title: "IV. PROVENANCE & INVESTMENT MAINTENANCE",
+    icon: Heart,
+    qa: [
+      {
+        q: "Where is HAIR OVEN hair ethically sourced?",
+        a: "Our hair is ethically collected directly from single donors across Southeast Asia and East Asia. We maintain strict ethical procurement standards, ensuring full compensation for donors while preserving the unrefined purity and natural strength of each strand.",
+      },
+      {
+        q: "How do I properly store and preserve my unit?",
+        a: "To ensure multi-year and lifetime longevity, store your unit inside the complimentary HAIR OVEN Silk Preservation Bag or on a satin mannequin head when not in use. Keep the hair hydrated with lightweight, sulfate-free oils and avoid excessive direct heat without thermal protection.",
+      },
     ],
   },
   {
-    title: "Shipping, Exchange & Support",
-    items: [
-      { q: "Do you ship worldwide?", a: "Yes. Lagos dispatch, 3–7 days express internationally. Duties/taxes calculated at checkout where applicable." },
-      { q: "Exchange policy?", a: "Unworn, unaltered, hygiene seal intact within 7 days. Bespoke is made for you and is final." },
-      { q: "WhatsApp support?", a: "9AM–7PM WAT, real humans who know hair. We would rather guide you to the right texture than rush a sale." },
+    id: "fit-policies",
+    title: "V. FIT PRECISION & POLICIES",
+    icon: Ruler,
+    qa: [
+      {
+        q: "How do I select the correct cap size for Ready-to-Wear units?",
+        a: "We offer standard Small (21.5\"), Medium (22.5\"), and Large (23.5\") cap sizes, all equipped with internal adjustable security bands. If you require assistance, our Client Concierge provides a step-by-step measurement guide.",
+      },
+      {
+        q: "What is your exchange protocol for luxury units?",
+        a: "Due to the personal nature of luxury hair craftsmanship, all custom Atelier pieces are final sale. For Ready-to-Wear and Signature collections, we accept exchanges within 7 days of delivery, provided the security seal remains intact and the Oven Veil™ lace has not been cut, coloured, or altered.",
+      },
     ],
   },
 ];
 
 export default function HeirloomGuidePage() {
-  const [open, setOpen] = useState<string>("Hair Quality & Collections-0");
+  const [openItems, setOpenItems] = useState<Record<string, boolean>>({ "0-0": true });
+
+  const toggleQA = (key: string) => {
+    setOpenItems((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   return (
-    <div className="bg-[#FFFCF8]">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-10 py-12 lg:py-16">
-        <div className="max-w-[720px]">
-          <div className="text-[11px] tracking-[0.22em] uppercase text-[#A68B5B]">Education</div>
-          <h1 className="font-serif text-[42px] lg:text-[52px] leading-none tracking-[-0.02em] mt-3">The Heirloom Guide</h1>
-          <p className="text-sm leading-7 text-[#57534E] mt-4">An editorial, honest guide to choosing, wearing, caring for and storing your hair - so your heirloom lasts.</p>
+    <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
+      {/* Hero Header */}
+      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
+          <img
+            src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1600&auto=format&fit=crop"
+            alt="Heirloom Guide"
+            className="w-full h-full object-cover"
+          />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-transparent to-transparent" />
 
-        <div className="mt-12 grid lg:grid-cols-12 gap-8">
-          <aside className="lg:col-span-3">
-            <div className="sticky top-24 p-6 bg-[#FDF8F0] border border-[rgba(28,18,14,0.06)]">
-              <div className="text-[11px] tracking-[0.16em] uppercase text-[#A68B5B]">Chapters</div>
-              <ul className="mt-4 space-y-2 text-sm">
-                {sections.map((s) => (
-                  <li key={s.title} className="text-[#2B1B12]">{s.title}</li>
-                ))}
-              </ul>
-              <Link href="/shop" className="mt-6 inline-flex h-9 px-5 bg-[#2B1B12] text-white text-[11px] tracking-[0.14em] uppercase items-center">Shop Now →</Link>
-            </div>
-          </aside>
+        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center">
+          <span className="text-[10px] tracking-[0.24em] uppercase text-[#D4AF37] font-semibold">
+            CLIENT CARE & KNOWLEDGE HUB
+          </span>
+          <h1 className="font-serif text-[42px] sm:text-[60px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light max-w-[900px] mx-auto">
+            THE HEIRLOOM GUIDE
+          </h1>
+          <p className="mt-4 text-xs sm:text-sm tracking-[0.2em] uppercase text-[#E8DDC9]/70 font-medium">
+            PRESERVATION, PROVENANCE, AND PROPRIETARY FIT.
+          </p>
+        </div>
+      </section>
 
-          <div className="lg:col-span-9 space-y-10">
-            {sections.map((sec) => (
-              <div key={sec.title}>
-                <h2 className="text-[11px] tracking-[0.18em] uppercase text-[#A68B5B] border-b border-[rgba(28,18,14,0.08)] pb-3">{sec.title}</h2>
-                <div className="mt-4 space-y-3">
-                  {sec.items.map((it, idx) => {
-                    const key = `${sec.title}-${idx}`;
-                    const isOpen = open === key;
-                    return (
-                      <div key={key} className="border border-[rgba(28,18,14,0.08)] bg-white">
-                        <button onClick={() => setOpen(isOpen ? "" : key)} className="w-full flex items-center justify-between p-5 text-left">
-                          <span className="font-medium text-sm pr-6">{it.q}</span>
-                          <span className="w-8 h-8 shrink-0 grid place-items-center border border-[rgba(28,18,14,0.12)] rounded-full">{isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}</span>
-                        </button>
-                        <AnimatePresence>
-                          {isOpen && (
-                            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                              <div className="px-5 pb-5 text-sm leading-6 text-[#57534E]">{it.a}</div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    );
-                  })}
-                </div>
+      {/* Guide Content */}
+      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-16 lg:py-24 space-y-16">
+        {heirloomSections.map((section, sIdx) => {
+          const Icon = section.icon;
+          return (
+            <div key={section.id} className="border-b border-[#2B1B12]/10 pb-12 last:border-0">
+              <div className="flex items-center gap-3 mb-6">
+                <Icon className="w-6 h-6 text-[#B8860B]" />
+                <h2 className="font-serif text-2xl lg:text-3xl text-[#2B1B12] font-medium tracking-tight">
+                  {section.title}
+                </h2>
               </div>
-            ))}
+
+              <div className="space-y-4">
+                {section.qa.map((item, qIdx) => {
+                  const key = `${sIdx}-${qIdx}`;
+                  const isOpen = !!openItems[key];
+                  return (
+                    <div
+                      key={item.q}
+                      className="border border-[#2B1B12]/10 bg-white rounded-sm overflow-hidden"
+                    >
+                      <button
+                        onClick={() => toggleQA(key)}
+                        className="w-full text-left p-6 flex justify-between items-center gap-4 hover:bg-[#F5EFE6]/50 transition-colors"
+                      >
+                        <span className="font-serif text-lg text-[#2B1B12]">{item.q}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 text-[#B8860B] transition-transform duration-300 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {isOpen && (
+                        <div className="px-6 pb-6 pt-2 text-xs sm:text-sm text-[#57534E] leading-7 whitespace-pre-line border-t border-[#2B1B12]/05">
+                          {item.a}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </section>
+
+      {/* Concierge Banner */}
+      <section className="bg-[#E0D5C5]/30 border-t border-[#2B1B12]/10 py-16 text-center">
+        <div className="max-w-[700px] mx-auto px-6">
+          <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
+            CLIENT CONCIERGE
+          </span>
+          <h3 className="font-serif text-2xl lg:text-3xl text-[#2B1B12] mt-2">
+            Require Further Guidance?
+          </h3>
+          <p className="text-xs sm:text-sm text-[#57534E] mt-3 leading-6">
+            Our Client Concierge is available for virtual consultations, cap measurement support, and custom preservation advice.
+          </p>
+          <div className="mt-6 flex justify-center gap-4 text-xs tracking-[0.14em] uppercase font-semibold">
+            <a
+              href="https://wa.me/2348057388171"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3.5 bg-[#2B1B12] text-[#FFFCF8] hover:bg-[#B8860B] transition-colors"
+            >
+              WhatsApp Concierge
+            </a>
+            <Link
+              href="/atelier"
+              className="px-8 py-3.5 border border-[#2B1B12]/20 text-[#2B1B12] hover:bg-[#2B1B12] hover:text-white transition-colors"
+            >
+              Atelier Commissions
+            </Link>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
