@@ -19,7 +19,7 @@ export function PrivateAtelier() {
       <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-6">
           <div className="text-[10px] tracking-[0.22em] uppercase text-[#D4AF37] font-semibold">
-            THE ATELIER — A PRIVATE COMMISSION
+            THE ATELIER | A PRIVATE COMMISSION
           </div>
           <h2 className="font-serif text-[36px] lg:text-[52px] leading-[0.9] tracking-[-0.02em] mt-3 font-light">
             Created<br />

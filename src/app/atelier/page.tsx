@@ -40,7 +40,7 @@ export default function AtelierPage() {
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10">
           <div className="max-w-[800px]">
             <span className="text-[10px] tracking-[0.24em] uppercase text-[#D4AF37] font-semibold">
-              THE ATELIER — A PRIVATE COMMISSION
+              THE ATELIER | A PRIVATE COMMISSION
             </span>
             <h1 className="font-serif text-[44px] sm:text-[64px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
               Your Vision. Our Master Craftsmanship.

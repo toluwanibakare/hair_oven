@@ -42,7 +42,7 @@ export function OvenVeil() {
               PROPRIETARY PRECISION
             </span>
 
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white leading-[0.95] tracking-[-0.02em] font-light">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-4xl xl:text-5xl text-white leading-[0.95] tracking-[-0.02em] font-light lg:whitespace-nowrap">
               INTRODUCING OVEN VEIL™
             </h2>
 
@@ -52,26 +52,26 @@ export function OvenVeil() {
 
             {/* Editorial Spec List without generic icons */}
             <div className="mt-8 grid sm:grid-cols-2 gap-6 border-t border-white/10 pt-6">
-              <div className="space-y-1">
-                <div className="text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold font-serif">
-                  — 01
+              <div className="space-y-1.5">
+                <div className="text-xs sm:text-sm tracking-[0.2em] uppercase text-[#F3E5AB] font-bold font-mono">
+                  01
                 </div>
-                <h4 className="text-xs tracking-[0.14em] uppercase font-semibold text-white">
+                <h4 className="text-xs sm:text-sm tracking-[0.14em] uppercase font-semibold text-white">
                   Micro-Bleached Knots
                 </h4>
-                <p className="text-[11px] text-[#E8DDC9]/65 leading-5">
+                <p className="text-[11px] sm:text-xs text-[#E8DDC9]/75 leading-5">
                   Single-knotted hairline pre-plucked for true realism.
                 </p>
               </div>
 
-              <div className="space-y-1">
-                <div className="text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold font-serif">
-                  — 02
+              <div className="space-y-1.5">
+                <div className="text-xs sm:text-sm tracking-[0.2em] uppercase text-[#F3E5AB] font-bold font-mono">
+                  02
                 </div>
-                <h4 className="text-xs tracking-[0.14em] uppercase font-semibold text-white">
+                <h4 className="text-xs sm:text-sm tracking-[0.14em] uppercase font-semibold text-white">
                   Universal Skin Melt
                 </h4>
-                <p className="text-[11px] text-[#E8DDC9]/65 leading-5">
+                <p className="text-[11px] sm:text-xs text-[#E8DDC9]/75 leading-5">
                   Adapts seamlessly to warm, deep, and fair complexions.
                 </p>
               </div>

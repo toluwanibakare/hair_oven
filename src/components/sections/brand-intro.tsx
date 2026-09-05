@@ -19,16 +19,17 @@ export function BrandIntro() {
             THE HOUSE FOUNDATION
           </span>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-6xl text-[#2B1B12] font-light leading-[0.95] tracking-[-0.02em]">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2B1B12] font-light leading-snug tracking-tight">
             WHERE BEAUTY MEETS THE ART OF HAIR.
           </h2>
 
-          <p className="mt-8 text-base sm:text-lg text-[#57534E] leading-8 font-normal">
-            Some houses begin with a business plan. HAIR OVEN began with a calling.
+          <p className="mt-8 text-base sm:text-lg lg:text-xl text-[#2B1B12] font-serif leading-snug tracking-tight px-2 sm:px-0">
+            Some houses begin with a business plan.
+            <span className="block mt-1.5 italic font-normal">HAIR OVEN began with a calling.</span>
           </p>
 
-          <p className="mt-4 text-sm sm:text-base text-[#57534E] leading-7 font-normal max-w-[70ch] mx-auto">
-            Founded on faith, shaped by preparation, and refined through an obsession with craftsmanship. We believe true luxury is not defined by appearance alone—it is found in the rarity of the materials, the structural integrity of the construction, and the absolute reverence we hold for the woman who wears it.
+          <p className="mt-5 text-sm sm:text-base text-[#57534E] leading-relaxed font-normal max-w-[65ch] mx-auto px-4 sm:px-0 text-center">
+            Founded on faith, shaped by preparation, and refined through an obsession with craftsmanship. We believe true luxury is not defined by appearance alone. It is found in the rarity of the materials, the structural integrity of the construction, and the absolute reverence we hold for the woman who wears it.
           </p>
 
           <div className="mt-10">

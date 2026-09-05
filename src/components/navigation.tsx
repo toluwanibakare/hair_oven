@@ -60,9 +60,8 @@ export function Navigation() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2 text-[10px] tracking-[0.2em] uppercase font-medium border-b border-[#E8DDC9]/10">
-        <span className="hidden sm:inline">Complimentary express worldwide shipping on orders over ₦500,000 — </span>
-        Client Concierge available via WhatsApp 9AM–7PM WAT
+      <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2.5 px-4 text-[11px] sm:text-xs tracking-[0.18em] uppercase font-medium border-b border-[#E8DDC9]/10">
+        <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • Website build in progress, launching soon • Private Concierge & Atelier Commissions Open
       </div>
 
       <header className="sticky top-0 z-50 bg-[#FFFCF8] border-b border-[#2B1B12]/10 transition-all duration-300">

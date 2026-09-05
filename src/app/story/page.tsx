@@ -46,7 +46,7 @@ export default function HousePage() {
           </div>
           <div className="lg:col-span-7 text-sm lg:text-base text-[#57534E] leading-8">
             <p>
-              Some houses begin with a business plan. HAIR OVEN began with a calling.
+              Some houses begin with a business plan. <em className="italic text-[#2B1B12] font-normal">HAIR OVEN began with a calling.</em>
             </p>
             <p className="mt-4">
               Long before there was a name, a logo, or a global vision, there was a little girl who loved beautiful hair. From watching my mother’s hands plait my hair to weaving the hair of neighborhood children, an unspoken obsession with precision was born. I didn’t know it then, but God was preparing my hands long before He revealed the assignment.
@@ -178,7 +178,7 @@ export default function HousePage() {
               I see the children whose hair I wove. I see my mother's hands. I hear my late father's words. I see the years of global travel, researching factories, testing qualities, and constantly asking one question: <em>"How do we give women the absolute best?"</em>
             </p>
             <p>
-              My greatest hope is that the woman who encounters this brand never feels like a transaction. I want her to feel seen. I want her to feel revered. Whether she is investing in exceptional raw hair, preparing for her wedding day, serving clients as a stylist, or simply looking in the mirror to feel extraordinary—she belongs here.
+              My greatest hope is that the woman who encounters this brand never feels like a transaction. I want her to feel seen. I want her to feel revered. Whether she is investing in exceptional raw hair, preparing for her wedding day, serving clients as a stylist, or simply looking in the mirror to feel extraordinary, she belongs here.
             </p>
             <p className="font-serif text-lg text-[#2B1B12] italic">
               God was preparing the hands before revealing the assignment. HAIR OVEN is my response.

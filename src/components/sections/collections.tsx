@@ -43,11 +43,11 @@ export function Collections() {
   return (
     <section className="bg-[#FFFCF8] text-[#2B1B12] py-20 lg:py-28 border-b border-[#2B1B12]/10">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
-        <div className="text-center max-w-[760px] mx-auto mb-16">
+        <div className="text-center max-w-[900px] mx-auto mb-16">
           <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
             THE HOUSES OF CRAFT
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B1B12] mt-3 font-light">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#2B1B12] mt-3 font-light lg:whitespace-nowrap">
             AN EXPRESSION OF ABSOLUTE LUXURY.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#57534E] leading-7">
