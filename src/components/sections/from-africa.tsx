@@ -70,9 +70,27 @@ export function FromAfrica() {
             </div>
 
             <div className="mt-4 grid grid-cols-3 gap-3">
-              <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=400&auto=format&fit=crop" alt="" className="h-[100px] w-full object-cover" />
-              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop" alt="" className="h-[100px] w-full object-cover" />
-              <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=400&auto=format&fit=crop" alt="" className="h-[100px] w-full object-cover" />
+              <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
+                <img
+                  src="/products/caramel-wave.jpeg"
+                  alt="Caramel Wave"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
+                <img
+                  src="/products/velmorea.jpeg"
+                  alt="The Velmorea"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
+                <img
+                  src="/products/adunni.png"
+                  alt="The Adunni"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
           </div>
         </div>
