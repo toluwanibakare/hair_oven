@@ -31,8 +31,7 @@ export const collections = [
     accent: "Lifetime",
     years: "LIFETIME",
     color: "#2B1B12",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/velmorea.jpeg",
     priceFrom: 485000,
   },
   {
@@ -42,8 +41,8 @@ export const collections = [
     tagline: "LONG-TERM LUXURY",
     description:
       "Exceptional high-density virgin hair designed for long-term luxury. Refined, resilient, remarkable.",
-    accent: "2–3+ Years",
-    years: "2–3+ YEARS",
+    accent: "2 to 3+ Years",
+    years: "2 to 3+ YEARS",
     color: "#3D2314",
     image: "/products/caramel-wave.jpeg",
     priceFrom: 285000,
@@ -56,10 +55,9 @@ export const collections = [
     description:
       "High-quality everyday human hair crafted for dependable beauty and effortless rotation.",
     accent: "Everyday Versatile",
-    years: "12–18 MONTHS",
+    years: "12 to 18 MONTHS",
     color: "#57534E",
-    image:
-      "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/aurelia-barrel-curl.jpeg",
     priceFrom: 145000,
   },
 ] as const;

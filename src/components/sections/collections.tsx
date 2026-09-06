@@ -11,7 +11,7 @@ const collectionCards = [
     desc: "The absolute summit of the House. Entirely unprocessed, single-donor rare units with fully intact cuticles. Preserved as a permanent heirloom investment for those who command distinction beyond the expected.",
     link: "/collections/private",
     btnText: "DISCOVER PRIVATE",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/velmorea.jpeg",
     objectPos: "object-top",
   },
   {
@@ -20,7 +20,7 @@ const collectionCards = [
     desc: "Exceptional, high-density virgin hair engineered for long-term luxury. Distinctive silhouettes and impeccably refined finishes that embody the unmistakable character of HAIR OVEN.",
     link: "/collections/signature",
     btnText: "DISCOVER SIGNATURE",
-    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/caramel-wave.jpeg",
     objectPos: "object-top",
   },
   {
@@ -29,7 +29,7 @@ const collectionCards = [
     desc: "High-quality, versatile human hair crafted for effortless rotation and everyday refinement. Luxury designed for seamless style shifts.",
     link: "/collections/essentials",
     btnText: "DISCOVER ESSENTIALS",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/aurelia-barrel-curl.jpeg",
     objectPos: "object-top",
   },
   {
@@ -38,7 +38,7 @@ const collectionCards = [
     desc: "An exclusive invitation to bring your ultimate vision to life. A private creation experience where architecture, density, texture, and our proprietary Oven Veil™ technology are tailored strictly to your silhouette.",
     link: "/atelier",
     btnText: "ENTER THE ATELIER",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/honey-ash-bronzed-wave.jpeg",
     objectPos: "object-top",
   },
 ];
