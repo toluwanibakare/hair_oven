@@ -11,7 +11,7 @@ const collectionCards = [
     desc: "The absolute summit of the House. Entirely unprocessed, single-donor rare units with fully intact cuticles. Preserved as a permanent heirloom investment for those who command distinction beyond the expected.",
     link: "/collections/private",
     btnText: "DISCOVER PRIVATE",
-    image: "/products/velmorea.jpeg",
+    image: "/products/editorial-model-2.jpg",
     objectPos: "object-top",
   },
   {

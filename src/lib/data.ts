@@ -31,7 +31,7 @@ export const collections = [
     accent: "Lifetime",
     years: "LIFETIME",
     color: "#2B1B12",
-    image: "/products/velmorea.jpeg",
+    image: "/products/editorial-model-2.jpg",
     priceFrom: 485000,
   },
   {
