@@ -38,7 +38,7 @@ const collectionCards = [
     desc: "An exclusive invitation to bring your ultimate vision to life. A private creation experience where architecture, density, texture, and our proprietary Oven Veil™ technology are tailored strictly to your silhouette.",
     link: "/atelier",
     btnText: "ENTER THE ATELIER",
-    image: "/products/honey-ash-bronzed-wave.jpeg",
+    image: "/products/editorial-model.jpg",
     objectPos: "object-top",
   },
 ];
