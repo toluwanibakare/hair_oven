@@ -72,23 +72,23 @@ export function FromAfrica() {
             <div className="mt-4 grid grid-cols-3 gap-3">
               <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
                 <img
-                  src="/products/caramel-wave.jpeg"
-                  alt="Caramel Wave"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="/products/africa-thumb-1.jpg"
+                  alt="Global Silhouette Craft"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
                 <img
-                  src="/products/velmorea.jpeg"
-                  alt="The Velmorea"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="/products/africa-thumb-2.jpg"
+                  alt="Global Volume Movement"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
                 <img
-                  src="/products/adunni.png"
-                  alt="The Adunni"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="/products/africa-thumb-3.jpg"
+                  alt="Global Hair Artisanry"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
