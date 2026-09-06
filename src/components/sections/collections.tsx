@@ -11,7 +11,8 @@ const collectionCards = [
     desc: "The absolute summit of the House. Entirely unprocessed, single-donor rare units with fully intact cuticles. Preserved as a permanent heirloom investment for those who command distinction beyond the expected.",
     link: "/collections/private",
     btnText: "DISCOVER PRIVATE",
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop",
+    objectPos: "object-top",
   },
   {
     title: "SIGNATURE COLLECTION",
@@ -19,7 +20,8 @@ const collectionCards = [
     desc: "Exceptional, high-density virgin hair engineered for long-term luxury. Distinctive silhouettes and impeccably refined finishes that embody the unmistakable character of HAIR OVEN.",
     link: "/collections/signature",
     btnText: "DISCOVER SIGNATURE",
-    image: "/products/caramel-wave.jpeg",
+    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1200&auto=format&fit=crop",
+    objectPos: "object-top",
   },
   {
     title: "ESSENTIALS",
@@ -27,7 +29,8 @@ const collectionCards = [
     desc: "High-quality, versatile human hair crafted for effortless rotation and everyday refinement. Luxury designed for seamless style shifts.",
     link: "/collections/essentials",
     btnText: "DISCOVER ESSENTIALS",
-    image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop",
+    objectPos: "object-top",
   },
   {
     title: "THE ATELIER",
@@ -35,7 +38,8 @@ const collectionCards = [
     desc: "An exclusive invitation to bring your ultimate vision to life. A private creation experience where architecture, density, texture, and our proprietary Oven Veil™ technology are tailored strictly to your silhouette.",
     link: "/atelier",
     btnText: "ENTER THE ATELIER",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop",
+    objectPos: "object-top",
   },
 ];
 
@@ -65,13 +69,13 @@ export function Collections() {
               transition={{ delay: i * 0.08 }}
               className="border border-[#2B1B12]/10 bg-[#EDE6D6]/20 rounded-sm overflow-hidden flex flex-col justify-between group hover:border-[#B8860B] transition-all"
             >
-              <div className="aspect-[16/9] relative overflow-hidden bg-[#2B1B12]">
+              <div className="aspect-[4/3] sm:aspect-[14/10] relative overflow-hidden bg-[#2B1B12]">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className={`w-full h-full object-cover ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-6 text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold">
                   {card.tagline}
                 </div>
