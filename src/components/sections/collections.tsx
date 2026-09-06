@@ -19,7 +19,7 @@ const collectionCards = [
     desc: "Exceptional, high-density virgin hair engineered for long-term luxury. Distinctive silhouettes and impeccably refined finishes that embody the unmistakable character of HAIR OVEN.",
     link: "/collections/signature",
     btnText: "DISCOVER SIGNATURE",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1000&auto=format&fit=crop",
+    image: "/products/caramel-wave.jpeg",
   },
   {
     title: "ESSENTIALS",

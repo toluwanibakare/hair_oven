@@ -45,8 +45,7 @@ export const collections = [
     accent: "2–3+ Years",
     years: "2–3+ YEARS",
     color: "#3D2314",
-    image:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop",
+    image: "/products/caramel-wave.jpeg",
     priceFrom: 285000,
   },
   {
@@ -156,7 +155,6 @@ export const products: Product[] = [
     ],
     inStock: true,
     featured: true,
-    bestseller: true,
   },
   {
     id: "signature-aurelia-barrel-curl-24",
@@ -184,7 +182,6 @@ export const products: Product[] = [
     ],
     inStock: true,
     featured: true,
-    bestseller: true,
   },
   {
     id: "signature-honey-ash-bronzed-wave-24",
@@ -213,7 +210,6 @@ export const products: Product[] = [
     ],
     inStock: true,
     featured: true,
-    bestseller: true,
   },
   {
     id: "private-bone-straight-20",
@@ -248,7 +244,7 @@ export const products: Product[] = [
     image:
       "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=800&auto=format&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1200&auto=format&fit=crop",
     ],
     lengths: ['18"', '20"', '22"', '24"'],
     colors: ["Natural Black", "Natural Brown"],
@@ -262,50 +258,6 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "signature-curly-18",
-    name: "Signature Deep Curly 18″",
-    collection: "signature",
-    category: "Wigs",
-    price: 325000,
-    originalPrice: 365000,
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop",
-    ],
-    lengths: ['14"', '16"', '18"', '20"'],
-    colors: ["Natural Black", "Chocolate", "Honey Brown"],
-    density: "230%",
-    texture: "Deep Curly",
-    capSize: ["S", "M", "L"],
-    description: "High-density virgin deep curls. Defined, soft, enduring.",
-    longDescription: "Our signature curl - tight, juicy and meticulously defined. Virgin hair curated for longevity and movement.",
-    details: ["Virgin high-density", "Defined curl", "2-3+ years lifespan"],
-    inStock: true,
-    bestseller: true,
-  },
-  {
-    id: "signature-straight-16",
-    name: "Signature Silky Straight 16″",
-    collection: "signature",
-    category: "Bundles",
-    price: 285000,
-    image:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop",
-    ],
-    lengths: ['12"', '14"', '16"', '18"', '20"'],
-    colors: ["Natural Black", "Jet Black"],
-    density: "220%",
-    texture: "Silky Straight",
-    capSize: ["M", "L"],
-    description: "Liquid movement. Glass-like shine without heaviness.",
-    longDescription: "Refined straight hair with natural swing. Lightweight yet full.",
-    details: ["Virgin", "Silky finish", "Tangle-resistant"],
-    inStock: true,
-  },
-  {
     id: "essentials-wave-14",
     name: "Essentials Loose Wave 14″",
     collection: "essentials",
@@ -314,7 +266,7 @@ export const products: Product[] = [
     image:
       "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=800&auto=format&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1200&auto=format&fit=crop",
     ],
     lengths: ['12"', '14"', '16"', '18"'],
     colors: ["Natural Black", "Brown", "Blonde"],
@@ -346,12 +298,11 @@ export const products: Product[] = [
     longDescription: "A sharp, confident silhouette. Cut and crafted for polish.",
     details: ["Blunt cut", "Natural parting", "Lightweight cap"],
     inStock: true,
-    bestseller: true,
   },
   {
     id: "closure-oven-veil",
     name: "Oven Veil™ 13×6 HD Frontal",
-    collection: "signature",
+    collection: "essentials",
     category: "Closures & Frontals",
     price: 95000,
     image:
