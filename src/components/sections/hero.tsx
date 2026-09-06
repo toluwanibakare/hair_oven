@@ -18,24 +18,24 @@ export function Hero() {
         <img
           src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1920&auto=format&fit=crop"
           alt="HAIR OVEN - luxury hair editorial"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[center_5%] sm:object-cover"
         />
-        {/* Warm luxury overlay - not purple, warm brown/charcoal */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/70 via-[#2B1B12]/10 to-[#2B1B12]/20" />
+        {/* Warm luxury overlay - dark gradient at bottom on mobile to keep face/hair clear at top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/85 via-55% to-transparent sm:from-[#2B1B12]/70 sm:via-[#2B1B12]/10 sm:to-[#2B1B12]/20" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#2B1B12]/40 via-transparent to-transparent" />
         <div className="absolute inset-0 opacity-[0.12] mix-blend-soft-light" style={{ background: `radial-gradient(800px circle at 70% 30%, #C2A47A 0%, transparent 60%)` }} />
       </motion.div>
 
       {/* Content */}
-      <motion.div style={{ opacity }} className="relative z-10 h-full mx-auto max-w-[1600px] px-6 lg:px-10 flex flex-col justify-center pt-20 pb-16 lg:pb-24">
-        <div className="max-w-[760px] -mt-8 sm:-mt-12 lg:-mt-16">
+      <motion.div style={{ opacity }} className="relative z-10 h-full mx-auto max-w-[1600px] px-5 sm:px-6 lg:px-10 flex flex-col justify-end sm:justify-center pt-16 sm:pt-20 pb-8 sm:pb-16 lg:pb-24">
+        <div className="max-w-[760px] mb-2 sm:-mt-12 lg:-mt-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-            className="flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase text-white/80 mb-4"
+            className="flex items-center gap-2.5 text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.22em] uppercase text-white/80 mb-2 sm:mb-4"
           >
-            <span className="h-px w-8 bg-[#C2A47A]" />
+            <span className="h-px w-6 sm:w-8 bg-[#C2A47A]" />
             Born in Africa • Worn around the world
           </motion.div>
 
@@ -43,9 +43,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="font-serif text-[38px] sm:text-[52px] lg:text-[72px] leading-[0.92] tracking-[-0.03em] text-white font-light"
+            className="font-serif text-[28px] sm:text-[52px] lg:text-[72px] leading-[1.05] sm:leading-[0.92] tracking-[-0.03em] text-white font-light"
           >
-            <span className="block font-light tracking-[0.16em] text-[11px] sm:text-[12px] mb-3 text-[#E8DDC9]">HAIR OVEN</span>
+            <span className="block font-light tracking-[0.16em] text-[10px] sm:text-[12px] mb-1 sm:mb-3 text-[#E8DDC9]">HAIR OVEN</span>
             <span className="block">Exceptional hair.</span>
             <span className="block italic font-normal text-[#E8DDC9]">Extraordinary you.</span>
           </motion.h1>
@@ -54,7 +54,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-4 text-[14px] sm:text-[15px] leading-6 sm:leading-7 text-white/70 max-w-[48ch] font-light"
+            className="mt-2.5 sm:mt-4 text-[13px] sm:text-[15px] leading-5 sm:leading-7 text-white/80 sm:text-white/70 max-w-[48ch] font-light"
           >
             Where beauty meets the art of hair. A luxury house built on faith, craftsmanship and the belief that every woman deserves to feel beautiful.
           </motion.p>
@@ -63,18 +63,18 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75 }}
-            className="mt-6 flex flex-wrap gap-3"
+            className="mt-4 sm:mt-6 flex flex-wrap gap-2.5 sm:gap-3"
           >
-            <Link href="/shop" className="h-[46px] px-7 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
+            <Link href="/shop" className="h-[42px] sm:h-[46px] px-5 sm:px-7 bg-white text-[#2B1B12] inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold sm:font-medium hover:bg-[#E8DDC9] transition-colors">
               Shop the Collection <span className="ml-2">→</span>
             </Link>
-            <Link href="/story" className="h-[46px] px-7 border border-white/30 text-white inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium backdrop-blur hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
+            <Link href="/story" className="h-[42px] sm:h-[46px] px-5 sm:px-7 border border-white/30 text-white inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold sm:font-medium backdrop-blur hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
               Discover Our Story
             </Link>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.8 }} className="mt-8 flex items-center gap-6 text-[10px] tracking-[0.16em] uppercase text-white/60">
-            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#C2A47A]" /> Oven Veil™ - The invisible hairline</span>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.8 }} className="mt-4 sm:mt-8 flex items-center gap-4 sm:gap-6 text-[9px] sm:text-[10px] tracking-[0.14em] sm:tracking-[0.16em] uppercase text-white/60">
+            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#C2A47A]" /> Oven Veil™ • The invisible hairline</span>
             <span className="hidden sm:inline">•</span>
             <span className="hidden sm:inline">Bespoke atelier available</span>
           </motion.div>

@@ -60,8 +60,13 @@ export function Navigation() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2.5 px-4 text-[11px] sm:text-xs tracking-[0.18em] uppercase font-medium border-b border-[#E8DDC9]/10">
-        <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • Website build in progress, launching soon • Private Concierge & Atelier Commissions Open
+      <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2 sm:py-2.5 px-3 sm:px-4 text-[10px] sm:text-xs tracking-[0.14em] sm:tracking-[0.18em] uppercase font-medium border-b border-[#E8DDC9]/10 overflow-hidden">
+        <span className="sm:hidden block truncate whitespace-nowrap">
+          <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • ATELIER COMMISSIONS OPEN
+        </span>
+        <span className="hidden sm:block">
+          <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • Website build in progress, launching soon • Private Concierge & Atelier Commissions Open
+        </span>
       </div>
 
       <header className="sticky top-0 z-50 bg-[#FFFCF8] border-b border-[#2B1B12]/10 transition-all duration-300">
