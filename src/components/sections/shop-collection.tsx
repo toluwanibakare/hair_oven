@@ -76,8 +76,8 @@ export function ShopCollection() {
           {/* Editorial image block */}
           <div className="lg:col-span-12 mt-4 grid md:grid-cols-3 gap-6">
             <div className="md:col-span-2 relative aspect-[16/9] md:aspect-[2.2] overflow-hidden bg-[#F5EFE6] group">
-              <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1400&auto=format&fit=crop" alt="Editorial lifestyle" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/50 via-transparent to-transparent" />
+              <img src="/products/editorial-blowdry.jpg" alt="Editorial hair styling" className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/60 via-[#2B1B12]/20 to-transparent" />
               <div className="absolute bottom-0 p-6 lg:p-8">
                 <div className="text-[10px] tracking-[0.16em] uppercase text-white/80">Editorial</div>
                 <div className="font-serif text-white text-[24px] leading-none mt-2">Movement that feels alive.</div>
