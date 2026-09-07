@@ -33,18 +33,18 @@ export default function HousePage() {
       </section>
 
       {/* Chapters Section */}
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-28 space-y-24">
+      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-28 space-y-24 font-serif">
         {/* 01. THE CALLING */}
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 01
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
               THE CALLING
             </h2>
           </div>
-          <div className="lg:col-span-7 text-sm lg:text-base text-[#57534E] leading-8">
+          <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <p>
               Some houses begin with a business plan. <em className="italic text-[#2B1B12] font-normal">HAIR OVEN began with a calling.</em>
             </p>
@@ -57,14 +57,14 @@ export default function HousePage() {
         {/* 02. THE CRAFTSMANSHIP */}
         <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
           <div className="lg:col-span-5">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 02
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
               THE CRAFTSMANSHIP
             </h2>
           </div>
-          <div className="lg:col-span-7 text-sm lg:text-base text-[#57534E] leading-8">
+          <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <p>
               The most important lessons I learned about hair were not taught in a classroom. As a young girl, I would travel miles simply to have my hair braided by a woman whose work was immaculate. She taught me that the difference between the ordinary and the exceptional lives entirely in the details.
             </p>
@@ -77,14 +77,14 @@ export default function HousePage() {
         {/* 03. THE PROPHECY */}
         <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
           <div className="lg:col-span-5">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 03
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
               THE PROPHECY
             </h2>
           </div>
-          <div className="lg:col-span-7 text-sm lg:text-base text-[#57534E] leading-8">
+          <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <blockquote className="font-serif text-xl lg:text-2xl text-[#2B1B12] italic mb-4">
               “I can imagine what you’ll be like on your wedding day.”
             </blockquote>
@@ -100,14 +100,14 @@ export default function HousePage() {
         {/* 04. THE ASSIGNMENT */}
         <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
           <div className="lg:col-span-5">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 04
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
               THE ASSIGNMENT
             </h2>
           </div>
-          <div className="lg:col-span-7 text-sm lg:text-base text-[#57534E] leading-8">
+          <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <p>
               My journey was never only about hair. Armed with an Economics degree and years of entrepreneurial experience, I knew how to build a business. But I wanted purpose.
             </p>
@@ -120,14 +120,14 @@ export default function HousePage() {
         {/* 05. THE PHILOSOPHY */}
         <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
           <div className="lg:col-span-5">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 05
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
               UNCOMPROMISING RESPECT
             </h2>
           </div>
-          <div className="lg:col-span-7 text-sm lg:text-base text-[#57534E] leading-8">
+          <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <h3 className="font-serif text-xl text-[#2B1B12] mb-3">Your budget does not define your worth.</h3>
             <p>
               At HAIR OVEN, we believe every woman deserves to experience excellence. Whether she is purchasing an accessible Everyday Essential or investing in a hyper-rare, lifetime Private Reserve heirloom, she commands the exact same respect within our House.
@@ -141,14 +141,14 @@ export default function HousePage() {
         {/* 06. THE GLOBAL VISION */}
         <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
           <div className="lg:col-span-5">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 06
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
               THE GLOBAL VISION
             </h2>
           </div>
-          <div className="lg:col-span-7 text-sm lg:text-base text-[#57534E] leading-8">
+          <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <h3 className="font-serif text-xl text-[#2B1B12] mb-3">From Africa to the World.</h3>
             <p>
               Our ambition is global. We are building HAIR OVEN to be one of the world's most trusted names in ultra-premium hair. A brand born in Africa, built to stand proudly on a global stage, while never forgetting where it began.
@@ -161,16 +161,16 @@ export default function HousePage() {
       </section>
 
       {/* Founder's Note Section */}
-      <section className="bg-[#E0D5C5]/30 border-t border-[#2B1B12]/10 py-20 lg:py-28">
+      <section className="bg-[#E0D5C5]/30 border-t border-[#2B1B12]/10 py-20 lg:py-28 font-serif">
         <div className="max-w-[900px] mx-auto px-6 lg:px-10 text-center">
-          <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
+          <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold font-sans">
             A NOTE FROM THE FOUNDER
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2B1B12] mt-3 font-light">
             TO EVERY WOMAN WHO HAS BECOME PART OF OUR STORY
           </h2>
 
-          <div className="mt-8 text-sm lg:text-base text-[#57534E] leading-8 space-y-6 text-left max-w-[760px] mx-auto">
+          <div className="mt-8 text-base lg:text-lg text-[#57534E] leading-8 space-y-6 text-left max-w-[760px] mx-auto font-serif">
             <p>
               When I look at HAIR OVEN, I don't simply see a luxury house.
             </p>
@@ -180,7 +180,7 @@ export default function HousePage() {
             <p>
               My greatest hope is that the woman who encounters this brand never feels like a transaction. I want her to feel seen. I want her to feel revered. Whether she is investing in exceptional raw hair, preparing for her wedding day, serving clients as a stylist, or simply looking in the mirror to feel extraordinary, she belongs here.
             </p>
-            <p className="font-serif text-lg text-[#2B1B12] italic">
+            <p className="font-serif text-xl text-[#2B1B12] italic">
               God was preparing the hands before revealing the assignment. HAIR OVEN is my response.
             </p>
             <p>
@@ -188,11 +188,11 @@ export default function HousePage() {
             </p>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-[#2B1B12]/10 inline-block text-center">
+          <div className="mt-12 pt-8 border-t border-[#2B1B12]/10 inline-block text-center font-serif">
             <div className="font-serif text-2xl text-[#2B1B12] tracking-wide">
               Hannah OLUWATOSIN Ogundare
             </div>
-            <div className="text-[11px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold mt-1">
+            <div className="text-[11px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold mt-1 font-sans">
               Founder, HAIR OVEN
             </div>
           </div>

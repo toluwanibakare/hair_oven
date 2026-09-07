@@ -28,7 +28,7 @@ export function BrandIntro() {
             <span className="block mt-1.5 italic font-normal">HAIR OVEN began with a calling.</span>
           </p>
 
-          <p className="mt-5 text-sm sm:text-base text-[#57534E] leading-relaxed font-normal max-w-[65ch] mx-auto px-4 sm:px-0 text-center">
+          <p className="mt-5 text-base sm:text-lg text-[#57534E] leading-relaxed font-serif max-w-[65ch] mx-auto px-4 sm:px-0 text-center">
             Founded on faith, shaped by preparation, and refined through an obsession with craftsmanship. We believe true luxury is not defined by appearance alone. It is found in the rarity of the materials, the structural integrity of the construction, and the absolute reverence we hold for the woman who wears it.
           </p>
 
