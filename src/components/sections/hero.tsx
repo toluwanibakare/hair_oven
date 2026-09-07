@@ -20,10 +20,8 @@ export function Hero() {
           alt="HAIR OVEN - luxury hair editorial"
           className="absolute inset-0 h-full w-full object-cover object-[center_10%] sm:object-[center_35%]"
         />
-        {/* Warm luxury overlay - dark gradient at bottom on mobile to keep face/hair clear at top */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/85 via-55% to-transparent sm:from-[#2B1B12]/70 sm:via-[#2B1B12]/10 sm:to-[#2B1B12]/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2B1B12]/40 via-transparent to-transparent" />
-        <div className="absolute inset-0 opacity-[0.12] mix-blend-soft-light" style={{ background: `radial-gradient(800px circle at 70% 30%, #C2A47A 0%, transparent 60%)` }} />
+        {/* Clean luxury overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
       </motion.div>
 
       {/* Content */}
