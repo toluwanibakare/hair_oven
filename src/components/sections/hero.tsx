@@ -18,7 +18,7 @@ export function Hero() {
         <img
           src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1920&auto=format&fit=crop"
           alt="HAIR OVEN - luxury hair editorial"
-          className="absolute inset-0 h-full w-full object-cover object-[center_5%] sm:object-top"
+          className="absolute inset-0 h-full w-full object-cover object-[center_10%] sm:object-[center_35%]"
         />
         {/* Warm luxury overlay - dark gradient at bottom on mobile to keep face/hair clear at top */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/85 via-55% to-transparent sm:from-[#2B1B12]/70 sm:via-[#2B1B12]/10 sm:to-[#2B1B12]/20" />
