@@ -2,6 +2,7 @@
 
 import { Reveal } from "@/components/reveal";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function FromAfrica() {
   return (
@@ -24,12 +25,18 @@ export function FromAfrica() {
                 <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#2B1B12]" /> Duties calculated at checkout</span>
                 <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#78716C]" /> Studio: Lagos</span>
               </div>
-              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center">Shop Global Collection →</Link>
+              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#B8860B] transition-colors">Shop Global Collection →</Link>
             </Reveal>
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] bg-[#2B1B12] overflow-hidden p-8 lg:p-10 flex flex-col justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 32, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="relative aspect-[4/3] bg-[#2B1B12] overflow-hidden p-8 lg:p-10 flex flex-col justify-between shadow-xl rounded-sm"
+            >
               {/* subtle map grid */}
               <div className="absolute inset-0 opacity-10">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -67,30 +74,29 @@ export function FromAfrica() {
                 <span>No cheesy globe. Just real movement.</span>
                 <span className="hidden sm:inline">Nigeria → World</span>
               </div>
-            </div>
+            </motion.div>
 
             <div className="mt-4 grid grid-cols-3 gap-3">
-              <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
-                <img
-                  src="/products/africa-thumb-1.jpg"
-                  alt="Global Silhouette Craft"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
-                <img
-                  src="/products/africa-thumb-2.jpg"
-                  alt="Global Volume Movement"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group">
-                <img
-                  src="/products/africa-thumb-3.jpg"
-                  alt="Global Hair Artisanry"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+              {[
+                { src: "/products/africa-thumb-1.jpg", alt: "Global Silhouette Craft" },
+                { src: "/products/africa-thumb-2.jpg", alt: "Global Volume Movement" },
+                { src: "/products/africa-thumb-3.jpg", alt: "Global Hair Artisanry" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={item.src}
+                  initial={{ opacity: 0, y: 24, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.75, delay: 0.15 + idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

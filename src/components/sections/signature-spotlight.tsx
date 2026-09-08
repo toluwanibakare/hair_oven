@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const signatureUnits = [
@@ -115,7 +116,13 @@ export function SignatureSpotlight() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         
         {/* Section Header & Tab Selector */}
-        <div className="flex flex-wrap items-end justify-between gap-6 pb-10 border-b border-[#2B1B12]/10">
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap items-end justify-between gap-6 pb-10 border-b border-[#2B1B12]/10"
+        >
           <div>
             <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold block">
               SIGNATURE MASTERWORKS
@@ -140,20 +147,32 @@ export function SignatureSpotlight() {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Content Spotlight Grid */}
         <div className="mt-12 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Visual Showcase Side */}
-          <div className="lg:col-span-6 relative">
+          <motion.div
+            initial={{ opacity: 0, x: -36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 relative"
+          >
             <div className="aspect-[4/5] sm:aspect-[1.05] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-2xl group bg-[#2B1B12]">
-              <img
-                key={current.id}
-                src={current.image}
-                alt={current.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={current.id}
+                  src={current.image}
+                  alt={current.title}
+                  initial={{ opacity: 0, scale: 1.06 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </AnimatePresence>
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent" />
               
               <div className="absolute bottom-6 left-6 right-6 p-5 bg-[#2B1B12]/85 backdrop-blur-md border border-white/10 flex items-center justify-between text-white">
@@ -173,57 +192,73 @@ export function SignatureSpotlight() {
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Copy Side */}
-          <div className="lg:col-span-6">
-            <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold block mb-3">
-              {current.subtitle}
-            </span>
+          <motion.div
+            initial={{ opacity: 0, x: 36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6"
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current.id}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.4 }}
+              >
+                <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold block mb-3">
+                  {current.subtitle}
+                </span>
 
-            <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B1B12] leading-tight tracking-tight font-light">
-              {current.title}
-            </h3>
+                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B1B12] leading-tight tracking-tight font-light">
+                  {current.title}
+                </h3>
 
-            <p className="mt-6 text-sm sm:text-base text-[#57534E] leading-relaxed font-normal">
-              {current.description}
-            </p>
+                <p className="mt-6 text-sm sm:text-base text-[#57534E] leading-relaxed font-normal">
+                  {current.description}
+                </p>
 
-            {/* Signature Details Section */}
-            <div className="mt-8 border-t border-[#2B1B12]/10 pt-6">
-              <h4 className="text-[11px] tracking-[0.22em] uppercase text-[#2B1B12] font-semibold mb-4">
-                THE SIGNATURE DETAILS
-              </h4>
+                {/* Signature Details Section */}
+                <div className="mt-8 border-t border-[#2B1B12]/10 pt-6">
+                  <h4 className="text-[11px] tracking-[0.22em] uppercase text-[#2B1B12] font-semibold mb-4">
+                    THE SIGNATURE DETAILS
+                  </h4>
 
-              <div className="grid sm:grid-cols-2 gap-3">
-                {current.details.map((detail) => (
-                  <div key={detail} className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-2 shrink-0" />
-                    <span className="text-xs text-[#57534E] font-medium leading-5">
-                      {detail}
-                    </span>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {current.details.map((detail) => (
+                      <div key={detail} className="flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-2 shrink-0" />
+                        <span className="text-xs text-[#57534E] font-medium leading-5">
+                          {detail}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href={current.link}
-                className="h-[52px] px-9 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors shadow-md"
-              >
-                ACQUIRE THIS UNIT <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href={`https://wa.me/2348057388171?text=${encodeURIComponent(current.whatsappText)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-[52px] px-8 border border-[#2B1B12]/20 text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center hover:bg-[#2B1B12] hover:text-[#FFFCF8] transition-colors"
-              >
-                INQUIRE VIA CONCIERGE
-              </a>
-            </div>
-          </div>
+                <div className="mt-10 flex flex-wrap items-center gap-4">
+                  <Link
+                    href={current.link}
+                    className="h-[52px] px-9 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors shadow-md"
+                  >
+                    ACQUIRE THIS UNIT <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <a
+                    href={`https://wa.me/2348057388171?text=${encodeURIComponent(current.whatsappText)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-[52px] px-8 border border-[#2B1B12]/20 text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center hover:bg-[#2B1B12] hover:text-[#FFFCF8] transition-colors"
+                  >
+                    INQUIRE VIA CONCIERGE
+                  </a>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
 
         </div>
       </div>

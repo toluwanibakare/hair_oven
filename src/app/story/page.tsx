@@ -27,15 +27,21 @@ export default function HousePage() {
             THE HOUSE OF EXCEPTIONAL HAIR
           </h1>
           <p className="mt-6 text-sm sm:text-base tracking-[0.16em] uppercase text-[#E8DDC9]/80 font-medium max-w-[800px] mx-auto">
-            Birthed by God. Inspired by women. Defined by craftsmanship.
+            Birthed by GOD. Inspired by women. Defined by craftsmanship.
           </p>
         </div>
       </section>
 
       {/* Chapters Section */}
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-28 space-y-24 font-serif">
+      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-28 space-y-24 font-serif overflow-hidden">
         {/* 01. THE CALLING */}
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-12 gap-10 items-center"
+        >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 01
@@ -49,13 +55,19 @@ export default function HousePage() {
               Some houses begin with a business plan. <em className="italic text-[#2B1B12] font-normal">HAIR OVEN began with a calling.</em>
             </p>
             <p className="mt-4">
-              Long before there was a name, a logo, or a global vision, there was a little girl who loved beautiful hair. From watching my mother’s hands plait my hair to weaving the hair of neighborhood children, an unspoken obsession with precision was born. I didn’t know it then, but God was preparing my hands long before He revealed the assignment.
+              Long before there was a name, a logo, or a global vision, there was a little girl who loved beautiful hair. From watching my mother’s hands plait my hair to weaving the hair of neighborhood children, an unspoken obsession with precision was born. I didn’t know it then, but GOD was preparing my hands long before HE revealed the assignment.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* 02. THE CRAFTSMANSHIP */}
-        <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16"
+        >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 02
@@ -72,10 +84,16 @@ export default function HousePage() {
               The precision of the line. The patience behind the work. The pride in the finish. That deep reverence for craftsmanship became the absolute standard that HAIR OVEN represents today.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* 03. THE PROPHECY */}
-        <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16"
+        >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 03
@@ -92,13 +110,19 @@ export default function HousePage() {
               Decades ago, my late father would smile and joke that he could see me hiring a hairstylist and makeup artist from another country for my wedding. It was his loving way of describing my uncompromising standards.
             </p>
             <p className="mt-4">
-              Today, those words carry the weight of prophecy. God allows memories from our past to make perfect sense only when we finally step into the future He was preparing us for.
+              Today, those words carry the weight of prophecy. GOD allows memories from our past to make perfect sense only when we finally step into the future HE was preparing us for.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* 04. THE ASSIGNMENT */}
-        <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16"
+        >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 04
@@ -112,13 +136,19 @@ export default function HousePage() {
               My journey was never only about hair. Armed with an Economics degree and years of entrepreneurial experience, I knew how to build a business. But I wanted purpose.
             </p>
             <p className="mt-4">
-              I prayed and asked God to direct my steps. He did not simply lead me to a business; He gave me HAIR OVEN. The name. The vision. The exact assignment: to help women experience absolute beauty without compromising on quality, dignity, or value.
+              I prayed and asked GOD to direct my steps. HE did not simply lead me to a business; HE gave me HAIR OVEN. The name. The vision. The exact assignment: to help women experience absolute beauty without compromising on quality, dignity, or value.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* 05. THE PHILOSOPHY */}
-        <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16"
+        >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 05
@@ -136,10 +166,16 @@ export default function HousePage() {
               The collection she selects dictates the price; it will never dictate her value.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* 06. THE GLOBAL VISION */}
-        <div className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-12 gap-10 items-center border-t border-[#2B1B12]/10 pt-16"
+        >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
               CHAPTER 06
@@ -157,12 +193,18 @@ export default function HousePage() {
               As we expand, our promise remains absolute: we will continuously raise the standard. Because when a woman chooses HAIR OVEN, she is trusting us with more than her finances. She is trusting us with her identity.
             </p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Founder's Note Section */}
-      <section className="bg-[#E0D5C5]/30 border-t border-[#2B1B12]/10 py-20 lg:py-28 font-serif">
-        <div className="max-w-[900px] mx-auto px-6 lg:px-10 text-center">
+      <section className="bg-[#E0D5C5]/30 border-t border-[#2B1B12]/10 py-20 lg:py-28 font-serif overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-[900px] mx-auto px-6 lg:px-10 text-center"
+        >
           <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold font-sans">
             A NOTE FROM THE FOUNDER
           </span>
@@ -181,7 +223,7 @@ export default function HousePage() {
               My greatest hope is that the woman who encounters this brand never feels like a transaction. I want her to feel seen. I want her to feel revered. Whether she is investing in exceptional raw hair, preparing for her wedding day, serving clients as a stylist, or simply looking in the mirror to feel extraordinary, she belongs here.
             </p>
             <p className="font-serif text-xl text-[#2B1B12] italic">
-              God was preparing the hands before revealing the assignment. HAIR OVEN is my response.
+              GOD was preparing the hands before revealing the assignment. HAIR OVEN is my response.
             </p>
             <p>
               Thank you for trusting us. Thank you for believing in the standard. And thank you for becoming part of a story that began long before this House had a name.
@@ -196,7 +238,7 @@ export default function HousePage() {
               Founder, HAIR OVEN
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

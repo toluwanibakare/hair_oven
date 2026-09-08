@@ -45,9 +45,15 @@ const collectionCards = [
 
 export function Collections() {
   return (
-    <section className="bg-[#FFFCF8] text-[#2B1B12] py-20 lg:py-28 border-b border-[#2B1B12]/10">
+    <section className="bg-[#FFFCF8] text-[#2B1B12] py-20 lg:py-28 border-b border-[#2B1B12]/10 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
-        <div className="text-center max-w-[900px] mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center max-w-[900px] mx-auto mb-16"
+        >
           <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
             THE HOUSES OF CRAFT
           </span>
@@ -57,17 +63,18 @@ export function Collections() {
           <p className="mt-4 text-sm sm:text-base text-[#57534E] leading-7">
             From hyper-exclusive rare units preserved as lifetime investments, to everyday elegance. Each HAIR OVEN collection is defined by uncompromising design, international standards of quality, and a distinctly elevated point of view.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {collectionCards.map((card, i) => (
             <motion.div
               key={card.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 44 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="border border-[#2B1B12]/10 bg-[#EDE6D6]/20 rounded-sm overflow-hidden flex flex-col justify-between group hover:border-[#B8860B] transition-all"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.85, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6 }}
+              className="border border-[#2B1B12]/10 bg-[#EDE6D6]/20 rounded-sm overflow-hidden flex flex-col justify-between group hover:border-[#B8860B] transition-all duration-300 shadow-sm hover:shadow-xl"
             >
               <div className="aspect-[4/3] sm:aspect-[14/10] relative overflow-hidden bg-[#2B1B12]">
                 <img

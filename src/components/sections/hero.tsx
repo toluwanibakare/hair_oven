@@ -43,7 +43,7 @@ export function Hero() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-serif text-[28px] sm:text-[52px] lg:text-[72px] leading-[1.05] sm:leading-[0.92] tracking-[-0.03em] text-white font-light"
           >
-            <span className="block font-light tracking-[0.16em] text-[10px] sm:text-[12px] mb-1 sm:mb-3 text-[#E8DDC9]">HAIR OVEN</span>
+            <span className="block font-light tracking-[0.16em] text-[10px] sm:text-[12px] mb-3 sm:mb-5 text-[#E8DDC9]">HAIR OVEN</span>
             <span className="block">Exceptional hair.</span>
             <span className="block italic font-normal text-[#E8DDC9]">Extraordinary you.</span>
           </motion.h1>

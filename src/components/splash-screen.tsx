@@ -32,17 +32,17 @@ export function SplashScreen() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.02 }}
           transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
-          className="fixed inset-0 z-[9999] bg-[#2B1B12] text-[#E8DDC9] flex flex-col items-center justify-center overflow-hidden pointer-events-none select-none"
+          className="fixed inset-0 z-[9999] bg-[#FFFCF8] text-[#2B1B12] flex flex-col items-center justify-center overflow-hidden pointer-events-none select-none"
         >
           {/* Subtle Ambient Radial Glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4AF37]/15 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#B8860B]/12 via-transparent to-transparent pointer-events-none" />
 
           {/* Golden Ring Reveal */}
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
-            animate={{ scale: [0.85, 1.05, 1], opacity: [0, 0.3, 0.15] }}
+            animate={{ scale: [0.85, 1.05, 1], opacity: [0, 0.4, 0.2] }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="absolute w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] rounded-full border border-[#D4AF37]/30 blur-[1px]"
+            className="absolute w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] rounded-full border border-[#B8860B]/25 blur-[1px]"
           />
 
           {/* Logo Reveal Animation */}
@@ -57,7 +57,7 @@ export function SplashScreen() {
               alt="Hair Oven"
               fill
               priority
-              className="object-contain filter drop-shadow-[0_4px_20px_rgba(212,175,55,0.25)]"
+              className="object-contain filter drop-shadow-[0_4px_20px_rgba(184,134,11,0.2)]"
             />
           </motion.div>
 
@@ -66,15 +66,15 @@ export function SplashScreen() {
             initial={{ width: 0, opacity: 0 }}
             animate={{ width: "120px", opacity: 1 }}
             transition={{ delay: 0.15, duration: 0.35, ease: "easeOut" }}
-            className="h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent my-4 z-10"
+            className="h-[1px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent my-4 z-10"
           />
 
           {/* Elevated Tagline */}
           <motion.div
             initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 0.85, y: 0 }}
+            animate={{ opacity: 0.9, y: 0 }}
             transition={{ delay: 0.2, duration: 0.3 }}
-            className="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase text-[#E8DDC9] font-medium z-10 text-center px-4"
+            className="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase text-[#2B1B12] font-semibold z-10 text-center px-4"
           >
             THE APEX OF EXCEPTIONAL HAIR
           </motion.div>

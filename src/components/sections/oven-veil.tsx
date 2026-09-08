@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, EyeOff } from "lucide-react";
 
 export function OvenVeil() {
@@ -13,7 +14,13 @@ export function OvenVeil() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Macro Visual Shot */}
-          <div className="lg:col-span-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6"
+          >
             <div className="aspect-[4/3] sm:aspect-[14/10] relative rounded-sm overflow-hidden border border-white/10 shadow-2xl group">
               <img
                 src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop"
@@ -34,10 +41,16 @@ export function OvenVeil() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Copy Side */}
-          <div className="lg:col-span-6">
+          <motion.div
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6"
+          >
             <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold block mb-2">
               PROPRIETARY PRECISION
             </span>
@@ -50,9 +63,15 @@ export function OvenVeil() {
               The foundation of an undetectable finish. Oven Veil™ is HAIR OVEN’s proprietary, ultra-sheer lace technology. Engineered to mimic natural skin texture, it melts seamlessly upon contact with the scalp, offering an entirely invisible, weightless hairline that vanishes completely under any lighting or high-definition lens.
             </p>
 
-            {/* Editorial Spec List without generic icons */}
+            {/* Editorial Spec List */}
             <div className="mt-8 grid sm:grid-cols-2 gap-6 border-t border-white/10 pt-6">
-              <div className="space-y-1.5">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="space-y-1.5"
+              >
                 <div className="text-xs sm:text-sm tracking-[0.2em] uppercase text-[#F3E5AB] font-bold font-mono">
                   01
                 </div>
@@ -62,9 +81,15 @@ export function OvenVeil() {
                 <p className="text-[11px] sm:text-xs text-[#E8DDC9]/75 leading-5">
                   Single-knotted hairline pre-plucked for true realism.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="space-y-1.5">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+                className="space-y-1.5"
+              >
                 <div className="text-xs sm:text-sm tracking-[0.2em] uppercase text-[#F3E5AB] font-bold font-mono">
                   02
                 </div>
@@ -74,18 +99,24 @@ export function OvenVeil() {
                 <p className="text-[11px] sm:text-xs text-[#E8DDC9]/75 leading-5">
                   Adapts seamlessly to warm, deep, and fair complexions.
                 </p>
-              </div>
+              </motion.div>
             </div>
 
-            <div className="mt-10">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              className="mt-10"
+            >
               <Link
                 href="/heirloom-guide"
                 className="h-[50px] px-8 bg-[#D4AF37] text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white transition-colors"
               >
                 EXPLORE THE CRAFTSMANSHIP <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
         </div>
       </div>
