@@ -6,6 +6,7 @@ import { X, Search } from "lucide-react";
 import Link from "next/link";
 import { products } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
+import { WatermarkImage } from "@/components/watermark-image";
 
 export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [q, setQ] = useState("");
@@ -57,7 +58,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                   <div className="space-y-3">
                     {results.map((p) => (
                       <Link key={p.id} href={`/product/${p.id}`} onClick={onClose} className="flex gap-4 p-3 hover:bg-[#F5EFE6] transition-colors border border-transparent hover:border-[rgba(28,18,14,0.06)]">
-                        <img src={p.image} alt="" className="w-16 h-20 object-cover bg-[#F5EFE6]" />
+                        <WatermarkImage src={p.image} alt={p.name} containerClassName="w-16 h-20 bg-[#F5EFE6] shrink-0" imageClassName="w-full h-full object-cover" watermarkSize="sm" />
                         <div>
                           <div className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B]">{p.collection}</div>
                           <div className="font-serif text-[15px]">{p.name}</div>

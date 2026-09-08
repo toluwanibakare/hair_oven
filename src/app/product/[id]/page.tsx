@@ -7,6 +7,7 @@ import { products } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/context/cart-context";
 import { Heart, Minus, Plus, Shield, Truck, RefreshCw, MessageCircle } from "lucide-react";
+import { WatermarkImage } from "@/components/watermark-image";
 
 export default function ProductPage() {
   const params = useParams<{ id: string }>();
@@ -46,15 +47,15 @@ export default function ProductPage() {
                   onClick={() => setActiveImg(i)}
                   className={`w-[84px] h-[108px] overflow-hidden border-2 ${activeImg === i ? "border-[#2B1B12]" : "border-transparent"} bg-[#F5EFE6]`}
                 >
-                  <img src={img} alt="" className="w-full h-full object-cover" />
+                  <WatermarkImage src={img} alt="" containerClassName="w-full h-full" imageClassName="w-full h-full object-cover" watermarkSize="sm" showWatermark={false} />
                 </button>
               ))}
               <div className="w-[84px] h-[108px] bg-[#2B1B12] text-white p-3 flex flex-col justify-center text-[10px] tracking-[0.12em] uppercase leading-tight">Oven Veil™ • Invisible hairline included</div>
             </div>
             <div className="flex-1 relative aspect-[4/5] lg:aspect-[1.05] overflow-hidden bg-[#F5EFE6]">
-              <img src={product.images[activeImg]} alt={product.name} className="absolute inset-0 w-full h-full object-cover" />
-              {product.bestseller && <span className="absolute top-4 left-4 bg-[#2B1B12] text-white text-[10px] tracking-[0.14em] uppercase px-3 py-1.5">Bestseller</span>}
-              <button onClick={() => toggleWishlist(product.id)} className="absolute top-4 right-4 w-10 h-10 grid place-items-center rounded-full bg-white/90 backdrop-blur">
+              <WatermarkImage src={product.images[activeImg]} alt={product.name} containerClassName="absolute inset-0 w-full h-full" imageClassName="w-full h-full object-cover" watermarkSize="lg" />
+              {product.bestseller && <span className="absolute top-4 left-4 bg-[#2B1B12] text-white text-[10px] tracking-[0.14em] uppercase px-3 py-1.5 z-20">Bestseller</span>}
+              <button onClick={() => toggleWishlist(product.id)} className="absolute top-4 right-4 w-10 h-10 grid place-items-center rounded-full bg-white/90 backdrop-blur z-20">
                 <Heart className={`w-4 h-4 ${wished ? "fill-[#C2A47A] text-[#C2A47A]" : "text-[#2B1B12]"}`} />
               </button>
             </div>

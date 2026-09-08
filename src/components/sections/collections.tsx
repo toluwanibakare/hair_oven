@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { WatermarkImage } from "@/components/watermark-image";
 
 const collectionCards = [
   {
@@ -77,13 +78,15 @@ export function Collections() {
               className="border border-[#2B1B12]/10 bg-[#EDE6D6]/20 rounded-sm overflow-hidden flex flex-col justify-between group hover:border-[#B8860B] transition-all duration-300 shadow-sm hover:shadow-xl"
             >
               <div className="aspect-[4/3] sm:aspect-[14/10] relative overflow-hidden bg-[#2B1B12]">
-                <img
+                <WatermarkImage
                   src={card.image}
                   alt={card.title}
-                  className={`w-full h-full object-cover ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
+                  containerClassName="w-full h-full"
+                  imageClassName={`w-full h-full object-cover ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
+                  watermarkSize="md"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-6 text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent pointer-events-none z-10" />
+                <div className="absolute bottom-4 left-6 text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold z-20">
                   {card.tagline}
                 </div>
               </div>

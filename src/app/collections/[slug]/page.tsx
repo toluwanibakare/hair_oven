@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { collections, products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 import Link from "next/link";
+import { WatermarkImage } from "@/components/watermark-image";
 
 export function generateStaticParams() {
   return collections.map((c) => ({ slug: c.slug }));
@@ -24,8 +25,8 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
     <div className="bg-[#FFFCF8]">
       {/* Hero */}
       <div className={`relative overflow-hidden ${theme.bg} ${theme.text}`}>
-        <div className="absolute inset-0 opacity-20">
-          <img src={col.image} alt={col.name} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 opacity-25">
+          <WatermarkImage src={col.image} alt={col.name} containerClassName="w-full h-full" imageClassName="w-full h-full object-cover" watermarkSize="lg" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 py-20 lg:py-28">

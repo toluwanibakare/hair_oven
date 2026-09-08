@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { WatermarkImage } from "@/components/watermark-image";
 
 export function CaramelWave() {
   const detailsList = [
@@ -22,14 +23,16 @@ export function CaramelWave() {
           {/* Visual Showcase Side */}
           <div className="lg:col-span-6 relative">
             <div className="aspect-[4/5] sm:aspect-[1.05] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-2xl group bg-[#2B1B12]">
-              <img
+              <WatermarkImage
                 src="/products/caramel-wave.jpeg"
                 alt="The Signature Caramel Wave"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                containerClassName="w-full h-full"
+                imageClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                watermarkSize="lg"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent pointer-events-none z-10" />
               
-              <div className="absolute bottom-6 left-6 right-6 p-5 bg-[#2B1B12]/85 backdrop-blur-md border border-white/10 flex items-center justify-between text-white">
+              <div className="absolute bottom-6 left-6 right-6 p-5 bg-[#2B1B12]/85 backdrop-blur-md border border-white/10 flex items-center justify-between text-white z-20">
                 <div>
                   <span className="text-[10px] tracking-[0.22em] uppercase text-[#D4AF37] font-semibold block">
                     FEATURED SIGNATURE UNIT

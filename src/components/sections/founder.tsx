@@ -16,7 +16,7 @@ export function Founder() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div className="lg:col-span-5">
             <motion.div style={{ y }} className="relative aspect-[4/5] overflow-hidden bg-[#F5EFE6]">
-              <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=900&auto=format&fit=crop" alt="Hannah Oluwatosin Ogundare" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/founder.jpeg" alt="Hannah Oluwatosin Ogundare" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#2B1B12]/60 to-transparent">
                 <div className="text-white font-serif text-xl leading-none">Hannah Oluwatosin Ogundare</div>
                 <div className="text-[10px] tracking-[0.16em] uppercase text-white/80 mt-1">Founder, Hair Oven</div>

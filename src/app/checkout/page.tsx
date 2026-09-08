@@ -3,6 +3,7 @@
 import { useCart } from "@/context/cart-context";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
+import { WatermarkImage } from "@/components/watermark-image";
 
 export default function CheckoutPage() {
   const { items, cartTotal } = useCart();
@@ -40,7 +41,7 @@ export default function CheckoutPage() {
               <div className="mt-4 space-y-3">
                 {items.map((i) => (
                   <div key={i.product.id} className="flex gap-3 text-sm">
-                    <img src={i.product.image} alt="" className="w-16 h-20 object-cover bg-white" />
+                    <WatermarkImage src={i.product.image} alt={i.product.name} containerClassName="w-16 h-20 bg-white shrink-0" imageClassName="w-full h-full object-cover" watermarkSize="sm" />
                     <div className="flex-1">
                       <div className="font-medium leading-tight">{i.product.name}</div>
                       <div className="text-xs text-[#78716C]">{i.length} • {i.color} • Qty {i.qty}</div>

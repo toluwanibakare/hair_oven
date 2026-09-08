@@ -7,6 +7,7 @@ import type { Product } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/context/cart-context";
 import { cn } from "@/lib/utils";
+import { WatermarkImage } from "@/components/watermark-image";
 
 export function ProductCard({ product, variant = "default" }: { product: Product; variant?: "default" | "large" | "minimal" }) {
   const { toggleWishlist, isInWishlist } = useCart();
@@ -16,18 +17,24 @@ export function ProductCard({ product, variant = "default" }: { product: Product
     return (
       <Link href={`/product/${product.id}`} className="group block">
         <div className="relative aspect-[4/5] overflow-hidden bg-[#F5EFE6]">
-          <img src={product.image} alt={product.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]" />
-          <div className="absolute top-3 left-3 flex gap-2">
+          <WatermarkImage
+            src={product.image}
+            alt={product.name}
+            containerClassName="absolute inset-0 w-full h-full"
+            imageClassName="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+            watermarkSize="sm"
+          />
+          <div className="absolute top-3 left-3 flex gap-2 z-20">
             {product.featured && <span className="bg-[#2B1B12] text-white text-[10px] tracking-[0.14em] uppercase px-3 py-1.5">Featured</span>}
             {product.bestseller && <span className="bg-[#C2A47A] text-white text-[10px] tracking-[0.14em] uppercase px-3 py-1.5">Bestseller</span>}
           </div>
           <button
             onClick={(e) => { e.preventDefault(); toggleWishlist(product.id); }}
-            className="absolute top-3 right-3 w-9 h-9 grid place-items-center rounded-full bg-white/90 backdrop-blur hover:bg-white transition-colors"
+            className="absolute top-3 right-3 w-9 h-9 grid place-items-center rounded-full bg-white/90 backdrop-blur hover:bg-white transition-colors z-20"
           >
             <Heart className={cn("w-4 h-4", wished ? "fill-[#C2A47A] text-[#C2A47A]" : "text-[#2B1B12]")} strokeWidth={1.5} />
           </button>
-          <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#2B1B12]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#2B1B12]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-20">
             <span className="inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center">Quick View</span>
           </div>
         </div>
@@ -47,14 +54,20 @@ export function ProductCard({ product, variant = "default" }: { product: Product
   return (
     <Link href={`/product/${product.id}`} className="group block">
       <div className="relative aspect-[3/4] overflow-hidden bg-[#F5EFE6]">
-        <img src={product.image} alt={product.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700" />
+        <WatermarkImage
+          src={product.image}
+          alt={product.name}
+          containerClassName="absolute inset-0 w-full h-full"
+          imageClassName="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+          watermarkSize="sm"
+        />
         <button
           onClick={(e) => { e.preventDefault(); toggleWishlist(product.id); }}
-          className="absolute top-2.5 right-2.5 w-8 h-8 grid place-items-center rounded-full bg-white/90 backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute top-2.5 right-2.5 w-8 h-8 grid place-items-center rounded-full bg-white/90 backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity z-20"
         >
           <Heart className={cn("w-3.5 h-3.5", wished ? "fill-[#C2A47A] text-[#C2A47A]" : "text-[#2B1B12]")} strokeWidth={1.5} />
         </button>
-        {product.bestseller && <span className="absolute top-2.5 left-2.5 bg-[#2B1B12] text-white text-[9px] tracking-[0.14em] uppercase px-2 py-1">Bestseller</span>}
+        {product.bestseller && <span className="absolute top-2.5 left-2.5 bg-[#2B1B12] text-white text-[9px] tracking-[0.14em] uppercase px-2 py-1 z-20">Bestseller</span>}
       </div>
       <div className="pt-3">
         <div className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] truncate">{product.collection}</div>

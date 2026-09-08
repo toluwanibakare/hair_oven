@@ -3,6 +3,7 @@
 import { Reveal } from "@/components/reveal";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { WatermarkImage } from "@/components/watermark-image";
 
 export function FromAfrica() {
   return (
@@ -90,10 +91,12 @@ export function FromAfrica() {
                   transition={{ duration: 0.75, delay: 0.15 + idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   className="h-[120px] lg:h-[135px] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-sm bg-[#2B1B12] group"
                 >
-                  <img
+                  <WatermarkImage
                     src={item.src}
                     alt={item.alt}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    containerClassName="w-full h-full"
+                    imageClassName="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    watermarkSize="sm"
                   />
                 </motion.div>
               ))}
