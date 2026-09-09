@@ -97,6 +97,7 @@ export function FromAfrica() {
                     containerClassName="w-full h-full"
                     imageClassName="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     watermarkSize="sm"
+                    showWatermark={false}
                   />
                 </motion.div>
               ))}

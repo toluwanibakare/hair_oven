@@ -29,6 +29,7 @@ export function CaramelWave() {
                 containerClassName="w-full h-full"
                 imageClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 watermarkSize="lg"
+                showWatermark={false}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent pointer-events-none z-10" />
               

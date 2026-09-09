@@ -84,6 +84,7 @@ export function Collections() {
                   containerClassName="w-full h-full"
                   imageClassName={`w-full h-full object-cover ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
                   watermarkSize="md"
+                  showWatermark={false}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent pointer-events-none z-10" />
                 <div className="absolute bottom-4 left-6 text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold z-20">

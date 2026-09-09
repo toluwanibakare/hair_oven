@@ -55,7 +55,7 @@ export function HairOvenWoman() {
                   transition={{ delay: i * 0.06, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                   className="group relative aspect-[3/4] overflow-hidden bg-[#EDE6D6]"
                 >
-                  <WatermarkImage src={p.img} alt={p.label} containerClassName="absolute inset-0 w-full h-full" imageClassName="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700" watermarkSize="sm" />
+                  <WatermarkImage src={p.img} alt={p.label} containerClassName="absolute inset-0 w-full h-full" imageClassName="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700" watermarkSize="sm" showWatermark={false} />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/60 via-transparent to-transparent pointer-events-none z-10" />
                   <div className="absolute bottom-0 p-4 z-20">
                     <div className="text-white font-serif text-sm">{p.label}</div>
