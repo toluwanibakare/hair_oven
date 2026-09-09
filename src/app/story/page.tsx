@@ -198,47 +198,69 @@ export default function HousePage() {
 
       {/* Founder's Note Section */}
       <section className="bg-[#E0D5C5]/30 border-t border-[#2B1B12]/10 py-20 lg:py-28 font-serif overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-[900px] mx-auto px-6 lg:px-10 text-center"
-        >
-          <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold font-sans">
-            A NOTE FROM THE FOUNDER
-          </span>
-          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2B1B12] mt-3 font-light">
-            TO EVERY WOMAN WHO HAS BECOME PART OF OUR STORY
-          </h2>
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-5 relative aspect-[4/5] rounded-sm overflow-hidden bg-[#F5EFE6] border border-[#2B1B12]/10 shadow-xl"
+            >
+              <img
+                src="/founder.jpeg"
+                alt="Hannah Oluwatosin Ogundare"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#2B1B12]/70 to-transparent text-white font-serif">
+                <div className="text-xl">Hannah Oluwatosin Ogundare</div>
+                <div className="text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-sans mt-1">Founder, HAIR OVEN</div>
+              </div>
+            </motion.div>
 
-          <div className="mt-8 text-base lg:text-lg text-[#57534E] leading-8 space-y-6 text-left max-w-[760px] mx-auto font-serif">
-            <p>
-              When I look at HAIR OVEN, I don't simply see a luxury house.
-            </p>
-            <p>
-              I see the children whose hair I wove. I see my mother's hands. I hear my late father's words. I see the years of global travel, researching factories, testing qualities, and constantly asking one question: <em>"How do we give women the absolute best?"</em>
-            </p>
-            <p>
-              My greatest hope is that the woman who encounters this brand never feels like a transaction. I want her to feel seen. I want her to feel revered. Whether she is investing in exceptional raw hair, preparing for her wedding day, serving clients as a stylist, or simply looking in the mirror to feel extraordinary, she belongs here.
-            </p>
-            <p className="font-serif text-xl text-[#2B1B12] italic">
-              GOD was preparing the hands before revealing the assignment. HAIR OVEN is my response.
-            </p>
-            <p>
-              Thank you for trusting us. Thank you for believing in the standard. And thank you for becoming part of a story that began long before this House had a name.
-            </p>
-          </div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-7"
+            >
+              <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold font-sans block">
+                A NOTE FROM THE FOUNDER
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2B1B12] mt-3 font-light">
+                TO EVERY WOMAN WHO HAS BECOME PART OF OUR STORY
+              </h2>
 
-          <div className="mt-12 pt-8 border-t border-[#2B1B12]/10 inline-block text-center font-serif">
-            <div className="font-serif text-2xl text-[#2B1B12] tracking-wide">
-              Hannah OLUWATOSIN Ogundare
-            </div>
-            <div className="text-[11px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold mt-1 font-sans">
-              Founder, HAIR OVEN
-            </div>
+              <div className="mt-6 text-base lg:text-lg text-[#57534E] leading-8 space-y-5 font-serif">
+                <p>
+                  When I look at HAIR OVEN, I don't simply see a luxury house.
+                </p>
+                <p>
+                  I see the children whose hair I wove. I see my mother's hands. I hear my late father's words. I see the years of global travel, researching factories, testing qualities, and constantly asking one question: <em>"How do we give women the absolute best?"</em>
+                </p>
+                <p>
+                  My greatest hope is that the woman who encounters this brand never feels like a transaction. I want her to feel seen. I want her to feel revered. Whether she is investing in exceptional raw hair, preparing for her wedding day, serving clients as a stylist, or simply looking in the mirror to feel extraordinary, she belongs here.
+                </p>
+                <p className="font-serif text-xl text-[#2B1B12] italic">
+                  GOD was preparing the hands before revealing the assignment. HAIR OVEN is my response.
+                </p>
+                <p>
+                  Thank you for trusting us. Thank you for believing in the standard. And thank you for becoming part of a story that began long before this House had a name.
+                </p>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-[#2B1B12]/10 font-serif">
+                <div className="font-serif text-2xl text-[#2B1B12] tracking-wide">
+                  Hannah OLUWATOSIN Ogundare
+                </div>
+                <div className="text-[11px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold mt-1 font-sans">
+                  Founder, HAIR OVEN
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </section>
     </div>
   );
