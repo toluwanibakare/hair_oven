@@ -114,32 +114,6 @@ export default function HousePage() {
           </div>
         </motion.div>
 
-        {/* Ambient Video Showcase Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 36 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="relative aspect-[16/9] sm:aspect-[2.2/1] rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-2xl bg-[#2B1B12] group my-8"
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover opacity-60 pointer-events-none group-hover:scale-105 transition-transform duration-1000 ease-out"
-          >
-            <source src="/story_video.mp4" type="video/mp4" />
-            <source src="/story_video" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-[#2B1B12]/40" />
-          <div className="absolute inset-0 flex items-center justify-center p-8 text-center">
-            <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#FFFCF8] font-light max-w-[650px] leading-relaxed tracking-wide">
-              “Precision in the line. Patience in the work. Pride in the finish.”
-            </blockquote>
-          </div>
-        </motion.div>
-
         {/* 04. THE ASSIGNMENT */}
         <motion.div
           initial={{ opacity: 0, y: 36 }}
