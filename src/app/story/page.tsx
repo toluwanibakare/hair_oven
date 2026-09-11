@@ -8,18 +8,23 @@ import { ArrowRight, Sparkles, Heart } from "lucide-react";
 export default function HousePage() {
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
-      {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-36 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop"
-            alt="The House of Exceptional Hair"
-            className="w-full h-full object-cover"
-          />
+      {/* Hero Header with Autoplay Loop Video */}
+      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-28 lg:py-40 overflow-hidden">
+        <div className="absolute inset-0 opacity-45">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover pointer-events-none"
+          >
+            <source src="/story_video.mp4" type="video/mp4" />
+            <source src="/story_video" type="video/mp4" />
+          </video>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/50 to-[#2B1B12]/70" />
 
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center">
+        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center z-10">
           <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
             THE HOUSE MANIFESTO
           </span>
@@ -106,6 +111,32 @@ export default function HousePage() {
             <p>
               Decades ago, my late father would smile and joke that he could see me hiring a hairstylist and makeup artist from another country for my wedding. It was his loving way of describing my uncompromising standards. Today, those words carry the weight of prophecy. GOD allows memories from our past to make perfect sense only when we finally step into the future HE was preparing us for.
             </p>
+          </div>
+        </motion.div>
+
+        {/* Ambient Video Showcase Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="relative aspect-[16/9] sm:aspect-[2.2/1] rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-2xl bg-[#2B1B12] group my-8"
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-60 pointer-events-none group-hover:scale-105 transition-transform duration-1000 ease-out"
+          >
+            <source src="/story_video.mp4" type="video/mp4" />
+            <source src="/story_video" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-[#2B1B12]/40" />
+          <div className="absolute inset-0 flex items-center justify-center p-8 text-center">
+            <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#FFFCF8] font-light max-w-[650px] leading-relaxed tracking-wide">
+              “Precision in the line. Patience in the work. Pride in the finish.”
+            </blockquote>
           </div>
         </motion.div>
 
