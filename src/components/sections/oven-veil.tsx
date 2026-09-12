@@ -52,15 +52,15 @@ export function OvenVeil() {
             className="lg:col-span-6"
           >
             <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold block mb-2">
-              PROPRIETARY PRECISION
+              OUR SIGNATURE FINISHING PHILOSOPHY
             </span>
 
-            <h2 className="font-serif text-2xl sm:text-4xl lg:text-4xl xl:text-5xl text-white leading-[0.95] tracking-[-0.02em] font-light lg:whitespace-nowrap">
-              INTRODUCING OVEN VEIL™
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-4xl xl:text-5xl text-white leading-[0.95] tracking-[-0.02em] font-light">
+              OVEN VEIL™
             </h2>
 
             <p className="mt-6 text-sm lg:text-base text-[#E8DDC9]/80 leading-8">
-              The foundation of an undetectable finish. Oven Veil™ is HAIR OVEN’s proprietary, ultra-sheer lace technology. Engineered to mimic natural skin texture, it melts seamlessly upon contact with the scalp, offering an entirely invisible, weightless hairline that vanishes completely under any lighting or high-definition lens.
+              A considered approach to the transition between hair and wearer - designed to create an exceptionally natural appearance while preserving the movement and character of the hair.
             </p>
 
             {/* Editorial Spec List */}
@@ -76,10 +76,10 @@ export function OvenVeil() {
                   01
                 </div>
                 <h4 className="text-xs sm:text-sm tracking-[0.14em] uppercase font-semibold text-white">
-                  Micro-Bleached Knots
+                  How is a natural-looking finish achieved?
                 </h4>
                 <p className="text-[11px] sm:text-xs text-[#E8DDC9]/75 leading-5">
-                  Single-knotted hairline pre-plucked for true realism.
+                  Single-knotted hairline pre-plucked for true realism and seamless scalp integration.
                 </p>
               </motion.div>
 
@@ -94,10 +94,10 @@ export function OvenVeil() {
                   02
                 </div>
                 <h4 className="text-xs sm:text-sm tracking-[0.14em] uppercase font-semibold text-white">
-                  Universal Skin Melt
+                  Universal Complexion Blend
                 </h4>
                 <p className="text-[11px] sm:text-xs text-[#E8DDC9]/75 leading-5">
-                  Adapts seamlessly to warm, deep, and fair complexions.
+                  Ultra-sheer base designed to adapt harmoniously across warm, deep, and fair complexions.
                 </p>
               </motion.div>
             </div>
@@ -110,10 +110,10 @@ export function OvenVeil() {
               className="mt-10"
             >
               <Link
-                href="/heirloom-guide"
+                href="/oven-veil"
                 className="h-[50px] px-8 bg-[#D4AF37] text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white transition-colors"
               >
-                EXPLORE THE CRAFTSMANSHIP <ArrowRight className="w-4 h-4" />
+                DISCOVER OVEN VEIL™ <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
           </motion.div>

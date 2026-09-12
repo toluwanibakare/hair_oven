@@ -36,11 +36,11 @@ export function Footer() {
             </Link>
 
             <div>
-              <div className="font-serif text-lg text-[#2B1B12] font-medium">
-                THE HOUSE OF EXCEPTIONAL HAIR
+              <div className="font-serif text-xl text-[#2B1B12] font-normal tracking-wide">
+                HAIR OVEN
               </div>
-              <p className="text-xs text-[#57534E] leading-6 mt-1 max-w-[38ch]">
-                Exceptional hair. Uncompromising craftsmanship. Distinctly HAIR OVEN.
+              <p className="text-xs text-[#57534E] leading-6 mt-1 font-serif italic">
+                The House of Exceptional Hair.
               </p>
             </div>
 
@@ -115,53 +115,44 @@ export function Footer() {
           {/* Navigation Links Columns */}
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             
-            {/* Column 1: Shop */}
+            {/* Column 1: Collections */}
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
-                Shop Collections
+                Collections
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/collections/private" className="block hover:text-[#2B1B12] transition-colors">
-                  Private Collection (RAW)
+                  Private Collection
                 </Link>
                 <Link href="/collections/signature" className="block hover:text-[#2B1B12] transition-colors">
                   Signature Collection
                 </Link>
                 <Link href="/collections/essentials" className="block hover:text-[#2B1B12] transition-colors">
-                  Essentials Collection
-                </Link>
-                <Link href="/shop?cat=wigs" className="block hover:text-[#2B1B12] transition-colors">
-                  Luxury Wigs
+                  Essentials
                 </Link>
                 <Link href="/extensions" className="block hover:text-[#2B1B12] transition-colors">
-                  Hair Extensions
-                </Link>
-                <Link href="/shop?cat=tools" className="block hover:text-[#2B1B12] transition-colors">
-                  Tools & Care
+                  Extensions
                 </Link>
               </div>
             </div>
 
-            {/* Column 2: Atelier & Guidance */}
+            {/* Column 2: Atelier */}
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
-                Atelier & Guidance
+                Atelier
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/atelier" className="block hover:text-[#2B1B12] transition-colors">
-                  Atelier Commissions
+                  Custom Commissions
                 </Link>
                 <Link href="/atelier#consultation-form" className="block hover:text-[#2B1B12] transition-colors">
                   Private Appointments
                 </Link>
-                <Link href="/heirloom-guide" className="block hover:text-[#2B1B12] transition-colors">
-                  The Heirloom Guide
-                </Link>
-                <Link href="/heirloom-guide#bespoke-fit" className="block hover:text-[#2B1B12] transition-colors">
-                  Oven Veil™ Technology
+                <Link href="/oven-veil" className="block hover:text-[#2B1B12] transition-colors">
+                  Oven Veil™
                 </Link>
                 <Link href="/heirloom-guide#fit-policies" className="block hover:text-[#2B1B12] transition-colors">
-                  Cap Sizing Protocol
+                  Cap Sizing
                 </Link>
               </div>
             </div>
@@ -173,58 +164,77 @@ export function Footer() {
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/story" className="block hover:text-[#2B1B12] transition-colors">
-                  Our Story & Calling
+                  Our Story
                 </Link>
                 <Link href="/story#craftsmanship" className="block hover:text-[#2B1B12] transition-colors">
                   Our Standard
                 </Link>
+                <Link href="/story#provenance" className="block hover:text-[#2B1B12] transition-colors">
+                  Provenance
+                </Link>
                 <Link href="/wholesale" className="block hover:text-[#2B1B12] transition-colors">
                   The Trade Edit
-                </Link>
-                <Link href="/wholesale#enquiry-form" className="block hover:text-[#2B1B12] transition-colors">
-                  Volume Supply & MOQs
-                </Link>
-                <Link href="/contact" className="block hover:text-[#2B1B12] transition-colors">
-                  Client Support & Contact
                 </Link>
               </div>
             </div>
 
-            {/* Column 4: Newsletter */}
-            <div className="col-span-2 md:col-span-1">
+            {/* Column 4: Client Care & Newsletter */}
+            <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
-                Stay Connected
+                Client Care
               </div>
-              <div className="font-serif text-base text-[#2B1B12] mb-1">
-                THE HOUSE, IN YOUR INBOX.
+              <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium mb-6">
+                <Link href="/heirloom-guide" className="block hover:text-[#2B1B12] transition-colors">
+                  Heirloom Guide
+                </Link>
+                <Link href="/heirloom-guide#journey" className="block hover:text-[#2B1B12] transition-colors">
+                  Shipping & Delivery
+                </Link>
+                <Link href="/heirloom-guide#standard" className="block hover:text-[#2B1B12] transition-colors">
+                  Exchanges & Return Standard
+                </Link>
+                <Link href="/contact" className="block hover:text-[#2B1B12] transition-colors">
+                  Contact Concierge
+                </Link>
               </div>
-              <p className="text-[11px] leading-5 text-[#57534E] mb-4">
-                Receive exclusive new collection announcements, private rare unit releases, and elegant updates from the Founder.
-              </p>
-
-              {subscribed ? (
-                <div className="text-xs text-[#B8860B] font-semibold bg-white p-3 border border-[#2B1B12]/15">
-                  Welcome to The House. Thank you for subscribing.
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex border border-[#2B1B12]/20 bg-white focus-within:border-[#B8860B] transition-colors w-full">
-                  <input 
-                    type="email" 
-                    required
-                    placeholder="Email address" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 min-w-0 bg-transparent px-3 py-2.5 text-xs text-[#2B1B12] placeholder:text-[#2B1B12]/40 outline-none" 
-                  />
-                  <button type="submit" className="px-4 shrink-0 text-[10px] tracking-[0.16em] uppercase bg-[#2B1B12] text-[#E0D5C5] hover:bg-[#B8860B] transition-colors font-semibold">
-                    Join
-                  </button>
-                </form>
-              )}
             </div>
 
           </div>
 
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="py-8 border-b border-[#2B1B12]/15 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-1">
+              PRIVATE NOTES FROM THE HOUSE
+            </div>
+            <p className="text-xs text-[#57534E]">
+              Receive first access to private releases, new collections and Atelier announcements.
+            </p>
+          </div>
+
+          <div className="w-full md:w-auto min-w-[300px]">
+            {subscribed ? (
+              <div className="text-xs text-[#B8860B] font-semibold bg-white p-3 border border-[#2B1B12]/15">
+                Welcome to The House. Thank you for subscribing.
+              </div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex border border-[#2B1B12]/20 bg-white focus-within:border-[#B8860B] transition-colors w-full">
+                <input 
+                  type="email" 
+                  required
+                  placeholder="EMAIL" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 min-w-0 bg-transparent px-3 py-2.5 text-xs text-[#2B1B12] placeholder:text-[#2B1B12]/40 outline-none uppercase" 
+                />
+                <button type="submit" className="px-6 shrink-0 text-[10px] tracking-[0.16em] uppercase bg-[#2B1B12] text-[#E0D5C5] hover:bg-[#B8860B] transition-colors font-semibold">
+                  JOIN
+                </button>
+              </form>
+            )}
+          </div>
         </div>
 
         {/* Lower Footer Bottom Bar */}

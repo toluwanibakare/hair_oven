@@ -19,14 +19,13 @@ export function PrivateAtelier() {
       <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-6">
           <div className="text-[10px] tracking-[0.22em] uppercase text-[#D4AF37] font-semibold">
-            THE ATELIER | A PRIVATE COMMISSION
+            THE ATELIER
           </div>
           <h2 className="font-serif text-[36px] lg:text-[52px] leading-[0.9] tracking-[-0.02em] mt-3 font-light">
-            Created<br />
-            <span className="italic font-normal text-[#E8DDC9]">strictly for your silhouette.</span>
+            Made for one.
           </h2>
-          <p className="text-sm leading-7 text-white/70 mt-6 max-w-[48ch]">
-            An exclusive invitation to bring your ultimate vision to life. A private creation experience where architecture, density, texture, and our proprietary Oven Veil™ technology are tailored strictly to your silhouette.
+          <p className="text-sm lg:text-base leading-7 text-white/80 mt-6 max-w-[48ch]">
+            A private commission is created around the individual - not selected from a shelf. From hair selection and cap architecture to length, density, colour and finish, each element is considered in consultation with the client.
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-3 max-w-[420px]">
@@ -53,18 +52,18 @@ export function PrivateAtelier() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/atelier"
-              className="h-11 px-8 bg-[#D4AF37] text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-semibold hover:bg-white transition-colors"
+              href="/atelier#consultation-form"
+              className="h-11 px-6 bg-[#D4AF37] text-[#2B1B12] inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold hover:bg-white transition-colors"
             >
-              Enter The Atelier →
+              REQUEST AN ATELIER COMMISSION
             </Link>
             <a
               href="https://wa.me/2348057388171"
               target="_blank"
               rel="noopener noreferrer"
-              className="h-11 px-8 border border-white/20 inline-flex items-center text-[11px] tracking-[0.16em] uppercase hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors"
+              className="h-11 px-6 border border-white/20 inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors"
             >
-              Request WhatsApp Concierge
+              BOOK A PRIVATE APPOINTMENT
             </a>
           </div>
 

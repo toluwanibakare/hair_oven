@@ -1,152 +1,230 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Shield, Sparkles, Truck, Heart, Ruler, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { ChevronDown, Sparkles, ShieldCheck } from "lucide-react";
 
-const heirloomSections = [
+interface GuideTopic {
+  title: string;
+  content: string;
+}
+
+interface GuideSection {
+  numeral: string;
+  title: string;
+  topics: GuideTopic[];
+}
+
+const heirloomKnowledge: GuideSection[] = [
   {
-    id: "craftsmanship",
-    title: "I. THE CRAFTSMANSHIP & RESERVES",
-    icon: Shield,
-    qa: [
+    numeral: "I",
+    title: "THE HAIR",
+    topics: [
       {
-        q: "What defines the HAIR OVEN standard?",
-        a: "Excellence is never accidental. Our hair is defined by uncompromising donor selection, natural cuticle alignment, dense weight distribution, and flawless structural integrity. Each piece undergoes rigorous evaluation before receiving the HAIR OVEN stamp of authenticity.",
+        title: "Provenance",
+        content: "Every strand within our Private and Signature collections is ethically sourced directly from single donors across Southeast Asia and East Asia. We maintain rigorous procurement protocols ensuring donors are compensated fairly, while preserving the raw, unrefined strength of virgin hair.",
       },
       {
-        q: "How do the collections differ in longevity?",
-        a: "Longevity is directly tied to the purity and origin of the hair:\n\n• The Private Collection (RAW Reserve): Entirely unprocessed single-donor hair with fully intact cuticles. With proper care, this specific collection lasts a lifetime. It is preserved as a permanent heirloom investment.\n• The Signature Collection: Exceptional, high-density virgin hair designed for long-term luxury (2 to 3+ years) under daily wear and versatile restyling.\n• The Essentials Collection: High-quality human hair crafted for dependable beauty and effortless rotation.",
+        title: "Donor Selection",
+        content: "Only 1 in 100 hair bundles evaluated meets the stringent criteria required for HAIR OVEN. Strands are hand-inspected for natural elasticity, uniform strand strength, and rich, natural pigments without prior chemical processing.",
       },
       {
-        q: "Can the hair undergo custom chemical processing?",
-        a: "Indubitably. Both our Private Collection and Signature Collection possess intact cuticles, allowing seamless lifting, custom bleaching, and specific colour transformation by a master colourist without sacrificing structural integrity.",
+        title: "Cuticle Integrity",
+        content: "Absolute cuticle alignment from root to tip is the cornerstone of structural longevity. By keeping cuticles intact and running in one direction, HAIR OVEN creations resist matting and tangling across years of wear.",
+      },
+      {
+        title: "Density & Weight",
+        content: "We map density with meticulous weight distribution. Rather than overloading the crown, hair is woven to achieve realistic volume, natural bounce, and effortless movement that mimics natural scalp growth.",
+      },
+      {
+        title: "Collection Standards",
+        content: "Our House operates across three distinct collections: The Private Collection (unprocessed single-donor raw reserve for lifetime investment), The Signature Collection (exceptional high-density virgin hair), and Essentials (the everyday expression of the House).",
       },
     ],
   },
   {
-    id: "bespoke-fit",
-    title: "II. ATELIER COMMISSIONS & PROPRIETARY FIT",
-    icon: Sparkles,
-    qa: [
+    numeral: "II",
+    title: "THE CRAFT",
+    topics: [
       {
-        q: "What is Oven Veil™?",
-        a: "Oven Veil™ is HAIR OVEN’s proprietary, ultra-sheer lace technology. Designed to mimic natural skin texture and melting seamlessly upon contact, it offers an entirely invisible, weightless hairline that vanishes completely under any lighting or HD lens.",
+        title: "Construction",
+        content: "Each unit is hand-constructed by master wigmakers. Internal stitch lines are flat-tacked to eliminate bulk, maintaining a sleek profile against your scalp while ensuring superior durability.",
       },
       {
-        q: "How is an undetectable finish guaranteed?",
-        a: "Every HAIR OVEN unit is built exclusively with our Oven Veil™ base, hand-tied strands, and expertly pre-plucked natural hairlines. Internal adjustable banding ensures a custom-molded fit tailored exactly to your silhouette.",
-      },
-    ],
-  },
-  {
-    id: "logistics",
-    title: "III. LOGISTICS & FULFILLMENT",
-    icon: Truck,
-    qa: [
-      {
-        q: "What is your global delivery reach?",
-        a: "We serve an international clientele with white-glove courier delivery within Lagos, prioritized nationwide dispatch across Nigeria, and insured express global shipping worldwide.",
+        title: "Oven Veil™",
+        content: "Oven Veil™ is HAIR OVEN's proprietary finishing philosophy and sheer base material. Designed to harmonize seamlessly across warm, deep, and fair complexions, it creates a subtle, weightless transition between hair and skin.",
       },
       {
-        q: "What are the expected fulfillment timelines?",
-        a: "• Ready-to-Wear & Bundles: Dispatched within 24–72 business hours following quality verification.\n• RAW & Atelier Masterpieces: Require 7–14 business days of meticulous crafting, custom hairline tailoring, and QA assessment prior to dispatch.",
+        title: "Finishing",
+        content: "Hairlines are hand-trimmed and pre-plucked with delicate single knots along the perimeter. This multi-step process eliminates harsh edges, allowing versatile styling in high ponytails or swept-back looks.",
+      },
+      {
+        title: "Customisation",
+        content: "From custom color lifting executed without compromising structural integrity to bespoke density mapping, our Atelier craftsmen tailor every detail strictly to your specification.",
+      },
+      {
+        title: "Atelier Standards",
+        content: "Private Atelier commissions undergo a 7 to 14 business day creation window. Every creation undergoes a rigorous 12-point quality assessment before dispatch.",
       },
     ],
   },
   {
-    id: "maintenance",
-    title: "IV. PROVENANCE & INVESTMENT MAINTENANCE",
-    icon: Heart,
-    qa: [
+    numeral: "III",
+    title: "THE FIT",
+    topics: [
       {
-        q: "Where is HAIR OVEN hair ethically sourced?",
-        a: "Our hair is ethically collected directly from single donors across Southeast Asia and East Asia. We maintain strict ethical procurement standards, ensuring full compensation for donors while preserving the unrefined purity and natural strength of each strand.",
+        title: "Cap Architecture",
+        content: "Engineered with breathable luxury mesh, internal silicone non-slip grips, and custom-molded elastic tension bands that conform softly to your cranial outline.",
       },
       {
-        q: "How do I properly store and preserve my unit?",
-        a: "To ensure multi-year and lifetime longevity, store your unit inside the complimentary HAIR OVEN Silk Preservation Bag or on a satin mannequin head when not in use. Keep the hair hydrated with lightweight, sulfate-free oils and avoid excessive direct heat without thermal protection.",
+        title: "Measurements",
+        content: "Achieving flawless fit requires measuring 6 key cranial points: Circumference, Front to Nape, Ear to Ear across forehead, Ear to Ear over top, Temple to Temple round back, and Nape width.",
+      },
+      {
+        title: "Sizing",
+        content: "Ready-to-Wear pieces are available in Small (21.5\"), Medium (22.5\"), and Large (23.5\"). Custom Atelier commissions are built around your exact 3D measurement profile.",
+      },
+      {
+        title: "Private Fittings",
+        content: "Clients may request in-person fitting consultations at our Lagos studio, London appointments, or virtual video guidance led by our Senior Client Concierge.",
       },
     ],
   },
   {
-    id: "fit-policies",
-    title: "V. FIT PRECISION & POLICIES",
-    icon: Ruler,
-    qa: [
+    numeral: "IV",
+    title: "THE JOURNEY",
+    topics: [
       {
-        q: "How do I select the correct cap size for Ready-to-Wear units?",
-        a: "We offer standard Small (21.5\"), Medium (22.5\"), and Large (23.5\") cap sizes, all equipped with internal adjustable security bands. If you require assistance, our Client Concierge provides a step-by-step measurement guide.",
+        title: "Order Preparation",
+        content: "Following placement, every unit is prepared, cleansed with botanical formulations, air-dried, and hand-inspected under high-definition lighting prior to luxury packaging.",
       },
       {
-        q: "What is your exchange protocol for luxury units?",
-        a: "Due to the personal nature of luxury hair craftsmanship, all custom Atelier pieces are final sale. For Ready-to-Wear and Signature collections, we accept exchanges within 7 days of delivery, provided the security seal remains intact and the Oven Veil™ lace has not been cut, coloured, or altered.",
+        title: "Fulfilment",
+        content: "Ready-to-Wear orders are dispatched within 24–72 business hours. Custom Atelier pieces require a 7 to 14 business day craftsmanship window.",
+      },
+      {
+        title: "International Delivery",
+        content: "We partner with premium insured global couriers (DHL Express & FedEx International Priority) to ensure secure, tracked delivery to over 140 countries.",
+      },
+      {
+        title: "Private Concierge",
+        content: "Your dedicated Concierge is accessible via WhatsApp and email to provide live shipping updates, delivery scheduling, and personalized unboxing guidance.",
+      },
+    ],
+  },
+  {
+    numeral: "V",
+    title: "THE PRESERVATION",
+    topics: [
+      {
+        title: "Washing & Care",
+        content: "Cleanse every 15–20 wears using sulfate-free, moisture-rich shampoos. Lather gently downward from crown to ends without scrubbing or bunching the hair.",
+      },
+      {
+        title: "Storage",
+        content: "When not in wear, store your piece inside the complimentary HAIR OVEN Silk Preservation Bag or on a padded mannequin head away from direct sunlight and humidity.",
+      },
+      {
+        title: "Maintenance",
+        content: "Apply light botanical oils or silk serums to preserve moisture. Always apply heat protectant before using hot styling tools above 180°C (350°F).",
+      },
+      {
+        title: "Restoration",
+        content: "The House offers specialized restoration services for long-time clients, including lace repair, re-plucking, deep hydration treatments, and tone refresh.",
+      },
+      {
+        title: "Long-Term Preservation",
+        content: "With proper adherence to House care protocols, pieces from our Private Collection endure for years, retaining their natural luster, soft texture, and movement.",
+      },
+    ],
+  },
+  {
+    numeral: "VI",
+    title: "THE HOUSE STANDARD",
+    topics: [
+      {
+        title: "Authenticity",
+        content: "Every HAIR OVEN creation includes a embossed Certificate of Authenticity featuring a unique serial number verifying donor provenance and quality clearance.",
+      },
+      {
+        title: "Exchange Policy",
+        content: "Ready-to-Wear pieces may be exchanged within 7 days of receipt provided the hygiene seal remains intact and the lace is uncut and unaltered. Bespoke Atelier creations are final sale.",
+      },
+      {
+        title: "Client Care",
+        content: "Our commitment extends far beyond purchase. We offer lifetime client advisory on maintenance, restyling, and seasonal care routines.",
+      },
+      {
+        title: "Aftercare",
+        content: "Every purchase includes our physical Heirloom Guide booklet detailing step-by-step care guidelines tailored specifically to your chosen collection.",
       },
     ],
   },
 ];
 
 export default function HeirloomGuidePage() {
-  const [openItems, setOpenItems] = useState<Record<string, boolean>>({ "0-0": true });
+  const [openTopic, setOpenTopic] = useState<string | null>("I-0");
 
-  const toggleQA = (key: string) => {
-    setOpenItems((prev) => ({ ...prev, [key]: !prev[key] }));
+  const toggleTopic = (key: string) => {
+    setOpenTopic((prev) => (prev === key ? null : key));
   };
 
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
       {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-36 overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
             src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1600&auto=format&fit=crop"
-            alt="Heirloom Guide"
+            alt="The Heirloom Guide Header"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-transparent to-transparent" />
 
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center">
-          <span className="text-[10px] tracking-[0.24em] uppercase text-[#D4AF37] font-semibold">
-            CLIENT CARE & KNOWLEDGE HUB
+          <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
+            THE KNOWLEDGE BEHIND THE HOUSE.
           </span>
           <h1 className="font-serif text-[42px] sm:text-[60px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light max-w-[900px] mx-auto">
             THE HEIRLOOM GUIDE
           </h1>
-          <p className="mt-4 text-xs sm:text-sm tracking-[0.2em] uppercase text-[#E8DDC9]/70 font-medium">
-            PRESERVATION, PROVENANCE, AND PROPRIETARY FIT.
+          <p className="mt-4 text-xs sm:text-sm tracking-[0.18em] uppercase text-[#E8DDC9]/80 font-medium">
+            From provenance to preservation, every detail matters.
           </p>
         </div>
       </section>
 
-      {/* Guide Content */}
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-16 lg:py-24 space-y-16">
-        {heirloomSections.map((section, sIdx) => {
-          const Icon = section.icon;
-          return (
-            <div key={section.id} className="border-b border-[#2B1B12]/10 pb-12 last:border-0">
-              <div className="flex items-center gap-3 mb-6">
-                <Icon className="w-6 h-6 text-[#B8860B]" />
+      {/* Guide Content Architecture */}
+      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
+        <div className="space-y-16">
+          {heirloomKnowledge.map((sec, sIdx) => (
+            <div key={sec.numeral} className="border-b border-[#2B1B12]/10 pb-12 last:border-0">
+              <div className="flex items-baseline gap-4 mb-6">
+                <span className="font-serif text-2xl lg:text-3xl text-[#B8860B] font-light">
+                  {sec.numeral}
+                </span>
                 <h2 className="font-serif text-2xl lg:text-3xl text-[#2B1B12] font-medium tracking-tight">
-                  {section.title}
+                  {sec.title}
                 </h2>
               </div>
 
-              <div className="space-y-4">
-                {section.qa.map((item, qIdx) => {
-                  const key = `${sIdx}-${qIdx}`;
-                  const isOpen = !!openItems[key];
+              <div className="space-y-3">
+                {sec.topics.map((topic, tIdx) => {
+                  const key = `${sec.numeral}-${tIdx}`;
+                  const isOpen = openTopic === key;
                   return (
                     <div
-                      key={item.q}
+                      key={topic.title}
                       className="border border-[#2B1B12]/10 bg-white rounded-sm overflow-hidden"
                     >
                       <button
-                        onClick={() => toggleQA(key)}
-                        className="w-full text-left p-6 flex justify-between items-center gap-4 hover:bg-[#F5EFE6]/50 transition-colors"
+                        onClick={() => toggleTopic(key)}
+                        className="w-full text-left p-5 sm:p-6 flex justify-between items-center gap-4 hover:bg-[#EDE6D6]/30 transition-colors"
                       >
-                        <span className="font-serif text-lg text-[#2B1B12]">{item.q}</span>
+                        <span className="font-serif text-base sm:text-lg text-[#2B1B12] font-medium">
+                          {topic.title}
+                        </span>
                         <ChevronDown
                           className={`w-4 h-4 text-[#B8860B] transition-transform duration-300 ${
                             isOpen ? "rotate-180" : ""
@@ -155,8 +233,8 @@ export default function HeirloomGuidePage() {
                       </button>
 
                       {isOpen && (
-                        <div className="px-6 pb-6 pt-2 text-xs sm:text-sm text-[#57534E] leading-7 whitespace-pre-line border-t border-[#2B1B12]/05">
-                          {item.a}
+                        <div className="px-5 sm:px-6 pb-6 pt-2 text-xs sm:text-sm text-[#57534E] leading-7 border-t border-[#2B1B12]/05">
+                          {topic.content}
                         </div>
                       )}
                     </div>
@@ -164,21 +242,21 @@ export default function HeirloomGuidePage() {
                 })}
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </section>
 
       {/* Concierge Banner */}
       <section className="bg-[#E0D5C5]/30 border-t border-[#2B1B12]/10 py-16 text-center">
         <div className="max-w-[700px] mx-auto px-6">
           <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
-            CLIENT CONCIERGE
+            PRIVATE CONCIERGE
           </span>
           <h3 className="font-serif text-2xl lg:text-3xl text-[#2B1B12] mt-2">
-            Require Further Guidance?
+            Require Assistance Selecting Your Piece?
           </h3>
           <p className="text-xs sm:text-sm text-[#57534E] mt-3 leading-6">
-            Our Client Concierge is available for virtual consultations, cap measurement support, and custom preservation advice.
+            Our Senior Concierge is available for virtual consultations, cap sizing guidance, and custom preservation advice.
           </p>
           <div className="mt-6 flex justify-center gap-4 text-xs tracking-[0.14em] uppercase font-semibold">
             <a
@@ -187,14 +265,8 @@ export default function HeirloomGuidePage() {
               rel="noopener noreferrer"
               className="px-8 py-3.5 bg-[#2B1B12] text-[#FFFCF8] hover:bg-[#B8860B] transition-colors"
             >
-              WhatsApp Concierge
+              SPEAK WITH A CONCIERGE
             </a>
-            <Link
-              href="/atelier"
-              className="px-8 py-3.5 border border-[#2B1B12]/20 text-[#2B1B12] hover:bg-[#2B1B12] hover:text-white transition-colors"
-            >
-              Atelier Commissions
-            </Link>
           </div>
         </div>
       </section>

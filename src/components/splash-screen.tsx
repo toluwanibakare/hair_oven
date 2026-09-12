@@ -76,7 +76,7 @@ export function SplashScreen() {
             transition={{ delay: 0.2, duration: 0.3 }}
             className="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase text-[#2B1B12] font-semibold z-10 text-center px-4"
           >
-            THE APEX OF EXCEPTIONAL HAIR
+            THE HOUSE OF EXCEPTIONAL HAIR
           </motion.div>
         </motion.div>
       )}

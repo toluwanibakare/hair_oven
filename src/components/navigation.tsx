@@ -62,10 +62,10 @@ export function Navigation() {
       {/* Announcement Bar */}
       <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2 sm:py-2.5 px-3 sm:px-4 text-[10px] sm:text-xs tracking-[0.14em] sm:tracking-[0.18em] uppercase font-medium border-b border-[#E8DDC9]/10 overflow-hidden">
         <span className="sm:hidden block truncate whitespace-nowrap">
-          <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • ATELIER COMMISSIONS OPEN
+          <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • PRIVATE CONCIERGE & ATELIER COMMISSIONS OPEN
         </span>
         <span className="hidden sm:block">
-          <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • Website build in progress, launching soon • Private Concierge & Atelier Commissions Open
+          <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • Private Concierge & Atelier Commissions Open
         </span>
       </div>
 
@@ -153,11 +153,7 @@ export function Navigation() {
         </div>
 
         {/* Desktop Category Navigation Bar */}
-        <nav className="hidden lg:flex items-center justify-center gap-7 py-3 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
-          <Link href="/shop?filter=new" className="hover:text-[#B8860B] transition-colors py-1">
-            NEW IN
-          </Link>
-
+        <nav className="hidden lg:flex items-center justify-center gap-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
           {/* COLLECTIONS Dropdown Menu */}
           <div
             className="relative"
@@ -169,7 +165,7 @@ export function Navigation() {
                 collectionsOpen ? "text-[#B8860B]" : "hover:text-[#B8860B]"
               }`}
             >
-              THE COLLECTIONS{" "}
+              COLLECTIONS{" "}
               <ChevronDown
                 className={`w-3 h-3 transition-transform duration-300 ${collectionsOpen ? "rotate-180" : "rotate-0"}`}
               />
@@ -182,60 +178,63 @@ export function Navigation() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.98 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[640px] bg-[#FFFCF8] border border-[#2B1B12]/15 shadow-[0_16px_48px_rgba(43,27,18,0.12)] p-6 grid grid-cols-2 gap-4 rounded-sm z-50"
+                  className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[540px] bg-[#FFFCF8] border border-[#2B1B12]/15 shadow-[0_16px_48px_rgba(43,27,18,0.12)] p-5 grid grid-cols-2 gap-3 rounded-sm z-50"
                 >
-                  {collectionsDropdown.map((col) => (
-                    <Link
-                      key={col.title}
-                      href={col.href}
-                      onClick={() => setCollectionsOpen(false)}
-                      className="group p-4 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
-                    >
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold">
-                          {col.badge}
-                        </span>
-                        <ChevronRight className="w-3.5 h-3.5 text-[#2B1B12]/40 group-hover:text-[#B8860B] group-hover:translate-x-1 transition-all" />
-                      </div>
-                      <div className="font-serif text-base text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">
-                        {col.title}
-                      </div>
-                      <div className="text-[11px] text-[#57534E] mt-1 leading-4 normal-case font-normal">
-                        {col.tagline}
-                      </div>
-                    </Link>
-                  ))}
+                  <Link
+                    href="/collections/private"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
+                  >
+                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">RAW Reserve</div>
+                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Private Collection</div>
+                  </Link>
+                  <Link
+                    href="/collections/signature"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
+                  >
+                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">House Signatures</div>
+                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Signature Collection</div>
+                  </Link>
+                  <Link
+                    href="/collections/essentials"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
+                  >
+                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Everyday Luxury</div>
+                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Essentials</div>
+                  </Link>
+                  <Link
+                    href="/extensions"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
+                  >
+                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Hair Extensions</div>
+                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Extensions</div>
+                  </Link>
+                  <Link
+                    href="/shop?cat=tools"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm col-span-2"
+                  >
+                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Care & Maintenance</div>
+                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Hair Tools & Care</div>
+                  </Link>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          <Link href="/shop?cat=wigs" className="hover:text-[#B8860B] transition-colors py-1">
-            WIGS
-          </Link>
-
-          <Link href="/extensions" className="hover:text-[#B8860B] transition-colors py-1">
-            EXTENSIONS
-          </Link>
-
           <Link href="/atelier" className="hover:text-[#B8860B] transition-colors py-1">
-            THE ATELIER
-          </Link>
-
-          <Link href="/shop?cat=tools" className="hover:text-[#B8860B] transition-colors py-1">
-            TOOLS & CARE
-          </Link>
-
-          <Link href="/wholesale" className="hover:text-[#B8860B] transition-colors py-1">
-            THE TRADE EDIT
-          </Link>
-
-          <Link href="/heirloom-guide" className="hover:text-[#B8860B] transition-colors py-1">
-            THE HEIRLOOM GUIDE
+            ATELIER
           </Link>
 
           <Link href="/story" className="hover:text-[#B8860B] transition-colors py-1">
             THE HOUSE
+          </Link>
+
+          <Link href="/heirloom-guide" className="hover:text-[#B8860B] transition-colors py-1">
+            HEIRLOOM GUIDE
           </Link>
         </nav>
       </header>

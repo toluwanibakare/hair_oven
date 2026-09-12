@@ -37,13 +37,13 @@ export function Founder() {
             <Reveal delay={0.12}>
               <div className="mt-6 space-y-4 text-[15px] leading-7 text-[#57534E] font-light max-w-[58ch]">
                 <p>
-                  As a child, I would weave the hair of children around my neighbourhood. My mother plaited my hair with precision. I once travelled long distances to have my cornrows done by a woman whose craftsmanship left me in awe - neatness, patience, attention to detail.
+                  I was a young girl learning the intricate architecture of hair from my mother. I was a teenager traveling miles just to witness the flawless execution of a master artisan. These moments forged an early, deep-seated appreciation for neatness, patience, and uncompromising detail.
                 </p>
                 <p>
-                  My late father once told me: <em className="text-[#2B1B12] font-serif italic">“I can imagine what you’ll be like on your wedding day.”</em> He imagined me hiring stylists and makeup artists from other countries. Years later, those words became part of a larger story.
+                  My late father understood this standard implicitly. He once mused that I would one day fly in international stylists for my own wedding, knowing I would accept nothing short of the extraordinary.
                 </p>
                 <p>
-                  After graduating with a 2:1 in Economics from an American university and years as an entrepreneur, I asked GOD to direct me toward what I was meant to build. That prayer led to HAIR OVEN - born through faith, passion, craftsmanship and a desire to create something meaningful in the world of hair.
+                  Bridging an American education in Economics with years of entrepreneurial experience, I asked GOD to reveal the empire I was meant to build. HAIR OVEN is the realization of that prayer - an exclusive sanctuary where passion meets masterful craftsmanship to create rare artifacts of beauty.
                 </p>
               </div>
               <div className="mt-8 border-l-2 border-[#C2A47A] pl-6">

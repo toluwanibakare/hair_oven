@@ -27,7 +27,7 @@ export const collections = [
     subtitle: "Raw Reserve",
     tagline: "THE HEIRLOOM INVESTMENT",
     description:
-      "Entirely unprocessed single-donor hair with fully intact cuticles. The ultimate heirloom - a lifetime companion.",
+      "An uncompromised single-origin reserve, preserved with absolute cuticle alignment, each creation is meticulously selected for its distinctive character and flawless integrity. A rare artifact of beauty, crafted to endure a lifetime.",
     accent: "Lifetime",
     years: "LIFETIME",
     color: "#2B1B12",
@@ -40,7 +40,7 @@ export const collections = [
     subtitle: "Signature",
     tagline: "LONG-TERM LUXURY",
     description:
-      "Exceptional high-density virgin hair designed for long-term luxury. Refined, resilient, remarkable.",
+      "The threshold of the absolute. Reserved exclusively for those who recognize that true distinction needs no announcement. Curated for immaculate density, fluid movement, and peerless structural longevity. Nothing rushed. Nothing overlooked. An effortless, commanding presence designed not merely to be worn, but to become entirely your own.",
     accent: "2 to 3+ Years",
     years: "2 to 3+ YEARS",
     color: "#3D2314",

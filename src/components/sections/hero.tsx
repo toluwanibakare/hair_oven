@@ -34,47 +34,40 @@ export function Hero() {
             className="flex items-center gap-2.5 text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.22em] uppercase text-white/80 mb-2 sm:mb-4"
           >
             <span className="h-px w-6 sm:w-8 bg-[#C2A47A]" />
-            Born in Africa • Worn around the world
+            BORN IN AFRICA • WORN AROUND THE WORLD
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="font-serif text-[28px] sm:text-[52px] lg:text-[72px] leading-[1.05] sm:leading-[0.92] tracking-[-0.03em] text-white font-light"
+            className="font-serif text-[32px] sm:text-[56px] lg:text-[76px] leading-[1.02] sm:leading-[0.92] tracking-[-0.03em] text-white font-light"
           >
-            <span className="block font-light tracking-[0.16em] text-[10px] sm:text-[12px] mb-3 sm:mb-5 text-[#E8DDC9]">HAIR OVEN</span>
-            <span className="block">Exceptional hair.</span>
-            <span className="block italic font-normal text-[#E8DDC9]">Extraordinary you.</span>
+            <span className="block font-light tracking-[0.2em] text-[11px] sm:text-[13px] mb-3 sm:mb-5 text-[#E8DDC9]">HAIR OVEN</span>
+            <span className="block">Hair, held to a higher standard.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-2.5 sm:mt-4 text-[13px] sm:text-[15px] leading-5 sm:leading-7 text-white/80 sm:text-white/70 max-w-[48ch] font-light"
+            className="mt-3 sm:mt-4 text-[13px] sm:text-[15px] leading-5 sm:leading-7 text-white/80 max-w-[48ch] font-light"
           >
-            Where beauty meets the art of hair. A luxury house built on faith, craftsmanship and the belief that every woman deserves to feel beautiful.
+            Exceptional hair. Considered craftsmanship. A private standard.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75 }}
-            className="mt-4 sm:mt-6 flex flex-wrap gap-2.5 sm:gap-3"
+            className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4"
           >
-            <Link href="/shop" className="h-[42px] sm:h-[46px] px-5 sm:px-7 bg-white text-[#2B1B12] inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold sm:font-medium hover:bg-[#E8DDC9] transition-colors">
-              Shop the Collection <span className="ml-2">→</span>
+            <Link href="/shop" className="h-[46px] sm:h-[50px] px-6 sm:px-8 bg-white text-[#2B1B12] inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#E8DDC9] transition-colors shadow-lg">
+              EXPLORE THE COLLECTIONS
             </Link>
-            <Link href="/story" className="h-[42px] sm:h-[46px] px-5 sm:px-7 border border-white/30 text-white inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold sm:font-medium backdrop-blur hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
-              Discover Our Story
+            <Link href="/atelier" className="h-[46px] sm:h-[50px] px-6 sm:px-8 border border-white/40 text-white inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.18em] uppercase font-semibold backdrop-blur-md hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
+              ENTER THE ATELIER
             </Link>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.8 }} className="mt-4 sm:mt-8 flex items-center gap-4 sm:gap-6 text-[9px] sm:text-[10px] tracking-[0.14em] sm:tracking-[0.16em] uppercase text-white/60">
-            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#C2A47A]" /> Oven Veil™ • The invisible hairline</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="hidden sm:inline">Bespoke atelier available</span>
           </motion.div>
         </div>
 
