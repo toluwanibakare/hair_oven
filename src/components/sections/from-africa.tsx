@@ -4,29 +4,31 @@ import { Reveal } from "@/components/reveal";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { WatermarkImage } from "@/components/watermark-image";
+import { useLanguage } from "@/context/language-context";
 
 export function FromAfrica() {
+  const { t } = useLanguage();
   return (
     <section className="bg-[#FDF8F0] py-16 lg:py-24 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6">
             <Reveal>
-              <div className="text-[10px] tracking-[0.22em] uppercase text-[#A68B5B]">Global Vision</div>
+              <div className="text-[10px] tracking-[0.22em] uppercase text-[#A68B5B]">{t.africa.eyebrow}</div>
               <h2 className="font-serif text-[38px] lg:text-[52px] leading-[0.9] tracking-[-0.02em] mt-3">
-                From Africa
+                {t.africa.titleA}
                 <br />
-                <span className="italic font-normal">to the world.</span>
+                <span className="italic font-normal">{t.africa.titleB}</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="text-sm leading-7 text-[#57534E] mt-6 max-w-[48ch]">Born in Africa, built to serve women globally. Lagos to London, Houston to Johannesburg - same standard, same respect, same Oven Veil™. International shipping. WhatsApp consultation that actually answers.</p>
+              <p className="text-sm leading-7 text-[#57534E] mt-6 max-w-[48ch]">{t.africa.body}</p>
               <div className="mt-8 flex flex-wrap gap-6 text-[11px] tracking-[0.12em] uppercase">
-                <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#C2A47A]" /> Worldwide shipping</span>
-                <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#2B1B12]" /> Duties calculated at checkout</span>
-                <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#78716C]" /> Studio: Lagos</span>
+                {t.africa.bullets.map((b, i) => (
+                  <span key={b} className="flex items-center gap-2"><span className={`w-2 h-2 rounded-full ${i === 0 ? "bg-[#C2A47A]" : i === 1 ? "bg-[#2B1B12]" : "bg-[#78716C]"}`} /> {b}</span>
+                ))}
               </div>
-              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#B8860B] transition-colors">Shop Global Collection →</Link>
+              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#B8860B] transition-colors">{t.africa.cta}</Link>
             </Reveal>
           </div>
 
@@ -52,28 +54,26 @@ export function FromAfrica() {
 
               <div className="relative">
                 <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.16em] uppercase text-white/60">
-                  <span className="w-2 h-2 rounded-full bg-[#C2A47A] animate-pulse" /> Live dispatch • Lagos
+                  <span className="w-2 h-2 rounded-full bg-[#C2A47A] animate-pulse" /> {t.africa.live}
                 </div>
               </div>
 
               <div className="relative grid grid-cols-3 gap-4 text-center">
-                <div className="border border-white/10 bg-white/[0.06] backdrop-blur p-4">
-                  <div className="text-white font-serif text-xl">Lagos</div>
-                  <div className="text-[10px] tracking-[0.14em] uppercase text-white/60 mt-1">House</div>
+                {[
+                  { city: "Lagos", role: t.africa.roles[0] },
+                  { city: "London", role: t.africa.roles[1] },
+                  { city: "Houston", role: t.africa.roles[2] },
+                ].map((c) => (
+                <div key={c.city} className="border border-white/10 bg-white/[0.06] backdrop-blur p-4">
+                  <div className="text-white font-serif text-xl">{c.city}</div>
+                  <div className="text-[10px] tracking-[0.14em] uppercase text-white/60 mt-1">{c.role}</div>
                 </div>
-                <div className="border border-white/10 bg-white/[0.06] backdrop-blur p-4">
-                  <div className="text-white font-serif text-xl">London</div>
-                  <div className="text-[10px] tracking-[0.14em] uppercase text-white/60 mt-1">Stockist</div>
-                </div>
-                <div className="border border-white/10 bg-white/[0.06] backdrop-blur p-4">
-                  <div className="text-white font-serif text-xl">Houston</div>
-                  <div className="text-[10px] tracking-[0.14em] uppercase text-white/60 mt-1">Clients</div>
-                </div>
+                ))}
               </div>
 
               <div className="relative flex items-center justify-between text-[11px] tracking-[0.12em] uppercase text-white/50">
-                <span>No cheesy globe. Just real movement.</span>
-                <span className="hidden sm:inline">Nigeria → World</span>
+                <span>{t.africa.noteA}</span>
+                <span className="hidden sm:inline">{t.africa.noteB}</span>
               </div>
             </motion.div>
 

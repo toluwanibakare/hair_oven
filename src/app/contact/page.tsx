@@ -4,8 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckCircle2, MessageSquare, Mail, Phone, Clock, Send, ShieldCheck, HelpCircle } from "lucide-react";
+import { useLanguage } from "@/context/language-context";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [ticketId, setTicketId] = useState("");
   const [formData, setFormData] = useState({
@@ -40,13 +42,13 @@ export default function ContactPage() {
 
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center">
           <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
-            CLIENT CARE & SUPPORT
+            {t.contact.heroEyebrow}
           </span>
           <h1 className="font-serif text-[42px] sm:text-[60px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
-            Contact The House
+            {t.contact.heroTitle}
           </h1>
           <p className="mt-4 text-xs sm:text-sm tracking-[0.16em] uppercase text-[#E8DDC9]/70 font-medium max-w-[600px] mx-auto">
-            Dedicated assistance for orders, Atelier commissions, and client care.
+            {t.contact.heroSub}
           </p>
         </div>
       </section>
@@ -54,77 +56,45 @@ export default function ContactPage() {
       {/* Main Support Options Grid */}
       <section className="max-w-[1600px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          
-          <div className="p-8 bg-white border border-[#2B1B12]/10 rounded-sm flex flex-col justify-between hover:border-[#B8860B] transition-colors">
+          {[
+            { href: "https://wa.me/2348057388171", external: true, lineA: "+234 805 738 8171" },
+            { href: "mailto:support@hairoven.com", external: true, lineA: "support@hairoven.com" },
+            { href: "/atelier#consultation-form", external: false, lineA: t.contact.studios },
+          ].map((c, i) => (
+          <div key={t.contact.cards[i].title} className="p-8 bg-white border border-[#2B1B12]/10 rounded-sm flex flex-col justify-between hover:border-[#B8860B] transition-colors">
             <div>
-              <span className="font-serif text-lg text-[#B8860B] font-semibold">01 /</span>
-              <h3 className="font-serif text-2xl text-[#2B1B12] mt-2">WhatsApp Concierge</h3>
+              <span className="font-serif text-lg text-[#B8860B] font-semibold">0{i + 1} /</span>
+              <h3 className="font-serif text-2xl text-[#2B1B12] mt-2">{t.contact.cards[i].title}</h3>
               <p className="text-xs text-[#57534E] leading-6 mt-3">
-                Immediate assistance for order updates, cap sizing guidance, and urgent inquiries.
+                {t.contact.cards[i].body}
               </p>
               <div className="mt-4 text-sm font-semibold text-[#2B1B12]">
-                +234 805 738 8171
+                {c.lineA}
               </div>
-              <div className="text-[11px] text-[#57534E] mt-0.5">Available 9:00 AM – 7:00 PM WAT</div>
+              <div className="text-[11px] text-[#57534E] mt-0.5">{t.contact.cards[i].lineB}</div>
             </div>
 
             <div className="mt-6 pt-4 border-t border-[#2B1B12]/08">
+              {c.external ? (
               <a
-                href="https://wa.me/2348057388171"
+                href={c.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#B8860B] hover:text-[#2B1B12] transition-colors"
               >
-                Chat on WhatsApp →
+                {t.contact.cards[i].cta}
               </a>
-            </div>
-          </div>
-
-          <div className="p-8 bg-white border border-[#2B1B12]/10 rounded-sm flex flex-col justify-between hover:border-[#B8860B] transition-colors">
-            <div>
-              <span className="font-serif text-lg text-[#B8860B] font-semibold">02 /</span>
-              <h3 className="font-serif text-2xl text-[#2B1B12] mt-2">Email Support</h3>
-              <p className="text-xs text-[#57534E] leading-6 mt-3">
-                For detailed client inquiries, order changes, and formal documentation.
-              </p>
-              <div className="mt-4 text-sm font-semibold text-[#2B1B12]">
-                support@hairoven.com
-              </div>
-              <div className="text-[11px] text-[#57534E] mt-0.5">24-hour response protocol</div>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-[#2B1B12]/08">
-              <a
-                href="mailto:support@hairoven.com"
-                className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#B8860B] hover:text-[#2B1B12] transition-colors"
-              >
-                Send Email →
-              </a>
-            </div>
-          </div>
-
-          <div className="p-8 bg-white border border-[#2B1B12]/10 rounded-sm flex flex-col justify-between hover:border-[#B8860B] transition-colors">
-            <div>
-              <span className="font-serif text-lg text-[#B8860B] font-semibold">03 /</span>
-              <h3 className="font-serif text-2xl text-[#2B1B12] mt-2">Atelier Appointments</h3>
-              <p className="text-xs text-[#57534E] leading-6 mt-3">
-                Private consultations for custom commissions, bridal units, and cranial mapping.
-              </p>
-              <div className="mt-4 text-sm font-semibold text-[#2B1B12]">
-                Lagos & London Studios
-              </div>
-              <div className="text-[11px] text-[#57534E] mt-0.5">Strictly by appointment</div>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-[#2B1B12]/08">
+              ) : (
               <Link
-                href="/atelier#consultation-form"
+                href={c.href}
                 className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#B8860B] hover:text-[#2B1B12] transition-colors"
               >
-                Book Appointment →
+                {t.contact.cards[i].cta}
               </Link>
+              )}
             </div>
           </div>
+          ))}
 
         </div>
 
@@ -135,33 +105,33 @@ export default function ContactPage() {
             {/* Left Info Column */}
             <div className="lg:col-span-4">
               <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
-                SUPPORT TICKET
+                {t.contact.ticketEyebrow}
               </span>
               <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2 font-light">
-                Submit a Support Request
+                {t.contact.ticketTitle}
               </h2>
               <p className="text-xs text-[#57534E] leading-6 mt-4">
-                Please complete the form to log a tracked support ticket with our Client Concierge team. Every ticket receives priority attention and an assigned tracking code.
+                {t.contact.ticketBody}
               </p>
 
               <div className="mt-8 space-y-4">
                 <div className="p-4 bg-white border border-[#2B1B12]/08 rounded-sm">
                   <div className="text-[10px] tracking-[0.14em] uppercase text-[#B8860B] font-semibold">
-                    Order Assistance
+                    {t.contact.infoAtitle}
                   </div>
                   <p className="text-[11px] text-[#57534E] mt-1">
-                    Have your order number ready for faster dispatch and status tracking.
+                    {t.contact.infoAbody}
                   </p>
                 </div>
 
                 <div className="p-4 bg-white border border-[#2B1B12]/08 rounded-sm">
                   <div className="text-[10px] tracking-[0.14em] uppercase text-[#B8860B] font-semibold">
-                    The Heirloom Guide
+                    {t.contact.infoBtitle}
                   </div>
                   <p className="text-[11px] text-[#57534E] mt-1">
-                    For cap sizing, hair maintenance, or exchange policies, explore{" "}
+                    {t.contact.infoBbodyA}{" "}
                     <Link href="/heirloom-guide" className="underline text-[#2B1B12]">
-                      The Heirloom Guide
+                      {t.contact.infoBbodyB}
                     </Link>.
                   </p>
                 </div>
@@ -173,33 +143,33 @@ export default function ContactPage() {
               {submitted ? (
                 <div className="text-center py-12">
                   <CheckCircle2 className="w-14 h-14 text-[#B8860B] mx-auto mb-4" />
-                  <h3 className="font-serif text-2xl text-[#2B1B12]">Support Ticket Received</h3>
+                  <h3 className="font-serif text-2xl text-[#2B1B12]">{t.contact.successTitle}</h3>
                   <div className="mt-2 text-sm font-semibold text-[#B8860B]">
-                    Ticket ID: {ticketId}
+                    {t.contact.successId} {ticketId}
                   </div>
                   <p className="text-xs text-[#57534E] max-w-[44ch] mx-auto mt-3 leading-6">
-                    Thank you. Your support ticket has been logged with Client Care. A dedicated representative will follow up via email within 24 business hours.
+                    {t.contact.successBody}
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 px-6 py-3 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.14em] uppercase hover:bg-[#B8860B] transition-colors"
                   >
-                    Submit Another Ticket
+                    {t.contact.successAgain}
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <h3 className="font-serif text-2xl text-[#2B1B12]">Client Support Ticket</h3>
+                  <h3 className="font-serif text-2xl text-[#2B1B12]">{t.contact.formTitle}</h3>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
-                        Full Name *
+                        {t.contact.nameLabel}
                       </label>
                       <input
                         required
                         type="text"
-                        placeholder="Your full name"
+                        placeholder={t.contact.namePh}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full h-11 px-3 bg-[#FFFCF8] border border-[#2B1B12]/15 text-sm text-[#2B1B12] focus:border-[#B8860B] outline-none"
@@ -207,7 +177,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
-                        Email Address *
+                        {t.contact.emailLabel}
                       </label>
                       <input
                         required
@@ -223,7 +193,7 @@ export default function ContactPage() {
                   <div className="grid md:grid-cols-3 gap-4">
                     <div>
                       <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
-                        Phone / WhatsApp
+                        {t.contact.phoneLabel}
                       </label>
                       <input
                         type="text"
@@ -235,11 +205,11 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
-                        Order Number (Optional)
+                        {t.contact.orderLabel}
                       </label>
                       <input
                         type="text"
-                        placeholder="e.g. HO-84920"
+                        placeholder={t.contact.orderPh}
                         value={formData.orderNumber}
                         onChange={(e) => setFormData({ ...formData, orderNumber: e.target.value })}
                         className="w-full h-11 px-3 bg-[#FFFCF8] border border-[#2B1B12]/15 text-sm text-[#2B1B12] focus:border-[#B8860B] outline-none"
@@ -247,31 +217,28 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
-                        Inquiry Category
+                        {t.contact.catLabel}
                       </label>
                       <select
                         value={formData.inquiryType}
                         onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                         className="w-full h-11 px-3 bg-[#FFFCF8] border border-[#2B1B12]/15 text-sm text-[#2B1B12] focus:border-[#B8860B] outline-none"
                       >
-                        <option value="General Inquiry">General Inquiry</option>
-                        <option value="Order Tracking & Delivery">Order Tracking & Delivery</option>
-                        <option value="Atelier Commission">Atelier Commission</option>
-                        <option value="Cap Sizing & Fit">Cap Sizing & Fit</option>
-                        <option value="Wholesale & Trade">Wholesale & Trade</option>
-                        <option value="Exchanges & Returns">Exchanges & Returns</option>
+                        {t.contact.cats.map((c) => (
+                          <option key={c} value={c}>{c}</option>
+                        ))}
                       </select>
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
-                      Subject *
-                    </label>
-                    <input
-                      required
-                      type="text"
-                      placeholder="Brief summary of your request"
+                      <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
+                        {t.contact.subjectLabel}
+                      </label>
+                      <input
+                        required
+                        type="text"
+                        placeholder={t.contact.subjectPh}
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       className="w-full h-11 px-3 bg-[#FFFCF8] border border-[#2B1B12]/15 text-sm text-[#2B1B12] focus:border-[#B8860B] outline-none"
@@ -279,13 +246,13 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
-                      Message & Details *
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      placeholder="Please detail your request or question..."
+                      <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
+                        {t.contact.messageLabel}
+                      </label>
+                      <textarea
+                        required
+                        rows={5}
+                        placeholder={t.contact.messagePh}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full p-3 bg-[#FFFCF8] border border-[#2B1B12]/15 text-sm text-[#2B1B12] focus:border-[#B8860B] outline-none"
@@ -296,7 +263,7 @@ export default function ContactPage() {
                     type="submit"
                     className="w-full h-13 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors flex items-center justify-center gap-2"
                   >
-                    <Send className="w-4 h-4" /> Submit Support Ticket
+                    <Send className="w-4 h-4" /> {t.contact.submit}
                   </button>
                 </form>
               )}

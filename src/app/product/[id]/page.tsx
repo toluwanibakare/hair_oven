@@ -8,8 +8,10 @@ import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/context/cart-context";
 import { Heart, Minus, Plus, ChevronDown, MessageCircle, ShieldCheck } from "lucide-react";
 import { WatermarkImage } from "@/components/watermark-image";
+import { useLanguage } from "@/context/language-context";
 
 export default function ProductPage() {
+  const { t } = useLanguage();
   const params = useParams<{ id: string }>();
   const product = products.find((p) => p.id === params.id);
   const { addToCart, toggleWishlist, isInWishlist } = useCart();
@@ -22,8 +24,8 @@ export default function ProductPage() {
   if (!product) {
     return (
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10 py-24 text-center">
-        <div className="font-serif text-3xl">Product not found</div>
-        <Link href="/shop" className="mt-6 inline-flex h-11 px-8 bg-[#2B1B12] text-white items-center text-[11px] tracking-[0.16em] uppercase">Back to Shop</Link>
+        <div className="font-serif text-3xl">{t.product.notFound}</div>
+        <Link href="/shop" className="mt-6 inline-flex h-11 px-8 bg-[#2B1B12] text-white items-center text-[11px] tracking-[0.16em] uppercase">{t.product.backToShop}</Link>
       </div>
     );
   }
@@ -36,8 +38,8 @@ export default function ProductPage() {
         
         {/* Breadcrumb Navigation */}
         <div className="flex gap-2 text-[10px] tracking-[0.16em] uppercase text-[#78716C] mb-8 font-medium">
-          <Link href="/" className="hover:text-[#2B1B12]">Home</Link> <span>/</span> 
-          <Link href="/shop" className="hover:text-[#2B1B12]">Shop</Link> <span>/</span> 
+          <Link href="/" className="hover:text-[#2B1B12]">{t.product.home}</Link> <span>/</span> 
+          <Link href="/shop" className="hover:text-[#2B1B12]">{t.product.shop}</Link> <span>/</span> 
           <span className="text-[#2B1B12]">{product.name}</span>
         </div>
 
@@ -98,43 +100,43 @@ export default function ProductPage() {
               <div>
                 <span className="text-2xl font-serif text-[#2B1B12]">{formatPrice(product.price * qty)}</span>
                 <span className="block text-[10px] tracking-[0.14em] uppercase text-[#57534E] mt-0.5">
-                  Complimentary Insured Delivery Included
+                  {t.product.deliveryNote}
                 </span>
               </div>
               <span className="text-[10px] tracking-[0.14em] uppercase text-[#B8860B] font-semibold bg-[#EDE6D6]/40 px-3 py-1 border border-[#2B1B12]/10">
-                {product.inStock ? "Ready for Dispatch" : "Atelier Pre-Order"}
+                {product.inStock ? t.product.ready : t.product.preorder}
               </span>
             </div>
 
             {/* Clean Information Block (Point 11 requirement) */}
             <div className="bg-[#EDE6D6]/20 border border-[#2B1B12]/10 p-5 rounded-sm space-y-2.5 text-xs text-[#2B1B12]">
               <div className="flex justify-between border-b border-[#2B1B12]/05 pb-2">
-                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">HAIR</span>
-                <span className="font-medium">100% Human Hair</span>
+                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">{t.product.specHair}</span>
+                <span className="font-medium">{t.product.specHairV}</span>
               </div>
               <div className="flex justify-between border-b border-[#2B1B12]/05 pb-2">
-                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">ORIGIN</span>
-                <span className="font-medium">Verified Single-Donor Provenance</span>
+                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">{t.product.specOrigin}</span>
+                <span className="font-medium">{t.product.specOriginV}</span>
               </div>
               <div className="flex justify-between border-b border-[#2B1B12]/05 pb-2">
-                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">TEXTURE</span>
+                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">{t.product.specTexture}</span>
                 <span className="font-medium">{product.texture}</span>
               </div>
               <div className="flex justify-between border-b border-[#2B1B12]/05 pb-2">
-                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">LENGTH</span>
+                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">{t.product.specLength}</span>
                 <span className="font-medium">{length}</span>
               </div>
               <div className="flex justify-between border-b border-[#2B1B12]/05 pb-2">
-                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">DENSITY</span>
+                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">{t.product.specDensity}</span>
                 <span className="font-medium">{product.density}</span>
               </div>
               <div className="flex justify-between border-b border-[#2B1B12]/05 pb-2">
-                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">CAP</span>
-                <span className="font-medium">Hand-Tacked Ergonomic Architecture</span>
+                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">{t.product.specCap}</span>
+                <span className="font-medium">{t.product.specCapV}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">FINISH</span>
-                <span className="font-medium text-[#B8860B]">Oven Veil™ Ultra-Sheer Base</span>
+                <span className="text-[10px] tracking-[0.14em] uppercase text-[#57534E] font-semibold">{t.product.specFinish}</span>
+                <span className="font-medium text-[#B8860B]">{t.product.specFinishV}</span>
               </div>
             </div>
 
@@ -142,7 +144,7 @@ export default function ProductPage() {
             <div className="space-y-4 pt-2">
               <div>
                 <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-2">
-                  Select Length
+                  {t.product.selectLength}
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {product.lengths.map((l) => (
@@ -185,20 +187,20 @@ export default function ProductPage() {
                   }}
                   className="flex-1 h-12 bg-[#2B1B12] text-[#FFFCF8] text-[10px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors"
                 >
-                  ADD TO BAG - {formatPrice(product.price * qty)}
+                  {t.product.addToBag} - {formatPrice(product.price * qty)}
                 </button>
               </div>
             </div>
 
             {/* THE STORY (2-3 Short Paragraphs) */}
             <div className="pt-6 border-t border-[#2B1B12]/10 space-y-4">
-              <h3 className="font-serif text-xl text-[#2B1B12]">THE STORY</h3>
+              <h3 className="font-serif text-xl text-[#2B1B12]">{t.product.storyTitle}</h3>
               <div className="text-xs text-[#57534E] leading-6 space-y-3">
                 <p>
-                  Crafted through the House of HAIR OVEN, {product.name} embodies the convergence of verified provenance and quiet exclusivity. Sourced directly from single donors, every cuticles-aligned strand retains its natural integrity and soft drop.
+                  {t.product.storyA.replace("{name}", product.name)}
                 </p>
                 <p>
-                  Finished with our signature Oven Veil™ philosophy, the hairline transition is hand-tied with micro-bleached single knots to melt effortlessly against your scalp. Each creation is inspected strand-by-strand prior to luxury seal verification.
+                  {t.product.storyB}
                 </p>
               </div>
             </div>
@@ -210,7 +212,7 @@ export default function ProductPage() {
                   onClick={() => setOpenDetail(openDetail === "details" ? null : "details")}
                   className="w-full p-4 flex justify-between items-center text-left text-xs font-serif text-[#2B1B12]"
                 >
-                  <span>THE DETAILS & SPECIFICATIONS</span>
+                  <span>{t.product.detailsTitle}</span>
                   <ChevronDown className={`w-4 h-4 text-[#B8860B] transition-transform ${openDetail === "details" ? "rotate-180" : ""}`} />
                 </button>
                 {openDetail === "details" && (
@@ -229,10 +231,10 @@ export default function ProductPage() {
             {/* PRIVATE CONCIERGE Block (Point 11 requirement) */}
             <div className="bg-[#E0D5C5]/30 border border-[#2B1B12]/10 p-6 text-center rounded-sm space-y-3">
               <div className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
-                PRIVATE CONCIERGE
+                {t.product.conciergeTitle}
               </div>
               <p className="text-xs text-[#57534E]">
-                Need assistance selecting your piece or configuring custom Atelier specifications?
+                {t.product.conciergeBody}
               </p>
               <a
                 href={`https://wa.me/2348057388171?text=Hi%20HAIR%20OVEN%2C%20I%20need%20concierge%20assistance%20with%20${encodeURIComponent(product.name)}`}
@@ -240,7 +242,7 @@ export default function ProductPage() {
                 rel="noopener noreferrer"
                 className="inline-flex h-10 px-6 bg-[#2B1B12] text-[#FFFCF8] text-[10px] tracking-[0.16em] uppercase font-semibold hover:bg-[#B8860B] transition-colors items-center gap-2"
               >
-                <MessageCircle className="w-3.5 h-3.5" /> SPEAK WITH A CONCIERGE
+                <MessageCircle className="w-3.5 h-3.5" /> {t.product.conciergeCta}
               </a>
             </div>
 

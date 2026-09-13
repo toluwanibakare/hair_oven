@@ -1,18 +1,21 @@
-import { notFound } from "next/navigation";
+"use client";
+
+import { notFound, useParams } from "next/navigation";
 import { collections, products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 import Link from "next/link";
 import { WatermarkImage } from "@/components/watermark-image";
+import { useLanguage } from "@/context/language-context";
 
-export function generateStaticParams() {
-  return collections.map((c) => ({ slug: c.slug }));
-}
-
-export default async function CollectionPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function CollectionPage() {
+  const { t } = useLanguage();
+  const params = useParams<{ slug: string }>();
+  const slug = params.slug;
   const col = collections.find((c) => c.slug === slug);
   if (!col) return notFound();
   const list = products.filter((p) => p.collection === slug);
+  const bodies = t.collectionPage.bodies;
+  const statement = slug === "private" ? bodies[0] : slug === "signature" ? bodies[1] : bodies[2];
 
   const themes: Record<string, { bg: string; text: string; accent: string }> = {
     private: { bg: "bg-[#2B1B12]", text: "text-[#E8DDC9]", accent: "bg-[#C2A47A]" },
@@ -38,7 +41,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             <p className="mt-6 text-sm leading-7 opacity-70 max-w-[48ch]">{col.description}</p>
             <div className="mt-8 flex flex-wrap gap-4 items-center">
               <span className="bg-white text-[#2B1B12] px-4 py-2 text-[11px] tracking-[0.16em] uppercase">{col.years}</span>
-              <span className="text-[11px] tracking-[0.14em] uppercase opacity-60">From {new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 }).format(col.priceFrom)}</span>
+              <span className="text-[11px] tracking-[0.14em] uppercase opacity-60">{t.collectionPage.from} {new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 }).format(col.priceFrom)}</span>
             </div>
           </div>
         </div>
@@ -47,14 +50,12 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       {/* Statement */}
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10 py-12 grid lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-4">
-          <h2 className="font-serif text-2xl leading-tight">Every strand inspected.<br />Every unit promised.</h2>
+          <h2 className="font-serif text-2xl leading-tight">{t.collectionPage.statementTitleA}<br />{t.collectionPage.statementTitleB}</h2>
           <p className="text-sm leading-6 text-[#57534E] mt-4">
-            {slug === "private" && "Raw, unprocessed single-donor hair. Cuticles intact, aligned. The ultimate heirloom - lifetime with care."}
-            {slug === "signature" && "High-density virgin hair curated for long-term luxury. Resilient, refined, endlessly wearable."}
-            {slug === "essentials" && "Dependable everyday human hair. Beautiful, versatile and crafted for rotation - without compromise on construction."}
+            {statement}
           </p>
           <Link href="/shop" className="mt-6 inline-flex h-10 px-6 border border-[rgba(28,18,14,0.12)] text-[11px] tracking-[0.14em] uppercase items-center hover:bg-[#2B1B12] hover:text-white transition-colors">
-            Shop {col.subtitle} →
+            {t.collectionPage.shopPrefix} {col.subtitle} →
           </Link>
         </div>
         <div className="lg:col-span-8">
@@ -63,7 +64,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
               <ProductCard key={p.id} product={p} variant="large" />
             ))}
           </div>
-          {list.length === 0 && <div className="py-12 text-center text-[#78716C]">No products yet. Check back soon or chat via WhatsApp.</div>}
+          {list.length === 0 && <div className="py-12 text-center text-[#78716C]">{t.collectionPage.empty}</div>}
         </div>
       </div>
 
@@ -75,7 +76,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
               <div className="text-[10px] tracking-[0.16em] uppercase opacity-60">{c.tagline}</div>
               <div className="font-serif text-lg mt-2">{c.name}</div>
               <div className={`text-xs mt-2 ${c.slug === slug ? "text-white/60" : "text-[#57534E]"}`}>{c.description}</div>
-              <div className="text-[11px] tracking-[0.14em] uppercase mt-4 underline underline-offset-4">{c.slug === slug ? "Currently viewing" : "Explore →"}</div>
+              <div className="text-[11px] tracking-[0.14em] uppercase mt-4 underline underline-offset-4">{c.slug === slug ? t.collectionPage.viewing : t.collectionPage.explore}</div>
             </Link>
           ))}
         </div>

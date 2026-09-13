@@ -2,12 +2,16 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Search, User, ShoppingBag, Menu, X, ChevronDown, ChevronRight, Heart, Sparkles } from "lucide-react";
 import { useCart } from "@/context/cart-context";
+import { useLanguage } from "@/context/language-context";
+import { BRAND } from "@/lib/i18n";
 import { CartDrawer } from "./cart-drawer";
 import { SearchOverlay } from "./search-overlay";
+import { LanguageSelector } from "./language-selector";
 
 const collectionsDropdown = [
   {
@@ -46,7 +50,20 @@ export function Navigation() {
   const [collectionsOpen, setCollectionsOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const { cartCount, setDrawerOpen, wishlist } = useCart();
+  const { t } = useLanguage();
   const { scrollY } = useScroll();
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    const clean = href.split("?")[0];
+    if (clean === "/") return pathname === "/";
+    return pathname === clean || pathname.startsWith(clean + "/");
+  };
+  const collectionsActive =
+    collectionsOpen ||
+    ["/collections", "/shop", "/extensions", "/product"].some(
+      (p) => pathname === p || pathname.startsWith(p + "/")
+    );
 
   useMotionValueEvent(scrollY, "change", (latest) => setScrolled(latest > 24));
 
@@ -62,10 +79,10 @@ export function Navigation() {
       {/* Announcement Bar */}
       <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2 sm:py-2.5 px-3 sm:px-4 text-[10px] sm:text-xs tracking-[0.14em] sm:tracking-[0.18em] uppercase font-medium border-b border-[#E8DDC9]/10 overflow-hidden">
         <span className="sm:hidden block truncate whitespace-nowrap">
-          <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • PRIVATE CONCIERGE & ATELIER COMMISSIONS OPEN
+          <span className="font-semibold text-[#D4AF37]">{BRAND.house}</span> • {t.nav.announcement.toUpperCase()}
         </span>
         <span className="hidden sm:block">
-          <span className="font-semibold text-[#D4AF37]">HAIR OVEN</span> • Private Concierge & Atelier Commissions Open
+          <span className="font-semibold text-[#D4AF37]">{BRAND.house}</span> • {t.nav.announcement}
         </span>
       </div>
 
@@ -79,7 +96,7 @@ export function Navigation() {
             <button
               className="p-2 -ml-2 text-[#2B1B12] hover:text-[#B8860B] transition-colors"
               onClick={() => setMobileOpen(true)}
-              aria-label="Open menu"
+              aria-label={t.nav.openMenu}
             >
               <Menu className="w-6 h-6" strokeWidth={1.5} />
             </button>
@@ -110,9 +127,12 @@ export function Navigation() {
 
           {/* Right Header Icons */}
           <div className="flex items-center justify-end gap-1 sm:gap-2">
+            <div className="hidden md:block mr-1">
+              <LanguageSelector variant="desktop" />
+            </div>
             <button
               onClick={() => setSearchOpen(true)}
-              aria-label="Search"
+              aria-label={t.nav.search}
               className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors text-[#2B1B12]"
             >
               <Search className="w-4 h-4" strokeWidth={1.5} />
@@ -139,7 +159,7 @@ export function Navigation() {
 
             <button
               onClick={() => setDrawerOpen(true)}
-              aria-label="Shopping Bag"
+              aria-label={t.nav.bag}
               className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors relative text-[#2B1B12]"
             >
               <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
@@ -154,6 +174,10 @@ export function Navigation() {
 
         {/* Desktop Category Navigation Bar */}
         <nav className="hidden lg:flex items-center justify-center gap-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
+          <Link href="/" className={`relative py-1 transition-colors ${isActive("/") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
+            {t.nav.home}
+            {isActive("/") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
+          </Link>
           {/* COLLECTIONS Dropdown Menu */}
           <div
             className="relative"
@@ -161,14 +185,15 @@ export function Navigation() {
             onMouseLeave={() => setCollectionsOpen(false)}
           >
             <button
-              className={`py-1 flex items-center gap-1 transition-colors ${
-                collectionsOpen ? "text-[#B8860B]" : "hover:text-[#B8860B]"
+              className={`relative py-1 flex items-center gap-1 transition-colors ${
+                collectionsActive ? "text-[#B8860B]" : "hover:text-[#B8860B]"
               }`}
             >
-              COLLECTIONS{" "}
+              {t.nav.collections}{" "}
               <ChevronDown
                 className={`w-3 h-3 transition-transform duration-300 ${collectionsOpen ? "rotate-180" : "rotate-0"}`}
               />
+              {collectionsActive && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
             </button>
 
             <AnimatePresence>
@@ -225,16 +250,19 @@ export function Navigation() {
             </AnimatePresence>
           </div>
 
-          <Link href="/atelier" className="hover:text-[#B8860B] transition-colors py-1">
-            ATELIER
+          <Link href="/atelier" className={`relative py-1 transition-colors ${isActive("/atelier") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
+            {t.nav.atelier}
+            {isActive("/atelier") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
           </Link>
 
-          <Link href="/story" className="hover:text-[#B8860B] transition-colors py-1">
-            THE HOUSE
+          <Link href="/story" className={`relative py-1 transition-colors ${isActive("/story") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
+            {t.nav.house}
+            {isActive("/story") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
           </Link>
 
-          <Link href="/heirloom-guide" className="hover:text-[#B8860B] transition-colors py-1">
-            HEIRLOOM GUIDE
+          <Link href="/heirloom-guide" className={`relative py-1 transition-colors ${isActive("/heirloom-guide") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
+            {t.nav.heirloomGuide}
+            {isActive("/heirloom-guide") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
           </Link>
         </nav>
       </header>
@@ -269,44 +297,52 @@ export function Navigation() {
 
               <div className="flex-1 overflow-auto p-6 space-y-3 font-semibold tracking-[0.12em] text-xs uppercase text-[#2B1B12]">
                 <Link
+                  href="/"
+                  onClick={() => setMobileOpen(false)}
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/") ? "text-[#B8860B]" : ""}`}
+                >
+                  <span className="flex items-center gap-2">{isActive("/") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.home}</span>
+                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                </Link>
+                <Link
                   href="/shop?filter=new"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-3 border-b border-[#2B1B12]/08"
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
                 >
-                  <span>NEW IN</span>
+                  <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.newIn}</span>
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
 
                 <div className="py-2 border-b border-[#2B1B12]/08">
                   <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] mb-2 font-bold">
-                    THE COLLECTIONS
+                    {t.nav.collections}
                   </div>
                   <div className="pl-3 space-y-2.5 font-medium text-xs normal-case text-[#57534E]">
                     <Link
                       href="/collections/private"
                       onClick={() => setMobileOpen(false)}
-                      className="block hover:text-[#2B1B12]"
+                      className={`block hover:text-[#2B1B12] ${isActive("/collections/private") ? "text-[#B8860B]" : ""}`}
                     >
                       Private Collection (RAW Reserve)
                     </Link>
                     <Link
                       href="/collections/signature"
                       onClick={() => setMobileOpen(false)}
-                      className="block hover:text-[#2B1B12]"
+                      className={`block hover:text-[#2B1B12] ${isActive("/collections/signature") ? "text-[#B8860B]" : ""}`}
                     >
                       Signature Collection
                     </Link>
                     <Link
                       href="/collections/essentials"
                       onClick={() => setMobileOpen(false)}
-                      className="block hover:text-[#2B1B12]"
+                      className={`block hover:text-[#2B1B12] ${isActive("/collections/essentials") ? "text-[#B8860B]" : ""}`}
                     >
                       Essentials Collection
                     </Link>
                     <Link
                       href="/atelier"
                       onClick={() => setMobileOpen(false)}
-                      className="block hover:text-[#2B1B12]"
+                      className={`block hover:text-[#2B1B12] ${isActive("/atelier") ? "text-[#B8860B]" : ""}`}
                     >
                       The Atelier (Private Commission)
                     </Link>
@@ -316,65 +352,68 @@ export function Navigation() {
                 <Link
                   href="/shop?cat=wigs"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-3 border-b border-[#2B1B12]/08"
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
                 >
-                  <span>WIGS</span>
+                  <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.wigs}</span>
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
 
                 <Link
                   href="/extensions"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-3 border-b border-[#2B1B12]/08"
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/extensions") ? "text-[#B8860B]" : ""}`}
                 >
-                  <span>EXTENSIONS</span>
+                  <span className="flex items-center gap-2">{isActive("/extensions") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.extensions}</span>
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
 
                 <Link
                   href="/atelier"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-3 border-b border-[#2B1B12]/08"
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/atelier") ? "text-[#B8860B]" : ""}`}
                 >
-                  <span>THE ATELIER</span>
+                  <span className="flex items-center gap-2">{isActive("/atelier") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.atelier}</span>
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
 
                 <Link
                   href="/shop?cat=tools"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-3 border-b border-[#2B1B12]/08"
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
                 >
-                  <span>TOOLS & CARE</span>
+                  <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.toolsCare}</span>
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
 
                 <Link
                   href="/wholesale"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-3 border-b border-[#2B1B12]/08"
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/wholesale") ? "text-[#B8860B]" : ""}`}
                 >
-                  <span>THE TRADE EDIT</span>
+                  <span className="flex items-center gap-2">{isActive("/wholesale") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.tradeEdit}</span>
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
 
                 <Link
                   href="/heirloom-guide"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-3 border-b border-[#2B1B12]/08"
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/heirloom-guide") ? "text-[#B8860B]" : ""}`}
                 >
-                  <span>THE HEIRLOOM GUIDE</span>
+                  <span className="flex items-center gap-2">{isActive("/heirloom-guide") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.heirloomGuide}</span>
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
 
                 <Link
                   href="/story"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-3 border-b border-[#2B1B12]/08"
+                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/story") ? "text-[#B8860B]" : ""}`}
                 >
-                  <span>THE HOUSE</span>
+                  <span className="flex items-center gap-2">{isActive("/story") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.house}</span>
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
+                <div className="pt-4">
+                  <LanguageSelector variant="mobile" />
+                </div>
               </div>
 
               <div className="p-6 border-t border-[#2B1B12]/10 bg-[#EDE6D6]/40 flex gap-3">
@@ -383,7 +422,7 @@ export function Navigation() {
                   onClick={() => setMobileOpen(false)}
                   className="flex-1 h-11 grid place-items-center border border-[#2B1B12]/20 text-[11px] tracking-[0.14em] uppercase font-semibold"
                 >
-                  Account
+                  {t.nav.account}
                 </Link>
                 <button
                   onClick={() => {

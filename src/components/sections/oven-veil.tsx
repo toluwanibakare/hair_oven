@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, EyeOff } from "lucide-react";
+import { useLanguage } from "@/context/language-context";
 
 export function OvenVeil() {
+  const { t } = useLanguage();
   return (
     <section className="bg-[#2B1B12] text-[#E8DDC9] py-20 lg:py-28 relative overflow-hidden">
       {/* Background Subtle Gradient Glow */}
@@ -33,7 +35,7 @@ export function OvenVeil() {
                 <div className="flex items-center gap-2">
                   <EyeOff className="w-4 h-4 text-[#D4AF37]" />
                   <span className="text-[10px] tracking-[0.2em] uppercase text-white font-semibold">
-                    UNDETECTABLE MELT
+                    {t.ovenVeilHome.badgeA}
                   </span>
                 </div>
                 <span className="text-[10px] tracking-[0.14em] uppercase text-[#D4AF37] font-semibold">
@@ -52,7 +54,7 @@ export function OvenVeil() {
             className="lg:col-span-6"
           >
             <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold block mb-2">
-              OUR SIGNATURE FINISHING PHILOSOPHY
+              {t.ovenVeilHome.eyebrow}
             </span>
 
             <h2 className="font-serif text-2xl sm:text-4xl lg:text-4xl xl:text-5xl text-white leading-[0.95] tracking-[-0.02em] font-light">
@@ -60,7 +62,7 @@ export function OvenVeil() {
             </h2>
 
             <p className="mt-6 text-sm lg:text-base text-[#E8DDC9]/80 leading-8">
-              A considered approach to the transition between hair and wearer - designed to create an exceptionally natural appearance while preserving the movement and character of the hair.
+              {t.ovenVeilHome.body}
             </p>
 
             {/* Editorial Spec List */}
@@ -76,10 +78,10 @@ export function OvenVeil() {
                   01
                 </div>
                 <h4 className="text-xs sm:text-sm tracking-[0.14em] uppercase font-semibold text-white">
-                  How is a natural-looking finish achieved?
+                  {t.ovenVeilHome.spec1Title}
                 </h4>
                 <p className="text-[11px] sm:text-xs text-[#E8DDC9]/75 leading-5">
-                  Single-knotted hairline pre-plucked for true realism and seamless scalp integration.
+                  {t.ovenVeilHome.spec1Body}
                 </p>
               </motion.div>
 
@@ -94,10 +96,10 @@ export function OvenVeil() {
                   02
                 </div>
                 <h4 className="text-xs sm:text-sm tracking-[0.14em] uppercase font-semibold text-white">
-                  Universal Complexion Blend
+                  {t.ovenVeilHome.spec2Title}
                 </h4>
                 <p className="text-[11px] sm:text-xs text-[#E8DDC9]/75 leading-5">
-                  Ultra-sheer base designed to adapt harmoniously across warm, deep, and fair complexions.
+                  {t.ovenVeilHome.spec2Body}
                 </p>
               </motion.div>
             </div>
@@ -113,7 +115,7 @@ export function OvenVeil() {
                 href="/oven-veil"
                 className="h-[50px] px-8 bg-[#D4AF37] text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white transition-colors"
               >
-                DISCOVER OVEN VEIL™ <ArrowRight className="w-4 h-4" />
+                {t.ovenVeilHome.cta} <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
           </motion.div>

@@ -4,8 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Send, PhoneCall, Mail, Package, Instagram, Youtube, Facebook } from "lucide-react";
+import { useLanguage } from "@/context/language-context";
+import { BRAND } from "@/lib/i18n";
+import { LanguageSelector } from "./language-selector";
 
 export function Footer() {
+  const { t } = useLanguage();
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState("");
 
@@ -36,11 +40,11 @@ export function Footer() {
             </Link>
 
             <div>
-              <div className="font-serif text-xl text-[#2B1B12] font-normal tracking-wide">
-                HAIR OVEN
+              <div className="font-serif text-lg text-[#2B1B12] font-medium">
+                THE HOUSE OF EXCEPTIONAL HAIR
               </div>
-              <p className="text-xs text-[#57534E] leading-6 mt-1 font-serif italic">
-                The House of Exceptional Hair.
+              <p className="text-xs text-[#57534E] leading-6 mt-1 max-w-[38ch]">
+                {t.footer.tagline}
               </p>
             </div>
 
@@ -115,44 +119,53 @@ export function Footer() {
           {/* Navigation Links Columns */}
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             
-            {/* Column 1: Collections */}
+            {/* Column 1: Shop */}
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
-                Collections
+                {t.footer.colShop}
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/collections/private" className="block hover:text-[#2B1B12] transition-colors">
-                  Private Collection
+                  Private Collection (RAW)
                 </Link>
                 <Link href="/collections/signature" className="block hover:text-[#2B1B12] transition-colors">
                   Signature Collection
                 </Link>
                 <Link href="/collections/essentials" className="block hover:text-[#2B1B12] transition-colors">
-                  Essentials
+                  Essentials Collection
+                </Link>
+                <Link href="/shop?cat=wigs" className="block hover:text-[#2B1B12] transition-colors">
+                  Luxury Wigs
                 </Link>
                 <Link href="/extensions" className="block hover:text-[#2B1B12] transition-colors">
-                  Extensions
+                  Hair Extensions
+                </Link>
+                <Link href="/shop?cat=tools" className="block hover:text-[#2B1B12] transition-colors">
+                  Tools & Care
                 </Link>
               </div>
             </div>
 
-            {/* Column 2: Atelier */}
+            {/* Column 2: Atelier & Guidance */}
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
-                Atelier
+                {t.footer.colAtelier}
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/atelier" className="block hover:text-[#2B1B12] transition-colors">
-                  Custom Commissions
+                  Atelier Commissions
                 </Link>
                 <Link href="/atelier#consultation-form" className="block hover:text-[#2B1B12] transition-colors">
                   Private Appointments
                 </Link>
-                <Link href="/oven-veil" className="block hover:text-[#2B1B12] transition-colors">
-                  Oven Veil™
+                <Link href="/heirloom-guide" className="block hover:text-[#2B1B12] transition-colors">
+                  The Heirloom Guide
+                </Link>
+                <Link href="/heirloom-guide#bespoke-fit" className="block hover:text-[#2B1B12] transition-colors">
+                  Oven Veil™ Technology
                 </Link>
                 <Link href="/heirloom-guide#fit-policies" className="block hover:text-[#2B1B12] transition-colors">
-                  Cap Sizing
+                  Cap Sizing Protocol
                 </Link>
               </div>
             </div>
@@ -160,93 +173,75 @@ export function Footer() {
             {/* Column 3: The House */}
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
-                The House
+                {t.footer.colHouse}
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/story" className="block hover:text-[#2B1B12] transition-colors">
-                  Our Story
+                  Our Story & Calling
                 </Link>
                 <Link href="/story#craftsmanship" className="block hover:text-[#2B1B12] transition-colors">
                   Our Standard
                 </Link>
-                <Link href="/story#provenance" className="block hover:text-[#2B1B12] transition-colors">
-                  Provenance
-                </Link>
                 <Link href="/wholesale" className="block hover:text-[#2B1B12] transition-colors">
                   The Trade Edit
                 </Link>
-              </div>
-            </div>
-
-            {/* Column 4: Client Care & Newsletter */}
-            <div>
-              <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
-                Client Care
-              </div>
-              <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium mb-6">
-                <Link href="/heirloom-guide" className="block hover:text-[#2B1B12] transition-colors">
-                  Heirloom Guide
-                </Link>
-                <Link href="/heirloom-guide#journey" className="block hover:text-[#2B1B12] transition-colors">
-                  Shipping & Delivery
-                </Link>
-                <Link href="/heirloom-guide#standard" className="block hover:text-[#2B1B12] transition-colors">
-                  Exchanges & Return Standard
+                <Link href="/wholesale#enquiry-form" className="block hover:text-[#2B1B12] transition-colors">
+                  Volume Supply & MOQs
                 </Link>
                 <Link href="/contact" className="block hover:text-[#2B1B12] transition-colors">
-                  Contact Concierge
+                  Client Support & Contact
                 </Link>
               </div>
             </div>
 
-          </div>
-
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="py-8 border-b border-[#2B1B12]/15 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-1">
-              PRIVATE NOTES FROM THE HOUSE
-            </div>
-            <p className="text-xs text-[#57534E]">
-              Receive first access to private releases, new collections and Atelier announcements.
-            </p>
-          </div>
-
-          <div className="w-full md:w-auto min-w-[300px]">
-            {subscribed ? (
-              <div className="text-xs text-[#B8860B] font-semibold bg-white p-3 border border-[#2B1B12]/15">
-                Welcome to The House. Thank you for subscribing.
+            {/* Column 4: Newsletter */}
+            <div className="col-span-2 md:col-span-1">
+              <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
+                {t.footer.stayConnected}
               </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex border border-[#2B1B12]/20 bg-white focus-within:border-[#B8860B] transition-colors w-full">
-                <input 
-                  type="email" 
-                  required
-                  placeholder="EMAIL" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 min-w-0 bg-transparent px-3 py-2.5 text-xs text-[#2B1B12] placeholder:text-[#2B1B12]/40 outline-none uppercase" 
-                />
-                <button type="submit" className="px-6 shrink-0 text-[10px] tracking-[0.16em] uppercase bg-[#2B1B12] text-[#E0D5C5] hover:bg-[#B8860B] transition-colors font-semibold">
-                  JOIN
-                </button>
-              </form>
-            )}
+              <div className="font-serif text-base text-[#2B1B12] mb-1">
+                {t.footer.newsletterTitle}
+              </div>
+              <p className="text-[11px] leading-5 text-[#57534E] mb-4">
+                {t.footer.newsletterBody}
+              </p>
+
+              {subscribed ? (
+                <div className="text-xs text-[#B8860B] font-semibold bg-white p-3 border border-[#2B1B12]/15">
+                  {t.footer.welcome}
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="flex border border-[#2B1B12]/20 bg-white focus-within:border-[#B8860B] transition-colors w-full">
+                  <input 
+                    type="email" 
+                    required
+                    placeholder={t.footer.emailPlaceholder} 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 min-w-0 bg-transparent px-3 py-2.5 text-xs text-[#2B1B12] placeholder:text-[#2B1B12]/40 outline-none" 
+                  />
+                  <button type="submit" className="px-4 shrink-0 text-[10px] tracking-[0.16em] uppercase bg-[#2B1B12] text-[#E0D5C5] hover:bg-[#B8860B] transition-colors font-semibold">
+                    {t.footer.join}
+                  </button>
+                </form>
+              )}
+            </div>
+
           </div>
+
         </div>
 
         {/* Lower Footer Bottom Bar */}
         <div className="pt-6 pb-4 flex flex-col md:flex-row gap-4 justify-between items-center text-[11px] tracking-[0.08em] text-[#57534E] z-10 relative font-medium">
           <div className="md:flex-1 flex justify-center md:justify-start order-1">
-            © {new Date().getFullYear()} HAIR OVEN. All rights reserved.
+            © {new Date().getFullYear()} {BRAND.house}. {t.footer.rights}
           </div>
 
-          <div className="flex gap-6 order-2">
-            <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">Privacy</Link>
-            <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">Terms</Link>
-            <Link href="/contact" className="hover:text-[#2B1B12] transition-colors">Contact</Link>
+          <div className="flex gap-6 order-2 items-center">
+            <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.privacy}</Link>
+            <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.terms}</Link>
+            <Link href="/contact" className="hover:text-[#2B1B12] transition-colors">{t.footer.contactLink}</Link>
+            <LanguageSelector variant="desktop" />
           </div>
 
           <div className="md:flex-1 flex justify-center md:justify-end order-3 mt-2 md:mt-0">

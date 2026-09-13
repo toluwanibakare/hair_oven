@@ -5,6 +5,7 @@ import { products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { WatermarkImage } from "@/components/watermark-image";
+import { useLanguage } from "@/context/language-context";
 
 const categories = [
   "Raw & Premium Human Hair",
@@ -18,6 +19,7 @@ const categories = [
 ];
 
 export function ShopCollection() {
+  const { t } = useLanguage();
   const featured = products.filter((p) => p.featured);
   const bestsellers = products.filter((p) => p.bestseller);
 
@@ -26,19 +28,19 @@ export function ShopCollection() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <div className="text-[10px] tracking-[0.22em] uppercase text-[#A68B5B]">Discovery</div>
-            <h2 className="font-serif text-[36px] lg:text-[48px] leading-none tracking-[-0.02em] mt-3">Shop the Hair Oven Collection</h2>
+            <div className="text-[10px] tracking-[0.22em] uppercase text-[#A68B5B]">{t.shopHome.eyebrow}</div>
+            <h2 className="font-serif text-[36px] lg:text-[48px] leading-none tracking-[-0.02em] mt-3">{t.shopHome.title}</h2>
           </div>
           <Link href="/shop" className="hidden sm:inline-flex h-11 px-6 border border-[rgba(28,18,14,0.12)] items-center text-[11px] tracking-[0.16em] uppercase hover:bg-[#2B1B12] hover:text-white hover:border-[#2B1B12] transition-colors">
-            View All Hair →
+            {t.shopHome.viewAll}
           </Link>
         </div>
 
         {/* Category pills - editorial */}
         <div className="mt-8 flex gap-2 overflow-auto no-scrollbar pb-2">
-          {categories.map((cat) => (
+          {categories.map((cat, i) => (
             <Link key={cat} href={`/shop?cat=${encodeURIComponent(cat)}`} className="shrink-0 h-9 px-4 border border-[rgba(28,18,14,0.12)] bg-[#FDF8F0] hover:bg-[#2B1B12] hover:text-white hover:border-[#2B1B12] transition-colors text-[11px] tracking-[0.08em] uppercase whitespace-nowrap inline-flex items-center">
-              {cat}
+              {t.shopHome.categories[i] ?? cat}
             </Link>
           ))}
         </div>
@@ -64,8 +66,8 @@ export function ShopCollection() {
           {/* Horizontal row - full width */}
           <div className="lg:col-span-12">
             <div className="flex items-center justify-between mt-4 mb-4">
-              <div className="text-[11px] tracking-[0.16em] uppercase text-[#78716C]">Bestsellers • Most loved</div>
-              <Link href="/shop?sort=bestseller" className="text-[11px] tracking-[0.14em] uppercase underline underline-offset-4 decoration-[#C2A47A] hover:text-[#A68B5B]">View bestsellers</Link>
+              <div className="text-[11px] tracking-[0.16em] uppercase text-[#78716C]">{t.shopHome.bestsellers}</div>
+              <Link href="/shop?sort=bestseller" className="text-[11px] tracking-[0.14em] uppercase underline underline-offset-4 decoration-[#C2A47A] hover:text-[#A68B5B]">{t.shopHome.viewBestsellers}</Link>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[...bestsellers, ...products.slice(0, 2)].slice(0, 4).map((p) => (
@@ -80,16 +82,16 @@ export function ShopCollection() {
               <WatermarkImage src="/products/editorial-blowdry.jpg" alt="Editorial hair styling" containerClassName="absolute inset-0 w-full h-full" imageClassName="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700" watermarkSize="lg" showWatermark={false} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/60 via-[#2B1B12]/20 to-transparent pointer-events-none z-10" />
               <div className="absolute bottom-0 p-6 lg:p-8 z-20">
-                <div className="text-[10px] tracking-[0.16em] uppercase text-white/80">Editorial</div>
-                <div className="font-serif text-white text-[24px] leading-none mt-2">Movement that feels alive.</div>
-                <Link href="/collections/signature" className="mt-4 inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center">Shop Signature →</Link>
+                <div className="text-[10px] tracking-[0.16em] uppercase text-white/80">{t.shopHome.editorialEyebrow}</div>
+                <div className="font-serif text-white text-[24px] leading-none mt-2">{t.shopHome.editorialTitle}</div>
+                <Link href="/collections/signature" className="mt-4 inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center">{t.shopHome.editorialCta}</Link>
               </div>
             </div>
             <div className="bg-[#FDF8F0] border border-[rgba(28,18,14,0.06)] p-8 flex flex-col justify-center">
-              <div className="text-[10px] tracking-[0.18em] uppercase text-[#A68B5B]">Oven Veil™</div>
-              <div className="font-serif text-[22px] leading-tight mt-3">Sheer lace that melts.</div>
-              <p className="text-sm leading-6 text-[#57534E] mt-3">Part of every wig. Part of every promise.</p>
-              <Link href="/heirloom-guide" className="mt-6 text-[11px] tracking-[0.14em] uppercase underline underline-offset-4 decoration-[#C2A47A]">Learn about lace →</Link>
+              <div className="text-[10px] tracking-[0.18em] uppercase text-[#A68B5B]">{t.shopHome.veilEyebrow}</div>
+              <div className="font-serif text-[22px] leading-tight mt-3">{t.shopHome.veilTitle}</div>
+              <p className="text-sm leading-6 text-[#57534E] mt-3">{t.shopHome.veilBody}</p>
+              <Link href="/heirloom-guide" className="mt-6 text-[11px] tracking-[0.14em] uppercase underline underline-offset-4 decoration-[#C2A47A]">{t.shopHome.veilCta}</Link>
             </div>
           </div>
         </div>

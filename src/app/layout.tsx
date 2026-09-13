@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/cart-context";
+import { LanguageProvider } from "@/context/language-context";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${cormorant.variable} ${inter.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-[#FFFCF8] text-[#1A1A1A]">
         <SplashScreen />
+        <LanguageProvider>
         <CartProvider>
           <ScrollFeatures />
           <Navigation />
@@ -69,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
           <Footer />
         </CartProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

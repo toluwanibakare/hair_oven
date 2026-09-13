@@ -4,8 +4,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { WatermarkImage } from "@/components/watermark-image";
+import { useLanguage } from "@/context/language-context";
 
 export default function OvenVeilPage() {
+  const { t } = useLanguage();
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
       {/* Editorial Hero Header */}
@@ -22,13 +24,13 @@ export default function OvenVeilPage() {
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10">
           <div className="max-w-[800px]">
             <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
-              OUR SIGNATURE FINISHING PHILOSOPHY
+              {t.ovenVeilPage.heroEyebrow}
             </span>
             <h1 className="font-serif text-[44px] sm:text-[64px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
               OVEN VEIL™
             </h1>
             <p className="mt-6 text-base sm:text-lg text-[#E8DDC9]/90 leading-8 max-w-[62ch]">
-              A considered approach to the transition between hair and wearer - designed to create an exceptionally natural appearance while preserving the movement and character of the hair.
+              {t.ovenVeilPage.heroBody}
             </p>
             
             <div className="mt-8 flex flex-wrap gap-4">
@@ -36,13 +38,13 @@ export default function OvenVeilPage() {
                 href="/atelier#consultation-form"
                 className="h-[50px] px-8 bg-[#D4AF37] text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white transition-colors"
               >
-                REQUEST AN ATELIER COMMISSION
+                {t.ovenVeilPage.ctaA}
               </Link>
               <Link
                 href="/heirloom-guide"
                 className="h-[50px] px-8 border border-white/20 text-white text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white hover:text-[#2B1B12] transition-colors"
               >
-                READ THE HEIRLOOM GUIDE
+                {t.ovenVeilPage.ctaB}
               </Link>
             </div>
           </div>
@@ -54,20 +56,20 @@ export default function OvenVeilPage() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-6">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold">
-              THE PHILOSOPHY OF TRANSITION
+              {t.ovenVeilPage.philEyebrow}
             </span>
             <h2 className="font-serif text-3xl lg:text-5xl text-[#2B1B12] mt-3 font-light">
-              How is a natural-looking finish achieved?
+              {t.ovenVeilPage.philTitle}
             </h2>
             <div className="mt-6 space-y-5 text-sm text-[#57534E] leading-7">
               <p>
-                At HAIR OVEN, we reject stiff, aggressive edges in favor of seamless, effortless realism. Oven Veil™ is defined not by harsh chemical glues or temporary illusions, but by precise hand-craftsmanship and anatomical harmony.
+                {t.ovenVeilPage.p1}
               </p>
               <p>
-                Each strand is individually single-knotted onto our proprietary, ultra-sheer base material. The hairline undergoes a multi-stage micro-bleaching process, creating the optical foundation of natural growth directly from the scalp.
+                {t.ovenVeilPage.p2}
               </p>
               <p>
-                The resulting transition moves naturally with your facial expressions, holding weight and fluid direction without tension or artificial shine.
+                {t.ovenVeilPage.p3}
               </p>
             </div>
 
@@ -75,20 +77,20 @@ export default function OvenVeilPage() {
               <div>
                 <div className="font-serif text-2xl text-[#B8860B]">01</div>
                 <div className="text-[11px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mt-1">
-                  Single-Knotted Realism
+                  {t.ovenVeilPage.feat1title}
                 </div>
                 <p className="text-xs text-[#57534E] mt-1 leading-5">
-                  Hand-tied along the immediate front perimeter to replicate organic hair density.
+                  {t.ovenVeilPage.feat1body}
                 </p>
               </div>
 
               <div>
                 <div className="font-serif text-2xl text-[#B8860B]">02</div>
                 <div className="text-[11px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mt-1">
-                  Fluid Dynamics
+                  {t.ovenVeilPage.feat2title}
                 </div>
                 <p className="text-xs text-[#57534E] mt-1 leading-5">
-                  Preserves the natural drop, bounce, and movement of every single strand.
+                  {t.ovenVeilPage.feat2body}
                 </p>
               </div>
             </div>

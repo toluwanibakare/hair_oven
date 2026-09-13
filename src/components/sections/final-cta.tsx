@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/context/language-context";
 
 export function FinalCta() {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const scale = useTransform(scrollYProgress, [0, 1], [1.06, 1]);
@@ -20,22 +22,22 @@ export function FinalCta() {
 
       <div className="relative z-10 h-full max-w-[1600px] mx-auto px-6 lg:px-10 flex flex-col justify-center items-center text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}>
-          <div className="text-[11px] tracking-[0.22em] uppercase text-[#E8DDC9]">Your hair story starts here</div>
+          <div className="text-[11px] tracking-[0.22em] uppercase text-[#E8DDC9]">{t.finalCta.eyebrow}</div>
           <h2 className="font-serif text-[42px] sm:text-[56px] lg:text-[72px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
-            Exceptional hair.
+            {t.finalCta.titleA}
             <br />
-            <span className="italic font-normal text-[#E8DDC9]">Extraordinary you.</span>
+            <span className="italic font-normal text-[#E8DDC9]">{t.finalCta.titleB}</span>
           </h2>
-          <p className="text-white/70 text-sm lg:text-base max-w-[48ch] mx-auto mt-6 leading-6">Discover exceptional hair, crafted with intention. The Private, Signature and Essentials collections await.</p>
+          <p className="text-white/70 text-sm lg:text-base max-w-[48ch] mx-auto mt-6 leading-6">{t.finalCta.body}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link href="/shop" className="h-[52px] px-10 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
-              Shop Hair Oven →
+              {t.finalCta.primary}
             </Link>
             <Link href="/collections/private" className="h-[52px] px-10 border border-white/30 text-white inline-flex items-center text-[11px] tracking-[0.16em] uppercase backdrop-blur hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">
-              Explore the Collections
+              {t.finalCta.secondary}
             </Link>
           </div>
-          <div className="mt-8 text-[10px] tracking-[0.16em] uppercase text-white/50">Born from faith • Inspired by women • Defined by craftsmanship • Built without compromise</div>
+          <div className="mt-8 text-[10px] tracking-[0.16em] uppercase text-white/50">{t.finalCta.strip}</div>
         </motion.div>
       </div>
     </section>

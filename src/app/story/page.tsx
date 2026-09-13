@@ -4,8 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Heart } from "lucide-react";
+import { useLanguage } from "@/context/language-context";
 
 export default function HousePage() {
+  const { t } = useLanguage();
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
       {/* Hero Header with Autoplay Loop Video */}
@@ -26,13 +28,13 @@ export default function HousePage() {
 
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center z-10">
           <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
-            THE HOUSE MANIFESTO
+            {t.story.manifesto}
           </span>
           <h1 className="font-serif text-[42px] sm:text-[64px] lg:text-[84px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light max-w-[1000px] mx-auto">
-            THE HOUSE OF EXCEPTIONAL HAIR
+            {t.story.title}
           </h1>
           <p className="mt-6 text-sm sm:text-base tracking-[0.16em] uppercase text-[#E8DDC9]/80 font-medium max-w-[800px] mx-auto">
-            Birthed by GOD. Inspired by women. Defined by craftsmanship.
+            {t.story.tagline}
           </p>
         </div>
       </section>
@@ -49,18 +51,18 @@ export default function HousePage() {
         >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
-              01. THE CALLING
+              {t.story.ch1label}
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
-              THE CALLING
+              {t.story.ch1title}
             </h2>
           </div>
           <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <p>
-              Some houses begin with a business plan. <em className="italic text-[#2B1B12] font-normal">HAIR OVEN began with a calling.</em>
+              {t.story.ch1a} <em className="italic text-[#2B1B12] font-normal">{t.story.ch1calling}</em>
             </p>
             <p className="mt-4">
-              Long before there was a name, a logo, or a global vision, there was a little girl who loved beautiful hair. From watching my mother’s hands plait my hair to weaving the hair of neighborhood children, an unspoken obsession with precision was born. I didn’t know it then, but GOD was preparing my hands long before HE revealed the assignment.
+              {t.story.ch1b}
             </p>
           </div>
         </motion.div>
@@ -75,15 +77,15 @@ export default function HousePage() {
         >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
-              02. THE CRAFTSMANSHIP
+              {t.story.ch2label}
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
-              THE CRAFTSMANSHIP
+              {t.story.ch2title}
             </h2>
           </div>
           <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <p>
-              The most important lessons I learned about hair were not taught in a classroom. As a young girl, I would travel miles simply to have my hair braided by a woman whose work was immaculate. She taught me that the difference between the ordinary and the exceptional lives entirely in the details. The precision of the line. The patience behind the work. The pride in the finish. That deep reverence for craftsmanship became the absolute standard that HAIR OVEN represents today.
+              {t.story.ch2}
             </p>
           </div>
         </motion.div>
@@ -98,18 +100,18 @@ export default function HousePage() {
         >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
-              03. THE PROPHECY
+              {t.story.ch3label}
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
-              THE PROPHECY
+              {t.story.ch3title}
             </h2>
           </div>
           <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <blockquote className="font-serif text-xl lg:text-2xl text-[#2B1B12] italic mb-4">
-              “I can imagine what you’ll be like on your wedding day.”
+              “{t.story.ch3quote}”
             </blockquote>
             <p>
-              Decades ago, my late father would smile and joke that he could see me hiring a hairstylist and makeup artist from another country for my wedding. It was his loving way of describing my uncompromising standards. Today, those words carry the weight of prophecy. GOD allows memories from our past to make perfect sense only when we finally step into the future HE was preparing us for.
+              {t.story.ch3}
             </p>
           </div>
         </motion.div>
@@ -124,15 +126,15 @@ export default function HousePage() {
         >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
-              04. THE ASSIGNMENT
+              {t.story.ch4label}
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
-              THE ASSIGNMENT
+              {t.story.ch4title}
             </h2>
           </div>
           <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
             <p>
-              My journey was never only about hair. Armed with an Economics degree and years of entrepreneurial experience, I knew how to build a business. But I wanted purpose. I prayed and asked GOD to direct my steps. HE did not simply lead me to a business; HE gave me HAIR OVEN. The name. The vision. The exact assignment: to help women experience absolute beauty without compromising on quality, dignity, or value.
+              {t.story.ch4}
             </p>
           </div>
         </motion.div>
@@ -147,16 +149,16 @@ export default function HousePage() {
         >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
-              05. THE PHILOSOPHY: UNCOMPROMISING RESPECT
+              {t.story.ch5label}
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
-              UNCOMPROMISING RESPECT
+              {t.story.ch5title}
             </h2>
           </div>
           <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
-            <h3 className="font-serif text-xl text-[#2B1B12] mb-3">Your budget does not define your worth.</h3>
+            <h3 className="font-serif text-xl text-[#2B1B12] mb-3">{t.story.ch5head}</h3>
             <p>
-              At HAIR OVEN, we believe every woman deserves to experience excellence. Whether she is purchasing an accessible Everyday Essential or investing in a hyper-rare, lifetime Private Reserve heirloom, she commands the exact same respect within our House. The collection she selects dictates the price; it will never dictate her value.
+              {t.story.ch5}
             </p>
           </div>
         </motion.div>
@@ -171,16 +173,16 @@ export default function HousePage() {
         >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold font-sans">
-              06. THE GLOBAL VISION
+              {t.story.ch6label}
             </span>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#2B1B12] mt-2">
-              THE GLOBAL VISION
+              {t.story.ch6title}
             </h2>
           </div>
           <div className="lg:col-span-7 text-base lg:text-lg text-[#57534E] leading-8 font-serif">
-            <h3 className="font-serif text-xl text-[#2B1B12] mb-3">From Africa to the World.</h3>
+            <h3 className="font-serif text-xl text-[#2B1B12] mb-3">{t.story.ch6head}</h3>
             <p>
-              Our ambition is global. We are building HAIR OVEN to be one of the world's most trusted names in ultra-premium hair. A brand born in Africa, built to stand proudly on a global stage, while never forgetting where it began. As we expand, our promise remains absolute: we will continuously raise the standard. Because when a woman chooses HAIR OVEN, she is trusting us with more than her finances. She is trusting us with her identity.
+              {t.story.ch6}
             </p>
           </div>
         </motion.div>
@@ -216,37 +218,37 @@ export default function HousePage() {
               className="lg:col-span-7"
             >
               <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold font-sans block">
-                A NOTE FROM THE FOUNDER
+                {t.story.noteEyebrow}
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2B1B12] mt-3 font-light">
-                TO EVERY WOMAN WHO HAS BECOME PART OF OUR STORY:
+                {t.story.noteTitle}
               </h2>
 
               <div className="mt-6 text-base lg:text-lg text-[#57534E] leading-8 space-y-5 font-serif">
                 <p>
-                  When I look at HAIR OVEN, I don't simply see a luxury house.
+                  {t.story.noteP1}
                 </p>
                 <p>
-                  I see the children whose hair I wove. I see my mother's hands. I hear my late father's words. I see the years of global travel, researching factories, testing qualities, and constantly asking one question: <em>"How do we give women the absolute best?"</em>
+                  {t.story.noteP2}
                 </p>
                 <p>
-                  My greatest hope is that the woman who encounters this brand never feels like a transaction. I want her to feel seen. I want her to feel revered. Whether she is investing in exceptional raw hair, preparing for her wedding day, serving clients as a stylist, or simply looking in the mirror to feel extraordinary - she belongs here.
+                  {t.story.noteP3}
                 </p>
                 <p className="font-serif text-xl text-[#2B1B12] italic">
-                  GOD was preparing the hands before revealing the assignment. HAIR OVEN is my response.
+                  {t.story.noteP4}
                 </p>
                 <p>
-                  Thank you for trusting us. Thank you for believing in the standard. And thank you for becoming part of a story that began long before this House had a name.
+                  {t.story.noteP5}
                 </p>
               </div>
 
               <div className="mt-8 pt-6 border-t border-[#2B1B12]/10 font-serif">
-                <div className="text-sm text-[#78716C] italic font-serif mb-1">With immense gratitude,</div>
+                <div className="text-sm text-[#78716C] italic font-serif mb-1">{t.story.gratitude}</div>
                 <div className="font-serif text-2xl text-[#2B1B12] tracking-wide">
-                  Hannah OLUWATOSIN Ogundare
+                  {t.story.founderName}
                 </div>
                 <div className="text-[11px] tracking-[0.2em] uppercase text-[#B8860B] font-semibold mt-1 font-sans">
-                  Founder, HAIR OVEN
+                  {t.story.founderRole}
                 </div>
               </div>
             </motion.div>

@@ -4,47 +4,38 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { WatermarkImage } from "@/components/watermark-image";
+import { useLanguage } from "@/context/language-context";
 
-const collectionCards = [
+const baseCards = [
   {
     title: "THE PRIVATE COLLECTION",
-    tagline: "RESERVED FOR THE RAREST HAIR.",
-    desc: "Entirely unprocessed, single-donor hair selected for exceptional provenance, natural integrity and enduring beauty. Every piece is considered individually, with the attention ordinarily reserved for an heirloom.",
     link: "/collections/private",
-    btnText: "DISCOVER THE PRIVATE COLLECTION",
     image: "/products/editorial-model-2.jpg",
     objectPos: "object-top",
   },
   {
     title: "THE SIGNATURE COLLECTION",
-    tagline: "THE HAIR OVEN STANDARD, MADE PERSONAL.",
-    desc: "Exceptional human hair selected for its natural movement, density and character, then finished through the House with meticulous attention to proportion, construction and wear.",
     link: "/collections/signature",
-    btnText: "EXPLORE SIGNATURE",
-    image: "/products/caramel-wave.jpeg",
+    image: "/products/signature_collection.jpg",
     objectPos: "object-top",
   },
   {
     title: "ESSENTIALS",
-    tagline: "THE EVERYDAY EXPRESSION OF THE HOUSE.",
-    desc: "Considered pieces for effortless, elevated wear - created with the same attention to finish and presentation that defines HAIR OVEN.",
     link: "/collections/essentials",
-    btnText: "DISCOVER ESSENTIALS",
-    image: "/products/aurelia-barrel-curl.jpeg",
+    image: "/products/essentials.jpg",
     objectPos: "object-top",
   },
   {
     title: "THE ATELIER",
-    tagline: "MADE FOR ONE.",
-    desc: "A private commission is created around the individual - not selected from a shelf. From hair selection and cap architecture to length, density, colour and finish, each element is considered in consultation with the client.",
     link: "/atelier",
-    btnText: "ENTER THE ATELIER",
     image: "/products/editorial-model.jpg",
     objectPos: "object-top",
   },
 ];
 
 export function Collections() {
+  const { t } = useLanguage();
+  const cards = baseCards.map((c, i) => ({ ...c, ...t.collections.cards[i] }));
   return (
     <section className="bg-[#FFFCF8] text-[#2B1B12] py-20 lg:py-28 border-b border-[#2B1B12]/10 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
@@ -56,18 +47,18 @@ export function Collections() {
           className="text-center max-w-[900px] mx-auto mb-16"
         >
           <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
-            THE HOUSES OF CRAFT
+            {t.collections.eyebrow}
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#2B1B12] mt-3 font-light lg:whitespace-nowrap">
-            AN EXPRESSION OF ABSOLUTE LUXURY.
+            {t.collections.title}
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#57534E] leading-7">
-            From hyper-exclusive rare units preserved as lifetime investments, to everyday elegance. Each HAIR OVEN collection is defined by uncompromising design, international standards of quality, and a distinctly elevated point of view.
+            {t.collections.body}
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {collectionCards.map((card, i) => (
+          {cards.map((card, i) => (
             <motion.div
               key={card.title}
               initial={{ opacity: 0, y: 44 }}
@@ -107,7 +98,7 @@ export function Collections() {
                     href={card.link}
                     className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#2B1B12] hover:text-[#B8860B] inline-flex items-center gap-2 transition-colors"
                   >
-                    {card.btnText} <ArrowRight className="w-4 h-4" />
+                    {card.btn} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>

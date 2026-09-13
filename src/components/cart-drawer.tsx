@@ -7,8 +7,10 @@ import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
 
 import { WatermarkImage } from "@/components/watermark-image";
+import { useLanguage } from "@/context/language-context";
 
 export function CartDrawer() {
+  const { t } = useLanguage();
   const { items, removeFromCart, updateQty, cartTotal, drawerOpen, setDrawerOpen, cartCount } = useCart();
 
   return (
@@ -31,8 +33,8 @@ export function CartDrawer() {
           >
             <div className="h-[72px] px-6 flex items-center justify-between border-b border-[rgba(28,18,14,0.06)]">
               <div>
-                <div className="text-[11px] tracking-[0.18em] uppercase text-[#A68B5B]">Your Bag</div>
-                <div className="font-serif text-[18px] tracking-[-0.01em]">{cartCount === 0 ? "Empty" : `${cartCount} ${cartCount === 1 ? "item" : "items"}`}</div>
+                <div className="text-[11px] tracking-[0.18em] uppercase text-[#A68B5B]">{t.nav.yourBag}</div>
+                <div className="font-serif text-[18px] tracking-[-0.01em]">{cartCount === 0 ? t.nav.empty : `${cartCount} ${cartCount === 1 ? "item" : "items"}`}</div>
               </div>
               <button onClick={() => setDrawerOpen(false)} className="w-10 h-10 grid place-items-center rounded-full hover:bg-[#2B1B12]/5 transition-colors">
                 <X className="w-5 h-5" />
@@ -45,13 +47,13 @@ export function CartDrawer() {
                   <div className="w-16 h-16 rounded-full bg-[#F5EFE6] grid place-items-center mx-auto mb-4">
                     <ShoppingBag className="w-6 h-6 text-[#A68B5B]" strokeWidth={1.5} />
                   </div>
-                  <div className="font-serif text-2xl">Your bag is empty</div>
-                  <p className="text-sm text-[#78716C] mt-2 max-w-[28ch] mx-auto">Discover exceptional hair, crafted with intention.</p>
+                  <div className="font-serif text-2xl">{t.cart.emptyTitle}</div>
+                  <p className="text-sm text-[#78716C] mt-2 max-w-[28ch] mx-auto">{t.cart.emptyBody}</p>
                   <button
                     onClick={() => setDrawerOpen(false)}
                     className="mt-6 h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase"
                   >
-                    Continue Shopping
+                    {t.cart.continue}
                   </button>
                 </div>
               </div>
@@ -82,7 +84,7 @@ export function CartDrawer() {
                           <div className="text-right">
                             <div className="text-sm font-medium">{formatPrice(item.product.price * item.qty)}</div>
                             <button onClick={() => removeFromCart(item.product.id)} className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] hover:text-[#2B1B12] underline underline-offset-4">
-                              Remove
+                              {t.cart.remove}
                             </button>
                           </div>
                         </div>
@@ -92,12 +94,12 @@ export function CartDrawer() {
                 </div>
                 <div className="border-t border-[rgba(28,18,14,0.08)] p-6 bg-[#FDF8F0] space-y-4">
                   <div className="flex justify-between text-sm">
-                    <span className="text-[#78716C]">Subtotal</span>
+                    <span className="text-[#78716C]">{t.cart.subtotal}</span>
                     <span className="font-medium">{formatPrice(cartTotal)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-[#78716C]">Shipping</span>
-                    <span className="text-[#A68B5B]">Calculated at checkout</span>
+                    <span className="text-[#78716C]">{t.cart.shipping}</span>
+                    <span className="text-[#A68B5B]">{t.cart.shippingNote}</span>
                   </div>
                   <div className="h-px bg-[rgba(28,18,14,0.08)]" />
                   <Link
@@ -105,9 +107,9 @@ export function CartDrawer() {
                     onClick={() => setDrawerOpen(false)}
                     className="h-[52px] bg-[#2B1B12] text-white grid place-items-center text-[11px] tracking-[0.18em] uppercase font-medium hover:bg-[#2B1B12] transition-colors"
                   >
-                    Proceed to Checkout
+                    {t.cart.checkout}
                   </Link>
-                  <div className="text-center text-[11px] text-[#78716C]">Secure checkout • WhatsApp support available</div>
+                  <div className="text-center text-[11px] text-[#78716C]">{t.cart.support}</div>
                 </div>
               </>
             )}

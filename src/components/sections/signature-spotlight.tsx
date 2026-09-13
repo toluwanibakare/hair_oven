@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { WatermarkImage } from "@/components/watermark-image";
+import { useLanguage } from "@/context/language-context";
 
 const signatureUnits = [
   {
@@ -109,8 +110,10 @@ const signatureUnits = [
 ];
 
 export function SignatureSpotlight() {
+  const { t } = useLanguage();
+  const units = signatureUnits.map((u, i) => ({ ...u, ...t.spotlight.units[i] }));
   const [activeTab, setActiveTab] = useState(0);
-  const current = signatureUnits[activeTab];
+  const current = units[activeTab];
 
   return (
     <section className="bg-[#FFFCF8] text-[#2B1B12] py-20 lg:py-28 border-b border-[#2B1B12]/10 overflow-hidden">
@@ -126,15 +129,15 @@ export function SignatureSpotlight() {
         >
           <div>
             <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold block">
-              SIGNATURE MASTERWORKS
+              {t.spotlight.eyebrow}
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B1B12] leading-tight tracking-tight mt-2 font-light">
-              HOUSE ICON SILHOUETTES.
+              {t.spotlight.title}
             </h2>
           </div>
 
           <div className="flex gap-3 bg-[#EDE6D6]/40 p-1.5 rounded-sm border border-[#2B1B12]/10">
-            {signatureUnits.map((unit, idx) => (
+            {units.map((unit, idx) => (
               <button
                 key={unit.id}
                 onClick={() => setActiveTab(idx)}
@@ -177,7 +180,7 @@ export function SignatureSpotlight() {
                     containerClassName="w-full h-full"
                     imageClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     watermarkSize="lg"
-                    showWatermark={false}
+                    showWatermark={true}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -196,7 +199,7 @@ export function SignatureSpotlight() {
                   href={current.link}
                   className="h-10 px-5 bg-[#D4AF37] text-[#2B1B12] text-[10px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-1.5 hover:bg-white transition-colors"
                 >
-                  VIEW UNIT <ArrowRight className="w-3.5 h-3.5" />
+                  {t.spotlight.viewUnit} <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
@@ -233,7 +236,7 @@ export function SignatureSpotlight() {
                 {/* Signature Details Section */}
                 <div className="mt-8 border-t border-[#2B1B12]/10 pt-6">
                   <h4 className="text-[11px] tracking-[0.22em] uppercase text-[#2B1B12] font-semibold mb-4">
-                    THE SIGNATURE DETAILS
+                    {t.spotlight.detailsTitle}
                   </h4>
 
                   <div className="grid sm:grid-cols-2 gap-3">
@@ -253,7 +256,7 @@ export function SignatureSpotlight() {
                     href={current.link}
                     className="h-[52px] px-9 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors shadow-md"
                   >
-                    ACQUIRE THIS UNIT <ArrowRight className="w-4 h-4" />
+                    {t.spotlight.acquire} <ArrowRight className="w-4 h-4" />
                   </Link>
                   <a
                     href={`https://wa.me/2348057388171?text=${encodeURIComponent(current.whatsappText)}`}
@@ -261,7 +264,7 @@ export function SignatureSpotlight() {
                     rel="noopener noreferrer"
                     className="h-[52px] px-8 border border-[#2B1B12]/20 text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center hover:bg-[#2B1B12] hover:text-[#FFFCF8] transition-colors"
                   >
-                    INQUIRE VIA CONCIERGE
+                    {t.spotlight.inquire}
                   </a>
                 </div>
               </motion.div>

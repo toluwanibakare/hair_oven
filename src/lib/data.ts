@@ -348,18 +348,21 @@ export const testimonials = [
     location: "Lagos, NG",
     text: "The Private Collection is unlike anything I have owned. Five years and it still moves like new. Worth every kobo.",
     product: "Raw Bone Straight 20″",
+    rating: 5,
   },
   {
     name: "Zainab A.",
     location: "London, UK",
     text: "I have never had a frontal melt this seamlessly. Oven Veil is not marketing - it truly disappears.",
     product: "Oven Veil™ Frontal",
+    rating: 4,
   },
   {
     name: "Chloe M.",
     location: "Houston, US",
     text: "Signature Deep Curly survived my wedding, honeymoon and everyday life. Defined and so soft.",
     product: "Signature Deep Curly",
+    rating: 5,
   },
 ];
 
