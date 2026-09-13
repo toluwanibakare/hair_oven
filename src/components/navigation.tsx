@@ -48,6 +48,7 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [collectionsOpen, setCollectionsOpen] = useState(false);
+  const [mobileCollectionsOpen, setMobileCollectionsOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const { cartCount, setDrawerOpen, wishlist } = useCart();
   const { t } = useLanguage();
@@ -295,7 +296,7 @@ export function Navigation() {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-auto p-6 space-y-3 font-semibold tracking-[0.12em] text-xs uppercase text-[#2B1B12]">
+              <div className="flex-1 overflow-auto px-6 pb-6 pt-2 space-y-3 font-semibold tracking-[0.12em] text-xs uppercase text-[#2B1B12]">
                 <Link
                   href="/"
                   onClick={() => setMobileOpen(false)}
@@ -313,40 +314,59 @@ export function Navigation() {
                   <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                 </Link>
 
-                <div className="py-2 border-b border-[#2B1B12]/08">
-                  <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] mb-2 font-bold">
-                    {t.nav.collections}
-                  </div>
-                  <div className="pl-3 space-y-2.5 font-medium text-xs normal-case text-[#57534E]">
-                    <Link
-                      href="/collections/private"
-                      onClick={() => setMobileOpen(false)}
-                      className={`block hover:text-[#2B1B12] ${isActive("/collections/private") ? "text-[#B8860B]" : ""}`}
-                    >
-                      Private Collection (RAW Reserve)
-                    </Link>
-                    <Link
-                      href="/collections/signature"
-                      onClick={() => setMobileOpen(false)}
-                      className={`block hover:text-[#2B1B12] ${isActive("/collections/signature") ? "text-[#B8860B]" : ""}`}
-                    >
-                      Signature Collection
-                    </Link>
-                    <Link
-                      href="/collections/essentials"
-                      onClick={() => setMobileOpen(false)}
-                      className={`block hover:text-[#2B1B12] ${isActive("/collections/essentials") ? "text-[#B8860B]" : ""}`}
-                    >
-                      Essentials Collection
-                    </Link>
-                    <Link
-                      href="/atelier"
-                      onClick={() => setMobileOpen(false)}
-                      className={`block hover:text-[#2B1B12] ${isActive("/atelier") ? "text-[#B8860B]" : ""}`}
-                    >
-                      The Atelier (Private Commission)
-                    </Link>
-                  </div>
+                <div className="border-b border-[#2B1B12]/08">
+                  <button
+                    onClick={() => setMobileCollectionsOpen((v) => !v)}
+                    className={`w-full flex items-center justify-between py-3 ${mobileCollectionsOpen || ["/collections", "/shop", "/extensions", "/product"].some((p) => pathname === p || pathname.startsWith(p + "/")) ? "text-[#B8860B]" : ""}`}
+                    aria-expanded={mobileCollectionsOpen}
+                  >
+                    <span className="flex items-center gap-2">{t.nav.collections}</span>
+                    <ChevronDown
+                      className={`w-4 h-4 text-[#B8860B] transition-transform duration-300 ${mobileCollectionsOpen ? "rotate-180" : "rotate-0"}`}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {mobileCollectionsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-3 pb-4 space-y-2.5 font-medium text-xs normal-case text-[#57534E]">
+                          <Link
+                            href="/collections/private"
+                            onClick={() => setMobileOpen(false)}
+                            className={`block hover:text-[#2B1B12] ${isActive("/collections/private") ? "text-[#B8860B]" : ""}`}
+                          >
+                            Private Collection (RAW Reserve)
+                          </Link>
+                          <Link
+                            href="/collections/signature"
+                            onClick={() => setMobileOpen(false)}
+                            className={`block hover:text-[#2B1B12] ${isActive("/collections/signature") ? "text-[#B8860B]" : ""}`}
+                          >
+                            Signature Collection
+                          </Link>
+                          <Link
+                            href="/collections/essentials"
+                            onClick={() => setMobileOpen(false)}
+                            className={`block hover:text-[#2B1B12] ${isActive("/collections/essentials") ? "text-[#B8860B]" : ""}`}
+                          >
+                            Essentials Collection
+                          </Link>
+                          <Link
+                            href="/atelier"
+                            onClick={() => setMobileOpen(false)}
+                            className={`block hover:text-[#2B1B12] ${isActive("/atelier") ? "text-[#B8860B]" : ""}`}
+                          >
+                            The Atelier (Private Commission)
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 <Link
