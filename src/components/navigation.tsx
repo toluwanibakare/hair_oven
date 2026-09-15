@@ -66,11 +66,7 @@ export function Navigation() {
           
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden flex items-center">
-            {isComingPage ? (
-              <div className="p-2 -ml-2 text-[#2B1B12] opacity-40 pointer-events-none select-none">
-                <Menu className="w-6 h-6" strokeWidth={1.5} />
-              </div>
-            ) : (
+            {!isComingPage && (
               <button
                 className="p-2 -ml-2 text-[#2B1B12] hover:text-[#B8860B] transition-colors"
                 onClick={() => setMobileOpen(true)}

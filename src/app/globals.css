@@ -135,10 +135,25 @@ img {
   -webkit-user-drag: none !important;
 }
 
-/* Lenis-like smooth feel via CSS */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+/* Luxury Hazard Tape Gradient */
+.bg-hazard-tape {
+  background: repeating-linear-gradient(
+    -45deg,
+    #2B1B12,
+    #2B1B12 16px,
+    #D4AF37 16px,
+    #D4AF37 32px
+  );
 }
+
+.bg-hazard-tape-subtle {
+  background: repeating-linear-gradient(
+    -45deg,
+    #2B1B12,
+    #2B1B12 12px,
+    #B8860B 12px,
+    #B8860B 24px
+  );
+}
+
 
