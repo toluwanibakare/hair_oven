@@ -12,7 +12,7 @@ export default function HousePage() {
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
       {/* Hero Header with Autoplay Loop Video */}
       <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-28 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 opacity-45">
+        <div className="absolute inset-0 opacity-80">
           <video
             autoPlay
             loop
@@ -24,7 +24,7 @@ export default function HousePage() {
             <source src="/story_video" type="video/mp4" />
           </video>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/50 to-[#2B1B12]/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/30 to-[#2B1B12]/45" />
 
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center z-10">
           <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
