@@ -1,22 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Sparkles, CheckCircle2, ArrowRight, MessageCircle, Clock, ShieldCheck } from "lucide-react";
-import { WatermarkImage } from "@/components/watermark-image";
+import { MessageCircle } from "lucide-react";
 
 export default function ComingSoonPage() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail("");
-    }
-  };
 
   const progressSteps = [
     { n: "01", title: "Provenance & Donor Curation", status: "Completed", pct: 100, desc: "Sourcing single-donor raw reserves with absolute cuticle integrity." },
@@ -56,14 +44,14 @@ export default function ComingSoonPage() {
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
       {/* Hero Header Section */}
       <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-36 overflow-hidden">
-        <div className="absolute inset-0 opacity-25">
+        <div className="absolute inset-0 opacity-65">
           <img
             src="/products/editorial-model-2.jpg"
             alt="HAIR OVEN Digital Flagship Preparation"
             className="w-full h-full object-cover object-top"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/70 to-[#2B1B12]/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/40 to-[#2B1B12]/50" />
 
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center z-10">
           <motion.div
@@ -93,19 +81,19 @@ export default function ComingSoonPage() {
             className="mt-10 flex flex-wrap justify-center gap-4 text-xs tracking-[0.16em] uppercase font-semibold"
           >
             <a
-              href="#notify-form"
-              className="h-12 px-8 bg-[#D4AF37] text-[#2B1B12] inline-flex items-center gap-2 hover:bg-white transition-colors"
-            >
-              REQUEST PRIVATE ACCESS
-            </a>
-            <a
               href="https://wa.me/2348057388171"
               target="_blank"
               rel="noopener noreferrer"
+              className="h-12 px-8 bg-[#D4AF37] text-[#2B1B12] inline-flex items-center gap-2 hover:bg-white transition-colors"
+            >
+              <MessageCircle className="w-4 h-4 text-[#2B1B12]" /> WHATSAPP CONCIERGE
+            </a>
+            <Link
+              href="/atelier"
               className="h-12 px-8 border border-white/20 text-white inline-flex items-center gap-2 hover:bg-white hover:text-[#2B1B12] transition-colors"
             >
-              <MessageCircle className="w-4 h-4 text-[#D4AF37]" /> WHATSAPP CONCIERGE
-            </a>
+              REQUEST ATELIER COMMISSION
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -201,57 +189,6 @@ export default function ComingSoonPage() {
         </div>
       </section>
 
-      {/* VIP Access Notification Form Section */}
-      <section id="notify-form" className="max-w-[1000px] mx-auto px-6 lg:px-10 py-20 lg:py-28 text-center">
-        <div className="bg-[#2B1B12] text-[#E8DDC9] p-8 sm:p-14 rounded-sm border border-[#2B1B12]/10 shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#B8860B]/15 via-transparent to-transparent pointer-events-none" />
-
-          <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold block mb-2">
-            PRIVATE NOTES FROM THE HOUSE
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-light">
-            Receive First Access
-          </h2>
-          <p className="mt-4 text-xs sm:text-sm text-[#E8DDC9]/80 leading-6 max-w-[54ch] mx-auto">
-            Be the first to receive a private invitation upon digital launch, along with priority release access to rare raw unit reserves.
-          </p>
-
-          <div className="mt-8 max-w-[480px] mx-auto">
-            {submitted ? (
-              <div className="bg-white/10 border border-[#D4AF37]/30 p-6 text-center text-white rounded-sm">
-                <CheckCircle2 className="w-10 h-10 text-[#D4AF37] mx-auto mb-2" />
-                <div className="font-serif text-xl">Your Private Note Has Been Recorded</div>
-                <p className="text-xs text-[#E8DDC9]/80 mt-1">
-                  Thank you. You will receive first notification as soon as the House opens.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row border border-white/20 bg-white focus-within:border-[#D4AF37] transition-colors rounded-sm overflow-hidden">
-                <input
-                  type="email"
-                  required
-                  placeholder="ENTER YOUR EMAIL ADDRESS"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 min-w-0 bg-transparent px-4 py-3.5 text-xs text-[#2B1B12] placeholder:text-[#2B1B12]/50 outline-none uppercase font-medium"
-                />
-                <button
-                  type="submit"
-                  className="px-8 py-3.5 text-[10px] tracking-[0.18em] uppercase bg-[#D4AF37] text-[#2B1B12] hover:bg-white transition-colors font-semibold shrink-0"
-                >
-                  REQUEST ACCESS
-                </button>
-              </form>
-            )}
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-center items-center gap-4 text-[11px] tracking-[0.12em] uppercase text-[#E8DDC9]/60">
-            <span>By appointment in Lagos & London</span>
-            <span className="hidden sm:inline">•</span>
-            <span>Worldwide Insured Delivery</span>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

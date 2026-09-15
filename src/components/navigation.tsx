@@ -5,44 +5,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { Search, User, ShoppingBag, Menu, X, ChevronDown, ChevronRight, Heart, Sparkles } from "lucide-react";
+import { Search, User, ShoppingBag, Menu, X, ChevronDown, ChevronRight, Heart } from "lucide-react";
 import { useCart } from "@/context/cart-context";
 import { useLanguage } from "@/context/language-context";
 import { BRAND } from "@/lib/i18n";
 import { CartDrawer } from "./cart-drawer";
 import { SearchOverlay } from "./search-overlay";
 import { LanguageSelector } from "./language-selector";
-
-const collectionsDropdown = [
-  {
-    title: "PRIVATE COLLECTION",
-    subtitle: "RAW Reserve",
-    tagline: "Rare. Untouched. Exclusively Reserved.",
-    href: "/collections/private",
-    badge: "Lifetime Heirloom",
-  },
-  {
-    title: "SIGNATURE COLLECTION",
-    subtitle: "House Signatures",
-    tagline: "High-density virgin hair engineered for long-term luxury.",
-    href: "/collections/signature",
-    badge: "2-3+ Years",
-  },
-  {
-    title: "ESSENTIALS COLLECTION",
-    subtitle: "Everyday Luxury",
-    tagline: "Dependable beauty, flawlessly executed.",
-    href: "/collections/essentials",
-    badge: "Effortless Rotation",
-  },
-  {
-    title: "THE ATELIER",
-    subtitle: "Private Commission",
-    tagline: "Custom cranial mapping, density & Oven Veil™ architecture.",
-    href: "/atelier",
-    badge: "Custom Commission",
-  },
-];
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,11 +24,14 @@ export function Navigation() {
   const { scrollY } = useScroll();
   const pathname = usePathname();
 
+  const isComingPage = pathname === "/coming";
+
   const isActive = (href: string) => {
     const clean = href.split("?")[0];
     if (clean === "/") return pathname === "/";
     return pathname === clean || pathname.startsWith(clean + "/");
   };
+  
   const collectionsActive =
     collectionsOpen ||
     ["/collections", "/shop", "/extensions", "/product"].some(
@@ -94,28 +66,40 @@ export function Navigation() {
           
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden flex items-center">
-            <button
-              className="p-2 -ml-2 text-[#2B1B12] hover:text-[#B8860B] transition-colors"
-              onClick={() => setMobileOpen(true)}
-              aria-label={t.nav.openMenu}
-            >
-              <Menu className="w-6 h-6" strokeWidth={1.5} />
-            </button>
+            {isComingPage ? (
+              <div className="p-2 -ml-2 text-[#2B1B12] opacity-40 pointer-events-none select-none">
+                <Menu className="w-6 h-6" strokeWidth={1.5} />
+              </div>
+            ) : (
+              <button
+                className="p-2 -ml-2 text-[#2B1B12] hover:text-[#B8860B] transition-colors"
+                onClick={() => setMobileOpen(true)}
+                aria-label={t.nav.openMenu}
+              >
+                <Menu className="w-6 h-6" strokeWidth={1.5} />
+              </button>
+            )}
           </div>
 
           {/* Left Side Location & Contact Quick Link (Desktop) */}
-          <div className="hidden lg:flex items-center gap-6 text-[10px] tracking-[0.18em] uppercase font-semibold text-[#57534E]">
-            <Link
-              href="/contact"
-              className="hover:text-[#2B1B12] transition-colors flex items-center gap-2"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" /> LAGOS • LONDON • WORLDWIDE
-            </Link>
+          <div className={`hidden lg:flex items-center gap-6 text-[10px] tracking-[0.18em] uppercase font-semibold text-[#57534E] ${isComingPage ? "opacity-45 pointer-events-none select-none" : ""}`}>
+            {isComingPage ? (
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" /> LAGOS • LONDON • WORLDWIDE
+              </span>
+            ) : (
+              <Link
+                href="/contact"
+                className="hover:text-[#2B1B12] transition-colors flex items-center gap-2"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" /> LAGOS • LONDON • WORLDWIDE
+              </Link>
+            )}
           </div>
 
           {/* Center Brand Logo */}
           <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
-            <Link href="/" className="block relative w-36 h-12 sm:w-48 sm:h-14 hover:opacity-90 transition-opacity">
+            <Link href={isComingPage ? "/coming" : "/"} className="block relative w-36 h-12 sm:w-48 sm:h-14 hover:opacity-90 transition-opacity">
               <Image
                 src="/brand_logo.PNG"
                 alt="HAIR OVEN"
@@ -131,333 +115,369 @@ export function Navigation() {
             <div className="hidden md:block mr-1">
               <LanguageSelector variant="desktop" />
             </div>
-            <button
-              onClick={() => setSearchOpen(true)}
-              aria-label={t.nav.search}
-              className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors text-[#2B1B12]"
-            >
-              <Search className="w-4 h-4" strokeWidth={1.5} />
-            </button>
 
-            <Link
-              href="/account"
-              className="hidden sm:grid w-9 h-9 sm:w-10 sm:h-10 place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors text-[#2B1B12]"
-            >
-              <User className="w-4 h-4" strokeWidth={1.5} />
-            </Link>
+            {isComingPage ? (
+              /* Non-clickable right icons with reduced transparency on coming page */
+              <div className="flex items-center justify-end gap-1 sm:gap-2 opacity-40 pointer-events-none select-none">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center text-[#2B1B12]">
+                  <Search className="w-4 h-4" strokeWidth={1.5} />
+                </div>
+                <div className="hidden sm:grid w-9 h-9 sm:w-10 sm:h-10 place-items-center text-[#2B1B12]">
+                  <User className="w-4 h-4" strokeWidth={1.5} />
+                </div>
+                <div className="hidden sm:grid w-9 h-9 sm:w-10 sm:h-10 place-items-center text-[#2B1B12]">
+                  <Heart className="w-4 h-4" strokeWidth={1.5} />
+                </div>
+                <div className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center text-[#2B1B12]">
+                  <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
+                </div>
+              </div>
+            ) : (
+              /* Interactive right header icons */
+              <>
+                <button
+                  onClick={() => setSearchOpen(true)}
+                  aria-label={t.nav.search}
+                  className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors text-[#2B1B12]"
+                >
+                  <Search className="w-4 h-4" strokeWidth={1.5} />
+                </button>
 
-            <Link
-              href="/wishlist"
-              className="hidden sm:grid w-9 h-9 sm:w-10 sm:h-10 place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors relative text-[#2B1B12]"
-            >
-              <Heart className="w-4 h-4" strokeWidth={1.5} />
-              {wishlist.length > 0 && (
-                <span className="absolute top-1 right-1 bg-[#B8860B] text-white text-[9px] w-3.5 h-3.5 grid place-items-center rounded-full font-medium">
-                  {wishlist.length}
-                </span>
-              )}
-            </Link>
+                <Link
+                  href="/account"
+                  className="hidden sm:grid w-9 h-9 sm:w-10 sm:h-10 place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors text-[#2B1B12]"
+                >
+                  <User className="w-4 h-4" strokeWidth={1.5} />
+                </Link>
 
-            <button
-              onClick={() => setDrawerOpen(true)}
-              aria-label={t.nav.bag}
-              className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors relative text-[#2B1B12]"
-            >
-              <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
-              {cartCount > 0 && (
-                <span className="absolute top-0.5 right-0.5 bg-[#2B1B12] text-[#E8DDC9] text-[9px] w-4.5 h-4.5 grid place-items-center rounded-full font-semibold">
-                  {cartCount}
-                </span>
-              )}
-            </button>
+                <Link
+                  href="/wishlist"
+                  className="hidden sm:grid w-9 h-9 sm:w-10 sm:h-10 place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors relative text-[#2B1B12]"
+                >
+                  <Heart className="w-4 h-4" strokeWidth={1.5} />
+                  {wishlist.length > 0 && (
+                    <span className="absolute top-1 right-1 bg-[#B8860B] text-white text-[9px] w-3.5 h-3.5 grid place-items-center rounded-full font-medium">
+                      {wishlist.length}
+                    </span>
+                  )}
+                </Link>
+
+                <button
+                  onClick={() => setDrawerOpen(true)}
+                  aria-label={t.nav.bag}
+                  className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center hover:bg-[#B8860B]/10 hover:text-[#B8860B] rounded-full transition-colors relative text-[#2B1B12]"
+                >
+                  <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
+                  {cartCount > 0 && (
+                    <span className="absolute top-0.5 right-0.5 bg-[#2B1B12] text-[#E8DDC9] text-[9px] w-4.5 h-4.5 grid place-items-center rounded-full font-semibold">
+                      {cartCount}
+                    </span>
+                  )}
+                </button>
+              </>
+            )}
           </div>
         </div>
 
         {/* Desktop Category Navigation Bar */}
-        <nav className="hidden lg:flex items-center justify-center gap-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
-          <Link href="/" className={`relative py-1 transition-colors ${isActive("/") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
-            {t.nav.home}
-            {isActive("/") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
-          </Link>
-          {/* COLLECTIONS Dropdown Menu */}
-          <div
-            className="relative"
-            onMouseEnter={() => setCollectionsOpen(true)}
-            onMouseLeave={() => setCollectionsOpen(false)}
-          >
-            <button
-              className={`relative py-1 flex items-center gap-1 transition-colors ${
-                collectionsActive ? "text-[#B8860B]" : "hover:text-[#B8860B]"
-              }`}
-            >
-              {t.nav.collections}{" "}
-              <ChevronDown
-                className={`w-3 h-3 transition-transform duration-300 ${collectionsOpen ? "rotate-180" : "rotate-0"}`}
-              />
-              {collectionsActive && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
-            </button>
-
-            <AnimatePresence>
-              {collectionsOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[540px] bg-[#FFFCF8] border border-[#2B1B12]/15 shadow-[0_16px_48px_rgba(43,27,18,0.12)] p-5 grid grid-cols-2 gap-3 rounded-sm z-50"
-                >
-                  <Link
-                    href="/collections/private"
-                    onClick={() => setCollectionsOpen(false)}
-                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
-                  >
-                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">RAW Reserve</div>
-                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Private Collection</div>
-                  </Link>
-                  <Link
-                    href="/collections/signature"
-                    onClick={() => setCollectionsOpen(false)}
-                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
-                  >
-                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">House Signatures</div>
-                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Signature Collection</div>
-                  </Link>
-                  <Link
-                    href="/collections/essentials"
-                    onClick={() => setCollectionsOpen(false)}
-                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
-                  >
-                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Everyday Luxury</div>
-                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Essentials</div>
-                  </Link>
-                  <Link
-                    href="/extensions"
-                    onClick={() => setCollectionsOpen(false)}
-                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
-                  >
-                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Hair Extensions</div>
-                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Extensions</div>
-                  </Link>
-                  <Link
-                    href="/shop?cat=tools"
-                    onClick={() => setCollectionsOpen(false)}
-                    className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm col-span-2"
-                  >
-                    <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Care & Maintenance</div>
-                    <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Hair Tools & Care</div>
-                  </Link>
-                </motion.div>
-              )}
-            </AnimatePresence>
+        {isComingPage ? (
+          /* Visual non-clickable category nav bar with reduced transparency for coming page */
+          <div className="hidden lg:flex items-center justify-center gap-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8] opacity-50 pointer-events-none select-none cursor-default">
+            <span className="py-1">{t.nav.home}</span>
+            <span className="py-1 flex items-center gap-1">{t.nav.collections} <ChevronDown className="w-3 h-3" /></span>
+            <span className="py-1">{t.nav.atelier}</span>
+            <span className="py-1">{t.nav.house}</span>
+            <span className="py-1">{t.nav.heirloomGuide}</span>
           </div>
+        ) : (
+          /* Interactive category navigation bar */
+          <nav className="hidden lg:flex items-center justify-center gap-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
+            <Link href="/" className={`relative py-1 transition-colors ${isActive("/") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
+              {t.nav.home}
+              {isActive("/") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
+            </Link>
 
-          <Link href="/atelier" className={`relative py-1 transition-colors ${isActive("/atelier") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
-            {t.nav.atelier}
-            {isActive("/atelier") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
-          </Link>
+            <div
+              className="relative"
+              onMouseEnter={() => setCollectionsOpen(true)}
+              onMouseLeave={() => setCollectionsOpen(false)}
+            >
+              <button
+                className={`relative py-1 flex items-center gap-1 transition-colors ${
+                  collectionsActive ? "text-[#B8860B]" : "hover:text-[#B8860B]"
+                }`}
+              >
+                {t.nav.collections}{" "}
+                <ChevronDown
+                  className={`w-3 h-3 transition-transform duration-300 ${collectionsOpen ? "rotate-180" : "rotate-0"}`}
+                />
+                {collectionsActive && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
+              </button>
 
-          <Link href="/story" className={`relative py-1 transition-colors ${isActive("/story") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
-            {t.nav.house}
-            {isActive("/story") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
-          </Link>
+              <AnimatePresence>
+                {collectionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[540px] bg-[#FFFCF8] border border-[#2B1B12]/15 shadow-[0_16px_48px_rgba(43,27,18,0.12)] p-5 grid grid-cols-2 gap-3 rounded-sm z-50"
+                  >
+                    <Link
+                      href="/collections/private"
+                      onClick={() => setCollectionsOpen(false)}
+                      className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
+                    >
+                      <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">RAW Reserve</div>
+                      <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Private Collection</div>
+                    </Link>
+                    <Link
+                      href="/collections/signature"
+                      onClick={() => setCollectionsOpen(false)}
+                      className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
+                    >
+                      <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">House Signatures</div>
+                      <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Signature Collection</div>
+                    </Link>
+                    <Link
+                      href="/collections/essentials"
+                      onClick={() => setCollectionsOpen(false)}
+                      className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
+                    >
+                      <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Everyday Luxury</div>
+                      <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Essentials</div>
+                    </Link>
+                    <Link
+                      href="/extensions"
+                      onClick={() => setCollectionsOpen(false)}
+                      className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm"
+                    >
+                      <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Hair Extensions</div>
+                      <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Extensions</div>
+                    </Link>
+                    <Link
+                      href="/shop?cat=tools"
+                      onClick={() => setCollectionsOpen(false)}
+                      className="group p-3 border border-[#2B1B12]/08 bg-[#EDE6D6]/20 hover:border-[#B8860B] hover:bg-white transition-all rounded-sm col-span-2"
+                    >
+                      <div className="text-[9px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold mb-0.5">Care & Maintenance</div>
+                      <div className="font-serif text-sm text-[#2B1B12] group-hover:text-[#B8860B] transition-colors">Hair Tools & Care</div>
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
-          <Link href="/heirloom-guide" className={`relative py-1 transition-colors ${isActive("/heirloom-guide") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
-            {t.nav.heirloomGuide}
-            {isActive("/heirloom-guide") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
-          </Link>
-        </nav>
+            <Link href="/atelier" className={`relative py-1 transition-colors ${isActive("/atelier") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
+              {t.nav.atelier}
+              {isActive("/atelier") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
+            </Link>
+
+            <Link href="/story" className={`relative py-1 transition-colors ${isActive("/story") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
+              {t.nav.house}
+              {isActive("/story") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
+            </Link>
+
+            <Link href="/heirloom-guide" className={`relative py-1 transition-colors ${isActive("/heirloom-guide") ? "text-[#B8860B]" : "hover:text-[#B8860B]"}`}>
+              {t.nav.heirloomGuide}
+              {isActive("/heirloom-guide") && <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#B8860B]" />}
+            </Link>
+          </nav>
+        )}
       </header>
 
       {/* Mobile Drawer Navigation */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-[#2B1B12]/50 backdrop-blur-sm z-[100] lg:hidden"
-            />
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed inset-y-0 left-0 w-[88%] max-w-[380px] bg-[#FFFCF8] z-[100] flex flex-col lg:hidden border-r border-[#2B1B12]/10"
-            >
-              <div className="h-[64px] flex items-center justify-between px-6 border-b border-[#2B1B12]/10">
-                <Image src="/brand_logo.PNG" alt="Hair Oven" width={130} height={38} className="object-contain" />
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  className="w-10 h-10 grid place-items-center rounded-full hover:bg-[#2B1B12]/5"
-                >
-                  <X className="w-5 h-5 text-[#2B1B12]" />
-                </button>
-              </div>
-
-              <div className="flex-1 overflow-auto px-6 pb-6 pt-2 space-y-3 font-semibold tracking-[0.12em] text-xs uppercase text-[#2B1B12]">
-                <Link
-                  href="/"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.home}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
-                <Link
-                  href="/shop?filter=new"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.newIn}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
-
-                <div className="border-b border-[#2B1B12]/08">
+      {!isComingPage && (
+        <AnimatePresence>
+          {mobileOpen && (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setMobileOpen(false)}
+                className="fixed inset-0 bg-[#2B1B12]/50 backdrop-blur-sm z-[100] lg:hidden"
+              />
+              <motion.div
+                initial={{ x: "-100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "-100%" }}
+                transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                className="fixed inset-y-0 left-0 w-[88%] max-w-[380px] bg-[#FFFCF8] z-[100] flex flex-col lg:hidden border-r border-[#2B1B12]/10"
+              >
+                <div className="h-[64px] flex items-center justify-between px-6 border-b border-[#2B1B12]/10">
+                  <Image src="/brand_logo.PNG" alt="Hair Oven" width={130} height={38} className="object-contain" />
                   <button
-                    onClick={() => setMobileCollectionsOpen((v) => !v)}
-                    className={`w-full flex items-center justify-between py-3 ${mobileCollectionsOpen || ["/collections", "/shop", "/extensions", "/product"].some((p) => pathname === p || pathname.startsWith(p + "/")) ? "text-[#B8860B]" : ""}`}
-                    aria-expanded={mobileCollectionsOpen}
+                    onClick={() => setMobileOpen(false)}
+                    className="w-10 h-10 grid place-items-center rounded-full hover:bg-[#2B1B12]/5"
                   >
-                    <span className="flex items-center gap-2">{t.nav.collections}</span>
-                    <ChevronDown
-                      className={`w-4 h-4 text-[#B8860B] transition-transform duration-300 ${mobileCollectionsOpen ? "rotate-180" : "rotate-0"}`}
-                    />
+                    <X className="w-5 h-5 text-[#2B1B12]" />
                   </button>
-                  <AnimatePresence initial={false}>
-                    {mobileCollectionsOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-3 pb-4 space-y-2.5 font-medium text-xs normal-case text-[#57534E]">
-                          <Link
-                            href="/collections/private"
-                            onClick={() => setMobileOpen(false)}
-                            className={`block hover:text-[#2B1B12] ${isActive("/collections/private") ? "text-[#B8860B]" : ""}`}
-                          >
-                            Private Collection (RAW Reserve)
-                          </Link>
-                          <Link
-                            href="/collections/signature"
-                            onClick={() => setMobileOpen(false)}
-                            className={`block hover:text-[#2B1B12] ${isActive("/collections/signature") ? "text-[#B8860B]" : ""}`}
-                          >
-                            Signature Collection
-                          </Link>
-                          <Link
-                            href="/collections/essentials"
-                            onClick={() => setMobileOpen(false)}
-                            className={`block hover:text-[#2B1B12] ${isActive("/collections/essentials") ? "text-[#B8860B]" : ""}`}
-                          >
-                            Essentials Collection
-                          </Link>
-                          <Link
-                            href="/atelier"
-                            onClick={() => setMobileOpen(false)}
-                            className={`block hover:text-[#2B1B12] ${isActive("/atelier") ? "text-[#B8860B]" : ""}`}
-                          >
-                            The Atelier (Private Commission)
-                          </Link>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
 
-                <Link
-                  href="/shop?cat=wigs"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.wigs}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
+                <div className="flex-1 overflow-auto px-6 pb-6 pt-2 space-y-3 font-semibold tracking-[0.12em] text-xs uppercase text-[#2B1B12]">
+                  <Link
+                    href="/"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.home}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
+                  <Link
+                    href="/shop?filter=new"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.newIn}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
 
-                <Link
-                  href="/extensions"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/extensions") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/extensions") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.extensions}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
+                  <div className="border-b border-[#2B1B12]/08">
+                    <button
+                      onClick={() => setMobileCollectionsOpen((v) => !v)}
+                      className={`w-full flex items-center justify-between py-3 ${mobileCollectionsOpen || ["/collections", "/shop", "/extensions", "/product"].some((p) => pathname === p || pathname.startsWith(p + "/")) ? "text-[#B8860B]" : ""}`}
+                      aria-expanded={mobileCollectionsOpen}
+                    >
+                      <span className="flex items-center gap-2">{t.nav.collections}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-[#B8860B] transition-transform duration-300 ${mobileCollectionsOpen ? "rotate-180" : "rotate-0"}`}
+                      />
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {mobileCollectionsOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pl-3 pb-4 space-y-2.5 font-medium text-xs normal-case text-[#57534E]">
+                            <Link
+                              href="/collections/private"
+                              onClick={() => setMobileOpen(false)}
+                              className={`block hover:text-[#2B1B12] ${isActive("/collections/private") ? "text-[#B8860B]" : ""}`}
+                            >
+                              Private Collection (RAW Reserve)
+                            </Link>
+                            <Link
+                              href="/collections/signature"
+                              onClick={() => setMobileOpen(false)}
+                              className={`block hover:text-[#2B1B12] ${isActive("/collections/signature") ? "text-[#B8860B]" : ""}`}
+                            >
+                              Signature Collection
+                            </Link>
+                            <Link
+                              href="/collections/essentials"
+                              onClick={() => setMobileOpen(false)}
+                              className={`block hover:text-[#2B1B12] ${isActive("/collections/essentials") ? "text-[#B8860B]" : ""}`}
+                            >
+                              Essentials Collection
+                            </Link>
+                            <Link
+                              href="/atelier"
+                              onClick={() => setMobileOpen(false)}
+                              className={`block hover:text-[#2B1B12] ${isActive("/atelier") ? "text-[#B8860B]" : ""}`}
+                            >
+                              The Atelier (Private Commission)
+                            </Link>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
 
-                <Link
-                  href="/atelier"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/atelier") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/atelier") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.atelier}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
+                  <Link
+                    href="/shop?cat=wigs"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.wigs}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
 
-                <Link
-                  href="/shop?cat=tools"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.toolsCare}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
+                  <Link
+                    href="/extensions"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/extensions") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/extensions") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.extensions}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
 
-                <Link
-                  href="/wholesale"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/wholesale") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/wholesale") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.tradeEdit}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
+                  <Link
+                    href="/atelier"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/atelier") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/atelier") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.atelier}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
 
-                <Link
-                  href="/heirloom-guide"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/heirloom-guide") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/heirloom-guide") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.heirloomGuide}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
+                  <Link
+                    href="/shop?cat=tools"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/shop") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/shop") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.toolsCare}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
 
-                <Link
-                  href="/story"
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/story") ? "text-[#B8860B]" : ""}`}
-                >
-                  <span className="flex items-center gap-2">{isActive("/story") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.house}</span>
-                  <ChevronRight className="w-4 h-4 text-[#B8860B]" />
-                </Link>
-                <div className="pt-4">
-                  <LanguageSelector variant="mobile" />
+                  <Link
+                    href="/wholesale"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/wholesale") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/wholesale") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.tradeEdit}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
+
+                  <Link
+                    href="/heirloom-guide"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/heirloom-guide") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/heirloom-guide") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.heirloomGuide}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
+
+                  <Link
+                    href="/story"
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-[#2B1B12]/08 ${isActive("/story") ? "text-[#B8860B]" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">{isActive("/story") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.house}</span>
+                    <ChevronRight className="w-4 h-4 text-[#B8860B]" />
+                  </Link>
+                  <div className="pt-4">
+                    <LanguageSelector variant="mobile" />
+                  </div>
                 </div>
-              </div>
 
-              <div className="p-6 border-t border-[#2B1B12]/10 bg-[#EDE6D6]/40 flex gap-3">
-                <Link
-                  href="/account"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex-1 h-11 grid place-items-center border border-[#2B1B12]/20 text-[11px] tracking-[0.14em] uppercase font-semibold"
-                >
-                  {t.nav.account}
-                </Link>
-                <button
-                  onClick={() => {
-                    setMobileOpen(false);
-                    setDrawerOpen(true);
-                  }}
-                  className="flex-1 h-11 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.14em] uppercase font-semibold hover:bg-[#B8860B] transition-colors"
-                >
-                  Bag ({cartCount})
-                </button>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+                <div className="p-6 border-t border-[#2B1B12]/10 bg-[#EDE6D6]/40 flex gap-3">
+                  <Link
+                    href="/account"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex-1 h-11 grid place-items-center border border-[#2B1B12]/20 text-[11px] tracking-[0.14em] uppercase font-semibold"
+                  >
+                    {t.nav.account}
+                  </Link>
+                  <button
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setDrawerOpen(true);
+                    }}
+                    className="flex-1 h-11 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.14em] uppercase font-semibold hover:bg-[#B8860B] transition-colors"
+                  >
+                    Bag ({cartCount})
+                  </button>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      )}
 
       <CartDrawer />
       <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
