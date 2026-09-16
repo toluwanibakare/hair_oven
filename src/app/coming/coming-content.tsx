@@ -194,7 +194,7 @@ export function ComingSoonContent() {
                 </div>
                 <div className="w-full h-4 bg-white/10 rounded-full p-0.5 border border-[#D4AF37]/20 overflow-hidden">
                   <div
-                    className="h-full bg-hazard-tape rounded-full transition-all duration-1000 shadow-lg"
+                    className="h-full bg-hazard-tape-animated rounded-full transition-all duration-1000 shadow-lg"
                     style={{ width: "65%" }}
                   />
                 </div>
@@ -231,21 +231,22 @@ export function ComingSoonContent() {
                   <form onSubmit={handleSubmitWaitlist} className="space-y-3.5 text-left">
                     <div>
                       <input
-                        type="email"
+                        type="text"
                         required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder={c.emailPlaceholder}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder={c.namePlaceholder}
                         className="w-full h-12 px-4 bg-black/50 border border-[#D4AF37]/40 text-white placeholder-[#E8DDC9]/40 text-xs sm:text-sm focus:outline-none focus:border-[#D4AF37] transition-colors rounded-sm"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder={c.namePlaceholder}
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder={c.emailPlaceholder}
                         className="w-full h-11 px-4 bg-black/40 border border-[#D4AF37]/25 text-white placeholder-[#E8DDC9]/40 text-xs focus:outline-none focus:border-[#D4AF37] transition-colors rounded-sm"
                       />
                       <input

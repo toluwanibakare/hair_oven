@@ -146,6 +146,27 @@ img {
   );
 }
 
+@keyframes hazardStripeMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 32px 0;
+  }
+}
+
+.bg-hazard-tape-animated {
+  background: repeating-linear-gradient(
+    -45deg,
+    #2B1B12,
+    #2B1B12 16px,
+    #D4AF37 16px,
+    #D4AF37 32px
+  );
+  background-size: 32px 32px;
+  animation: hazardStripeMove 1.2s linear infinite;
+}
+
 .bg-hazard-tape-subtle {
   background: repeating-linear-gradient(
     -45deg,
