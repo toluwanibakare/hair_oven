@@ -56,7 +56,7 @@ export function Footer() {
             {/* Contact Details */}
             <div className="space-y-2 text-xs text-[#2B1B12] font-medium">
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold">
-                CLIENT CONCIERGE & CONTACT
+                {t.footer.clientConcierge}
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#57534E]">WhatsApp:</span>
@@ -65,7 +65,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[#57534E]">Client Care:</span>
+                <span className="text-[#57534E]">{t.footer.clientCare}</span>
                 <a href="mailto:support@hairoven.com" className="hover:text-[#B8860B] transition-colors font-semibold">
                   support@hairoven.com
                 </a>
@@ -75,7 +75,7 @@ export function Footer() {
             {/* Social Media Links */}
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-3">
-                FOLLOW THE HOUSE
+                {t.footer.followHouse}
               </div>
               <div className="flex items-center gap-3">
                 <a
@@ -135,7 +135,7 @@ export function Footer() {
 
             <div className="md:flex-1 flex justify-center md:justify-end order-3 mt-2 md:mt-0">
               <Link href="https://www.tmb.it.com" target="_blank" rel="noopener noreferrer" className="text-[#B8860B] hover:text-[#2B1B12] transition-colors flex items-center gap-1 group">
-                Built by TMB
+                {t.footer.builtBy}
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </Link>
             </div>
@@ -173,7 +173,7 @@ export function Footer() {
 
             <div>
               <div className="font-serif text-lg text-[#2B1B12] font-medium">
-                THE HOUSE OF EXCEPTIONAL HAIR
+                HAIR OVEN
               </div>
               <p className="text-xs text-[#57534E] leading-6 mt-1 max-w-[38ch]">
                 {t.footer.tagline}
@@ -182,7 +182,7 @@ export function Footer() {
 
             <div className="pt-2 space-y-2 text-xs text-[#2B1B12] font-medium">
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold">
-                CLIENT CONCIERGE & CONTACT
+                {t.footer.clientConcierge}
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#57534E]">WhatsApp:</span>
@@ -191,7 +191,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[#57534E]">Client Care:</span>
+                <span className="text-[#57534E]">{t.footer.clientCare}</span>
                 <a href="mailto:support@hairoven.com" className="hover:text-[#B8860B] transition-colors">
                   support@hairoven.com
                 </a>
@@ -201,7 +201,7 @@ export function Footer() {
             {/* Social Media Links */}
             <div className="pt-3">
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-3">
-                FOLLOW THE HOUSE
+                {t.footer.followHouse}
               </div>
               <div className="flex items-center gap-3">
                 <a
@@ -377,7 +377,7 @@ export function Footer() {
 
           <div className="md:flex-1 flex justify-center md:justify-end order-3 mt-2 md:mt-0">
             <Link href="https://www.tmb.it.com" target="_blank" rel="noopener noreferrer" className="text-[#B8860B] hover:text-[#2B1B12] transition-colors flex items-center gap-1 group">
-              Built by TMB
+              {t.footer.builtBy}
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </Link>
           </div>

@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/language-context";
+import { supabase } from "@/lib/supabase";
 
 function WhatsAppIcon({ className = "w-4 h-4 fill-current" }: { className?: string }) {
   return (
@@ -13,8 +14,59 @@ function WhatsAppIcon({ className = "w-4 h-4 fill-current" }: { className?: stri
 }
 
 export function ComingSoonContent() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const c = t.coming;
+
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "duplicate" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const scrollToWaitlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById("waitlist-form");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleSubmitWaitlist = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) return;
+
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const { error } = await supabase.from("waitlist").insert([
+        {
+          email: email.trim().toLowerCase(),
+          name: name.trim() || null,
+          phone: phone.trim() || null,
+          locale: locale || "en",
+        },
+      ]);
+
+      if (error) {
+        if (error.code === "23505") {
+          setStatus("duplicate");
+        } else {
+          console.error("Supabase insert error:", error);
+          setErrorMessage(error.message);
+          setStatus("error");
+        }
+      } else {
+        setStatus("success");
+        setEmail("");
+        setName("");
+        setPhone("");
+      }
+    } catch (err: unknown) {
+      console.error("Waitlist submit error:", err);
+      setStatus("error");
+    }
+  };
 
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
@@ -49,7 +101,7 @@ export function ComingSoonContent() {
             </p>
           </motion.div>
 
-          {/* Quick Contact & Status CTA */}
+          {/* Quick Contact & Status CTA (WhatsApp + Join Waitlist smooth scroll) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,12 +116,13 @@ export function ComingSoonContent() {
             >
               <WhatsAppIcon className="w-4 h-4 fill-[#2B1B12]" /> {c.whatsappCta}
             </a>
-            <Link
-              href="/atelier"
+            <a
+              href="#waitlist-form"
+              onClick={scrollToWaitlist}
               className="h-12 px-8 border border-white/20 text-white inline-flex items-center gap-2 hover:bg-white hover:text-[#2B1B12] transition-colors"
             >
-              {c.atelierCta}
-            </Link>
+              {c.joinWaitlistBtn}
+            </a>
           </motion.div>
         </div>
       </section>
@@ -151,16 +204,80 @@ export function ComingSoonContent() {
                 </div>
               </div>
 
-              {/* Concierge Action */}
-              <div className="mt-10 flex flex-wrap justify-center gap-4 text-xs tracking-[0.16em] uppercase font-semibold">
-                <a
-                  href="https://wa.me/2348057388171"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-12 px-8 bg-[#D4AF37] text-[#2B1B12] inline-flex items-center gap-2 hover:bg-white transition-colors shadow-md"
-                >
-                  <WhatsAppIcon className="w-4 h-4 fill-[#2B1B12]" /> {c.connectConcierge}
-                </a>
+              {/* JOIN THE PRIVATE WAITLIST FORM (Targeted by smooth-scroll from Hero) */}
+              <div id="waitlist-form" className="mt-12 pt-10 border-t border-[#D4AF37]/20 max-w-[580px] mx-auto scroll-mt-24">
+                <span className="text-[10px] tracking-[0.24em] uppercase text-[#D4AF37] font-semibold block mb-2">
+                  {c.waitlistEyebrow}
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-light mb-2">
+                  {c.waitlistTitle}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#E8DDC9]/70 leading-6 mb-6">
+                  {c.waitlistSubtitle}
+                </p>
+
+                {status === "success" ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="p-5 bg-[#B8860B]/20 border border-[#D4AF37] text-[#F3E5AB] text-xs sm:text-sm leading-6 rounded-sm text-center"
+                  >
+                    <p className="font-semibold tracking-wider uppercase text-white mb-1">
+                      RESERVATION CONFIRMED
+                    </p>
+                    <p>{c.successMsg}</p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmitWaitlist} className="space-y-3.5 text-left">
+                    <div>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder={c.emailPlaceholder}
+                        className="w-full h-12 px-4 bg-black/50 border border-[#D4AF37]/40 text-white placeholder-[#E8DDC9]/40 text-xs sm:text-sm focus:outline-none focus:border-[#D4AF37] transition-colors rounded-sm"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder={c.namePlaceholder}
+                        className="w-full h-11 px-4 bg-black/40 border border-[#D4AF37]/25 text-white placeholder-[#E8DDC9]/40 text-xs focus:outline-none focus:border-[#D4AF37] transition-colors rounded-sm"
+                      />
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder={c.phonePlaceholder}
+                        className="w-full h-11 px-4 bg-black/40 border border-[#D4AF37]/25 text-white placeholder-[#E8DDC9]/40 text-xs focus:outline-none focus:border-[#D4AF37] transition-colors rounded-sm"
+                      />
+                    </div>
+
+                    {status === "duplicate" && (
+                      <p className="text-xs text-[#F3E5AB] bg-[#B8860B]/15 border border-[#B8860B]/40 p-3 rounded-sm text-center font-sans">
+                        {c.duplicateMsg}
+                      </p>
+                    )}
+
+                    {status === "error" && (
+                      <p className="text-xs text-red-300 bg-red-950/40 border border-red-500/40 p-3 rounded-sm text-center font-sans">
+                        {errorMessage || c.errorMsg}
+                      </p>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      className="w-full h-12 bg-[#D4AF37] text-[#2B1B12] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-white transition-colors shadow-lg disabled:opacity-50"
+                    >
+                      {status === "submitting" ? c.joiningBtn : c.joinWaitlistBtn}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>

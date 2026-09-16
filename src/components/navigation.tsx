@@ -13,6 +13,19 @@ import { CartDrawer } from "./cart-drawer";
 import { SearchOverlay } from "./search-overlay";
 import { LanguageSelector } from "./language-selector";
 
+function ComingSoonTooltip({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="group relative inline-flex items-center justify-center cursor-not-allowed">
+      <div className="opacity-50 group-hover:opacity-80 transition-opacity">
+        {children}
+      </div>
+      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 px-2.5 py-1 bg-[#2B1B12] text-[#D4AF37] border border-[#D4AF37]/50 shadow-2xl text-[9px] tracking-[0.18em] font-mono uppercase font-bold rounded-xs opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none z-50 whitespace-nowrap">
+        COMING SOON
+      </div>
+    </div>
+  );
+}
+
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -78,11 +91,13 @@ export function Navigation() {
           </div>
 
           {/* Left Side Location & Contact Quick Link (Desktop) */}
-          <div className={`hidden lg:flex items-center gap-6 text-[10px] tracking-[0.18em] uppercase font-semibold text-[#57534E] ${isComingPage ? "opacity-45 pointer-events-none select-none" : ""}`}>
+          <div className="hidden lg:flex items-center gap-6 text-[10px] tracking-[0.18em] uppercase font-semibold text-[#57534E]">
             {isComingPage ? (
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" /> LAGOS • LONDON • WORLDWIDE
-              </span>
+              <ComingSoonTooltip>
+                <span className="flex items-center gap-2 py-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" /> LAGOS • LONDON • WORLDWIDE
+                </span>
+              </ComingSoonTooltip>
             ) : (
               <Link
                 href="/contact"
@@ -113,20 +128,28 @@ export function Navigation() {
             </div>
 
             {isComingPage ? (
-              /* Non-clickable right icons with reduced transparency on coming page */
-              <div className="flex items-center justify-end gap-1 sm:gap-2 opacity-40 pointer-events-none select-none">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center text-[#2B1B12]">
-                  <Search className="w-4 h-4" strokeWidth={1.5} />
-                </div>
-                <div className="hidden sm:grid w-9 h-9 sm:w-10 sm:h-10 place-items-center text-[#2B1B12]">
-                  <User className="w-4 h-4" strokeWidth={1.5} />
-                </div>
-                <div className="hidden sm:grid w-9 h-9 sm:w-10 sm:h-10 place-items-center text-[#2B1B12]">
-                  <Heart className="w-4 h-4" strokeWidth={1.5} />
-                </div>
-                <div className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center text-[#2B1B12]">
-                  <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
-                </div>
+              /* Non-clickable right icons with coming soon tooltip (hidden on mobile so only logo shows) */
+              <div className="hidden sm:flex items-center justify-end gap-1 sm:gap-2">
+                <ComingSoonTooltip>
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center text-[#2B1B12]">
+                    <Search className="w-4 h-4" strokeWidth={1.5} />
+                  </div>
+                </ComingSoonTooltip>
+                <ComingSoonTooltip>
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center text-[#2B1B12]">
+                    <User className="w-4 h-4" strokeWidth={1.5} />
+                  </div>
+                </ComingSoonTooltip>
+                <ComingSoonTooltip>
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center text-[#2B1B12]">
+                    <Heart className="w-4 h-4" strokeWidth={1.5} />
+                  </div>
+                </ComingSoonTooltip>
+                <ComingSoonTooltip>
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 grid place-items-center text-[#2B1B12]">
+                    <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
+                  </div>
+                </ComingSoonTooltip>
               </div>
             ) : (
               /* Interactive right header icons */
@@ -177,13 +200,15 @@ export function Navigation() {
 
         {/* Desktop Category Navigation Bar */}
         {isComingPage ? (
-          /* Visual non-clickable category nav bar with reduced transparency for coming page */
-          <div className="hidden lg:flex items-center justify-center gap-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8] opacity-50 pointer-events-none select-none cursor-default">
-            <span className="py-1">{t.nav.home}</span>
-            <span className="py-1 flex items-center gap-1">{t.nav.collections} <ChevronDown className="w-3 h-3" /></span>
-            <span className="py-1">{t.nav.atelier}</span>
-            <span className="py-1">{t.nav.house}</span>
-            <span className="py-1">{t.nav.heirloomGuide}</span>
+          /* Visual category nav bar with coming soon hover tooltips */
+          <div className="hidden lg:flex items-center justify-center gap-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
+            <ComingSoonTooltip><span className="py-1">{t.nav.home}</span></ComingSoonTooltip>
+            <ComingSoonTooltip>
+              <span className="py-1 flex items-center gap-1">{t.nav.collections} <ChevronDown className="w-3 h-3" /></span>
+            </ComingSoonTooltip>
+            <ComingSoonTooltip><span className="py-1">{t.nav.atelier}</span></ComingSoonTooltip>
+            <ComingSoonTooltip><span className="py-1">{t.nav.house}</span></ComingSoonTooltip>
+            <ComingSoonTooltip><span className="py-1">{t.nav.heirloomGuide}</span></ComingSoonTooltip>
           </div>
         ) : (
           /* Interactive category navigation bar */
