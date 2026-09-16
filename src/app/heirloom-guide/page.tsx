@@ -116,7 +116,7 @@ export default function HeirloomGuidePage() {
           </p>
           <div className="mt-6 flex justify-center gap-4 text-xs tracking-[0.14em] uppercase font-semibold">
             <a
-              href="https://wa.me/2348057388171"
+              href="https://wa.me/2348051332551"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3.5 bg-[#2B1B12] text-[#FFFCF8] hover:bg-[#B8860B] transition-colors"

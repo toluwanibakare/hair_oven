@@ -85,7 +85,7 @@ function ShopContent() {
           <div className="bg-[#2B1B12] text-white p-6">
             <div className="text-[11px] tracking-[0.14em] uppercase text-[#C2A47A]">{t.shop.conciergeEyebrow}</div>
             <div className="font-serif text-lg mt-2">{t.shop.conciergeTitle}</div>
-            <a href="https://wa.me/2348057388171" className="mt-3 inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center">{t.shop.conciergeCta}</a>
+            <a href="https://wa.me/2348051332551" className="mt-3 inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center">{t.shop.conciergeCta}</a>
           </div>
           <div className="bg-white border border-[rgba(28,18,14,0.06)] p-6">
             <div className="text-[11px] tracking-[0.14em] uppercase text-[#A68B5B]">{t.shop.bespokeEyebrow}</div>

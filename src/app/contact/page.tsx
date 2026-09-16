@@ -57,7 +57,7 @@ export default function ContactPage() {
       <section className="max-w-[1600px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
-            { href: "https://wa.me/2348057388171", external: true, lineA: "+234 805 738 8171" },
+            { href: "https://wa.me/2348051332551", external: true, lineA: "+234 805 133 2551" },
             { href: "mailto:support@hairoven.com", external: true, lineA: "support@hairoven.com" },
             { href: "/atelier#consultation-form", external: false, lineA: t.contact.studios },
           ].map((c, i) => (

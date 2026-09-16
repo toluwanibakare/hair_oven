@@ -237,7 +237,7 @@ export default function ProductPage() {
                 {t.product.conciergeBody}
               </p>
               <a
-                href={`https://wa.me/2348057388171?text=Hi%20HAIR%20OVEN%2C%20I%20need%20concierge%20assistance%20with%20${encodeURIComponent(product.name)}`}
+                href={`https://wa.me/2348051332551?text=Hi%20HAIR%20OVEN%2C%20I%20need%20concierge%20assistance%20with%20${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-10 px-6 bg-[#2B1B12] text-[#FFFCF8] text-[10px] tracking-[0.16em] uppercase font-semibold hover:bg-[#B8860B] transition-colors items-center gap-2"
