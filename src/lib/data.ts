@@ -44,7 +44,7 @@ export const collections = [
     accent: "2 to 3+ Years",
     years: "2 to 3+ YEARS",
     color: "#3D2314",
-    image: "/products/caramel-wave.jpeg",
+    image: "/products/signature_page.jpeg",
     priceFrom: 285000,
   },
   {

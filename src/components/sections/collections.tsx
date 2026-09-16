@@ -16,7 +16,7 @@ const baseCards = [
   {
     title: "THE SIGNATURE COLLECTION",
     link: "/collections/signature",
-    image: "/products/signature_collection.jpg",
+    image: "/products/signature_page.jpeg",
     objectPos: "object-top",
   },
   {
