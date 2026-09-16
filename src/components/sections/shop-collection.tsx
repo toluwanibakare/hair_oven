@@ -70,9 +70,11 @@ export function ShopCollection() {
               <Link href="/shop?sort=bestseller" className="text-[11px] tracking-[0.14em] uppercase underline underline-offset-4 decoration-[#C2A47A] hover:text-[#A68B5B]">{t.shopHome.viewBestsellers}</Link>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[...bestsellers, ...products.slice(0, 2)].slice(0, 4).map((p) => (
-                <ProductCard key={`bs-${p.id}`} product={p} />
-              ))}
+              {Array.from(new Map([...bestsellers, ...products].map((p) => [p.id, p])).values())
+                .slice(0, 4)
+                .map((p) => (
+                  <ProductCard key={`bs-${p.id}`} product={p} />
+                ))}
             </div>
           </div>
 

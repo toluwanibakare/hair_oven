@@ -29,7 +29,7 @@ export default function CollectionPage() {
       {/* Hero */}
       <div className={`relative overflow-hidden ${theme.bg} ${theme.text}`}>
         <div className="absolute inset-0 opacity-25">
-          <WatermarkImage src={col.image} alt={col.name} containerClassName="w-full h-full" imageClassName="w-full h-full object-cover" watermarkSize="lg" showWatermark={false} />
+          <WatermarkImage src={col.image} alt={col.name} containerClassName="w-full h-full" imageClassName={`w-full h-full ${slug === "signature" ? "object-contain bg-[#2B1B12]" : "object-cover"}`} watermarkSize="lg" showWatermark={false} />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 py-20 lg:py-28">

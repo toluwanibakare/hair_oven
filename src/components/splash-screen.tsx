@@ -57,6 +57,8 @@ export function SplashScreen() {
               alt="Hair Oven"
               fill
               priority
+              loading="eager"
+              sizes="(max-width: 640px) 224px, 288px"
               className="object-contain filter drop-shadow-[0_4px_20px_rgba(184,134,11,0.2)]"
             />
           </motion.div>

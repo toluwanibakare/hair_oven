@@ -28,3 +28,13 @@ All future code modifications, copy updates, and AI agent contributions must str
 - **Framework**: Next.js (App Router), React, TypeScript, Tailwind CSS, Framer Motion.
 - **Design Token Palette**: Warm luxury brown (`#2B1B12`), sand cream (`#FFFCF8`, `#E0D5C5`), gold accents (`#B8860B`, `#D4AF37`, `#F3E5AB`).
 - **Code Cleanliness**: Keep code modular, clean, and free of unused icons or extraneous imports.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

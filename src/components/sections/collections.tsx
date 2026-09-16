@@ -12,24 +12,28 @@ const baseCards = [
     link: "/collections/private",
     image: "/products/editorial-model-2.jpg",
     objectPos: "object-top",
+    objectFit: "object-cover",
   },
   {
     title: "THE SIGNATURE COLLECTION",
     link: "/collections/signature",
     image: "/products/signature_page.jpeg",
-    objectPos: "object-top",
+    objectPos: "object-center",
+    objectFit: "object-contain bg-[#2B1B12]",
   },
   {
     title: "ESSENTIALS",
     link: "/collections/essentials",
     image: "/products/essentials.jpg",
     objectPos: "object-top",
+    objectFit: "object-cover",
   },
   {
     title: "THE ATELIER",
     link: "/atelier",
     image: "/products/editorial-model.jpg",
     objectPos: "object-top",
+    objectFit: "object-cover",
   },
 ];
 
@@ -73,7 +77,7 @@ export function Collections() {
                   src={card.image}
                   alt={card.title}
                   containerClassName="w-full h-full"
-                  imageClassName={`w-full h-full object-cover ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
+                  imageClassName={`w-full h-full ${card.objectFit || "object-cover"} ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
                   watermarkSize="md"
                   showWatermark={false}
                 />
