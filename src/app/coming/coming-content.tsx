@@ -101,7 +101,7 @@ export function ComingSoonContent() {
       </div>
 
       {/* Featured "WEBSITE IS ALMOST READY" Construction Banner Card */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 pb-8">
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -165,100 +165,6 @@ export function ComingSoonContent() {
             </div>
           </div>
         </motion.div>
-      </section>
-
-      {/* Build in Progress Section */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
-        <div className="text-center max-w-[700px] mx-auto mb-16">
-          <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
-            {c.prepEyebrow}
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B1B12] mt-3 font-light">
-            {c.prepTitle}
-          </h2>
-          <p className="mt-4 text-xs sm:text-sm text-[#57534E] leading-6">
-            {c.prepBody}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {c.progressSteps.map((step, idx) => (
-            <motion.div
-              key={step.n}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: idx * 0.1 }}
-              className="bg-[#EDE6D6]/20 border border-[#2B1B12]/10 p-6 rounded-sm flex flex-col justify-between relative overflow-hidden"
-            >
-              {/* Top Hazard Accent Stripe */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-hazard-tape opacity-80" />
-
-              <div className="pt-2">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="font-serif text-2xl text-[#B8860B] font-light">{step.n}</span>
-                  <span className="text-[9px] tracking-[0.16em] uppercase font-semibold px-2.5 py-1 bg-white border border-[#2B1B12]/10 text-[#2B1B12]">
-                    {step.status}
-                  </span>
-                </div>
-                <h3 className="font-serif text-lg text-[#2B1B12] font-medium">{step.title}</h3>
-                <p className="text-xs text-[#57534E] mt-2 leading-5">{step.desc}</p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-[#2B1B12]/08">
-                <div className="flex justify-between text-[10px] tracking-[0.12em] text-[#78716C] mb-1 font-semibold">
-                  <span>PROGRESS</span>
-                  <span>{step.pct}%</span>
-                </div>
-                <div className="w-full h-2 bg-[#2B1B12]/10 rounded-full overflow-hidden p-0.5">
-                  <div
-                    className="h-full bg-hazard-tape rounded-full transition-all duration-1000"
-                    style={{ width: `${step.pct}%` }}
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* What to Expect Preview Section */}
-      <section className="bg-[#E0D5C5]/20 border-t border-b border-[#2B1B12]/10 py-20 lg:py-28">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="text-center max-w-[700px] mx-auto mb-16">
-            <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
-              {c.expectEyebrow}
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B1B12] mt-3 font-light">
-              {c.expectTitle}
-            </h2>
-            <p className="mt-4 text-xs sm:text-sm text-[#57534E] leading-6">
-              {c.expectBody}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {c.previewCards.map((card, i) => (
-              <motion.div
-                key={card.numeral}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                className="bg-white border border-[#2B1B12]/10 p-8 rounded-sm shadow-sm hover:border-[#B8860B] transition-colors"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="font-serif text-2xl text-[#B8860B] font-light">{card.numeral}</span>
-                  <div className="text-[10px] tracking-[0.2em] uppercase text-[#78716C] font-semibold">
-                    {card.subtitle}
-                  </div>
-                </div>
-                <h3 className="font-serif text-2xl text-[#2B1B12] font-light">{card.title}</h3>
-                <p className="text-xs sm:text-sm text-[#57534E] leading-6 mt-3">{card.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
     </div>
   );
