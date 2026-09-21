@@ -32,14 +32,14 @@ export default function AtelierPage() {
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
       {/* Hero Header */}
       <section className="relative bg-[#2B1B12] text-[#E8DDC9] pt-10 lg:pt-14 pb-20 lg:pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-45 lg:opacity-55">
           <img
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop"
+            src="/atlier_hero.jpg"
             alt="The Atelier"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/30 to-transparent" />
 
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10">
           <div className="max-w-[800px]">
