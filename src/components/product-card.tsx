@@ -75,7 +75,7 @@ export function ProductCard({ product, variant = "default" }: { product: Product
       </div>
       <div className="pt-3">
         <div className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] truncate font-semibold">{product.collection}</div>
-        <div className="text-[14px] leading-tight font-medium mt-1 line-clamp-1 group-hover:text-[#A68B5B] transition-colors">{product.name}</div>
+        <div className="font-serif text-[16px] leading-tight mt-1 line-clamp-1 group-hover:text-[#A68B5B] transition-colors">{product.name}</div>
         <div className="flex items-baseline gap-2 mt-1.5">
           <span className="text-sm sm:text-base font-bold text-[#2B1B12] tracking-tight">{formatPrice(product.price)}</span>
           {product.originalPrice && <span className="text-xs text-[#A8A29E] line-through font-normal">{formatPrice(product.originalPrice)}</span>}
