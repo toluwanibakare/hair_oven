@@ -53,6 +53,7 @@ export const metadata: Metadata = {
   },
 };
 
+import { CurrencyProvider } from "@/context/currency-context";
 import { ScrollFeatures } from "@/components/scroll-features";
 import { PageTransition } from "@/components/page-transition";
 import { SplashScreen } from "@/components/splash-screen";
@@ -63,14 +64,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col bg-[#FFFCF8] text-[#1A1A1A]">
         <SplashScreen />
         <LanguageProvider>
-        <CartProvider>
-          <ScrollFeatures />
-          <Navigation />
-          <main className="flex-1">
-            <PageTransition>{children}</PageTransition>
-          </main>
-          <Footer />
-        </CartProvider>
+          <CurrencyProvider>
+            <CartProvider>
+              <ScrollFeatures />
+              <Navigation />
+              <main className="flex-1">
+                <PageTransition>{children}</PageTransition>
+              </main>
+              <Footer />
+            </CartProvider>
+          </CurrencyProvider>
         </LanguageProvider>
       </body>
     </html>

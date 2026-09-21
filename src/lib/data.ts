@@ -15,6 +15,15 @@ export type Product = {
   description: string;
   longDescription: string;
   details: string[];
+  lengthPrices?: Record<string, number>;
+  modelSpecs?: {
+    closureType?: string;
+    texture?: string;
+    length?: string;
+    density?: string;
+    color?: string;
+    styling?: string;
+  };
   inStock: boolean;
   featured?: boolean;
   bestseller?: boolean;
@@ -63,6 +72,51 @@ export const collections = [
 ] as const;
 
 export const products: Product[] = [
+  {
+    id: "signature-argentine-bob",
+    name: "The Argentine Bob",
+    collection: "signature",
+    category: "Wigs",
+    price: 299000,
+    originalPrice: 320000,
+    image: "/products/THE_ARGENTINE_BOB.PNG",
+    images: ["/products/THE_ARGENTINE_BOB.PNG"],
+    lengths: ['6"', '8"', '10"', '12"'],
+    lengthPrices: {
+      '6"': 299000,
+      '8"': 320000,
+      '10"': 350000,
+      '12"': 385000,
+    },
+    colors: ["Glass-Smooth Natural Black"],
+    density: "Full, Natural-Looking Density",
+    texture: "Silky Straight",
+    capSize: ["S", "M", "L", "XL"],
+    description:
+      "A precisely crafted, ultra-sleek bob defined by its clean silhouette, immaculate movement, and naturally lustrous finish.",
+    longDescription:
+      "A precisely crafted, ultra-sleek bob defined by its clean silhouette, immaculate movement, and naturally lustrous finish. Designed for effortless sophistication, The Bob is cut to create a sharp yet feminine silhouette: minimal in expression, exceptional in detail.",
+    details: [
+      "Style: Sleek Blunt Bob",
+      "Length: Chin-length",
+      "Texture: Silky Straight",
+      "Finish: High-shine, glass-smooth",
+      "Density: Full, natural-looking density",
+      "Appearance: Soft, polished, and exceptionally refined",
+      "Collection: Signature Collection",
+    ],
+    modelSpecs: {
+      closureType: "Customised Thin HD Lace Closure 5x5",
+      texture: "100% Raw Silky Straight Hair",
+      length: '10"',
+      density: "Full 250g",
+      color: "Glass-Smooth Natural Black",
+      styling: "Middle Parting",
+    },
+    inStock: true,
+    featured: true,
+    bestseller: true,
+  },
   {
     id: "signature-caramel-wave-24",
     name: "The Signature Caramel Wave",

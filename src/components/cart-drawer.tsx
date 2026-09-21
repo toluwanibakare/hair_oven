@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { X, Minus, Plus, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/cart-context";
-import { formatPrice } from "@/lib/utils";
+import { useCurrency } from "@/context/currency-context";
 import Link from "next/link";
 
 import { WatermarkImage } from "@/components/watermark-image";
@@ -12,6 +12,7 @@ import { useLanguage } from "@/context/language-context";
 export function CartDrawer() {
   const { t } = useLanguage();
   const { items, removeFromCart, updateQty, cartTotal, drawerOpen, setDrawerOpen, cartCount } = useCart();
+  const { formatPrice } = useCurrency();
 
   return (
     <AnimatePresence>

@@ -12,6 +12,7 @@ import { BRAND } from "@/lib/i18n";
 import { CartDrawer } from "./cart-drawer";
 import { SearchOverlay } from "./search-overlay";
 import { LanguageSelector } from "./language-selector";
+import { CurrencySelector } from "./currency-selector";
 
 function ComingSoonTooltip({ children }: { children: React.ReactNode }) {
   return (
@@ -122,8 +123,9 @@ export function Navigation() {
           </div>
 
           {/* Right Header Icons */}
-          <div className="flex items-center justify-end gap-1 sm:gap-2">
-            <div className="hidden md:block mr-1">
+          <div className="flex items-center justify-end gap-1.5 sm:gap-2">
+            <div className="hidden md:flex items-center gap-2 mr-1">
+              <CurrencySelector variant="desktop" />
               <LanguageSelector variant="desktop" />
             </div>
 

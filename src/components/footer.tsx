@@ -8,6 +8,7 @@ import { Instagram, Youtube, Facebook } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 import { BRAND } from "@/lib/i18n";
 import { LanguageSelector } from "./language-selector";
+import { CurrencySelector } from "./currency-selector";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -368,10 +369,11 @@ export function Footer() {
             © {new Date().getFullYear()} {BRAND.house}. {t.footer.rights}
           </div>
 
-          <div className="flex gap-6 order-2 items-center">
+          <div className="flex gap-4 sm:gap-6 order-2 items-center flex-wrap justify-center">
             <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.privacy}</Link>
             <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.terms}</Link>
             <Link href="/contact" className="hover:text-[#2B1B12] transition-colors">{t.footer.contactLink}</Link>
+            <CurrencySelector variant="desktop" />
             <LanguageSelector variant="desktop" />
           </div>
 
