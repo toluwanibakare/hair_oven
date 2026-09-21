@@ -53,14 +53,16 @@ export function AtelierVideo() {
             <div className="relative h-[440px] sm:h-[480px] lg:h-[500px] aspect-[9/16] rounded-xl overflow-hidden border border-[#D4AF37]/30 shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-[#1A100B] group">
               <video
                 ref={videoRef}
-                src="/video.MOV"
+                src="/hair_video.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
                 preload="auto"
                 className="w-full h-full object-cover"
-              />
+              >
+                <source src="/hair_video.mp4" type="video/mp4" />
+              </video>
 
               {/* Subtle Bottom Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent pointer-events-none" />
