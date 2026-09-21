@@ -16,6 +16,10 @@ export type Product = {
   longDescription: string;
   details: string[];
   lengthPrices?: Record<string, number>;
+  closureOptions?: Array<{
+    type: string;
+    lengthPrices: Record<string, number>;
+  }>;
   modelSpecs?: {
     closureType?: string;
     texture?: string;
@@ -73,9 +77,77 @@ export const collections = [
 
 export const products: Product[] = [
   {
+    id: "private-adewunmi",
+    name: "The Adewunmi",
+    collection: "essentials",
+    category: "Wigs",
+    price: 1600000,
+    image: "/products/ADEWUNMI.jpeg",
+    images: ["/products/ADEWUNMI.jpeg"],
+    lengths: ['26"', '28"', '30"'],
+    lengthPrices: {
+      '26"': 1600000,
+      '28"': 1750000,
+      '30"': 1900000,
+    },
+    closureOptions: [
+      {
+        type: "2x6 Lace Closure",
+        lengthPrices: {
+          '26"': 1600000,
+          '28"': 1750000,
+          '30"': 1900000,
+        },
+      },
+      {
+        type: "6x6 HD Lace Closure",
+        lengthPrices: {
+          '26"': 1900000,
+          '28"': 2150000,
+          '30"': 2300000,
+        },
+      },
+      {
+        type: "13x4 HD Frontal",
+        lengthPrices: {
+          '26"': 2250000,
+          '28"': 2350000,
+          '30"': 2550000,
+        },
+      },
+    ],
+    colors: ["Tangerine Dream (High-Saturation Vivid Orange)"],
+    density: "Full Precision Density",
+    texture: "Sleek Precision Cut",
+    capSize: ["S", "M", "L", "XL"],
+    description:
+      "Make an unforgettable statement with our Tangerine Dream unit. This ultra-vibrant, vivid orange hair commands attention with high-saturation color.",
+    longDescription:
+      "Make an unforgettable statement with our Tangerine Dream unit. This ultra-vibrant, vivid orange hair commands attention with high-saturation color. Perfect for high-fashion photoshoots, exclusive events, or a complete style transformation.",
+    details: [
+      "Premium human hair",
+      "Sleek, precision-cut bob",
+      "Natural-looking movement and lustre",
+      "High-saturation Tangerine Dream color",
+      "Available in 2x6, 6x6 HD Lace, and 13x4 HD Frontal options",
+      "Handcrafted preorder commission",
+    ],
+    modelSpecs: {
+      closureType: "2x6 / 6x6 HD Lace Closure or 13x4 HD Frontal",
+      texture: "100% Premium Human Hair (Sleek Precision Cut)",
+      length: '26" - 30"',
+      density: "Full Precision Density",
+      color: "Tangerine Dream Vivid Orange",
+      styling: "Sleek Precision-Cut Bob",
+    },
+    inStock: true,
+    featured: true,
+    bestseller: true,
+  },
+  {
     id: "signature-argentine-bob",
     name: "The Argentine Bob",
-    collection: "signature",
+    collection: "essentials",
     category: "Wigs",
     price: 299000,
     originalPrice: 320000,

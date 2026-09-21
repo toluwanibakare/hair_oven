@@ -34,6 +34,9 @@ export default function ProductPage() {
 
   const [activeImg, setActiveImg] = useState(0);
   const [selectedLength, setSelectedLength] = useState(product?.lengths[0] || '10"');
+  const [selectedClosureType, setSelectedClosureType] = useState(
+    product?.closureOptions?.[0]?.type || "2x6 Lace Closure"
+  );
   const [capSize, setCapSize] = useState("Medium (22-22.5\")");
   const [closureColor, setClosureColor] = useState("Transparent HD");
   const [hasMeasurements, setHasMeasurements] = useState<"yes" | "no">("no");
@@ -88,8 +91,11 @@ export default function ProductPage() {
     );
   }
 
-  // Calculate dynamic unit price based on length tier
-  const basePrice = product.lengthPrices?.[selectedLength] || product.price;
+  // Calculate dynamic unit price based on closure type & length tier
+  const activeClosureObj = product?.closureOptions?.find((c) => c.type === selectedClosureType) || product?.closureOptions?.[0];
+  const basePrice = activeClosureObj
+    ? (activeClosureObj.lengthPrices[selectedLength] || product.price)
+    : (product?.lengthPrices?.[selectedLength] || product.price);
 
   // Add-on prices in NGN
   const fittingPrices = [0, 182600, 507200];
@@ -249,7 +255,7 @@ export default function ProductPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[#2B1B12]">
                   <div>
                     <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Closure Type</span>
-                    <span className="font-medium text-xs">{product.modelSpecs.closureType}</span>
+                    <span className="font-medium text-xs">{selectedClosureType || product.modelSpecs.closureType}</span>
                   </div>
                   <div>
                     <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Texture</span>
@@ -257,7 +263,7 @@ export default function ProductPage() {
                   </div>
                   <div>
                     <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Length</span>
-                    <span className="font-medium text-xs">{product.modelSpecs.length || selectedLength}</span>
+                    <span className="font-medium text-xs">{selectedLength || product.modelSpecs.length}</span>
                   </div>
                   <div>
                     <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Density</span>
@@ -281,6 +287,31 @@ export default function ProductPage() {
                 Tailor Your Customisations
               </div>
 
+              {/* Closure / Frontal Type Selector if product has closureOptions */}
+              {product.closureOptions && product.closureOptions.length > 0 && (
+                <div>
+                  <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-2">
+                    Select Closure / Frontal Type
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    {product.closureOptions.map((opt) => (
+                      <button
+                        key={opt.type}
+                        type="button"
+                        onClick={() => setSelectedClosureType(opt.type)}
+                        className={`h-11 px-3 border text-center transition-all flex flex-col justify-center items-center font-semibold text-xs ${
+                          selectedClosureType === opt.type
+                            ? "bg-[#2B1B12] text-[#FFFCF8] border-[#2B1B12] shadow-sm"
+                            : "bg-white text-[#2B1B12] border-[#2B1B12]/15 hover:border-[#B8860B]"
+                        }`}
+                      >
+                        <span>{opt.type}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Length Selection */}
               <div>
                 <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-2">
@@ -288,7 +319,9 @@ export default function ProductPage() {
                 </label>
                 <div className="grid grid-cols-4 gap-2">
                   {product.lengths.map((l) => {
-                    const priceForL = product.lengthPrices?.[l] || product.price;
+                    const priceForL = activeClosureObj
+                      ? (activeClosureObj.lengthPrices[l] || product.price)
+                      : (product.lengthPrices?.[l] || product.price);
                     return (
                       <button
                         key={l}
