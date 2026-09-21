@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { BrandIntro } from "@/components/sections/brand-intro";
+import { AtelierVideo } from "@/components/sections/atelier-video";
 import { Founder } from "@/components/sections/founder";
 import { Collections } from "@/components/sections/collections";
 import { SignatureSpotlight } from "@/components/sections/signature-spotlight";
@@ -14,6 +15,7 @@ export default function Home() {
     <div className="overflow-x-hidden bg-[#FFFCF8]">
       <Hero />
       <BrandIntro />
+      <AtelierVideo />
       <Founder />
       <Collections />
       <SignatureSpotlight />
@@ -25,3 +27,4 @@ export default function Home() {
     </div>
   );
 }
+

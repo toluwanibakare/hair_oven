@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Sparkles, Send, ShieldCheck, Crown } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 
+import { AtelierVideo } from "@/components/sections/atelier-video";
+
 export default function AtelierPage() {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
@@ -29,7 +31,7 @@ export default function AtelierPage() {
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
       {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#2B1B12] text-[#E8DDC9] pt-10 lg:pt-14 pb-20 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
             src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop"
@@ -94,6 +96,9 @@ export default function AtelierPage() {
           ))}
         </div>
       </section>
+
+      {/* Atelier Video Section */}
+      <AtelierVideo />
 
       {/* Consultation Form */}
       <section id="consultation-form" className="bg-[#E0D5C5]/25 border-t border-b border-[#2B1B12]/10 py-20 lg:py-28">

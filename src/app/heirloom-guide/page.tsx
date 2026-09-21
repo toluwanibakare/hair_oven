@@ -28,15 +28,15 @@ export default function HeirloomGuidePage() {
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
       {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-36 overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
+      <section className="relative bg-[#2B1B12] text-[#E8DDC9] pt-10 lg:pt-14 pb-20 lg:pb-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-30 lg:opacity-35">
           <img
-            src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=1600&auto=format&fit=crop"
+            src="/vitaly-gariev-x27-edtdfio-unsplash.jpg"
             alt="The Heirloom Guide Header"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/40 to-transparent" />
 
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center">
           <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
