@@ -222,16 +222,16 @@ export default function ProductPage() {
             <div className="pt-4 border-t border-[#2B1B12]/10 flex items-baseline justify-between">
               <div>
                 <div className="flex items-baseline gap-3">
-                  <span className="text-3xl font-serif text-[#2B1B12] font-normal">
+                  <span className="text-3xl sm:text-4xl font-bold text-[#2B1B12] tracking-tight">
                     {formatPrice(unitTotalNGN)}
                   </span>
                   {product.originalPrice && (
-                    <span className="text-sm text-[#A8A29E] line-through">
+                    <span className="text-sm sm:text-base text-[#A8A29E] line-through font-normal">
                       {formatPrice(product.originalPrice)}
                     </span>
                   )}
                 </div>
-                <div className="text-[10px] tracking-[0.14em] uppercase text-[#78716C] mt-1">
+                <div className="text-[10px] tracking-[0.14em] uppercase text-[#78716C] mt-1 font-medium">
                   Taxes Included • Preorder Handcrafted Unit
                 </div>
               </div>
@@ -301,7 +301,7 @@ export default function ProductPage() {
                         }`}
                       >
                         <span className="text-xs font-semibold">{l}</span>
-                        <span className="text-[9px] opacity-80">{formatPrice(priceForL)}</span>
+                        <span className={`text-[10px] font-bold ${selectedLength === l ? "text-[#D4AF37]" : "text-[#B8860B]"}`}>{formatPrice(priceForL)}</span>
                       </button>
                     );
                   })}
@@ -533,7 +533,7 @@ export default function ProductPage() {
                   >
                     <span>PREORDER UNIT</span>
                     <span>•</span>
-                    <span>{formatPrice(grandTotalNGN)}</span>
+                    <span className="font-bold text-sm tracking-tight text-[#F3E5AB]">{formatPrice(grandTotalNGN)}</span>
                   </button>
                 </div>
 

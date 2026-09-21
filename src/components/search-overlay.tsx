@@ -5,12 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, Search } from "lucide-react";
 import Link from "next/link";
 import { products } from "@/lib/data";
-import { formatPrice } from "@/lib/utils";
+import { useCurrency } from "@/context/currency-context";
 import { WatermarkImage } from "@/components/watermark-image";
 import { useLanguage } from "@/context/language-context";
 
 export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { t } = useLanguage();
+  const { formatPrice } = useCurrency();
   const [q, setQ] = useState("");
   const results = useMemo(() => {
     if (!q) return [];
@@ -36,7 +37,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
               <div className="mt-8">
                 {!q ? (
                   <div>
-                    <div className="text-[10px] tracking-[0.18em] uppercase text-[#A68B5B] mb-4">{t.search.popular}</div>
+                    <div className="text-[10px] tracking-[0.18em] uppercase text-[#A68B5B] mb-4 font-semibold">{t.search.popular}</div>
                     <div className="flex flex-wrap gap-2">
                       {["Bone Straight", "Oven Veil", "Deep Curly", "Bespoke", "Blunt Bob"].map((t) => (
                         <button key={t} onClick={() => setQ(t)} className="px-4 py-2 border border-[rgba(28,18,14,0.12)] text-[12px] tracking-[0.08em] uppercase hover:bg-[#2B1B12] hover:text-white transition-colors">
@@ -44,7 +45,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                         </button>
                       ))}
                     </div>
-                    <div className="mt-8 grid grid-cols-3 gap-2 text-[11px] tracking-[0.12em] uppercase">
+                    <div className="mt-8 grid grid-cols-3 gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold">
                       <Link href="/collections/private" onClick={onClose} className="p-4 bg-[#F5EFE6] hover:bg-[#EDE6D6] transition-colors">
                         Private
                       </Link>
@@ -62,10 +63,10 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                       <Link key={p.id} href={`/product/${p.id}`} onClick={onClose} className="flex gap-4 p-3 hover:bg-[#F5EFE6] transition-colors border border-transparent hover:border-[rgba(28,18,14,0.06)]">
                         <WatermarkImage src={p.image} alt={p.name} containerClassName="w-16 h-20 bg-[#F5EFE6] shrink-0" imageClassName="w-full h-full object-cover" watermarkSize="sm" />
                         <div>
-                          <div className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B]">{p.collection}</div>
+                          <div className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] font-semibold">{p.collection}</div>
                           <div className="font-serif text-[15px]">{p.name}</div>
                           <div className="text-xs text-[#78716C]">{p.category} • {p.texture}</div>
-                          <div className="text-sm font-medium mt-1">{formatPrice(p.price)}</div>
+                          <div className="text-sm font-bold text-[#2B1B12] mt-1">{formatPrice(p.price)}</div>
                         </div>
                       </Link>
                     ))}
@@ -81,3 +82,4 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
     </AnimatePresence>
   );
 }
+

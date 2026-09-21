@@ -473,7 +473,8 @@ export function Navigation() {
                     <span className="flex items-center gap-2">{isActive("/story") && <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B]" />}{t.nav.house}</span>
                     <ChevronRight className="w-4 h-4 text-[#B8860B]" />
                   </Link>
-                  <div className="pt-4">
+                  <div className="pt-4 flex flex-wrap items-center gap-4 border-t border-[#2B1B12]/10">
+                    <CurrencySelector variant="mobile" />
                     <LanguageSelector variant="mobile" />
                   </div>
                 </div>

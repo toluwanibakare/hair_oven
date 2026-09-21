@@ -37,16 +37,16 @@ export function ProductCard({ product, variant = "default" }: { product: Product
             <Heart className={cn("w-4 h-4", wished ? "fill-[#C2A47A] text-[#C2A47A]" : "text-[#2B1B12]")} strokeWidth={1.5} />
           </button>
           <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#2B1B12]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-20">
-            <span className="inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center">Preorder Unit</span>
+            <span className="inline-flex h-9 px-5 bg-white text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase items-center font-semibold">Preorder Unit</span>
           </div>
         </div>
         <div className="pt-4">
-          <div className="text-[10px] tracking-[0.16em] uppercase text-[#A68B5B]">{product.collection} • {product.category}</div>
+          <div className="text-[10px] tracking-[0.16em] uppercase text-[#A68B5B] font-semibold">{product.collection} • {product.category}</div>
           <div className="font-serif text-[18px] leading-tight mt-1 group-hover:text-[#A68B5B] transition-colors">{product.name}</div>
           <div className="text-xs text-[#78716C] mt-1">{product.texture} • {product.density}</div>
-          <div className="flex items-baseline gap-2 mt-2">
-            <span className="text-sm font-medium">{formatPrice(product.price)}</span>
-            {product.originalPrice && <span className="text-xs text-[#A8A29E] line-through">{formatPrice(product.originalPrice)}</span>}
+          <div className="flex items-baseline gap-2.5 mt-2.5">
+            <span className="text-base sm:text-lg font-bold text-[#2B1B12] tracking-tight">{formatPrice(product.price)}</span>
+            {product.originalPrice && <span className="text-xs sm:text-sm text-[#A8A29E] line-through font-normal">{formatPrice(product.originalPrice)}</span>}
           </div>
         </div>
       </Link>
@@ -74,10 +74,14 @@ export function ProductCard({ product, variant = "default" }: { product: Product
         </div>
       </div>
       <div className="pt-3">
-        <div className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] truncate">{product.collection}</div>
+        <div className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] truncate font-semibold">{product.collection}</div>
         <div className="text-[14px] leading-tight font-medium mt-1 line-clamp-1 group-hover:text-[#A68B5B] transition-colors">{product.name}</div>
-        <div className="text-sm mt-1 font-medium">{formatPrice(product.price)}</div>
+        <div className="flex items-baseline gap-2 mt-1.5">
+          <span className="text-sm sm:text-base font-bold text-[#2B1B12] tracking-tight">{formatPrice(product.price)}</span>
+          {product.originalPrice && <span className="text-xs text-[#A8A29E] line-through font-normal">{formatPrice(product.originalPrice)}</span>}
+        </div>
       </div>
     </Link>
   );
 }
+

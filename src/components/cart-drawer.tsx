@@ -83,8 +83,8 @@ export function CartDrawer() {
                             </button>
                           </div>
                           <div className="text-right">
-                            <div className="text-sm font-medium">{formatPrice(item.product.price * item.qty)}</div>
-                            <button onClick={() => removeFromCart(item.product.id)} className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] hover:text-[#2B1B12] underline underline-offset-4">
+                            <div className="text-sm font-bold text-[#2B1B12]">{formatPrice(item.product.price * item.qty)}</div>
+                            <button onClick={() => removeFromCart(item.product.id)} className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] hover:text-[#2B1B12] underline underline-offset-4 mt-1">
                               {t.cart.remove}
                             </button>
                           </div>
@@ -95,8 +95,8 @@ export function CartDrawer() {
                 </div>
                 <div className="border-t border-[rgba(28,18,14,0.08)] p-6 bg-[#FDF8F0] space-y-4">
                   <div className="flex justify-between text-sm">
-                    <span className="text-[#78716C]">{t.cart.subtotal}</span>
-                    <span className="font-medium">{formatPrice(cartTotal)}</span>
+                    <span className="text-[#78716C] font-medium">{t.cart.subtotal}</span>
+                    <span className="font-bold text-base text-[#2B1B12]">{formatPrice(cartTotal)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-[#78716C]">{t.cart.shipping}</span>
