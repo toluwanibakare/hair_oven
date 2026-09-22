@@ -421,6 +421,58 @@ export const products: Product[] = [
     featured: true,
   },
   {
+    id: "essentials-the-essential",
+    name: "The Essential",
+    collection: "essentials",
+    category: "Wigs",
+    price: 1650000,
+    image: "/products/essential.jpeg",
+    images: ["/products/essential.jpeg"],
+    lengths: ['26"', '28"', '30"'],
+    lengthPrices: {
+      '26"': 1650000,
+      '28"': 1850000,
+      '30"': 1999999,
+    },
+    closureOptions: [
+      {
+        type: "6x6 HD Lace Closure",
+        lengthPrices: {
+          '26"': 1650000,
+          '28"': 1850000,
+          '30"': 1999999,
+        },
+      },
+    ],
+    colors: ["Rich Natural-Black Finish"],
+    density: "Full Natural Volume",
+    texture: "Defined Deep Curls",
+    capSize: ["S", "M", "L", "XL"],
+    description:
+      "A masterpiece of everyday luxury, The Essential presents defined deep curls with effortless volume and immaculate bounce.",
+    longDescription:
+      "A masterpiece of everyday luxury, The Essential presents defined deep curls with effortless volume and immaculate bounce. Cut from premium human hair and paired with a 6x6 HD lace closure, this unit delivers natural hairline blending and high-end movement.",
+    details: [
+      "Style: Voluminous Sculpted Deep Curls",
+      "Closure: 6x6 HD Lace Closure",
+      "Texture: Defined Deep Curls",
+      "Density: Full Natural Volume",
+      "Collection: Essentials Collection",
+      "Available Lengths: 26″, 28″, 30″",
+    ],
+    modelSpecs: {
+      closureType: "6x6 HD Lace Closure",
+      texture: "100% Premium Human Hair (Deep Curls)",
+      length: '26" - 30"',
+      density: "Full Natural Volume",
+      color: "Rich Natural-Black Finish",
+      styling: "Defined Centre Part",
+    },
+    inStock: true,
+    featured: true,
+    bestseller: true,
+  },
+  {
     id: "essentials-wave-14",
     name: "Essentials Loose Wave 14″",
     collection: "essentials",

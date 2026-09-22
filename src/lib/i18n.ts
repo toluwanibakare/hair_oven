@@ -421,7 +421,7 @@ const en = {
         numeral: "I",
         title: "THE HAIR",
         topics: [
-          { title: "Provenance", content: "Every strand within our Private and Signature collections is ethically sourced directly from single donors across Southeast Asia and East Asia. We maintain rigorous procurement protocols ensuring donors are compensated fairly, while preserving the raw, unrefined strength of virgin hair." },
+          { title: "Provenance", content: "Every strand within our Private and Signature collections is ethically sourced directly from single donors across the oceans, spanning Europe, Asia, South America, and global reserves. We maintain rigorous procurement protocols ensuring donors are compensated fairly, while preserving the raw, unrefined strength of virgin hair." },
           { title: "Donor Selection", content: "Only 1 in 100 hair bundles evaluated meets the stringent criteria required for HAIR OVEN. Strands are hand-inspected for natural elasticity, uniform strand strength, and rich, natural pigments without prior chemical processing." },
           { title: "Cuticle Integrity", content: "Absolute cuticle alignment from root to tip is the cornerstone of structural longevity. By keeping cuticles intact and running in one direction, HAIR OVEN creations resist matting and tangling across years of wear." },
           { title: "Density and Weight", content: "We map density with meticulous weight distribution. Rather than overloading the crown, hair is woven to achieve realistic volume, natural bounce, and effortless movement that mimics natural scalp growth." },
