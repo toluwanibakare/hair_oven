@@ -124,21 +124,14 @@ export function Footer() {
 
           {/* Lower Footer Bottom Bar (No Contact Page Link) */}
           <div className="pt-6 pb-4 flex flex-col md:flex-row gap-4 justify-between items-center text-[11px] tracking-[0.08em] text-[#57534E] z-10 relative font-medium">
-            <div className="md:flex-1 flex justify-center md:justify-start order-1">
+            <div>
               © {new Date().getFullYear()} {BRAND.house}. {t.footer.rights}
             </div>
 
-            <div className="flex gap-6 order-2 items-center">
+            <div className="flex gap-4 sm:gap-6 items-center flex-wrap justify-center md:justify-end">
               <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.privacy}</Link>
               <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.terms}</Link>
               <LanguageSelector variant="desktop" />
-            </div>
-
-            <div className="md:flex-1 flex justify-center md:justify-end order-3 mt-2 md:mt-0">
-              <Link href="https://www.tmb.it.com" target="_blank" rel="noopener noreferrer" className="text-[#B8860B] hover:text-[#2B1B12] transition-colors flex items-center gap-1 group">
-                {t.footer.builtBy}
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </Link>
             </div>
           </div>
 
@@ -365,23 +358,16 @@ export function Footer() {
 
         {/* Lower Footer Bottom Bar */}
         <div className="pt-6 pb-4 flex flex-col md:flex-row gap-4 justify-between items-center text-[11px] tracking-[0.08em] text-[#57534E] z-10 relative font-medium">
-          <div className="md:flex-1 flex justify-center md:justify-start order-1">
+          <div>
             © {new Date().getFullYear()} {BRAND.house}. {t.footer.rights}
           </div>
 
-          <div className="flex gap-4 sm:gap-6 order-2 items-center flex-wrap justify-center">
+          <div className="flex gap-4 sm:gap-6 items-center flex-wrap justify-center md:justify-end">
             <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.privacy}</Link>
             <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.terms}</Link>
             <Link href="/contact" className="hover:text-[#2B1B12] transition-colors">{t.footer.contactLink}</Link>
             <CurrencySelector variant="desktop" />
             <LanguageSelector variant="desktop" />
-          </div>
-
-          <div className="md:flex-1 flex justify-center md:justify-end order-3 mt-2 md:mt-0">
-            <Link href="https://www.tmb.it.com" target="_blank" rel="noopener noreferrer" className="text-[#B8860B] hover:text-[#2B1B12] transition-colors flex items-center gap-1 group">
-              {t.footer.builtBy}
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </Link>
           </div>
         </div>
 

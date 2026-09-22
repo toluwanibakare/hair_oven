@@ -43,8 +43,7 @@ export default function ProductPage() {
   const [measurementEarToEar, setMeasurementEarToEar] = useState("");
   const [measurementCircumference, setMeasurementCircumference] = useState("");
   const [measurementForeheadToNape, setMeasurementForeheadToNape] = useState("");
-  const [fittingOption, setFittingOption] = useState<number>(0); // 0 = None, 1 = Studio, 2 = Home Visit
-  const [processingTime, setProcessingTime] = useState<number>(0); // 0 = 9-10 days, 1 = 5 days (+203700 NGN)
+  const [processingTime, setProcessingTime] = useState<number>(0); // 0 = 10-14 days, 1 = 1-5 days (+203700 NGN)
   const [qty, setQty] = useState(1);
 
   // File Upload states
@@ -98,10 +97,9 @@ export default function ProductPage() {
     : (product?.lengthPrices?.[selectedLength] || product.price);
 
   // Add-on prices in NGN
-  const fittingPrices = [0, 182600, 507200];
   const processingPrices = [0, 203700];
 
-  const unitTotalNGN = basePrice + fittingPrices[fittingOption] + processingPrices[processingTime];
+  const unitTotalNGN = basePrice + processingPrices[processingTime];
   const grandTotalNGN = unitTotalNGN * qty;
 
   const wished = isInWishlist(product.id);
@@ -155,7 +153,7 @@ export default function ProductPage() {
                 HANDCRAFTED PREORDER COMMISSION
               </span>
               <p className="text-xs text-[#E8DDC9]/90 mt-0.5">
-                All Hair Oven creations are custom handcrafted on preorder. Dispatch in 5 – 10 working days. No immediate shipping.
+                All Hair Oven creations are custom handcrafted on preorder. Standard dispatch in 10 – 14 working days. Express dispatch available (1 – 5 working days).
               </p>
             </div>
           </div>
@@ -504,34 +502,18 @@ export default function ProductPage() {
                 </div>
               </div>
 
-              {/* Delivery & Fitting Options */}
-              <div className="pt-3 border-t border-[#2B1B12]/10 space-y-3">
+              {/* Processing & Delivery Time */}
+              <div className="space-y-3 pt-3 border-t border-[#2B1B12]/10">
                 <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12]">
-                  Private Fitting & Atelier Consultation
-                </label>
-                <select
-                  value={fittingOption}
-                  onChange={(e) => setFittingOption(parseInt(e.target.value))}
-                  className="w-full h-11 px-4 bg-white border border-[#2B1B12]/20 text-xs text-[#2B1B12] focus:outline-none focus:border-[#B8860B] rounded-sm font-medium"
-                >
-                  <option value={0}>None (Standard Delivery)</option>
-                  <option value={1}>At our St. Johns Wood Studio (+ {formatPrice(182600)})</option>
-                  <option value={2}>Home Visit - London Zone 1-4 (+ {formatPrice(507200)})</option>
-                </select>
-              </div>
-
-              {/* Processing Time */}
-              <div className="space-y-3">
-                <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12]">
-                  Preorder Processing Time
+                  Preorder Dispatch & Delivery Timeline
                 </label>
                 <select
                   value={processingTime}
                   onChange={(e) => setProcessingTime(parseInt(e.target.value))}
                   className="w-full h-11 px-4 bg-white border border-[#2B1B12]/20 text-xs text-[#2B1B12] focus:outline-none focus:border-[#B8860B] rounded-sm font-medium"
                 >
-                  <option value={0}>9 - 10 Working Days (Standard Preorder)</option>
-                  <option value={1}>5 Working Days Express Preorder (+ {formatPrice(203700)})</option>
+                  <option value={0}>10 – 14 Working Days (Standard Preorder Dispatch)</option>
+                  <option value={1}>1 – 5 Working Days (Express Preorder Dispatch + {formatPrice(203700)})</option>
                 </select>
               </div>
 

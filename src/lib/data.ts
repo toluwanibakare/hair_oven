@@ -419,9 +419,9 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "essentials-the-essential",
+    id: "signature-the-essential",
     name: "The Essential",
-    collection: "essentials",
+    collection: "signature",
     category: "Wigs",
     price: 1650000,
     image: "/products/essential.jpeg",
@@ -455,7 +455,7 @@ export const products: Product[] = [
       "Closure: 6x6 HD Lace Closure",
       "Texture: Defined Deep Curls",
       "Density: Full Natural Volume",
-      "Collection: Essentials Collection",
+      "Collection: Signature Collection",
       "Available Lengths: 26″, 28″, 30″",
     ],
     modelSpecs: {
@@ -470,9 +470,9 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "essentials-precision-bob",
+    id: "signature-precision-bob",
     name: "The Essential Precision Bob",
-    collection: "essentials",
+    collection: "signature",
     category: "Wigs",
     price: 350000,
     image: "/products/another_essential.jpeg",
