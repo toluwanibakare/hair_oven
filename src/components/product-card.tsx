@@ -26,7 +26,7 @@ export function ProductCard({ product, variant = "default" }: { product: Product
           />
           <button
             onClick={(e) => { e.preventDefault(); toggleWishlist(product.id); }}
-            className="absolute top-2.5 right-2.5 w-8 h-8 grid place-items-center rounded-full bg-white/90 backdrop-blur hover:bg-white transition-colors z-20 shadow-sm"
+            className="absolute bottom-2.5 right-2.5 w-8 h-8 grid place-items-center rounded-full bg-white/90 backdrop-blur hover:bg-white transition-colors z-20 shadow-sm"
           >
             <Heart className={cn("w-3.5 h-3.5", wished ? "fill-[#C2A47A] text-[#C2A47A]" : "text-[#2B1B12]")} strokeWidth={1.5} />
           </button>
@@ -65,7 +65,7 @@ export function ProductCard({ product, variant = "default" }: { product: Product
         />
         <button
           onClick={(e) => { e.preventDefault(); toggleWishlist(product.id); }}
-          className="absolute top-2.5 right-2.5 w-8 h-8 grid place-items-center rounded-full bg-white/90 backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-sm"
+          className="absolute bottom-2.5 right-2.5 w-8 h-8 grid place-items-center rounded-full bg-white/90 backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-sm"
         >
           <Heart className={cn("w-3.5 h-3.5", wished ? "fill-[#C2A47A] text-[#C2A47A]" : "text-[#2B1B12]")} strokeWidth={1.5} />
         </button>

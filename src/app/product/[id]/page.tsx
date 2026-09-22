@@ -225,14 +225,14 @@ export default function ProductPage() {
             </div>
 
             {/* Live Dynamic Price & Taxes */}
-            <div className="pt-4 border-t border-[#2B1B12]/10 flex items-baseline justify-between">
+            <div className="pt-4 border-t border-[#2B1B12]/10 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
               <div>
                 <div className="flex items-baseline gap-3">
-                  <span className="text-3xl sm:text-4xl font-bold text-[#2B1B12] tracking-tight">
+                  <span className="text-2xl sm:text-4xl font-bold text-[#2B1B12] tracking-tight">
                     {formatPrice(unitTotalNGN)}
                   </span>
                   {product.originalPrice && (
-                    <span className="text-sm sm:text-base text-[#A8A29E] line-through font-normal">
+                    <span className="text-xs sm:text-base text-[#A8A29E] line-through font-normal">
                       {formatPrice(product.originalPrice)}
                     </span>
                   )}
@@ -241,7 +241,7 @@ export default function ProductPage() {
                   Taxes Included • Preorder Handcrafted Unit
                 </div>
               </div>
-              <span className="text-[10px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold bg-[#EDE6D6]/40 px-3 py-1 border border-[#2B1B12]/10">
+              <span className="self-start sm:self-auto text-[10px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold bg-[#EDE6D6]/40 px-3 py-1 border border-[#2B1B12]/10">
                 Preorder Commission
               </span>
             </div>
@@ -317,7 +317,7 @@ export default function ProductPage() {
                 <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-2">
                   Select Hair Length
                 </label>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {product.lengths.map((l) => {
                     const priceForL = activeClosureObj
                       ? (activeClosureObj.lengthPrices[l] || product.price)
@@ -667,9 +667,9 @@ export default function ProductPage() {
 
         {/* "You May Also Like" Related Products Grid */}
         <div className="mt-20 pt-16 border-t border-[#2B1B12]/10">
-          <div className="flex items-end justify-between mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
             <div>
-              <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
+              <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold block">
                 CURATED SELECTIONS
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl text-[#2B1B12] mt-1">You May Also Like</h2>
