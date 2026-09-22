@@ -38,7 +38,7 @@ export function FromAfrica() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-              className="relative aspect-[4/3] bg-[#2B1B12] overflow-hidden p-8 lg:p-10 flex flex-col justify-between shadow-xl rounded-sm"
+              className="relative min-h-[260px] sm:aspect-[4/3] bg-[#2B1B12] overflow-hidden p-5 sm:p-8 lg:p-10 flex flex-col justify-between shadow-xl rounded-sm"
             >
               {/* subtle map grid */}
               <div className="absolute inset-0 opacity-10">
@@ -58,20 +58,20 @@ export function FromAfrica() {
                 </div>
               </div>
 
-              <div className="relative grid grid-cols-3 gap-4 text-center">
+              <div className="relative grid grid-cols-3 gap-2 sm:gap-4 text-center my-6 sm:my-0">
                 {[
                   { city: "Lagos", role: t.africa.roles[0] },
                   { city: "London", role: t.africa.roles[1] },
                   { city: "Houston", role: t.africa.roles[2] },
                 ].map((c) => (
-                <div key={c.city} className="border border-white/10 bg-white/[0.06] backdrop-blur p-4">
-                  <div className="text-white font-serif text-xl">{c.city}</div>
-                  <div className="text-[10px] tracking-[0.14em] uppercase text-white/60 mt-1">{c.role}</div>
-                </div>
+                  <div key={c.city} className="border border-white/10 bg-white/[0.06] backdrop-blur px-1.5 py-3 sm:p-4 rounded-xs">
+                    <div className="text-white font-serif text-sm sm:text-lg lg:text-xl truncate">{c.city}</div>
+                    <div className="text-[9px] sm:text-[10px] tracking-[0.08em] sm:tracking-[0.14em] uppercase text-white/60 mt-1 truncate">{c.role}</div>
+                  </div>
                 ))}
               </div>
 
-              <div className="relative flex items-center justify-between text-[11px] tracking-[0.12em] uppercase text-white/50">
+              <div className="relative flex items-center justify-between text-[10px] sm:text-[11px] tracking-[0.12em] uppercase text-white/50">
                 <span>{t.africa.noteA}</span>
                 <span className="hidden sm:inline">{t.africa.noteB}</span>
               </div>

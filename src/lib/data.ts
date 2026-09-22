@@ -142,7 +142,6 @@ export const products: Product[] = [
     },
     inStock: true,
     featured: true,
-    bestseller: true,
   },
   {
     id: "signature-argentine-bob",
@@ -187,7 +186,6 @@ export const products: Product[] = [
     },
     inStock: true,
     featured: true,
-    bestseller: true,
   },
   {
     id: "signature-caramel-wave-24",
@@ -470,7 +468,6 @@ export const products: Product[] = [
     },
     inStock: true,
     featured: true,
-    bestseller: true,
   },
   {
     id: "essentials-wave-14",
