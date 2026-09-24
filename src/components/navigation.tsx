@@ -21,7 +21,7 @@ function ComingSoonTooltip({ children }: { children: React.ReactNode }) {
       <div className="opacity-50 group-hover:opacity-80 transition-opacity">
         {children}
       </div>
-      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 px-2.5 py-1 bg-[#2B1B12] text-[#D4AF37] border border-[#D4AF37]/50 shadow-2xl text-[9px] tracking-[0.18em] font-mono uppercase font-bold rounded-xs opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none z-50 whitespace-nowrap">
+      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 px-2.5 py-1 bg-[#2B1B12] text-[#D4AF37] border border-[#D4AF37]/50 shadow-2xl text-[9px] tracking-[0.18em] font-sans uppercase font-bold rounded-xs opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none z-50 whitespace-nowrap">
         COMING SOON
       </div>
     </div>
@@ -399,26 +399,29 @@ export function Navigation() {
           <div className="relative" onMouseLeave={() => setActiveNav(null)}>
             <nav className="hidden lg:flex items-center justify-center gap-10 py-4 text-[13px] tracking-[0.16em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
               {navItems.map((item) => {
-                const isCurrentActive =
-                  activeNav === item.key ||
-                  (item.key === "home"
+                const pageActive =
+                  item.key === "home"
                     ? pathname === "/"
                     : item.key === "collections"
                     ? ["/collections", "/shop", "/extensions", "/product"].some((p) => pathname === p || pathname.startsWith(p + "/"))
-                    : isActive(item.href));
+                    : isActive(item.href);
+                const isHovered = activeNav === item.key;
+
                 return (
                   <Link
                     key={item.key}
                     href={item.href}
                     onMouseEnter={() => setActiveNav(item.key)}
                     className={`group relative py-1.5 transition-colors ${
-                      isCurrentActive ? "text-[#B8860B]" : "hover:text-[#B8860B]"
+                      pageActive || isHovered ? "text-[#B8860B]" : "text-[#2B1B12] hover:text-[#B8860B]"
                     }`}
                   >
                     <span>{item.label}</span>
                     <span
-                      className={`absolute -bottom-0.5 left-0 right-0 h-[2px] bg-[#2B1B12] transition-transform duration-300 ease-out origin-left ${
-                        isCurrentActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      className={`absolute -bottom-0.5 left-0 right-0 h-[2px] transition-transform duration-300 ease-out origin-left ${
+                        pageActive
+                          ? "bg-[#B8860B] scale-x-100"
+                          : "bg-[#2B1B12] scale-x-0 group-hover:scale-x-100"
                       }`}
                     />
                   </Link>
@@ -557,11 +560,11 @@ export function Navigation() {
                       <div key={item.key} className="bg-[#FFFCF8]">
                         <button
                           onClick={() => setOpenMobileNavKey(isOpen ? null : item.key)}
-                          className={`w-full py-4 px-6 flex items-center justify-between text-left transition-colors ${
+                          className={`w-full py-5 sm:py-6 px-6 sm:px-8 flex items-center justify-between text-left transition-colors ${
                             isOpen ? "bg-[#f9f6f1]" : "hover:bg-[#f9f6f1]"
                           }`}
                         >
-                          <span className="font-serif text-[19px] text-[#2B1B12] font-normal tracking-wide">
+                          <span className="font-serif text-[20px] sm:text-[22px] text-[#2B1B12] font-normal tracking-[0.14em] uppercase">
                             {item.label}
                           </span>
                           <ChevronDown
@@ -654,33 +657,9 @@ export function Navigation() {
                     );
                   })}
 
-                  {/* Preferences & Quick Concierge Links */}
-                  <div className="p-6 space-y-4 bg-[#FFFCF8]">
-                    <div className="space-y-2 text-xs uppercase tracking-[0.14em] font-semibold text-[#57534E]">
-                      <Link
-                        href="/bespoke"
-                        onClick={() => setMobileOpen(false)}
-                        className="block py-1 hover:text-[#2B1B12]"
-                      >
-                        Bespoke Commissions
-                      </Link>
-                      <Link
-                        href="/wholesale"
-                        onClick={() => setMobileOpen(false)}
-                        className="block py-1 hover:text-[#2B1B12]"
-                      >
-                        Trade & Wholesale Edit
-                      </Link>
-                      <Link
-                        href="/contact"
-                        onClick={() => setMobileOpen(false)}
-                        className="block py-1 hover:text-[#2B1B12]"
-                      >
-                        Contact Concierge
-                      </Link>
-                    </div>
-
-                    <div className="pt-4 flex flex-wrap items-center gap-4 border-t border-[#2B1B12]/10">
+                  {/* Currency & Language Selectors */}
+                  <div className="p-6 bg-[#FFFCF8]">
+                    <div className="flex flex-wrap items-center gap-4">
                       <CurrencySelector variant="mobile" />
                       <LanguageSelector variant="mobile" />
                     </div>

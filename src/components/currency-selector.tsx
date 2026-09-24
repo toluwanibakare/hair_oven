@@ -49,7 +49,7 @@ export function CurrencySelector({ variant = "desktop" }: { variant?: "desktop" 
               transition={{ duration: 0.15 }}
               className="absolute left-0 bottom-full mb-2 w-48 bg-[#FFFCF8] border border-[#2B1B12]/15 shadow-xl py-1 z-[120] rounded-xs"
             >
-              <div className="px-3 py-1.5 text-[9px] font-mono tracking-[0.18em] uppercase text-[#B8860B] font-bold border-b border-[#2B1B12]/08">
+            <div className="px-3 py-1.5 text-[9px] font-sans tracking-[0.18em] uppercase text-[#B8860B] font-bold border-b border-[#2B1B12]/08">
                 Select Currency
               </div>
               {currencyList.map((c) => {
@@ -107,7 +107,7 @@ export function CurrencySelector({ variant = "desktop" }: { variant?: "desktop" 
             transition={{ duration: 0.15 }}
             className="absolute right-0 top-full mt-2 w-48 bg-[#FFFCF8] border border-[#2B1B12]/15 shadow-xl py-1 z-[120] rounded-xs"
           >
-            <div className="px-3 py-1.5 text-[9px] font-mono tracking-[0.18em] uppercase text-[#B8860B] font-bold border-b border-[#2B1B12]/08">
+            <div className="px-3 py-1.5 text-[9px] font-sans tracking-[0.18em] uppercase text-[#B8860B] font-bold border-b border-[#2B1B12]/08">
               Select Currency
             </div>
             {currencyList.map((c) => {

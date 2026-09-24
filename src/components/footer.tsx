@@ -135,12 +135,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Massive Faded Background Watermark Logo */}
-          <div className="w-full flex justify-center overflow-hidden pointer-events-none select-none pt-4 pb-6 lg:pb-8">
-            <div className="font-serif text-[18vw] lg:text-[14vw] leading-[0.7] tracking-[-0.04em] text-[#2B1B12] opacity-[0.04] whitespace-nowrap">
-              HAIR OVEN
-            </div>
-          </div>
+
 
         </div>
       </footer>
@@ -371,12 +366,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Massive Faded Background Watermark Logo */}
-        <div className="w-full flex justify-center overflow-hidden pointer-events-none select-none pt-4 pb-6 lg:pb-8">
-          <div className="font-serif text-[18vw] lg:text-[14vw] leading-[0.7] tracking-[-0.04em] text-[#2B1B12] opacity-[0.04] whitespace-nowrap">
-            HAIR OVEN
-          </div>
-        </div>
+
 
       </div>
     </footer>

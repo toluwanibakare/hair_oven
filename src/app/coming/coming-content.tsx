@@ -135,7 +135,7 @@ export function ComingSoonContent() {
         <div className="bg-[#B8860B] text-[#2B1B12] py-3.5 overflow-hidden border-y border-[#2B1B12]/20">
           <div className="flex whitespace-nowrap animate-marquee">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="flex items-center gap-8 text-[11px] tracking-[0.24em] uppercase font-mono font-bold shrink-0 pr-8">
+              <div key={i} className="flex items-center gap-8 text-[11px] tracking-[0.24em] uppercase font-sans font-bold shrink-0 pr-8">
                 <span>★ {c.marqueeProgress}</span>
                 <span>•</span>
                 <span className="italic font-serif font-normal text-white">{c.marqueeReady}</span>
@@ -188,7 +188,7 @@ export function ComingSoonContent() {
 
               {/* Progress Gauge with Luxury Hazard Stripe Bar */}
               <div className="mt-10 max-w-[500px] mx-auto bg-black/40 border border-[#D4AF37]/30 p-4 sm:p-5 rounded-sm">
-                <div className="flex justify-between items-center text-xs tracking-[0.2em] font-mono text-[#D4AF37] mb-2.5 font-bold">
+                <div className="flex justify-between items-center text-xs tracking-[0.2em] font-sans text-[#D4AF37] mb-2.5 font-bold">
                   <span>{c.readinessLabel}</span>
                   <span>{c.readinessPct}</span>
                 </div>
