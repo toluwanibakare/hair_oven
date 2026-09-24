@@ -29,6 +29,7 @@ export type Product = {
     styling?: string;
   };
   inStock: boolean;
+  stockCount: number;
   featured?: boolean;
   bestseller?: boolean;
 };
@@ -141,6 +142,7 @@ export const products: Product[] = [
       styling: "Sleek Precision-Cut Bob",
     },
     inStock: true,
+    stockCount: 3,
     featured: true,
   },
   {
@@ -185,6 +187,7 @@ export const products: Product[] = [
       styling: "Middle Parting",
     },
     inStock: true,
+    stockCount: 2,
     featured: true,
   },
   {
@@ -228,6 +231,7 @@ export const products: Product[] = [
       styling: "Centre Parting",
     },
     inStock: true,
+    stockCount: 1,
     featured: true,
     bestseller: true,
   },
@@ -269,7 +273,8 @@ export const products: Product[] = [
       color: "Rich Espresso-Black Finish",
       styling: "Centre Parting",
     },
-    inStock: true,
+    inStock: false,
+    stockCount: 0,
     featured: true,
     bestseller: true,
   },
@@ -315,6 +320,7 @@ export const products: Product[] = [
       styling: "Natural Parting",
     },
     inStock: true,
+    stockCount: 4,
     featured: true,
   },
   {
@@ -341,7 +347,8 @@ export const products: Product[] = [
       "Flexible parting versatility.",
       "Precision coloring meets defined volume for an uncompromised luxury look.",
     ],
-    inStock: true,
+    inStock: false,
+    stockCount: 0,
     featured: true,
   },
   {
@@ -370,6 +377,7 @@ export const products: Product[] = [
       "Private Signature Collection",
     ],
     inStock: true,
+    stockCount: 2,
     featured: true,
   },
   {
@@ -394,6 +402,7 @@ export const products: Product[] = [
       "Our most exclusive offering. Single-donor raw hair that has never been chemically processed. Each strand retains its natural cuticle alignment for unparalleled silkiness, movement and longevity. Investment-grade hair that becomes more beautiful with time.",
     details: ["Single donor", "Unprocessed", "Intact cuticles", "Oven Veil™ lace", "Lifetime with care"],
     inStock: true,
+    stockCount: 5,
     featured: true,
   },
   {
@@ -415,7 +424,8 @@ export const products: Product[] = [
     description: "Voluminous raw body wave with natural luster.",
     longDescription: "Oceanic waves crafted from unprocessed single-donor hair. Bouncy, full and eternally elegant.",
     details: ["Raw single-donor", "Natural wave pattern", "High density"],
-    inStock: true,
+    inStock: false,
+    stockCount: 0,
     featured: true,
   },
   {
@@ -469,6 +479,7 @@ export const products: Product[] = [
       styling: "Defined Side Parting",
     },
     inStock: true,
+    stockCount: 2,
     featured: true,
   },
   {
@@ -519,6 +530,7 @@ export const products: Product[] = [
       styling: "Middle Parting Bob",
     },
     inStock: true,
+    stockCount: 3,
     featured: true,
   },
   {
@@ -541,6 +553,7 @@ export const products: Product[] = [
     longDescription: "Perfect for daily wear. Beautiful, resilient and crafted for versatility.",
     details: ["Human hair", "Everyday density", "Easy maintenance"],
     inStock: true,
+    stockCount: 6,
   },
   {
     id: "essentials-bob-10",
@@ -561,7 +574,8 @@ export const products: Product[] = [
     description: "Precision bob. Editorial edge for the modern woman.",
     longDescription: "A sharp, confident silhouette. Cut and crafted for polish.",
     details: ["Blunt cut", "Natural parting", "Lightweight cap"],
-    inStock: true,
+    inStock: false,
+    stockCount: 0,
   },
   {
     id: "closure-oven-veil",
@@ -583,6 +597,7 @@ export const products: Product[] = [
     longDescription: "Mimics skin texture. Melts seamlessly. Truly undetectable.",
     details: ["Ultra-sheer", "Pre-plucked", "Bleached knots"],
     inStock: true,
+    stockCount: 4,
     featured: true,
   },
   {
@@ -605,6 +620,7 @@ export const products: Product[] = [
     longDescription: "Matched donor, matched texture. Consistency you can feel.",
     details: ["3 bundles", "Single donor", "Unprocessed"],
     inStock: true,
+    stockCount: 2,
   },
 ];
 

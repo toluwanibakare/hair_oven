@@ -63,7 +63,18 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                       <Link key={p.id} href={`/product/${p.id}`} onClick={onClose} className="flex gap-4 p-3 hover:bg-[#F5EFE6] transition-colors border border-transparent hover:border-[rgba(28,18,14,0.06)]">
                         <WatermarkImage src={p.image} alt={p.name} containerClassName="w-16 h-20 bg-[#F5EFE6] shrink-0" imageClassName="w-full h-full object-cover" watermarkSize="sm" />
                         <div>
-                          <div className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] font-semibold">{p.collection}</div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] font-semibold">{p.collection}</span>
+                            {(!p.inStock || p.stockCount === 0) ? (
+                              <span className="text-[8px] tracking-[0.12em] uppercase text-[#57534E] font-semibold bg-[#2B1B12]/08 px-1.5 py-0.5 rounded-xs">
+                                Out of Stock
+                              </span>
+                            ) : (
+                              <span className="text-[8px] tracking-[0.12em] uppercase text-[#B8860B] font-semibold bg-[#B8860B]/10 px-1.5 py-0.5 rounded-xs">
+                                {p.stockCount} left
+                              </span>
+                            )}
+                          </div>
                           <div className="font-serif text-[15px]">{p.name}</div>
                           <div className="text-xs text-[#78716C]">{p.category} • {p.texture}</div>
                           <div className="text-sm font-bold text-[#2B1B12] mt-1">{formatPrice(p.price)}</div>

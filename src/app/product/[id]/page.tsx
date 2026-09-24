@@ -55,6 +55,14 @@ export default function ProductPage() {
   const [reviewModalOpen, setReviewModalOpen] = useState(false);
   const [openDetail, setOpenDetail] = useState<string | null>("story");
 
+  // Out of stock product request state
+  const [requestModalOpen, setRequestModalOpen] = useState(false);
+  const [requestName, setRequestName] = useState("");
+  const [requestEmail, setRequestEmail] = useState("");
+  const [requestPhone, setRequestPhone] = useState("");
+  const [requestNotes, setRequestNotes] = useState("");
+  const [requestSubmitted, setRequestSubmitted] = useState(false);
+
   // Reviews state
   const [userRating, setUserRating] = useState(5);
   const [reviewAuthor, setReviewAuthor] = useState("");
@@ -180,9 +188,15 @@ export default function ProductPage() {
               >
                 <Heart className={`w-4 h-4 ${wished ? "fill-[#B8860B] text-[#B8860B]" : "text-[#2B1B12]"}`} />
               </button>
-              <div className="absolute top-5 left-5 bg-[#2B1B12]/90 backdrop-blur text-[#D4AF37] border border-[#D4AF37]/40 text-[9px] tracking-[0.2em] uppercase font-semibold px-3 py-1.5 z-20">
-                PREORDER UNIT
-              </div>
+              {(!product.inStock || product.stockCount === 0) ? (
+                <div className="absolute top-5 left-5 bg-[#2B1B12] text-[#FFFCF8] border border-[#D4AF37]/40 text-[9px] tracking-[0.2em] uppercase font-semibold px-3 py-1.5 z-20 shadow-lg">
+                  OUT OF STOCK
+                </div>
+              ) : (
+                <div className="absolute top-5 left-5 bg-[#2B1B12]/90 backdrop-blur text-[#D4AF37] border border-[#D4AF37]/40 text-[9px] tracking-[0.2em] uppercase font-semibold px-3 py-1.5 z-20">
+                  {product.stockCount <= 2 ? `ONLY ${product.stockCount} LEFT IN ATELIER` : `IN STOCK (${product.stockCount} AVAILABLE)`}
+                </div>
+              )}
             </div>
 
             {/* Thumbnail Selection */}
@@ -206,10 +220,14 @@ export default function ProductPage() {
           {/* Right: Bespoke Customisation & Order Panel */}
           <div className="lg:col-span-5 space-y-7">
             <div>
-              <div className="flex items-center gap-2 text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
+              <div className="flex flex-wrap items-center gap-2 text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
                 <span>{product.collection.toUpperCase()} COLLECTION</span>
                 <span>•</span>
-                <span>BESPOKE PREORDER</span>
+                {(!product.inStock || product.stockCount === 0) ? (
+                  <span className="text-[#991B1B] bg-[#FEF2F2] px-2 py-0.5 border border-[#FCA5A5]/30">OUT OF STOCK • REQUEST ONLY</span>
+                ) : (
+                  <span>IN STOCK ({product.stockCount} REMAINING)</span>
+                )}
               </div>
               <h1 className="font-serif text-[36px] sm:text-[46px] leading-[0.95] text-[#2B1B12] mt-2 font-light">
                 {product.name}
@@ -237,9 +255,15 @@ export default function ProductPage() {
                   Taxes Included • Preorder Handcrafted Unit
                 </div>
               </div>
-              <span className="self-start sm:self-auto text-[10px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold bg-[#EDE6D6]/40 px-3 py-1 border border-[#2B1B12]/10">
-                Preorder Commission
-              </span>
+              {(!product.inStock || product.stockCount === 0) ? (
+                <span className="self-start sm:self-auto text-[10px] tracking-[0.16em] uppercase text-[#991B1B] font-semibold bg-[#FEF2F2] px-3 py-1 border border-[#FCA5A5]/40">
+                  Out of Stock
+                </span>
+              ) : (
+                <span className="self-start sm:self-auto text-[10px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold bg-[#EDE6D6]/40 px-3 py-1 border border-[#2B1B12]/10">
+                  {product.stockCount} Left in Reserve
+                </span>
+              )}
             </div>
 
             {/* Model & Creation Specifications Breakdown */}
@@ -532,40 +556,70 @@ export default function ProductPage() {
                 </select>
               </div>
 
-              {/* Add to Cart Action Bar */}
+              {/* Add to Cart / Out of Stock Request Action Bar */}
               <div className="pt-4 flex flex-col gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center border border-[#2B1B12]/20 bg-white">
+                {(!product.inStock || product.stockCount === 0) ? (
+                  <div className="space-y-3">
+                    <div className="p-4 bg-[#2B1B12]/05 border border-[#2B1B12]/10 rounded-sm text-xs text-[#57534E] space-y-1">
+                      <div className="font-semibold text-[#2B1B12] text-[11px] tracking-[0.14em] uppercase flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#78716C]" /> THIS CREATION IS CURRENTLY OUT OF STOCK
+                      </div>
+                      <p className="text-[11px] leading-relaxed">
+                        You can request a priority atelier commission for this piece. Our concierge team will source matching single-donor hair and confirm your custom creation date.
+                      </p>
+                    </div>
+
                     <button
                       type="button"
-                      onClick={() => setQty(Math.max(1, qty - 1))}
-                      className="w-10 h-12 grid place-items-center hover:bg-[#2B1B12]/5"
+                      onClick={() => setRequestModalOpen(true)}
+                      className="w-full h-12 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors shadow-lg flex items-center justify-center gap-2"
                     >
-                      <Minus className="w-3.5 h-3.5" />
-                    </button>
-                    <span className="w-10 text-center text-xs font-semibold">{qty}</span>
-                    <button
-                      type="button"
-                      onClick={() => setQty(qty + 1)}
-                      className="w-10 h-12 grid place-items-center hover:bg-[#2B1B12]/5"
-                    >
-                      <Plus className="w-3.5 h-3.5" />
+                      <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+                      <span>REQUEST THIS PIECE</span>
                     </button>
                   </div>
+                ) : (
+                  <div className="space-y-2">
+                    {product.stockCount <= 2 && (
+                      <div className="text-[10px] tracking-[0.14em] uppercase text-[#B8860B] font-semibold flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B] animate-pulse" />
+                        ONLY {product.stockCount} UNIT{product.stockCount > 1 ? "S" : ""} LEFT IN STOCK — RESERVE YOUR CREATION NOW
+                      </div>
+                    )}
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center border border-[#2B1B12]/20 bg-white">
+                        <button
+                          type="button"
+                          onClick={() => setQty(Math.max(1, qty - 1))}
+                          className="w-10 h-12 grid place-items-center hover:bg-[#2B1B12]/5"
+                        >
+                          <Minus className="w-3.5 h-3.5" />
+                        </button>
+                        <span className="w-10 text-center text-xs font-semibold">{qty}</span>
+                        <button
+                          type="button"
+                          onClick={() => setQty(Math.min(product.stockCount, qty + 1))}
+                          className="w-10 h-12 grid place-items-center hover:bg-[#2B1B12]/5"
+                        >
+                          <Plus className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
 
-                  <button
-                    type="button"
-                    onClick={() => {
-                      for (let i = 0; i < qty; i++)
-                        addToCart(product, { length: selectedLength, color: closureColor });
-                    }}
-                    className="flex-1 h-12 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors shadow-md flex items-center justify-center gap-2"
-                  >
-                    <span>PREORDER UNIT</span>
-                    <span>•</span>
-                    <span className="font-bold text-sm tracking-tight text-[#F3E5AB]">{formatPrice(grandTotalNGN)}</span>
-                  </button>
-                </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          for (let i = 0; i < qty; i++)
+                            addToCart(product, { length: selectedLength, color: closureColor });
+                        }}
+                        className="flex-1 h-12 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors shadow-md flex items-center justify-center gap-2"
+                      >
+                        <span>PREORDER UNIT</span>
+                        <span>•</span>
+                        <span className="font-bold text-sm tracking-tight text-[#F3E5AB]">{formatPrice(grandTotalNGN)}</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
 
                 {/* Consultation Booking Link */}
                 <div className="text-center pt-2">
@@ -837,6 +891,161 @@ export default function ProductPage() {
                   className="w-full h-12 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors"
                 >
                   Submit Review
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Out of Stock Product Request Modal */}
+      {requestModalOpen && (
+        <div className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-[#FFFCF8] text-[#2B1B12] border border-[#2B1B12]/20 max-w-lg w-full p-6 sm:p-8 shadow-2xl relative rounded-sm max-h-[90vh] overflow-y-auto">
+            <button
+              onClick={() => {
+                setRequestModalOpen(false);
+                setRequestSubmitted(false);
+              }}
+              className="absolute top-5 right-5 text-[#78716C] hover:text-[#2B1B12]"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="text-[10px] tracking-[0.22em] uppercase text-[#B8860B] font-semibold">
+              Atelier Request Concierge
+            </div>
+            <h3 className="font-serif text-2xl sm:text-3xl mt-1 text-[#2B1B12] font-light">
+              Request {product.name}
+            </h3>
+            <p className="text-xs text-[#57534E] mt-1.5 leading-relaxed">
+              This unit is currently out of stock. Submit your request below to initiate a private atelier reserve for this creation.
+            </p>
+
+            {requestSubmitted ? (
+              <div className="mt-6 p-6 bg-[#f9f6f1] border border-[#B8860B]/40 text-center space-y-3 rounded-sm">
+                <div className="w-10 h-10 rounded-full bg-[#B8860B]/10 text-[#B8860B] mx-auto grid place-items-center">
+                  <Check className="w-5 h-5" />
+                </div>
+                <div className="font-serif text-xl text-[#2B1B12]">Request Received</div>
+                <p className="text-xs text-[#57534E] leading-relaxed">
+                  Thank you, <span className="font-semibold text-[#2B1B12]">{requestName}</span>. Your request for <span className="font-semibold text-[#2B1B12]">{product.name}</span> has been logged with our Concierge team. We will contact you via WhatsApp / Email shortly with custom creation timelines and availability.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setRequestModalOpen(false);
+                    setRequestSubmitted(false);
+                  }}
+                  className="mt-4 px-6 h-10 bg-[#2B1B12] text-white text-[10px] tracking-[0.16em] uppercase font-semibold hover:bg-[#B8860B] transition-colors"
+                >
+                  Done
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (!requestName.trim() || !requestEmail.trim()) return;
+                  setRequestSubmitted(true);
+                }}
+                className="mt-6 space-y-4 text-xs"
+              >
+                <div>
+                  <label className="block text-[10px] tracking-[0.14em] uppercase text-[#78716C] mb-1 font-semibold">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Enter your full name"
+                    value={requestName}
+                    onChange={(e) => setRequestName(e.target.value)}
+                    className="w-full h-11 px-4 bg-white border border-[#2B1B12]/20 text-xs focus:outline-none focus:border-[#B8860B] font-medium"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-[10px] tracking-[0.14em] uppercase text-[#78716C] mb-1 font-semibold">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="client@example.com"
+                      value={requestEmail}
+                      onChange={(e) => setRequestEmail(e.target.value)}
+                      className="w-full h-11 px-4 bg-white border border-[#2B1B12]/20 text-xs focus:outline-none focus:border-[#B8860B] font-medium"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] tracking-[0.14em] uppercase text-[#78716C] mb-1 font-semibold">
+                      WhatsApp / Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="+234 800 000 0000"
+                      value={requestPhone}
+                      onChange={(e) => setRequestPhone(e.target.value)}
+                      className="w-full h-11 px-4 bg-white border border-[#2B1B12]/20 text-xs focus:outline-none focus:border-[#B8860B] font-medium"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-[10px] tracking-[0.14em] uppercase text-[#78716C] mb-1 font-semibold">
+                      Requested Hair Length
+                    </label>
+                    <select
+                      value={selectedLength}
+                      onChange={(e) => setSelectedLength(e.target.value)}
+                      className="w-full h-11 px-3 bg-white border border-[#2B1B12]/20 text-xs text-[#2B1B12] focus:outline-none focus:border-[#B8860B] font-medium"
+                    >
+                      {product.lengths.map((l) => (
+                        <option key={l} value={l}>
+                          {l}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[10px] tracking-[0.14em] uppercase text-[#78716C] mb-1 font-semibold">
+                      Cap Size
+                    </label>
+                    <select
+                      value={capSize}
+                      onChange={(e) => setCapSize(e.target.value)}
+                      className="w-full h-11 px-3 bg-white border border-[#2B1B12]/20 text-xs text-[#2B1B12] focus:outline-none focus:border-[#B8860B] font-medium"
+                    >
+                      <option value='Medium (22-22.5")'>Medium (22-22.5")</option>
+                      <option value='Small (20-21.5")'>Small (20-21.5")</option>
+                      <option value='Large (23-24")'>Large (23-24")</option>
+                      <option value='Extra Large (24-25")'>Extra Large (24-25")</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-[10px] tracking-[0.14em] uppercase text-[#78716C] mb-1 font-semibold">
+                    Custom Requests & Notes
+                  </label>
+                  <textarea
+                    rows={3}
+                    placeholder="Specify preferred lace tone, density adjustments, or dispatch urgency..."
+                    value={requestNotes}
+                    onChange={(e) => setRequestNotes(e.target.value)}
+                    className="w-full p-3 bg-white border border-[#2B1B12]/20 text-xs focus:outline-none focus:border-[#B8860B] font-medium"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full h-12 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors flex items-center justify-center gap-2"
+                >
+                  <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+                  <span>SUBMIT PIECE REQUEST</span>
                 </button>
               </form>
             )}
