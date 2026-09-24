@@ -28,14 +28,14 @@ function ComingSoonTooltip({ children }: { children: React.ReactNode }) {
   );
 }
 
-type NavKey = "home" | "collections" | "atelier" | "story" | "heirloom";
+type NavKey = "shop" | "story" | "atelier" | "journal" | "clientCare";
 
 const navItems: { key: NavKey; label: string; href: string }[] = [
-  { key: "home", label: "Home", href: "/" },
-  { key: "collections", label: "Collections", href: "/shop" },
-  { key: "atelier", label: "Atelier", href: "/atelier" },
-  { key: "story", label: "The House", href: "/story" },
-  { key: "heirloom", label: "Heirloom Guide", href: "/heirloom-guide" },
+  { key: "shop", label: "SHOP", href: "/shop" },
+  { key: "story", label: "THE HOUSE", href: "/story" },
+  { key: "atelier", label: "ATELIER", href: "/atelier" },
+  { key: "journal", label: "JOURNAL", href: "/heirloom-guide" },
+  { key: "clientCare", label: "CLIENT CARE", href: "/contact" },
 ];
 
 const megaMenuData: Record<
@@ -46,126 +46,58 @@ const megaMenuData: Record<
     cards: { title: string; subtitle: string; href: string; image: string }[];
   }
 > = {
-  home: {
+  shop: {
     col1: {
-      title: "Explore Home",
+      title: "Explore Collections",
       links: [
-        { label: "Hero & Collections", href: "/" },
-        { label: "Shop Hair Oven", href: "/#shop-collection" },
-        { label: "Signature Spotlight", href: "/#signature-spotlight" },
-        { label: "Brand Philosophy", href: "/#philosophy" },
-        { label: "The Atelier Video", href: "/#atelier-video" },
-      ],
-    },
-    col2: {
-      title: "Discover More",
-      links: [
-        { label: "Founder's Story", href: "/#founder" },
-        { label: "Oven Veil Technology", href: "/#oven-veil" },
-        { label: "African Provenance", href: "/#from-africa" },
-        { label: "Client Testimonials", href: "/#social-proof" },
-      ],
-    },
-    cards: [
-      {
-        title: "SHOP THE COLLECTION",
-        subtitle: "Signature & RAW Units",
-        href: "/shop",
-        image: "/products/caramel-wave.jpeg",
-      },
-      {
-        title: "OVEN VEIL ATELIER",
-        subtitle: "Invisible Melt Technology",
-        href: "/oven-veil",
-        image: "/products/editorial-model-2.jpg",
-      },
-    ],
-  },
-  collections: {
-    col1: {
-      title: "Discover Collections",
-      links: [
-        { label: "Private Collection (RAW Reserve)", href: "/collections/private" },
+        { label: "Private Collection (Raw Reserve)", href: "/collections/private" },
         { label: "Signature Collection", href: "/collections/signature" },
         { label: "Essentials Collection", href: "/collections/essentials" },
-        { label: "All Collections", href: "/shop" },
+        { label: "Custom / Atelier Units", href: "/atelier" },
       ],
     },
     col2: {
-      title: "By Category",
+      title: "By Category & Edit",
       links: [
-        { label: "Full Lace & HD Wigs", href: "/shop?cat=Wigs" },
+        { label: "Luxury Wigs", href: "/shop?cat=Wigs" },
         { label: "Raw Hair Bundles", href: "/shop?cat=Bundles" },
         { label: "Closures & Frontals", href: "/shop?cat=Closures%20%26%20Frontals" },
-        { label: "Hair Extensions & Care", href: "/extensions" },
+        { label: "Hair Tools & Care", href: "/shop?cat=tools" },
+        { label: "The Trade Edit (Wholesale)", href: "/wholesale" },
       ],
     },
     cards: [
       {
-        title: "THE SIGNATURE SUITE",
+        title: "PRIVATE COLLECTION",
+        subtitle: "Raw Reserve • Heirloom Investment",
+        href: "/collections/private",
+        image: "/products/editorial-model-2.jpg",
+      },
+      {
+        title: "SIGNATURE COLLECTION",
         subtitle: "Long-Term Luxury Units",
         href: "/collections/signature",
         image: "/products/signature_collection.jpg",
-      },
-      {
-        title: "RAW RESERVE",
-        subtitle: "Single Donor Unprocessed Hair",
-        href: "/collections/private",
-        image: "/products/aurelia-barrel-curl.jpeg",
-      },
-    ],
-  },
-  atelier: {
-    col1: {
-      title: "Atelier Services",
-      links: [
-        { label: "Bespoke Commissions", href: "/bespoke" },
-        { label: "Hand-Ventilated Lace", href: "/atelier#ventilated-lace" },
-        { label: "Custom Color Toning", href: "/atelier#color-toning" },
-        { label: "Fitting & Consultation", href: "/contact" },
-      ],
-    },
-    col2: {
-      title: "Provenance & Craft",
-      links: [
-        { label: "Single Donor Sourcing", href: "/atelier#sourcing" },
-        { label: "Cuticle Alignment", href: "/atelier#cuticle" },
-        { label: "Oven Veil Technology", href: "/oven-veil" },
-        { label: "Care & Longevity", href: "/heirloom-guide" },
-      ],
-    },
-    cards: [
-      {
-        title: "BESPOKE COMMISSIONS",
-        subtitle: "Tailored to Your Specifications",
-        href: "/bespoke",
-        image: "/products/editorial-blowdry.jpg",
-      },
-      {
-        title: "THE CRAFTSMANSHIP",
-        subtitle: "Uncompromising Precision",
-        href: "/atelier",
-        image: "/products/ADEWUNMI.jpeg",
       },
     ],
   },
   story: {
     col1: {
-      title: "Our Story",
+      title: "The House Heritage",
       links: [
-        { label: "The Heritage", href: "/story#heritage" },
-        { label: "Founder's Vision", href: "/story#founder" },
+        { label: "Our Story", href: "/story#heritage" },
+        { label: "The HAIR OVEN Philosophy", href: "/story#philosophy" },
+        { label: "The Founder's Journey", href: "/story#founder" },
         { label: "African Provenance", href: "/story#provenance" },
-        { label: "Craftsmanship Ethos", href: "/story#ethos" },
       ],
     },
     col2: {
-      title: "The Experience",
+      title: "Standard & Voices",
       links: [
-        { label: "The Hair Oven Standard", href: "/story#standard" },
+        { label: "Craftsmanship Standard", href: "/story#ethos" },
         { label: "Client Testimonials", href: "/story#testimonials" },
-        { label: "Trade & Wholesale", href: "/wholesale" },
-        { label: "Contact & Concierge", href: "/contact" },
+        { label: "Trade & Wholesale Edit", href: "/wholesale" },
+        { label: "Contact Concierge", href: "/contact" },
       ],
     },
     cards: [
@@ -176,44 +108,112 @@ const megaMenuData: Record<
         image: "/products/adunni.png",
       },
       {
-        title: "VISIT THE HOUSE",
-        subtitle: "Concierge & Appointments",
-        href: "/contact",
+        title: "THE HOUSE ETHOS",
+        subtitle: "Uncompromising Master Craftsmanship",
+        href: "/story#ethos",
         image: "/products/honey-ash-bronzed-wave.jpeg",
       },
     ],
   },
-  heirloom: {
+  atelier: {
     col1: {
-      title: "Heirloom Care",
+      title: "Atelier Commissions",
       links: [
-        { label: "Preservation Guide", href: "/heirloom-guide#preservation" },
-        { label: "Washing & Conditioning", href: "/heirloom-guide#washing" },
-        { label: "Lace Maintenance", href: "/heirloom-guide#lace" },
-        { label: "Storage & Travel", href: "/heirloom-guide#storage" },
+        { label: "Custom Units (Bespoke)", href: "/bespoke" },
+        { label: "Private Appointments", href: "/atelier#consultation-form" },
+        { label: "Bridal Commissions", href: "/bespoke" },
+        { label: "Atelier Consultation", href: "/contact" },
       ],
     },
     col2: {
-      title: "Specifications",
+      title: "Craft & Technology",
       links: [
-        { label: "Density & Texture Guide", href: "/heirloom-guide#density" },
-        { label: "Cap Sizing Chart", href: "/heirloom-guide#sizing" },
-        { label: "Oven Veil Care", href: "/heirloom-guide#veil-care" },
-        { label: "Lifetime Reserve", href: "/collections/private" },
+        { label: "Hand-Ventilated Lace", href: "/atelier#ventilated-lace" },
+        { label: "Custom Color Toning", href: "/atelier#color-toning" },
+        { label: "Single Donor Sourcing", href: "/atelier#sourcing" },
+        { label: "Oven Veil™ Technology", href: "/oven-veil" },
       ],
     },
     cards: [
       {
-        title: "CARE & MAINTENANCE",
+        title: "BESPOKE COMMISSIONS",
+        subtitle: "Tailored to Your Specifications",
+        href: "/bespoke",
+        image: "/products/editorial-blowdry.jpg",
+      },
+      {
+        title: "PRIVATE APPOINTMENTS",
+        subtitle: "Concierge Fitting & Consultation",
+        href: "/contact",
+        image: "/products/ADEWUNMI.jpeg",
+      },
+    ],
+  },
+  journal: {
+    col1: {
+      title: "Hair Guides & Care",
+      links: [
+        { label: "Hair Guides", href: "/heirloom-guide#preservation" },
+        { label: "The Heirloom Guide", href: "/heirloom-guide" },
+        { label: "Care & Maintenance", href: "/heirloom-guide#washing" },
+        { label: "Cap Sizing Protocol", href: "/heirloom-guide#sizing" },
+      ],
+    },
+    col2: {
+      title: "Editorials & Insights",
+      links: [
+        { label: "Oven Veil™ Care", href: "/heirloom-guide#veil-care" },
+        { label: "Density & Texture Guide", href: "/heirloom-guide#density" },
+        { label: "House Editorials", href: "/story#heritage" },
+        { label: "Private Reserve Sourcing", href: "/collections/private" },
+      ],
+    },
+    cards: [
+      {
+        title: "THE HEIRLOOM GUIDE",
         subtitle: "Protect Your Investment",
         href: "/heirloom-guide",
         image: "/products/velmorea.jpeg",
       },
       {
-        title: "LENGTH & SIZE GUIDE",
+        title: "DENSITY & SIZING GUIDE",
         subtitle: "Find Your Perfect Fit",
         href: "/heirloom-guide#sizing",
         image: "/products/THE_ARGENTINE_BOB.PNG",
+      },
+    ],
+  },
+  clientCare: {
+    col1: {
+      title: "Client Services",
+      links: [
+        { label: "Shipping & Delivery", href: "/heirloom-guide#fit-policies" },
+        { label: "Returns & Exchanges", href: "/heirloom-guide#fit-policies" },
+        { label: "Frequently Asked Questions", href: "/contact" },
+        { label: "Contact Concierge", href: "/contact" },
+      ],
+    },
+    col2: {
+      title: "Protocol & Enquiries",
+      links: [
+        { label: "Preorder Protocol", href: "/heirloom-guide#fit-policies" },
+        { label: "Trade & Wholesale Enquiry", href: "/wholesale" },
+        { label: "WhatsApp Support", href: "https://wa.me/2348051332551" },
+        { label: "Cap Fit Assistance", href: "/heirloom-guide#sizing" },
+      ],
+    },
+    cards: [
+      {
+        title: "CONTACT CONCIERGE",
+        subtitle: "Client Care & Assistance",
+        href: "/contact",
+        image: "/products/caramel-wave.jpeg",
+      },
+      {
+        title: "PREORDER PROTOCOL",
+        subtitle: "Handcrafted Sourcing & Timeline",
+        href: "/heirloom-guide#fit-policies",
+        image: "/products/aurelia-barrel-curl.jpeg",
       },
     ],
   },
@@ -387,23 +387,27 @@ export function Navigation() {
         {/* Desktop Category Navigation Bar with Odd Muse style Mega Dropdowns */}
         {isComingPage ? (
           <div className="hidden lg:flex items-center justify-center gap-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
-            <ComingSoonTooltip><span className="py-1">{t.nav.home}</span></ComingSoonTooltip>
-            <ComingSoonTooltip>
-              <span className="py-1 flex items-center gap-1">{t.nav.collections} <ChevronDown className="w-3 h-3" /></span>
-            </ComingSoonTooltip>
-            <ComingSoonTooltip><span className="py-1">{t.nav.atelier}</span></ComingSoonTooltip>
-            <ComingSoonTooltip><span className="py-1">{t.nav.house}</span></ComingSoonTooltip>
-            <ComingSoonTooltip><span className="py-1">{t.nav.heirloomGuide}</span></ComingSoonTooltip>
+            <ComingSoonTooltip><span className="py-1">SHOP</span></ComingSoonTooltip>
+            <ComingSoonTooltip><span className="py-1">THE HOUSE</span></ComingSoonTooltip>
+            <ComingSoonTooltip><span className="py-1">ATELIER</span></ComingSoonTooltip>
+            <ComingSoonTooltip><span className="py-1">JOURNAL</span></ComingSoonTooltip>
+            <ComingSoonTooltip><span className="py-1">CLIENT CARE</span></ComingSoonTooltip>
           </div>
         ) : (
           <div className="relative" onMouseLeave={() => setActiveNav(null)}>
             <nav className="hidden lg:flex items-center justify-center gap-10 py-4 text-[13px] tracking-[0.16em] uppercase font-semibold text-[#2B1B12] bg-[#FFFCF8]">
               {navItems.map((item) => {
                 const pageActive =
-                  item.key === "home"
-                    ? pathname === "/"
-                    : item.key === "collections"
-                    ? ["/collections", "/shop", "/extensions", "/product"].some((p) => pathname === p || pathname.startsWith(p + "/"))
+                  item.key === "shop"
+                    ? ["/shop", "/collections", "/product", "/extensions"].some((p) => pathname === p || pathname.startsWith(p + "/"))
+                    : item.key === "story"
+                    ? pathname === "/story"
+                    : item.key === "atelier"
+                    ? pathname === "/atelier" || pathname === "/bespoke"
+                    : item.key === "journal"
+                    ? pathname === "/heirloom-guide"
+                    : item.key === "clientCare"
+                    ? pathname === "/contact" || pathname === "/wholesale"
                     : isActive(item.href);
                 const isHovered = activeNav === item.key;
 

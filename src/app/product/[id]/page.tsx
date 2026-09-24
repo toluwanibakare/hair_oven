@@ -638,40 +638,7 @@ export default function ProductPage() {
               </div>
             </div>
 
-            {/* Concise Product Description & Story */}
-            <div className="pt-6 border-t border-[#2B1B12]/10 space-y-4">
-              <h3 className="font-serif text-xl text-[#2B1B12]">About The Creation</h3>
-              <p className="text-xs text-[#57534E] leading-relaxed font-normal">
-                {product.longDescription}
-              </p>
-            </div>
 
-            {/* Details Accordion */}
-            <div className="pt-2 border-t border-[#2B1B12]/10">
-              <div className="border border-[#2B1B12]/10 bg-white rounded-sm">
-                <button
-                  onClick={() => setOpenDetail(openDetail === "details" ? null : "details")}
-                  className="w-full p-4 flex justify-between items-center text-left text-xs font-serif text-[#2B1B12]"
-                >
-                  <span>Product Specs & Highlights</span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-[#B8860B] transition-transform ${
-                      openDetail === "details" ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {openDetail === "details" && (
-                  <div className="p-4 pt-0 text-xs text-[#57534E] leading-6 space-y-2 border-t border-[#2B1B12]/05">
-                    {product.details.map((d, i) => (
-                      <div key={i} className="flex gap-2">
-                        <span className="text-[#B8860B]">•</span>
-                        <span>{d}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
           </div>
         </div>
 
