@@ -28,7 +28,7 @@ export function Footer() {
 
   if (isComingPage) {
     return (
-      <footer className="bg-[#E0D5C5] text-[#2B1B12] relative border-t border-[#2B1B12]/10">
+      <footer className="bg-[#f9f6f1] text-[#2B1B12] relative border-t border-[#2B1B12]/10">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
           
           {/* Upper Footer Layout for Coming Soon Page */}
@@ -148,7 +148,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-[#E0D5C5] text-[#2B1B12] relative border-t border-[#2B1B12]/10">
+    <footer className="bg-[#f9f6f1] text-[#2B1B12] relative border-t border-[#2B1B12]/10">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         
         {/* Upper Footer Grid */}

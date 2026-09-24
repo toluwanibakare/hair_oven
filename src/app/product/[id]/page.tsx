@@ -63,16 +63,22 @@ export default function ProductPage() {
 
   const [reviewsList, setReviewsList] = useState([
     {
-      author: "Nadine V.",
-      date: "September 14, 2026",
+      author: "Dr. Kemi A. (Lagos, NG)",
+      date: "September 18, 2026",
       rating: 5,
-      comment: "The Argentine Bob is absolute perfection. Glass-like shine and the lace melting into skin is completely invisible. Masterpiece quality.",
+      comment: "The precision cut and density are unbelievable. I wore this to a 3-day wedding weekend in Lagos heat and it stayed glass-sleek the entire time. No tangling, no fuss.",
     },
     {
-      author: "Dr. Kemi A.",
+      author: "Zainab A. (London, UK)",
+      date: "September 10, 2026",
+      rating: 5,
+      comment: "My hairstylist in London was genuinely blown away by how thin and undetectable the lace is. Melted into my skin effortlessly without extra tinting.",
+    },
+    {
+      author: "Ngozi E. (Abuja, NG)",
       date: "August 28, 2026",
       rating: 5,
-      comment: "Incredible density and precision. The craftsmanship of Hair Oven is unmatched. Will be placing my next bespoke preorder soon.",
+      comment: "Hair Oven is the only brand I trust for raw hair now. The hair retains its natural shine and weight even after multiple washes. Worth every single kobo.",
     },
   ]);
 
@@ -144,22 +150,14 @@ export default function ProductPage() {
           <span className="text-[#2B1B12]">{product.name}</span>
         </div>
 
-        {/* Global Preorder Banner Notification */}
-        <div className="mb-10 bg-[#2B1B12] text-[#E8DDC9] border border-[#D4AF37]/40 p-4 sm:p-5 rounded-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-ping shrink-0" />
-            <div>
-              <span className="text-[10px] tracking-[0.24em] uppercase text-[#F3E5AB] font-semibold block">
-                HANDCRAFTED PREORDER COMMISSION
-              </span>
-              <p className="text-xs text-[#E8DDC9]/90 mt-0.5">
-                All Hair Oven creations are custom handcrafted on preorder. Standard dispatch in 10 – 14 working days. Express dispatch available (1 – 5 working days).
-              </p>
-            </div>
-          </div>
+        {/* Minimalist Preorder Notice */}
+        <div className="mb-8 pb-3 border-b border-[#2B1B12]/10 flex flex-wrap items-center justify-between gap-3 text-xs text-[#57534E]">
+          <span>
+            Every creation is custom crafted on commission. Standard dispatch: 10 – 14 working days (Express available: 1 – 5 working days).
+          </span>
           <Link
             href="/heirloom-guide#fit-policies"
-            className="shrink-0 text-[10px] tracking-[0.16em] uppercase text-[#D4AF37] underline underline-offset-4 hover:text-white"
+            className="text-[10px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold hover:underline shrink-0"
           >
             Preorder Protocol →
           </Link>
@@ -244,40 +242,57 @@ export default function ProductPage() {
               </span>
             </div>
 
-            {/* Model & Unit Specifications Breakdown */}
-            {product.modelSpecs && (
-              <div className="bg-[#EDE6D6]/30 border border-[#2B1B12]/10 p-5 rounded-sm space-y-2.5 text-xs">
-                <div className="text-[10px] tracking-[0.22em] uppercase font-semibold text-[#B8860B] mb-1">
-                  Model Specifications
+            {/* Model & Creation Specifications Breakdown */}
+            <div className="bg-[#f9f6f1] border border-[#2B1B12]/10 p-5 rounded-sm space-y-3 text-xs">
+              <div className="text-[10px] tracking-[0.22em] uppercase font-semibold text-[#B8860B]">
+                Model & Creation Specifications
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 text-[#2B1B12]">
+                <div>
+                  <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Closure / Cap Type</span>
+                  <span className="font-medium text-xs">
+                    {selectedClosureType || product.modelSpecs?.closureType || product.closureOptions?.[0]?.type || "HD Lace Closure"}
+                  </span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[#2B1B12]">
-                  <div>
-                    <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Closure Type</span>
-                    <span className="font-medium text-xs">{selectedClosureType || product.modelSpecs.closureType}</span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Texture</span>
-                    <span className="font-medium text-xs">{product.modelSpecs.texture}</span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Length</span>
-                    <span className="font-medium text-xs">{selectedLength || product.modelSpecs.length}</span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Density</span>
-                    <span className="font-medium text-xs">{product.modelSpecs.density}</span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Colour</span>
-                    <span className="font-medium text-xs">{product.modelSpecs.color}</span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Styling</span>
-                    <span className="font-medium text-xs">{product.modelSpecs.styling}</span>
-                  </div>
+                <div>
+                  <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Texture</span>
+                  <span className="font-medium text-xs">{product.modelSpecs?.texture || product.texture}</span>
+                </div>
+                <div>
+                  <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Length</span>
+                  <span className="font-medium text-xs">{selectedLength || product.modelSpecs?.length || product.lengths[0]}</span>
+                </div>
+                <div>
+                  <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Density</span>
+                  <span className="font-medium text-xs">{product.modelSpecs?.density || product.density}</span>
+                </div>
+                <div>
+                  <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Colour / Tone</span>
+                  <span className="font-medium text-xs">{product.modelSpecs?.color || product.colors[0]}</span>
+                </div>
+                <div>
+                  <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Styling</span>
+                  <span className="font-medium text-xs">{product.modelSpecs?.styling || "Signature Custom Finish"}</span>
                 </div>
               </div>
-            )}
+
+              {/* Merged Product Details & Highlights */}
+              {product.details && product.details.length > 0 && (
+                <div className="pt-3 border-t border-[#2B1B12]/10 space-y-1.5">
+                  <div className="text-[9px] tracking-[0.18em] uppercase text-[#78716C] font-semibold">
+                    Key Highlights & Details
+                  </div>
+                  <div className="space-y-1.5 text-xs text-[#57534E]">
+                    {product.details.map((d, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <span className="text-[#B8860B] font-bold">•</span>
+                        <span>{d}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Tailor Your Look Customisations Form */}
             <div className="space-y-5 pt-2">
