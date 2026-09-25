@@ -50,10 +50,10 @@ const megaMenuData: Record<
     col1: {
       title: "Explore Collections",
       links: [
-        { label: "Private Collection (Raw Reserve)", href: "/collections/private" },
+        { label: "Private Collection", href: "/collections/private" },
         { label: "Signature Collection", href: "/collections/signature" },
         { label: "Essentials Collection", href: "/collections/essentials" },
-        { label: "Custom / Atelier Units", href: "/atelier" },
+        { label: "Atelier", href: "/atelier" },
       ],
     },
     col2: {
@@ -69,7 +69,7 @@ const megaMenuData: Record<
     cards: [
       {
         title: "PRIVATE COLLECTION",
-        subtitle: "Raw Reserve • Heirloom Investment",
+        subtitle: "Heirloom Investment",
         href: "/collections/private",
         image: "/products/editorial-model-2.jpg",
       },
@@ -85,19 +85,16 @@ const megaMenuData: Record<
     col1: {
       title: "The House Heritage",
       links: [
-        { label: "Our Story", href: "/story#heritage" },
-        { label: "The HAIR OVEN Philosophy", href: "/story#philosophy" },
+        { label: "Our Story & Calling", href: "/story" },
         { label: "The Founder's Journey", href: "/story#founder" },
-        { label: "African Provenance", href: "/story#provenance" },
+        { label: "Craftsmanship Ethos", href: "/story#ethos" },
       ],
     },
     col2: {
-      title: "Standard & Voices",
+      title: "Voices & Provenance",
       links: [
-        { label: "Craftsmanship Standard", href: "/story#ethos" },
+        { label: "African Provenance", href: "/story#provenance" },
         { label: "Client Testimonials", href: "/story#testimonials" },
-        { label: "Trade & Wholesale Edit", href: "/wholesale" },
-        { label: "Contact Concierge", href: "/contact" },
       ],
     },
     cards: [
@@ -117,34 +114,30 @@ const megaMenuData: Record<
   },
   atelier: {
     col1: {
-      title: "Atelier Commissions",
+      title: "Services",
       links: [
-        { label: "Custom Units (Bespoke)", href: "/bespoke" },
+        { label: "Atelier", href: "/atelier" },
         { label: "Private Appointments", href: "/atelier#consultation-form" },
-        { label: "Bridal Commissions", href: "/bespoke" },
-        { label: "Atelier Consultation", href: "/contact" },
+        { label: "Bridal Consultation", href: "/bespoke" },
       ],
     },
     col2: {
-      title: "Craft & Technology",
+      title: "Technology",
       links: [
-        { label: "Hand-Ventilated Lace", href: "/atelier#ventilated-lace" },
-        { label: "Custom Color Toning", href: "/atelier#color-toning" },
-        { label: "Single Donor Sourcing", href: "/atelier#sourcing" },
         { label: "Oven Veil™ Technology", href: "/oven-veil" },
       ],
     },
     cards: [
       {
-        title: "BESPOKE COMMISSIONS",
-        subtitle: "Tailored to Your Specifications",
-        href: "/bespoke",
-        image: "/products/editorial-blowdry.jpg",
-      },
-      {
         title: "PRIVATE APPOINTMENTS",
         subtitle: "Concierge Fitting & Consultation",
         href: "/contact",
+        image: "/products/editorial-blowdry.jpg",
+      },
+      {
+        title: "OVEN VEIL™ ATELIER",
+        subtitle: "Invisible Melt Architecture",
+        href: "/oven-veil",
         image: "/products/ADEWUNMI.jpeg",
       },
     ],
@@ -153,7 +146,6 @@ const megaMenuData: Record<
     col1: {
       title: "Hair Guides & Care",
       links: [
-        { label: "Hair Guides", href: "/heirloom-guide#preservation" },
         { label: "The Heirloom Guide", href: "/heirloom-guide" },
         { label: "Care & Maintenance", href: "/heirloom-guide#washing" },
         { label: "Cap Sizing Protocol", href: "/heirloom-guide#sizing" },
@@ -162,10 +154,8 @@ const megaMenuData: Record<
     col2: {
       title: "Editorials & Insights",
       links: [
-        { label: "Oven Veil™ Care", href: "/heirloom-guide#veil-care" },
         { label: "Density & Texture Guide", href: "/heirloom-guide#density" },
         { label: "House Editorials", href: "/story#heritage" },
-        { label: "Private Reserve Sourcing", href: "/collections/private" },
       ],
     },
     cards: [
@@ -197,9 +187,8 @@ const megaMenuData: Record<
       title: "Protocol & Enquiries",
       links: [
         { label: "Preorder Protocol", href: "/heirloom-guide#fit-policies" },
-        { label: "Trade & Wholesale Enquiry", href: "/wholesale" },
+        { label: "The Trade Edit (Wholesale)", href: "/wholesale" },
         { label: "WhatsApp Support", href: "https://wa.me/2348051332551" },
-        { label: "Cap Fit Assistance", href: "/heirloom-guide#sizing" },
       ],
     },
     cards: [
