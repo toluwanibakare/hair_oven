@@ -116,7 +116,7 @@ export function AtelierVideo() {
                 href="/atelier"
                 className="h-[48px] px-8 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors shadow-md"
               >
-                <span>Explore Atelier Commissions</span>
+                <span>Explore The Atelier</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 

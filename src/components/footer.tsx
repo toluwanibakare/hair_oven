@@ -246,7 +246,7 @@ export function Footer() {
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/collections/private" className="block hover:text-[#2B1B12] transition-colors">
-                  Private Collection (RAW)
+                  Private Collection
                 </Link>
                 <Link href="/collections/signature" className="block hover:text-[#2B1B12] transition-colors">
                   Signature Collection
@@ -254,14 +254,20 @@ export function Footer() {
                 <Link href="/collections/essentials" className="block hover:text-[#2B1B12] transition-colors">
                   Essentials Collection
                 </Link>
+                <Link href="/atelier" className="block hover:text-[#2B1B12] transition-colors">
+                  Atelier
+                </Link>
                 <Link href="/shop?cat=wigs" className="block hover:text-[#2B1B12] transition-colors">
                   Luxury Wigs
                 </Link>
-                <Link href="/extensions" className="block hover:text-[#2B1B12] transition-colors">
-                  Hair Extensions
+                <Link href="/shop?cat=Bundles" className="block hover:text-[#2B1B12] transition-colors">
+                  Raw Hair Bundles
+                </Link>
+                <Link href="/shop?cat=Closures%20%26%20Frontals" className="block hover:text-[#2B1B12] transition-colors">
+                  Closures & Frontals
                 </Link>
                 <Link href="/shop?cat=tools" className="block hover:text-[#2B1B12] transition-colors">
-                  Tools & Care
+                  Hair Tools & Care
                 </Link>
               </div>
             </div>
@@ -273,18 +279,24 @@ export function Footer() {
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/atelier" className="block hover:text-[#2B1B12] transition-colors">
-                  Atelier Commissions
+                  Atelier
                 </Link>
                 <Link href="/atelier#consultation-form" className="block hover:text-[#2B1B12] transition-colors">
                   Private Appointments
                 </Link>
+                <Link href="/bespoke" className="block hover:text-[#2B1B12] transition-colors">
+                  Bridal Consultation
+                </Link>
+                <Link href="/oven-veil" className="block hover:text-[#2B1B12] transition-colors">
+                  Oven Veil™ Technology
+                </Link>
                 <Link href="/heirloom-guide" className="block hover:text-[#2B1B12] transition-colors">
                   The Heirloom Guide
                 </Link>
-                <Link href="/heirloom-guide#bespoke-fit" className="block hover:text-[#2B1B12] transition-colors">
-                  Oven Veil™ Technology
+                <Link href="/heirloom-guide#washing" className="block hover:text-[#2B1B12] transition-colors">
+                  Care & Maintenance
                 </Link>
-                <Link href="/heirloom-guide#fit-policies" className="block hover:text-[#2B1B12] transition-colors">
+                <Link href="/heirloom-guide#sizing" className="block hover:text-[#2B1B12] transition-colors">
                   Cap Sizing Protocol
                 </Link>
               </div>
@@ -299,14 +311,20 @@ export function Footer() {
                 <Link href="/story" className="block hover:text-[#2B1B12] transition-colors">
                   Our Story & Calling
                 </Link>
-                <Link href="/story#craftsmanship" className="block hover:text-[#2B1B12] transition-colors">
-                  Our Standard
+                <Link href="/story#founder" className="block hover:text-[#2B1B12] transition-colors">
+                  The Founder's Journey
+                </Link>
+                <Link href="/story#ethos" className="block hover:text-[#2B1B12] transition-colors">
+                  Craftsmanship Ethos
+                </Link>
+                <Link href="/story#provenance" className="block hover:text-[#2B1B12] transition-colors">
+                  African Provenance
+                </Link>
+                <Link href="/story#testimonials" className="block hover:text-[#2B1B12] transition-colors">
+                  Client Testimonials
                 </Link>
                 <Link href="/wholesale" className="block hover:text-[#2B1B12] transition-colors">
-                  The Trade Edit
-                </Link>
-                <Link href="/wholesale#enquiry-form" className="block hover:text-[#2B1B12] transition-colors">
-                  Volume Supply & MOQs
+                  The Trade Edit (Wholesale)
                 </Link>
                 <Link href="/contact" className="block hover:text-[#2B1B12] transition-colors">
                   Client Support & Contact

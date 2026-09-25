@@ -542,7 +542,7 @@ const en = {
     title: "Length. Volume. Possibility.",
     body: "Explore single-donor raw bundles, seamless clip-ins, lightweight tape-ins, and precision Oven Veil™ closures and frontals designed to blend invisibly with your natural crown.",
     shopCta: "Shop Extensions",
-    atelierCta: "Atelier Commissions",
+    atelierCta: "Explore The Atelier",
     curated: "CURATED SELECTION",
     catTitle: "Hair Extensions and Bundles",
     showingA: "Showing",
