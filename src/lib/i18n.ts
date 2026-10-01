@@ -103,24 +103,24 @@ const en = {
     body: "From hyper-exclusive rare units preserved as lifetime investments, to everyday elegance. Each HAIR OVEN collection is defined by uncompromising design, international standards of quality, and a distinctly elevated point of view.",
     cards: [
       {
-        tagline: "RESERVED FOR THE RAREST HAIR.",
-        desc: "Entirely unprocessed, single-donor hair selected for exceptional provenance, natural integrity and enduring beauty. Every piece is considered individually, with the attention ordinarily reserved for an heirloom.",
+        tagline: "A COLLECTION RESERVED FOR THE EXCEPTIONAL.",
+        desc: "The rarest single-donor hair, selected in the most exacting manner and presented in its purest, most untouched form. Limited by nature. Selected by discretion. Possessed by very few. An heirloom in its truest form.",
         btn: "DISCOVER THE PRIVATE COLLECTION",
       },
       {
-        tagline: "THE HAIR OVEN STANDARD, MADE PERSONAL.",
-        desc: "Exceptional human hair selected for its natural movement, density and character, then finished through the House with meticulous attention to proportion, construction and wear.",
+        tagline: "QUIETLY DISTINCTIVE.",
+        desc: "Refined through meticulous selection and finished to the exacting standards of HAIR OVEN.",
         btn: "EXPLORE SIGNATURE",
       },
       {
-        tagline: "THE EVERYDAY EXPRESSION OF THE HOUSE.",
-        desc: "Considered pieces for effortless, elevated wear, created with the same attention to finish and presentation that defines HAIR OVEN.",
+        tagline: "EVERYDAY, ELEVATED.",
+        desc: "Beautifully selected hair, refined for effortless everyday wear. Luxury, made effortless.",
         btn: "DISCOVER ESSENTIALS",
       },
       {
-        tagline: "MADE FOR ONE.",
-        desc: "A private commission is created around the individual, not selected from a shelf. From hair selection and cap architecture to length, density, colour and finish, each element is considered in consultation with the client.",
-        btn: "ENTER THE ATELIER",
+        tagline: "YOUR DAY. YOUR VISION.",
+        desc: "A private consultation to discover the perfect hair for your bridal look.",
+        btn: "BOOK YOUR CONSULTATION",
       },
     ],
   },

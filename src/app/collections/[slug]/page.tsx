@@ -28,20 +28,38 @@ export default function CollectionPage() {
     <div className="bg-[#FFFCF8]">
       {/* Hero */}
       <div className={`relative overflow-hidden ${theme.bg} ${theme.text}`}>
-        <div className={`absolute inset-0 ${slug === "signature" ? "opacity-45 lg:opacity-55" : "opacity-25"}`}>
-          <WatermarkImage src={col.image} alt={col.name} containerClassName="w-full h-full" imageClassName="w-full h-full object-cover object-top" watermarkSize="lg" showWatermark={false} />
+        <div className={`absolute inset-0 ${slug === "signature" ? "opacity-50 lg:opacity-60" : "opacity-35"}`}>
+          {"video" in col && col.video ? (
+            <video
+              src={col.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover object-center"
+            />
+          ) : (
+            <WatermarkImage src={col.image} alt={col.name} containerClassName="w-full h-full" imageClassName="w-full h-full object-cover object-top" watermarkSize="lg" showWatermark={false} />
+          )}
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/40 to-transparent" />
         <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
           <div className="max-w-[640px]">
-            <div className="text-[10px] tracking-[0.22em] uppercase opacity-70">{col.tagline}</div>
-            <h1 className="font-serif text-[44px] lg:text-[64px] leading-[0.9] tracking-[-0.02em] mt-3">
+            <div className="text-[10px] tracking-[0.22em] uppercase text-[#D4AF37] font-semibold">{col.tagline}</div>
+            <h1 className="font-serif text-[44px] lg:text-[64px] leading-[0.9] tracking-[-0.02em] mt-3 font-light text-white">
               {col.name}
             </h1>
-            <p className="mt-6 text-sm leading-7 opacity-70 max-w-[48ch]">{col.description}</p>
+            <p className="mt-6 text-sm lg:text-base leading-7 opacity-90 max-w-[48ch] font-serif italic">{col.description}</p>
+            {"poeticText" in col && col.poeticText && col.poeticText.length > 0 && (
+              <div className="mt-6 space-y-1 text-xs tracking-[0.14em] uppercase text-[#D4AF37] font-medium border-l-2 border-[#D4AF37]/50 pl-4">
+                {col.poeticText.map((line, idx) => (
+                  <div key={idx}>{line}</div>
+                ))}
+              </div>
+            )}
             <div className="mt-8 flex flex-wrap gap-4 items-center">
-              <span className="bg-white text-[#2B1B12] px-4 py-2 text-[11px] tracking-[0.16em] uppercase">{col.years}</span>
-              <span className="text-[11px] tracking-[0.14em] uppercase opacity-60">{t.collectionPage.from} {new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 }).format(col.priceFrom)}</span>
+              <span className="bg-white text-[#2B1B12] px-4 py-2 text-[11px] tracking-[0.16em] uppercase font-semibold">{col.years}</span>
+              <span className="text-[11px] tracking-[0.14em] uppercase opacity-80">{t.collectionPage.from} {new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 }).format(col.priceFrom)}</span>
             </div>
           </div>
         </div>

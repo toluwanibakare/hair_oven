@@ -10,6 +10,7 @@ const baseCards = [
   {
     title: "THE PRIVATE COLLECTION",
     link: "/collections/private",
+    video: "/private_collection.MP4",
     image: "/products/editorial-model-2.jpg",
     objectPos: "object-top",
     objectFit: "object-cover",
@@ -17,21 +18,21 @@ const baseCards = [
   {
     title: "THE SIGNATURE COLLECTION",
     link: "/collections/signature",
-    image: "/products/signature_page.jpeg",
+    image: "/products/signature_collection.jpeg",
     objectPos: "object-center",
-    objectFit: "object-contain bg-[#2B1B12]",
+    objectFit: "object-cover",
   },
   {
-    title: "ESSENTIALS",
+    title: "ESSENTIALS COLLECTION",
     link: "/collections/essentials",
-    image: "/products/essentials.jpg",
+    image: "/products/essential_collection.jpeg",
     objectPos: "object-top",
     objectFit: "object-cover",
   },
   {
-    title: "THE ATELIER",
-    link: "/atelier",
-    image: "/products/editorial-model.jpg",
+    title: "BRIDAL CONSULTATION",
+    link: "/bespoke",
+    image: "/products/bridal_consultation.jpeg",
     objectPos: "object-top",
     objectFit: "object-cover",
   },
@@ -73,14 +74,25 @@ export function Collections() {
               className="border border-[#2B1B12]/10 bg-[#EDE6D6]/20 rounded-sm overflow-hidden flex flex-col justify-between group hover:border-[#B8860B] transition-all duration-300 shadow-sm hover:shadow-xl"
             >
               <div className="aspect-[4/3] sm:aspect-[14/10] relative overflow-hidden bg-[#2B1B12]">
-                <WatermarkImage
-                  src={card.image}
-                  alt={card.title}
-                  containerClassName="w-full h-full"
-                  imageClassName={`w-full h-full ${card.objectFit || "object-cover"} ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
-                  watermarkSize="md"
-                  showWatermark={false}
-                />
+                {card.video ? (
+                  <video
+                    src={card.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                ) : (
+                  <WatermarkImage
+                    src={card.image}
+                    alt={card.title}
+                    containerClassName="w-full h-full"
+                    imageClassName={`w-full h-full ${card.objectFit || "object-cover"} ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
+                    watermarkSize="md"
+                    showWatermark={false}
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent pointer-events-none z-10" />
                 <div className="absolute bottom-4 left-6 text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold z-20">
                   {card.tagline}
