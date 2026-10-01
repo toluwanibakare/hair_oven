@@ -654,17 +654,15 @@ export default function ProductPage() {
 
                 {/* Consultation Booking Link */}
                 <div className="text-center pt-2">
-                  <a
-                    href="https://wa.me/2348051332551?text=Hi%20HAIR%20OVEN%2C%20I%20would%20like%20to%20book%20a%20private%20wig%20consultation."
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/bespoke#bridal-form"
                     className="text-xs text-[#57534E] hover:text-[#2B1B12] inline-flex items-center gap-1.5"
                   >
                     Need expert assistance selecting your look?{" "}
                     <span className="text-[#B8860B] font-semibold underline underline-offset-4">
                       Book a Private Consultation
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

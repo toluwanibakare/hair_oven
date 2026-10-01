@@ -5,11 +5,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckCircle2, Sparkles, Send, ShieldCheck, Crown } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
+import { useCurrency } from "@/context/currency-context";
 
 import { AtelierVideo } from "@/components/sections/atelier-video";
 
 export default function AtelierPage() {
   const { t } = useLanguage();
+  const { formatPrice } = useCurrency();
+  const [consultationType, setConsultationType] = useState<"team" | "hannah">("team");
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -135,8 +138,79 @@ export default function AtelierPage() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <h3 className="font-serif text-2xl text-[#2B1B12]">{t.atelier.detailsTitle}</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-3">
+                  <label className="block text-[10px] tracking-[0.16em] uppercase font-semibold text-[#2B1B12]">
+                    Select Consultation Tier * (Non-Refundable Fee)
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Option A: Atelier Team */}
+                    <div
+                      onClick={() => setConsultationType("team")}
+                      className={`p-4 border cursor-pointer transition-all rounded-sm flex flex-col justify-between ${
+                        consultationType === "team"
+                          ? "bg-[#2B1B12] text-white border-[#2B1B12] shadow-md ring-2 ring-[#B8860B]/30"
+                          : "bg-white text-[#2B1B12] border-[#2B1B12]/15 hover:border-[#B8860B]"
+                      }`}
+                    >
+                      <div>
+                        <div className="flex justify-between items-start">
+                          <span className={`text-[8px] tracking-[0.16em] uppercase font-bold px-2 py-0.5 border ${
+                            consultationType === "team" ? "text-[#D4AF37] border-[#D4AF37]/30 bg-white/10" : "text-[#B8860B] border-[#B8860B]/30 bg-[#EDE6D6]/30"
+                          }`}>
+                            Senior Styling Team
+                          </span>
+                          <span className="text-xs font-bold font-serif text-[#D4AF37]">
+                            {formatPrice(50000)}
+                          </span>
+                        </div>
+                        <h4 className="font-serif text-base mt-2">Atelier Team Consultation</h4>
+                        <p className={`text-[11px] mt-1 leading-relaxed ${consultationType === "team" ? "text-white/80" : "text-[#57534E]"}`}>
+                          Session with senior stylists for cranial measurement review, donor selection, and styling plan.
+                        </p>
+                      </div>
+                      <div className={`mt-3 pt-2 border-t text-[9px] tracking-[0.14em] uppercase font-semibold ${
+                        consultationType === "team" ? "border-white/15 text-[#D4AF37]" : "border-[#2B1B12]/10 text-[#B8860B]"
+                      }`}>
+                        Non-Refundable Deposit
+                      </div>
+                    </div>
+
+                    {/* Option B: Founder Hannah */}
+                    <div
+                      onClick={() => setConsultationType("hannah")}
+                      className={`p-4 border cursor-pointer transition-all rounded-sm flex flex-col justify-between ${
+                        consultationType === "hannah"
+                          ? "bg-[#2B1B12] text-white border-[#2B1B12] shadow-md ring-2 ring-[#B8860B]/30"
+                          : "bg-white text-[#2B1B12] border-[#2B1B12]/15 hover:border-[#B8860B]"
+                      }`}
+                    >
+                      <div>
+                        <div className="flex justify-between items-start">
+                          <span className={`text-[8px] tracking-[0.16em] uppercase font-bold px-2 py-0.5 border ${
+                            consultationType === "hannah" ? "text-[#D4AF37] border-[#D4AF37]/30 bg-white/10" : "text-[#B8860B] border-[#B8860B]/30 bg-[#EDE6D6]/30"
+                          }`}>
+                            Founder Exclusive
+                          </span>
+                          <span className="text-xs font-bold font-serif text-[#D4AF37]">
+                            {formatPrice(200000)}
+                          </span>
+                        </div>
+                        <h4 className="font-serif text-base mt-2">Private Founder Consultation</h4>
+                        <p className={`text-[11px] mt-1 leading-relaxed ${consultationType === "hannah" ? "text-white/80" : "text-[#57534E]"}`}>
+                          Exclusive 1-on-1 private session directly with Hannah for bespoke heirloom curation.
+                        </p>
+                      </div>
+                      <div className={`mt-3 pt-2 border-t text-[9px] tracking-[0.14em] uppercase font-semibold ${
+                        consultationType === "hannah" ? "border-white/15 text-[#D4AF37]" : "border-[#2B1B12]/10 text-[#B8860B]"
+                      }`}>
+                        Non-Refundable Deposit
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 className="font-serif text-2xl text-[#2B1B12] pt-3 border-t border-[#2B1B12]/10">{t.atelier.detailsTitle}</h3>
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -228,23 +302,33 @@ export default function AtelierPage() {
                 </div>
 
                 <div>
-                    <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
-                      {t.atelier.visionLabel}
-                    </label>
-                    <textarea
-                      rows={4}
-                      placeholder={t.atelier.visionPh}
+                  <label className="block text-[10px] tracking-[0.14em] uppercase font-semibold text-[#2B1B12] mb-1.5">
+                    {t.atelier.visionLabel}
+                  </label>
+                  <textarea
+                    rows={3}
+                    placeholder={t.atelier.visionPh}
                     value={formData.visionNotes}
                     onChange={(e) => setFormData({ ...formData, visionNotes: e.target.value })}
                     className="w-full p-3 bg-[#FFFCF8] border border-[#2B1B12]/15 text-sm text-[#2B1B12] focus:border-[#B8860B] outline-none"
                   />
                 </div>
 
+                <div className="p-3 bg-[#F9F6F0] border border-[#2B1B12]/10 rounded-sm text-xs space-y-1">
+                  <div className="flex justify-between items-center font-semibold text-[#2B1B12]">
+                    <span>Non-Refundable Consultation Fee:</span>
+                    <span className="text-sm text-[#B8860B]">{formatPrice(consultationType === "hannah" ? 200000 : 50000)}</span>
+                  </div>
+                  <p className="text-[10px] text-[#57534E]">
+                    Fee is non-refundable and credited 100% toward your final creation order.
+                  </p>
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full h-13 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors flex items-center justify-center gap-2"
+                  className="w-full h-12 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#B8860B] transition-colors flex items-center justify-center gap-2 shadow-md"
                 >
-                  <Send className="w-4 h-4" /> {t.atelier.submit}
+                  <Send className="w-4 h-4 text-[#D4AF37]" /> Pay {formatPrice(consultationType === "hannah" ? 200000 : 50000)} & Request Consultation
                 </button>
               </form>
             )}
