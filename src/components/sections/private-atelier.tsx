@@ -8,7 +8,7 @@ export function PrivateAtelier() {
     <section className="relative bg-[#2B1B12] text-white overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1920&auto=format&fit=crop"
+          src="/atlier_hero.jpg"
           alt="Atelier"
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />

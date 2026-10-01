@@ -5,12 +5,12 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 
 const personas = [
-  { label: "The Bride", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop" },
-  { label: "The Professional", img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=600&auto=format&fit=crop" },
-  { label: "The Mother", img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=600&auto=format&fit=crop" },
-  { label: "The Entrepreneur", img: "https://images.unsplash.com/photo-1526510747491-58f928ec870f?q=80&w=600&auto=format&fit=crop" },
-  { label: "The Student", img: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=600&auto=format&fit=crop" },
-  { label: "The Stylist", img: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=600&auto=format&fit=crop" },
+  { label: "The Bride", img: "/products/bridal_consultation.jpeg" },
+  { label: "The Professional", img: "/products/THE_ARGENTINE_BOB.PNG" },
+  { label: "The Mother", img: "/products/velmorea.jpeg" },
+  { label: "The Entrepreneur", img: "/products/ADEWUNMI.jpeg" },
+  { label: "The Student", img: "/products/another_essential.jpeg" },
+  { label: "The Stylist", img: "/products/editorial-styling.jpg" },
 ];
 
 import { WatermarkImage } from "@/components/watermark-image";

@@ -26,15 +26,11 @@ export function ProductCard({ product, variant = "default" }: { product: Product
             imageClassName={cn("w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]", isOutOfStock && "grayscale-[25%] opacity-90")}
             watermarkSize="sm"
           />
-          {isOutOfStock ? (
+          {isOutOfStock && (
             <div className="absolute top-2.5 left-2.5 bg-[#2B1B12] text-[#FFFCF8] text-[9px] tracking-[0.18em] uppercase font-semibold px-2.5 py-1 z-20 border border-[#D4AF37]/30 shadow-md">
               OUT OF STOCK
             </div>
-          ) : product.stockCount <= 2 ? (
-            <div className="absolute top-2.5 left-2.5 bg-[#FFFCF8]/90 backdrop-blur-md text-[#B8860B] border border-[#B8860B]/30 text-[8px] tracking-[0.16em] uppercase font-bold px-2.5 py-0.5 z-20">
-              Only {product.stockCount} Left
-            </div>
-          ) : null}
+          )}
           <button
             onClick={(e) => { e.preventDefault(); toggleWishlist(product.id); }}
             className="absolute bottom-2.5 right-2.5 w-8 h-8 grid place-items-center rounded-full bg-white/90 backdrop-blur hover:bg-white transition-colors z-20 shadow-sm"
@@ -54,7 +50,7 @@ export function ProductCard({ product, variant = "default" }: { product: Product
                 </span>
               ) : (
                 <span className="text-[8px] tracking-[0.12em] uppercase text-[#B8860B] font-semibold bg-[#B8860B]/10 px-2 py-0.5 rounded-xs">
-                  {product.stockCount} in stock
+                  In Stock
                 </span>
               )}
               {product.bestseller && (
@@ -92,15 +88,11 @@ export function ProductCard({ product, variant = "default" }: { product: Product
           imageClassName={cn("w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700", isOutOfStock && "grayscale-[25%] opacity-90")}
           watermarkSize="sm"
         />
-        {isOutOfStock ? (
+        {isOutOfStock && (
           <div className="absolute top-2.5 left-2.5 bg-[#2B1B12] text-[#FFFCF8] text-[9px] tracking-[0.18em] uppercase font-semibold px-2 py-0.5 z-20 border border-[#D4AF37]/30 shadow-md">
             OUT OF STOCK
           </div>
-        ) : product.stockCount <= 2 ? (
-          <div className="absolute top-2.5 left-2.5 bg-[#FFFCF8]/90 backdrop-blur-md text-[#B8860B] border border-[#B8860B]/30 text-[8px] tracking-[0.14em] uppercase font-bold px-2 py-0.5 z-20">
-            Only {product.stockCount} Left
-          </div>
-        ) : null}
+        )}
         <button
           onClick={(e) => { e.preventDefault(); toggleWishlist(product.id); }}
           className="absolute bottom-2.5 right-2.5 w-8 h-8 grid place-items-center rounded-full bg-white/90 backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-sm"
@@ -118,7 +110,7 @@ export function ProductCard({ product, variant = "default" }: { product: Product
               </span>
             ) : (
               <span className="text-[8px] tracking-[0.12em] uppercase text-[#B8860B] font-semibold bg-[#B8860B]/10 px-1.5 py-0.5 rounded-xs">
-                {product.stockCount} left
+                In Stock
               </span>
             )}
             {product.bestseller && (

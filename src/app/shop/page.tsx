@@ -20,15 +20,30 @@ function ShopContent() {
 
   const filtered = useMemo(() => {
     let list = [...products];
-    if (collection !== "all") list = list.filter((p) => p.collection === collection);
-    if (cat !== "All") {
-      const map: Record<string, string> = { Wigs: "Wigs", Bundles: "Bundles", "Closures & Frontals": "Closures & Frontals" };
-      const target = map[cat] || cat;
-      list = list.filter((p) => p.category.toLowerCase().includes(target.toLowerCase()) || (cat === "Bespoke Hair" && p.category.includes("Bespoke")));
+
+    // Filter by collection if selected
+    if (collection !== "all") {
+      list = list.filter((p) => p.collection === collection);
     }
+
+    // Filter by category if selected
+    if (cat !== "All") {
+      const lowerCat = cat.toLowerCase();
+      list = list.filter((p) => {
+        const pCat = p.category.toLowerCase();
+        if (lowerCat === "wigs") return pCat.includes("wig");
+        if (lowerCat === "bundles") return pCat.includes("bundle") || pCat.includes("extension");
+        if (lowerCat === "closures & frontals") return pCat.includes("closure") || pCat.includes("frontal") || pCat.includes("lace");
+        if (lowerCat === "hair extensions") return pCat.includes("extension") || pCat.includes("bundle") || pCat.includes("clip") || pCat.includes("tape");
+        if (lowerCat === "bespoke hair") return pCat.includes("bespoke") || p.id.includes("bespoke") || p.id.includes("bridal") || p.collection === "private";
+        return pCat.includes(lowerCat);
+      });
+    }
+
     if (sort === "price-asc") list.sort((a, b) => a.price - b.price);
     if (sort === "price-desc") list.sort((a, b) => b.price - a.price);
     if (sort === "bestseller") list.sort((a, b) => (b.bestseller ? 1 : 0) - (a.bestseller ? 1 : 0));
+
     return list;
   }, [cat, sort, collection]);
 
@@ -51,18 +66,49 @@ function ShopContent() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-2">
+        {/* Single Line Unified Filter Bar */}
+        <div className="mt-8 py-2.5 px-2 border-y border-[#2B1B12]/10 flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-none">
+          {/* Category Pills */}
           {categories.map((c, i) => (
-            <button key={c} onClick={() => setCat(c)} className={`h-9 px-4 border text-[11px] tracking-[0.12em] uppercase transition-colors ${cat === c ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-[#FDF8F0] border-[rgba(28,18,14,0.12)] hover:border-[#2B1B12]"}`}>
+            <button
+              key={c}
+              onClick={() => setCat(c)}
+              className={`h-9 px-4 border text-[10px] sm:text-[11px] tracking-[0.14em] uppercase shrink-0 transition-all font-medium rounded-xs ${
+                cat === c
+                  ? "bg-[#2B1B12] text-white border-[#2B1B12] shadow-sm"
+                  : "bg-white text-[#2B1B12] border-[rgba(28,18,14,0.12)] hover:border-[#B8860B]"
+              }`}
+            >
               {t.shop.cats[i] ?? c}
             </button>
           ))}
-        </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          <button onClick={() => setCollection("all")} className={`px-4 py-2 border text-[11px] tracking-[0.12em] uppercase ${collection === "all" ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-white border-[rgba(28,18,14,0.12)]"}`}>{t.shop.allCollections}</button>
+          {/* Divider */}
+          <div className="h-6 w-[1px] bg-[#2B1B12]/15 mx-1 shrink-0" />
+
+          {/* Collection Pills */}
+          <button
+            onClick={() => setCollection("all")}
+            className={`h-9 px-4 border text-[10px] sm:text-[11px] tracking-[0.14em] uppercase shrink-0 transition-all font-medium rounded-xs ${
+              collection === "all"
+                ? "bg-[#2B1B12] text-white border-[#2B1B12] shadow-sm"
+                : "bg-white text-[#2B1B12] border-[rgba(28,18,14,0.12)] hover:border-[#B8860B]"
+            }`}
+          >
+            All Collections
+          </button>
           {collections.map((col) => (
-            <button key={col.slug} onClick={() => setCollection(col.slug)} className={`px-4 py-2 border text-[11px] tracking-[0.12em] uppercase capitalize ${collection === col.slug ? "bg-[#2B1B12] text-white border-[#2B1B12]" : "bg-white border-[rgba(28,18,14,0.12)]"}`}>{col.slug}</button>
+            <button
+              key={col.slug}
+              onClick={() => setCollection(col.slug)}
+              className={`h-9 px-4 border text-[10px] sm:text-[11px] tracking-[0.14em] uppercase shrink-0 transition-all font-medium rounded-xs ${
+                collection === col.slug
+                  ? "bg-[#2B1B12] text-white border-[#2B1B12] shadow-sm"
+                  : "bg-white text-[#2B1B12] border-[rgba(28,18,14,0.12)] hover:border-[#B8860B]"
+              }`}
+            >
+              {col.name}
+            </button>
           ))}
         </div>
 

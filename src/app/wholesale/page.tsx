@@ -88,7 +88,7 @@ export default function WholesalePage() {
       <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
-            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1600&auto=format&fit=crop"
+            src="/products/signature_collection.jpg"
             alt="Wholesale Supply"
             className="w-full h-full object-cover"
           />

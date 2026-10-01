@@ -19,7 +19,7 @@ export function Hero() {
       {/* Media */}
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1920&auto=format&fit=crop"
+          src="/products/editorial-model.jpg"
           alt="HAIR OVEN - luxury hair editorial"
           className="absolute inset-0 h-full w-full object-cover object-[center_10%] sm:object-[center_35%]"
         />

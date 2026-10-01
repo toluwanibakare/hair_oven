@@ -28,7 +28,7 @@ export function Craftsmanship() {
         <div className="mt-12 grid lg:grid-cols-12 gap-8 lg:gap-10">
           <div className="lg:col-span-7">
             <motion.div style={{ y, scale }} className="relative aspect-[4/3] lg:aspect-[1.4] overflow-hidden bg-[#2B1B12]">
-              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop" alt="Craftsmanship detail" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/products/editorial-styling.jpg" alt="Craftsmanship detail" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
               <div className="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
                 <div className="text-[11px] tracking-[0.16em] uppercase text-white/80">Cuticle intact • 40× magnification</div>

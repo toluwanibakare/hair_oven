@@ -33,7 +33,7 @@ export default function ContactPage() {
       <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1600&auto=format&fit=crop"
+            src="/founder.jpeg"
             alt="Client Concierge Support"
             className="w-full h-full object-cover"
           />

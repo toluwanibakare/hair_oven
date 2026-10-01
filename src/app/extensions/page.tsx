@@ -41,7 +41,7 @@ export default function ExtensionsPage() {
       <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1600&auto=format&fit=crop"
+            src="/products/editorial-blowdry.jpg"
             alt="Hair Extensions"
             className="w-full h-full object-cover"
           />

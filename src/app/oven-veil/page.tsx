@@ -14,7 +14,7 @@ export default function OvenVeilPage() {
       <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-36 overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img
-            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1600&auto=format&fit=crop"
+            src="/products/essential_collection.jpeg"
             alt="Oven Veil Philosophy"
             className="w-full h-full object-cover"
           />
