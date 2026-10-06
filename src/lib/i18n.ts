@@ -73,7 +73,7 @@ const en = {
   socialProof: {
     eyebrow: "Voices",
     title: "What people say.",
-    badge: "Verified Client Reviews",
+    badge: "Client Reviews",
     note: "We do not fabricate reviews. These are real women, real purchases. Some names abbreviated for privacy.",
   },
   footer: {
@@ -113,7 +113,7 @@ const en = {
         btn: "EXPLORE SAPPHIRE",
       },
       {
-        tagline: "EVERYDAY, ELEVATED.",
+        tagline: "ESSENCE",
         desc: "Beautifully selected hair, refined for effortless everyday wear. Luxury, made effortless.",
         btn: "DISCOVER ESSENCE",
       },

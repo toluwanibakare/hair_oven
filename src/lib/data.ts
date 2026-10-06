@@ -77,14 +77,17 @@ export const collections = [
     slug: "essence",
     name: "Essence Collection",
     subtitle: "Essence",
-    tagline: "EVERYDAY, ELEVATED.",
+    tagline: "ESSENCE",
     description:
       "Beautifully selected hair, refined for effortless everyday wear. Luxury, made effortless.",
-    poeticText: ["Everyday, elevated.", "Luxury, made effortless."],
+    poeticText: [
+      "Beautifully selected hair, refined for effortless everyday wear.",
+      "Luxury, made effortless.",
+    ],
     accent: "Everyday Versatile",
     years: "12 to 18 MONTHS",
     color: "#57534E",
-    image: "/products/essential_collection.jpeg",
+    image: "/products/essence.jpeg",
     priceFrom: 145000,
   },
   {
@@ -842,7 +845,7 @@ export const testimonials = [
     location: "Abuja, NG",
     text: "Signature Caramel Wave survived humid outdoor weddings, long flights, and daily styling without losing its pattern or body. Hair Oven never disappoints.",
     product: "The Signature Caramel Wave",
-    rating: 5,
+    rating: 4.5,
   },
   {
     name: "Ngozi E.",

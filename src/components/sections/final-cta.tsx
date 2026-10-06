@@ -15,9 +15,9 @@ export function FinalCta() {
   return (
     <section ref={ref} className="relative h-[72vh] min-h-[520px] overflow-hidden bg-[#2B1B12]">
       <motion.div style={{ scale, y }} className="absolute inset-0">
-        <img src="/products/signature_page.jpeg" alt="Final CTA" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#2B1B12]/45" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/70 via-transparent to-[#2B1B12]/20" />
+        <img src="/products/editorial-blowdry.jpg" alt="Final CTA" className="absolute inset-0 w-full h-full object-cover object-[center_30%]" />
+        <div className="absolute inset-0 bg-[#2B1B12]/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-[#2B1B12]/30" />
       </motion.div>
 
       <div className="relative z-10 h-full max-w-[1600px] mx-auto px-6 lg:px-10 flex flex-col justify-center items-center text-center">
