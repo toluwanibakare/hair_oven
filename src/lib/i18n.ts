@@ -13,7 +13,7 @@ export const BRAND = {
 
 const en = {
   nav: {
-    announcement: "BUILD IN PROGRESS",
+    announcement: "FREE WORLDWIDE SHIPPING ON ORDERS OVER $1,500",
     home: "HOME",
     collections: "COLLECTIONS",
     atelier: "ATELIER",
@@ -724,7 +724,7 @@ export type Dictionary = typeof en;
 
 const fr: Dictionary = {
   nav: {
-    announcement: "Conciergerie privée et commissions de l’Atelier ouvertes",
+    announcement: "LIVRAISON MONDIALE GRATUITE DÈS 1 500 $ D'ACHAT",
     home: "ACCUEIL",
     collections: "COLLECTIONS",
     atelier: "ATELIER",

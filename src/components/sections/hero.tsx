@@ -18,13 +18,17 @@ export function Hero() {
     <section ref={ref} className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-[#2B1B12]">
       {/* Media */}
       <motion.div style={{ y, scale }} className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1920&auto=format&fit=crop"
-          alt="HAIR OVEN - luxury hair editorial"
-          className="absolute inset-0 h-full w-full object-cover object-[center_10%] sm:object-[center_35%]"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/hair_video.mp4" type="video/mp4" />
+        </video>
         {/* Clean luxury overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/60 via-[#2B1B12]/20 to-[#2B1B12]/40" />
       </motion.div>
 
       {/* Content */}
