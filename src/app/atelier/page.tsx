@@ -295,8 +295,9 @@ export default function AtelierPage() {
                       className="w-full h-11 px-3 bg-[#FFFCF8] border border-[#2B1B12]/15 text-sm text-[#2B1B12] focus:border-[#B8860B] outline-none"
                     >
                       <option value="Private Collection (RAW Reserve)">Private Collection (RAW Reserve)</option>
-                      <option value="Signature Collection (Virgin)">Signature Collection (Virgin)</option>
-                      <option value="Essentials Collection">Essentials Collection</option>
+                      <option value="Sapphire Collection (Virgin)">Sapphire Collection (Virgin)</option>
+                      <option value="Essence Collection">Essence Collection</option>
+                      <option value="Atelier Collection (Bespoke)">Atelier Collection (Bespoke)</option>
                     </select>
                   </div>
                 </div>

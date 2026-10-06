@@ -248,14 +248,14 @@ export function Footer() {
                 <Link href="/collections/private" className="block hover:text-[#2B1B12] transition-colors">
                   Private Collection
                 </Link>
-                <Link href="/collections/signature" className="block hover:text-[#2B1B12] transition-colors">
-                  Signature Collection
+                <Link href="/collections/sapphire" className="block hover:text-[#2B1B12] transition-colors">
+                  Sapphire Collection
                 </Link>
-                <Link href="/collections/essentials" className="block hover:text-[#2B1B12] transition-colors">
-                  Essentials Collection
+                <Link href="/collections/essence" className="block hover:text-[#2B1B12] transition-colors">
+                  Essence Collection
                 </Link>
-                <Link href="/atelier" className="block hover:text-[#2B1B12] transition-colors">
-                  Atelier
+                <Link href="/collections/atelier" className="block hover:text-[#2B1B12] transition-colors">
+                  Atelier Collection
                 </Link>
                 <Link href="/shop?cat=wigs" className="block hover:text-[#2B1B12] transition-colors">
                   Luxury Wigs
