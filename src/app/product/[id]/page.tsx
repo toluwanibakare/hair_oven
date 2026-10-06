@@ -178,19 +178,6 @@ export default function ProductPage() {
           <span className="text-[#2B1B12]">{product.name}</span>
         </div>
 
-        {/* Minimalist Preorder Notice */}
-        <div className="mb-8 pb-3 border-b border-[#2B1B12]/10 flex flex-wrap items-center justify-between gap-3 text-xs text-[#57534E]">
-          <span>
-            Every creation is custom crafted on commission. Standard dispatch: 10 – 14 working days (Express available: 1 – 5 working days).
-          </span>
-          <Link
-            href="/heirloom-guide#fit-policies"
-            className="text-[10px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold hover:underline shrink-0"
-          >
-            Preorder Protocol →
-          </Link>
-        </div>
-
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left: Product Images Gallery */}
           <div className="lg:col-span-7 space-y-4">
@@ -214,7 +201,7 @@ export default function ProductPage() {
                 </div>
               ) : (
                 <div className="absolute top-5 left-5 bg-[#2B1B12]/90 backdrop-blur text-[#D4AF37] border border-[#D4AF37]/40 text-[9px] tracking-[0.2em] uppercase font-semibold px-3 py-1.5 z-20">
-                  {product.stockCount <= 2 ? `ONLY ${product.stockCount} LEFT IN ATELIER` : `IN STOCK (${product.stockCount} AVAILABLE)`}
+                  IN STOCK
                 </div>
               )}
             </div>
@@ -246,14 +233,14 @@ export default function ProductPage() {
                 {(!product.inStock || product.stockCount === 0) ? (
                   <span className="text-[#991B1B] bg-[#FEF2F2] px-2 py-0.5 border border-[#FCA5A5]/30">OUT OF STOCK • REQUEST ONLY</span>
                 ) : (
-                  <span>IN STOCK ({product.stockCount} REMAINING)</span>
+                  <span>IN STOCK</span>
                 )}
               </div>
               <h1 className="font-serif text-[36px] sm:text-[46px] leading-[0.95] text-[#2B1B12] mt-2 font-light">
                 {product.name}
               </h1>
 
-              <p className="mt-4 text-xs sm:text-sm text-[#57534E] leading-relaxed font-serif italic border-l-2 border-[#B8860B] pl-4">
+              <p className="my-4 text-sm sm:text-base lg:text-lg text-[#2B1B12]/90 leading-relaxed sm:leading-7 font-serif italic border-l-2 border-[#B8860B] pl-4 py-1">
                 "{product.description}"
               </p>
             </div>
@@ -281,15 +268,15 @@ export default function ProductPage() {
                 </span>
               ) : (
                 <span className="self-start sm:self-auto text-[10px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold bg-[#EDE6D6]/40 px-3 py-1 border border-[#2B1B12]/10">
-                  {product.stockCount} Left in Reserve
+                  In Stock
                 </span>
               )}
             </div>
 
-            {/* Model & Creation Specifications Breakdown */}
+            {/* Specifications Breakdown */}
             <div className="bg-[#f9f6f1] border border-[#2B1B12]/10 p-5 rounded-sm space-y-3 text-xs">
               <div className="text-[10px] tracking-[0.22em] uppercase font-semibold text-[#B8860B]">
-                Model & Creation Specifications
+                SPECIFICATIONS
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 text-[#2B1B12]">
                 <div>
@@ -319,23 +306,6 @@ export default function ProductPage() {
                   <span className="font-medium text-xs">{product.modelSpecs?.styling || "Signature Custom Finish"}</span>
                 </div>
               </div>
-
-              {/* Merged Product Details & Highlights */}
-              {product.details && product.details.length > 0 && (
-                <div className="pt-3 border-t border-[#2B1B12]/10 space-y-1.5">
-                  <div className="text-[9px] tracking-[0.18em] uppercase text-[#78716C] font-semibold">
-                    Key Highlights & Details
-                  </div>
-                  <div className="space-y-1.5 text-xs text-[#57534E]">
-                    {product.details.map((d, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <span className="text-[#B8860B] font-bold">•</span>
-                        <span>{d}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* Tailor Your Look Customisations Form */}
@@ -600,12 +570,6 @@ export default function ProductPage() {
                   </div>
                 ) : (
                   <div className="space-y-2">
-                    {product.stockCount <= 2 && (
-                      <div className="text-[10px] tracking-[0.14em] uppercase text-[#B8860B] font-semibold flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#B8860B] animate-pulse" />
-                        ONLY {product.stockCount} UNIT{product.stockCount > 1 ? "S" : ""} LEFT IN STOCK: RESERVE YOUR CREATION NOW
-                      </div>
-                    )}
                     <div className="flex items-center gap-3">
                       <div className="flex items-center border border-[#2B1B12]/20 bg-white">
                         <button

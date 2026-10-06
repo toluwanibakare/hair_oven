@@ -8,31 +8,31 @@ import { useLanguage } from "@/context/language-context";
 
 const baseCards = [
   {
-    title: "THE PRIVATE COLLECTION",
+    title: "PRIVATE COLLECTION",
     link: "/collections/private",
-    video: "/private_collection.MP4",
-    image: "/products/editorial-model-2.jpg",
+    video: "/private.MP4",
+    image: "/products/private_collection.PNG",
     objectPos: "object-top",
     objectFit: "object-cover",
   },
   {
-    title: "THE SIGNATURE COLLECTION",
-    link: "/collections/signature",
-    image: "/products/signature_collection.jpeg",
-    objectPos: "object-center",
+    title: "SAPPHIRE COLLECTION",
+    link: "/collections/sapphire",
+    image: "/products/signature_collection.jpg",
+    objectPos: "object-top",
     objectFit: "object-cover",
   },
   {
-    title: "ESSENTIALS COLLECTION",
-    link: "/collections/essentials",
+    title: "ESSENCE COLLECTION",
+    link: "/collections/essence",
     image: "/products/essential_collection.jpeg",
     objectPos: "object-top",
     objectFit: "object-cover",
   },
   {
-    title: "BRIDAL CONSULTATION",
-    link: "/bespoke",
-    image: "/products/bridal_consultation.jpeg",
+    title: "ATELIER COLLECTION",
+    link: "/collections/atelier",
+    image: "/products/ATELIER.PNG",
     objectPos: "object-top",
     objectFit: "object-cover",
   },
@@ -41,6 +41,7 @@ const baseCards = [
 export function Collections() {
   const { t } = useLanguage();
   const cards = baseCards.map((c, i) => ({ ...c, ...t.collections.cards[i] }));
+
   return (
     <section className="bg-[#FFFCF8] text-[#2B1B12] py-20 lg:py-28 border-b border-[#2B1B12]/10 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
@@ -71,53 +72,52 @@ export function Collections() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.85, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -6 }}
-              className="border border-[#2B1B12]/10 bg-[#EDE6D6]/20 rounded-sm overflow-hidden flex flex-col justify-between group hover:border-[#B8860B] transition-all duration-300 shadow-sm hover:shadow-xl"
+              className="border border-[#2B1B12]/10 bg-[#EDE6D6]/20 rounded-sm overflow-hidden flex flex-col justify-between group hover:border-[#B8860B] transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer"
             >
-              <div className="aspect-[4/3] sm:aspect-[14/10] relative overflow-hidden bg-[#2B1B12]">
-                {card.video ? (
-                  <video
-                    src={card.video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                ) : (
-                  <WatermarkImage
-                    src={card.image}
-                    alt={card.title}
-                    containerClassName="w-full h-full"
-                    imageClassName={`w-full h-full ${card.objectFit || "object-cover"} ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
-                    watermarkSize="md"
-                    showWatermark={false}
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent pointer-events-none z-10" />
-                <div className="absolute bottom-4 left-6 text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold z-20">
-                  {card.tagline}
-                </div>
-              </div>
-
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-serif text-2xl lg:text-3xl text-[#2B1B12] font-light">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#57534E] leading-6 mt-3">
-                    {card.desc}
-                  </p>
+              <Link href={card.link} className="flex-1 flex flex-col justify-between h-full">
+                <div className="aspect-[4/3] sm:aspect-[14/10] relative overflow-hidden bg-[#2B1B12]">
+                  {card.video ? (
+                    <video
+                      src={card.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  ) : (
+                    <WatermarkImage
+                      src={card.image}
+                      alt={card.title}
+                      containerClassName="w-full h-full"
+                      imageClassName={`w-full h-full object-cover ${card.objectPos || "object-top"} group-hover:scale-105 transition-transform duration-700 ease-out`}
+                      watermarkSize="md"
+                      showWatermark={false}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-transparent to-transparent pointer-events-none z-10" />
+                  <div className="absolute bottom-4 left-6 text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold z-20">
+                    {card.tagline}
+                  </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-[#2B1B12]/10">
-                  <Link
-                    href={card.link}
-                    className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#2B1B12] hover:text-[#B8860B] inline-flex items-center gap-2 transition-colors"
-                  >
-                    {card.btn} <ArrowRight className="w-4 h-4" />
-                  </Link>
+                <div className="p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-serif text-2xl lg:text-3xl text-[#2B1B12] font-light group-hover:text-[#B8860B] transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#57534E] leading-6 mt-3">
+                      {card.desc}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-4 border-t border-[#2B1B12]/10">
+                    <span className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#2B1B12] group-hover:text-[#B8860B] inline-flex items-center gap-2 transition-colors">
+                      {card.btn} <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

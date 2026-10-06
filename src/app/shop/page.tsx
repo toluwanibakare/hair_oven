@@ -23,7 +23,13 @@ function ShopContent() {
 
     // Filter by collection if selected
     if (collection !== "all") {
-      list = list.filter((p) => p.collection === collection);
+      list = list.filter((p) => {
+        if (p.collection === collection) return true;
+        if (collection === "sapphire" && p.collection === "signature") return true;
+        if (collection === "essence" && p.collection === "essentials") return true;
+        if (collection === "atelier" && (p.collection === "atelier" || p.category === "Bespoke Hair" || p.id.includes("bespoke") || p.id.includes("bridal"))) return true;
+        return false;
+      });
     }
 
     // Filter by category if selected

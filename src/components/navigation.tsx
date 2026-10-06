@@ -51,9 +51,9 @@ const megaMenuData: Record<
       title: "Explore Collections",
       links: [
         { label: "Private Collection", href: "/collections/private" },
-        { label: "Signature Collection", href: "/collections/signature" },
-        { label: "Essentials Collection", href: "/collections/essentials" },
-        { label: "Atelier", href: "/atelier" },
+        { label: "Sapphire Collection", href: "/collections/sapphire" },
+        { label: "Essence Collection", href: "/collections/essence" },
+        { label: "Atelier Collection", href: "/collections/atelier" },
       ],
     },
     col2: {
@@ -69,14 +69,14 @@ const megaMenuData: Record<
     cards: [
       {
         title: "PRIVATE COLLECTION",
-        subtitle: "Heirloom Investment",
+        subtitle: "Reserved for the Exceptional",
         href: "/collections/private",
-        image: "/products/editorial-model-2.jpg",
+        image: "/products/private_collection.PNG",
       },
       {
-        title: "SIGNATURE COLLECTION",
-        subtitle: "Long-Term Luxury Units",
-        href: "/collections/signature",
+        title: "SAPPHIRE COLLECTION",
+        subtitle: "Quietly Distinctive",
+        href: "/collections/sapphire",
         image: "/products/signature_collection.jpg",
       },
     ],

@@ -1,7 +1,7 @@
 export type Product = {
   id: string;
   name: string;
-  collection: "private" | "signature" | "essentials";
+  collection: "private" | "sapphire" | "essence" | "atelier" | "signature" | "essentials";
   category: string;
   price: number;
   originalPrice?: number;
@@ -39,41 +39,45 @@ export const collections = [
     slug: "private",
     name: "Private Collection",
     subtitle: "Raw Reserve",
-    tagline: "A COLLECTION RESERVED FOR THE EXCEPTIONAL",
+    tagline: "Reserved for the Exceptional.",
     description:
-      "The rarest single-donor hair, selected in the most exacting manner and presented in its purest, most untouched form. Limited by nature. Selected by discretion. Possessed by very few. An heirloom in its truest form.",
+      "The rarest single-donor hair, preserved in its purest, most untouched form.",
     poeticText: [
-      "Limited by nature.",
-      "Selected by discretion.",
-      "Possessed by very few.",
+      "Exceptionally rare.",
+      "Intentionally limited.",
+      "Privately acquired.",
       "An heirloom in its truest form.",
     ],
     accent: "Lifetime",
     years: "LIFETIME",
     color: "#2B1B12",
-    image: "/products/editorial-model-2.jpg",
-    video: "/private_collection.MP4",
-    priceFrom: 485000,
+    image: "/products/private_collection.PNG",
+    video: "/private.MP4",
+    priceFrom: 1850000,
   },
   {
-    slug: "signature",
-    name: "Signature Collection",
-    subtitle: "Signature",
-    tagline: "QUIETLY DISTINCTIVE",
+    slug: "sapphire",
+    name: "Sapphire Collection",
+    subtitle: "Sapphire",
+    tagline: "SAPPHIRE COLLECTION",
     description:
-      "Refined through meticulous selection and finished to the exacting standards of HAIR OVEN. Quietly distinctive.",
-    poeticText: ["Quietly distinctive."],
+      "Meticulously selected. Expertly finished to HAIR OVEN standards. Quietly distinctive.",
+    poeticText: [
+      "Meticulously selected.",
+      "Expertly finished to HAIR OVEN standards.",
+      "Quietly distinctive.",
+    ],
     accent: "2 to 3+ Years",
     years: "2 to 3+ YEARS",
     color: "#3D2314",
-    image: "/products/signature_collection.jpeg",
+    image: "/products/signature_collection.jpg",
     priceFrom: 285000,
   },
   {
-    slug: "essentials",
-    name: "Essentials Collection",
-    subtitle: "Essentials",
-    tagline: "EVERYDAY, ELEVATED",
+    slug: "essence",
+    name: "Essence Collection",
+    subtitle: "Essence",
+    tagline: "EVERYDAY, ELEVATED.",
     description:
       "Beautifully selected hair, refined for effortless everyday wear. Luxury, made effortless.",
     poeticText: ["Everyday, elevated.", "Luxury, made effortless."],
@@ -82,6 +86,20 @@ export const collections = [
     color: "#57534E",
     image: "/products/essential_collection.jpeg",
     priceFrom: 145000,
+  },
+  {
+    slug: "atelier",
+    name: "Atelier Collection",
+    subtitle: "Bespoke Atelier",
+    tagline: "MADE FOR ONE.",
+    description:
+      "A private commission created around the individual. Custom cranial mapping, density and Oven Veil™ architecture.",
+    poeticText: ["Made for one.", "Custom architectural commission."],
+    accent: "Bespoke Masterwork",
+    years: "BESPOKE",
+    color: "#2B1B12",
+    image: "/products/ATELIER.PNG",
+    priceFrom: 1850000,
   },
 ] as const;
 

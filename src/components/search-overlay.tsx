@@ -71,7 +71,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                               </span>
                             ) : (
                               <span className="text-[8px] tracking-[0.12em] uppercase text-[#B8860B] font-semibold bg-[#B8860B]/10 px-1.5 py-0.5 rounded-xs">
-                                {p.stockCount} left
+                                In Stock
                               </span>
                             )}
                           </div>
