@@ -23,18 +23,13 @@ export function Hero() {
           alt="HAIR OVEN - luxury hair editorial"
           className="absolute inset-0 h-full w-full object-cover object-[center_10%] sm:object-[center_35%]"
         />
-        {/* Warm luxury overlay with gold radial glow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-[#2B1B12]/30 to-[#2B1B12]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2B1B12]/60 via-transparent to-transparent" />
-        <div
-          className="absolute inset-0 opacity-[0.25] mix-blend-soft-light pointer-events-none"
-          style={{ background: `radial-gradient(800px circle at 70% 30%, #C2A47A 0%, transparent 60%)` }}
-        />
+        {/* Clean luxury overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
       </motion.div>
 
       {/* Content */}
-      <motion.div style={{ opacity }} className="relative z-10 h-full mx-auto max-w-[1600px] px-5 sm:px-6 lg:px-10 flex flex-col justify-center pt-14 sm:pt-20 pb-12 sm:pb-16 lg:pb-24">
-        <div className="max-w-[760px] -mt-12 sm:-mt-12 lg:-mt-16 mb-2">
+      <motion.div style={{ opacity }} className="relative z-10 h-full mx-auto max-w-[1600px] px-5 sm:px-6 lg:px-10 flex flex-col justify-end sm:justify-center pt-16 sm:pt-20 pb-8 sm:pb-16 lg:pb-24">
+        <div className="max-w-[760px] mb-2 sm:-mt-12 lg:-mt-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,4 +89,3 @@ export function Hero() {
     </section>
   );
 }
-
