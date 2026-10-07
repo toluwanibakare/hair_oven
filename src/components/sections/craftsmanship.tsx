@@ -16,7 +16,7 @@ export function Craftsmanship() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         <div className="max-w-[720px]">
           <Reveal>
-            <div className="text-[10px] tracking-[0.22em] uppercase text-[#C2A47A]">The Hair Oven Standard</div>
+            <div className="text-[10px] tracking-[0.22em] uppercase text-[#C2A47A]">The HAIR OVEN Standard</div>
           </Reveal>
           <h2 className="font-serif text-[36px] lg:text-[54px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
             The difference is<br />

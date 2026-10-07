@@ -106,7 +106,7 @@ export default function ProductPage() {
       author: "Ngozi E. (Abuja, NG)",
       date: "August 28, 2026",
       rating: 5,
-      comment: "Hair Oven is the only brand I trust for raw hair now. The hair retains its natural shine and weight even after multiple washes. Worth every single kobo.",
+      comment: "HAIR OVEN is the only brand I trust for raw hair now. The hair retains its natural shine and weight even after multiple washes. Worth every single kobo.",
     },
   ]);
 
@@ -115,7 +115,7 @@ export default function ProductPage() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10 py-24 text-center">
         <div className="font-serif text-3xl">{t.product.notFound}</div>
         <Link
-          href="/shop"
+          href="/#shop"
           className="mt-6 inline-flex h-11 px-8 bg-[#2B1B12] text-white items-center text-[11px] tracking-[0.16em] uppercase"
         >
           {t.product.backToShop}
@@ -171,7 +171,7 @@ export default function ProductPage() {
             {t.product.home}
           </Link>{" "}
           <span>/</span>
-          <Link href="/shop" className="hover:text-[#2B1B12]">
+          <Link href="/#shop" className="hover:text-[#2B1B12]">
             {t.product.shop}
           </Link>{" "}
           <span>/</span>
@@ -224,7 +224,7 @@ export default function ProductPage() {
             )}
           </div>
 
-          {/* Right: Bespoke Customisation & Order Panel */}
+          {/* Right: Atelier Customisation & Order Panel */}
           <div className="lg:col-span-5 space-y-7">
             <div>
               <div className="flex flex-wrap items-center gap-2 text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
@@ -262,15 +262,6 @@ export default function ProductPage() {
                   Taxes Included • Preorder Handcrafted Unit
                 </div>
               </div>
-              {(!product.inStock || product.stockCount === 0) ? (
-                <span className="self-start sm:self-auto text-[10px] tracking-[0.16em] uppercase text-[#991B1B] font-semibold bg-[#FEF2F2] px-3 py-1 border border-[#FCA5A5]/40">
-                  Out of Stock
-                </span>
-              ) : (
-                <span className="self-start sm:self-auto text-[10px] tracking-[0.16em] uppercase text-[#B8860B] font-semibold bg-[#EDE6D6]/40 px-3 py-1 border border-[#2B1B12]/10">
-                  In Stock
-                </span>
-              )}
             </div>
 
             {/* Specifications Breakdown */}
@@ -686,7 +677,7 @@ export default function ProductPage() {
               <h2 className="font-serif text-2xl sm:text-3xl text-[#2B1B12] mt-1">You May Also Like</h2>
             </div>
             <Link
-              href="/shop"
+              href="/#shop"
               className="text-[11px] tracking-[0.16em] uppercase text-[#2B1B12] hover:text-[#B8860B] underline underline-offset-4"
             >
               Explore Full Collection →
@@ -752,7 +743,7 @@ export default function ProductPage() {
                   <span className="font-semibold block">Extra Large</span>
                   <span className="text-[11px] text-[#78716C]">24 – 25 inches (61-63 cm)</span>
                 </div>
-                <span className="text-[10px] tracking-[0.14em] uppercase text-[#B8860B] font-semibold">Bespoke</span>
+                <span className="text-[10px] tracking-[0.14em] uppercase text-[#B8860B] font-semibold">Atelier</span>
               </div>
             </div>
 

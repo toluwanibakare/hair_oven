@@ -28,7 +28,7 @@ export function FromAfrica() {
                   <span key={b} className="flex items-center gap-2"><span className={`w-2 h-2 rounded-full ${i === 0 ? "bg-[#C2A47A]" : i === 1 ? "bg-[#2B1B12]" : "bg-[#78716C]"}`} /> {b}</span>
                 ))}
               </div>
-              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#B8860B] transition-colors">{t.africa.cta}</Link>
+              <Link href="/#shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#B8860B] transition-colors">{t.africa.cta}</Link>
             </Reveal>
           </div>
 

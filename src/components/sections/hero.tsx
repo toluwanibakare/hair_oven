@@ -23,8 +23,9 @@ export function Hero() {
           alt="HAIR OVEN - luxury hair editorial"
           className="absolute inset-0 h-full w-full object-cover object-[center_10%] sm:object-[center_35%]"
         />
-        {/* Clean luxury overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-transparent to-transparent" />
+        {/* Clean luxury overlay with subtle warm brown shade touch */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(61,35,20,0.45)_0%,transparent_65%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/60 via-[#2B1B12]/20 to-transparent pointer-events-none" />
       </motion.div>
 
       {/* Content */}
@@ -66,7 +67,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.75 }}
             className="mt-4 sm:mt-6 flex flex-wrap gap-2.5 sm:gap-3"
           >
-            <Link href="/shop" className="h-[42px] sm:h-[46px] px-5 sm:px-7 bg-white text-[#2B1B12] inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold sm:font-medium hover:bg-[#E8DDC9] transition-colors">
+            <Link href="/#shop" className="h-[42px] sm:h-[46px] px-5 sm:px-7 bg-white text-[#2B1B12] inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold sm:font-medium hover:bg-[#E8DDC9] transition-colors">
               {t.hero.primaryCta} <span className="ml-2">→</span>
             </Link>
             <Link href="/story" className="h-[42px] sm:h-[46px] px-5 sm:px-7 border border-white/30 text-white inline-flex items-center text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold sm:font-medium backdrop-blur hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">

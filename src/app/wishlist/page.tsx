@@ -18,7 +18,7 @@ export default function WishlistPage() {
         {items.length === 0 ? (
           <div className="py-16 text-center">
             <p className="text-[#78716C]">{t.wishlist.empty}</p>
-            <Link href="/shop" className="mt-6 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center">{t.wishlist.cta}</Link>
+            <Link href="/#shop" className="mt-6 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center">{t.wishlist.cta}</Link>
           </div>
         ) : (
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">

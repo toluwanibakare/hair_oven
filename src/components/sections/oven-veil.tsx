@@ -26,7 +26,7 @@ export function OvenVeil() {
             <div className="aspect-[4/3] sm:aspect-[14/10] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-lg group">
               <img
                 src="/products/essential.jpeg"
-                alt="Oven Veil Lace Technology"
+                alt="Oven Veil™ Lace Technology"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/60 via-transparent to-transparent opacity-80" />

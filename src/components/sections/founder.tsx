@@ -21,7 +21,7 @@ export function Founder() {
               <img src="/founder.jpeg" alt="Hannah Oluwatosin Ogundare" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#2B1B12]/60 to-transparent">
                 <div className="text-white font-serif text-xl leading-none">Hannah Oluwatosin Ogundare</div>
-                <div className="text-[10px] tracking-[0.16em] uppercase text-white/80 mt-1">Founder, Hair Oven</div>
+                <div className="text-[10px] tracking-[0.16em] uppercase text-white/80 mt-1">Founder, HAIR OVEN</div>
               </div>
             </motion.div>
           </div>

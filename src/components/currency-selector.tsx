@@ -6,7 +6,7 @@ import { ChevronDown, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function CurrencySelector({ variant = "desktop" }: { variant?: "desktop" | "mobile" }) {
+export function CurrencySelector({ variant = "desktop", placement = "down" }: { variant?: "desktop" | "mobile"; placement?: "up" | "down" }) {
   const { currency, setCurrency } = useCurrency();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -101,11 +101,11 @@ export function CurrencySelector({ variant = "desktop" }: { variant?: "desktop" 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 6 }}
+            initial={{ opacity: 0, y: placement === "up" ? -6 : 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 6 }}
+            exit={{ opacity: 0, y: placement === "up" ? -6 : 6 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full mt-2 w-48 bg-[#FFFCF8] border border-[#2B1B12]/15 shadow-xl py-1 z-[120] rounded-xs"
+            className={cn("absolute right-0 w-48 bg-[#FFFCF8] border border-[#2B1B12]/15 shadow-xl py-1 z-[120] rounded-xs", placement === "up" ? "bottom-full mb-2" : "top-full mt-2")}
           >
             <div className="px-3 py-1.5 text-[9px] font-sans tracking-[0.18em] uppercase text-[#B8860B] font-bold border-b border-[#2B1B12]/08">
               Select Currency

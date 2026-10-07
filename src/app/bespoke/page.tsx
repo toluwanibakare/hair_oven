@@ -202,7 +202,7 @@ export default function BridalConsultationPage() {
                       </div>
                       <h4 className="font-serif text-lg mt-3">Private Founder Consultation</h4>
                       <p className={`text-xs mt-1.5 leading-relaxed ${consultationType === "hannah" ? "text-white/80" : "text-[#57534E]"}`}>
-                        Exclusive 1-on-1 private session directly with Hannah for bespoke heirloom curation and custom color guidance.
+                        Exclusive 1-on-1 private session directly with Hannah for atelier heirloom curation and custom color guidance.
                       </p>
                     </div>
                     <div className={`mt-4 pt-3 border-t text-[10px] tracking-[0.14em] uppercase font-semibold ${

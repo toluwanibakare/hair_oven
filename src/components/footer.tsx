@@ -11,7 +11,7 @@ import { LanguageSelector } from "./language-selector";
 import { CurrencySelector } from "./currency-selector";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, tr } = useLanguage();
   const pathname = usePathname();
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState("");
@@ -39,7 +39,7 @@ export function Footer() {
               <Link href="/" className="block relative w-48 h-16 -ml-1">
                 <Image 
                   src="/brand_logo.PNG" 
-                  alt="Hair Oven Logo" 
+                  alt="HAIR OVEN Logo" 
                   fill
                   className="object-contain object-left"
                 />
@@ -154,7 +154,7 @@ export function Footer() {
             <Link href="/" className="block relative w-48 h-18 -ml-1">
               <Image 
                 src="/brand_logo.PNG" 
-                alt="Hair Oven Logo" 
+                alt="HAIR OVEN Logo" 
                 fill
                 className="object-contain object-left"
               />
@@ -239,111 +239,101 @@ export function Footer() {
           {/* Navigation Links Columns */}
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             
-            {/* Column 1: Shop */}
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
                 {t.footer.colShop}
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/collections/private" className="block hover:text-[#2B1B12] transition-colors">
-                  Private Collection
+                  {tr("Private Collection")}
                 </Link>
                 <Link href="/collections/sapphire" className="block hover:text-[#2B1B12] transition-colors">
-                  Sapphire Collection
+                  {tr("Sapphire Collection")}
                 </Link>
                 <Link href="/collections/essence" className="block hover:text-[#2B1B12] transition-colors">
-                  Essence Collection
+                  {tr("Essence Collection")}
                 </Link>
                 <Link href="/collections/atelier" className="block hover:text-[#2B1B12] transition-colors">
-                  Atelier Collection
-                </Link>
-                <Link href="/shop?cat=wigs" className="block hover:text-[#2B1B12] transition-colors">
-                  Luxury Wigs
-                </Link>
-                <Link href="/shop?cat=Bundles" className="block hover:text-[#2B1B12] transition-colors">
-                  Raw Hair Bundles
-                </Link>
-                <Link href="/shop?cat=Closures%20%26%20Frontals" className="block hover:text-[#2B1B12] transition-colors">
-                  Closures & Frontals
-                </Link>
-                <Link href="/shop?cat=tools" className="block hover:text-[#2B1B12] transition-colors">
-                  Hair Tools & Care
+                  {tr("Atelier Collection")}
                 </Link>
               </div>
             </div>
 
-            {/* Column 2: Atelier & Guidance */}
+            <div>
+              <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
+                {t.footer.colCategories}
+              </div>
+              <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
+                <Link href="/categories/wigs" className="block hover:text-[#2B1B12] transition-colors">
+                  {tr("Wigs")}
+                </Link>
+                <Link href="/categories/bundles" className="block hover:text-[#2B1B12] transition-colors">
+                  {tr("Bundles")}
+                </Link>
+                <Link href="/categories/closures-frontals" className="block hover:text-[#2B1B12] transition-colors">
+                  {tr("Closures & Frontals")}
+                </Link>
+                <Link href="/categories/tools-care" className="block hover:text-[#2B1B12] transition-colors">
+                  {tr("Tools & Care")}
+                </Link>
+              </div>
+            </div>
+
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
                 {t.footer.colAtelier}
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/atelier" className="block hover:text-[#2B1B12] transition-colors">
-                  Atelier
-                </Link>
-                <Link href="/atelier#consultation-form" className="block hover:text-[#2B1B12] transition-colors">
-                  Private Appointments
+                  {tr("Atelier")}
                 </Link>
                 <Link href="/bespoke" className="block hover:text-[#2B1B12] transition-colors">
-                  Bridal Consultation
+                  {tr("Bridal Consultation")}
                 </Link>
                 <Link href="/oven-veil" className="block hover:text-[#2B1B12] transition-colors">
-                  Oven Veil™ Technology
+                  {tr("Oven Veil™")}
                 </Link>
                 <Link href="/heirloom-guide" className="block hover:text-[#2B1B12] transition-colors">
-                  The Heirloom Guide
-                </Link>
-                <Link href="/heirloom-guide#washing" className="block hover:text-[#2B1B12] transition-colors">
-                  Care & Maintenance
-                </Link>
-                <Link href="/heirloom-guide#sizing" className="block hover:text-[#2B1B12] transition-colors">
-                  Cap Sizing Protocol
+                  {tr("The Heirloom Guide")}
                 </Link>
               </div>
             </div>
 
-            {/* Column 3: The House */}
             <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
                 {t.footer.colHouse}
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/story" className="block hover:text-[#2B1B12] transition-colors">
-                  Our Story & Calling
+                  {tr("Our Story")}
                 </Link>
                 <Link href="/story#founder" className="block hover:text-[#2B1B12] transition-colors">
-                  The Founder's Journey
-                </Link>
-                <Link href="/story#ethos" className="block hover:text-[#2B1B12] transition-colors">
-                  Craftsmanship Ethos
-                </Link>
-                <Link href="/story#provenance" className="block hover:text-[#2B1B12] transition-colors">
-                  African Provenance
-                </Link>
-                <Link href="/story#testimonials" className="block hover:text-[#2B1B12] transition-colors">
-                  Client Testimonials
+                  {tr("The Founder")}
                 </Link>
                 <Link href="/wholesale" className="block hover:text-[#2B1B12] transition-colors">
-                  The Trade Edit (Wholesale)
+                  {tr("The Trade Edit (Wholesale)")}
                 </Link>
                 <Link href="/contact" className="block hover:text-[#2B1B12] transition-colors">
-                  Client Support & Contact
+                  {tr("Client Care")}
                 </Link>
               </div>
             </div>
 
-            {/* Column 4: Newsletter */}
-            <div className="col-span-2 md:col-span-1">
+            {/* Newsletter */}
+            <div className="col-span-2 md:col-span-4 pt-8 mt-2 border-t border-[#2B1B12]/10 md:grid md:grid-cols-2 md:gap-8 md:items-end">
+              <div>
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#B8860B] font-bold mb-4">
                 {t.footer.stayConnected}
               </div>
               <div className="font-serif text-base text-[#2B1B12] mb-1">
                 {t.footer.newsletterTitle}
               </div>
-              <p className="text-[11px] leading-5 text-[#57534E] mb-4">
+              <p className="text-[11px] leading-5 text-[#57534E] mb-4 md:mb-0 max-w-[48ch]">
                 {t.footer.newsletterBody}
               </p>
+              </div>
 
+              <div>
               {subscribed ? (
                 <div className="text-xs text-[#B8860B] font-semibold bg-white p-3 border border-[#2B1B12]/15">
                   {t.footer.welcome}
@@ -363,6 +353,7 @@ export function Footer() {
                   </button>
                 </form>
               )}
+              </div>
             </div>
 
           </div>
@@ -379,7 +370,7 @@ export function Footer() {
             <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.privacy}</Link>
             <Link href="/heirloom-guide#fit-policies" className="hover:text-[#2B1B12] transition-colors">{t.footer.terms}</Link>
             <Link href="/contact" className="hover:text-[#2B1B12] transition-colors">{t.footer.contactLink}</Link>
-            <CurrencySelector variant="desktop" />
+            <CurrencySelector variant="desktop" placement="up" />
             <LanguageSelector variant="desktop" />
           </div>
         </div>

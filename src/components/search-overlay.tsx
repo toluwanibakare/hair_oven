@@ -39,7 +39,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                   <div>
                     <div className="text-[10px] tracking-[0.18em] uppercase text-[#A68B5B] mb-4 font-semibold">{t.search.popular}</div>
                     <div className="flex flex-wrap gap-2">
-                      {["Bone Straight", "Oven Veil", "Deep Curly", "Bespoke", "Blunt Bob"].map((t) => (
+                      {["Bone Straight", "Oven Veil", "Deep Curly", "Atelier", "Blunt Bob"].map((t) => (
                         <button key={t} onClick={() => setQ(t)} className="px-4 py-2 border border-[rgba(28,18,14,0.12)] text-[12px] tracking-[0.08em] uppercase hover:bg-[#2B1B12] hover:text-white transition-colors">
                           {t}
                         </button>
@@ -49,11 +49,11 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                       <Link href="/collections/private" onClick={onClose} className="p-4 bg-[#F5EFE6] hover:bg-[#EDE6D6] transition-colors">
                         Private
                       </Link>
-                      <Link href="/collections/signature" onClick={onClose} className="p-4 bg-[#F5EFE6] hover:bg-[#EDE6D6] transition-colors">
-                        Signature
+                      <Link href="/collections/sapphire" onClick={onClose} className="p-4 bg-[#F5EFE6] hover:bg-[#EDE6D6] transition-colors">
+                        Sapphire
                       </Link>
-                      <Link href="/collections/essentials" onClick={onClose} className="p-4 bg-[#F5EFE6] hover:bg-[#EDE6D6] transition-colors">
-                        Essentials
+                      <Link href="/collections/essence" onClick={onClose} className="p-4 bg-[#F5EFE6] hover:bg-[#EDE6D6] transition-colors">
+                        Essence
                       </Link>
                     </div>
                   </div>
@@ -65,15 +65,6 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                         <div>
                           <div className="flex items-center gap-2">
                             <span className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] font-semibold">{p.collection}</span>
-                            {(!p.inStock || p.stockCount === 0) ? (
-                              <span className="text-[8px] tracking-[0.12em] uppercase text-[#57534E] font-semibold bg-[#2B1B12]/08 px-1.5 py-0.5 rounded-xs">
-                                Out of Stock
-                              </span>
-                            ) : (
-                              <span className="text-[8px] tracking-[0.12em] uppercase text-[#B8860B] font-semibold bg-[#B8860B]/10 px-1.5 py-0.5 rounded-xs">
-                                In Stock
-                              </span>
-                            )}
                           </div>
                           <div className="font-serif text-[15px]">{p.name}</div>
                           <div className="text-xs text-[#78716C]">{p.category} • {p.texture}</div>

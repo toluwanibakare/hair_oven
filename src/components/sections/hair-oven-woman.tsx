@@ -38,7 +38,7 @@ export function HairOvenWoman() {
                   <span key={t} className="px-3 py-1.5 border border-[rgba(28,18,14,0.12)] bg-white">{t}</span>
                 ))}
               </div>
-              <Link href="/shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#2B1B12] transition-colors">
+              <Link href="/#shop" className="mt-8 inline-flex h-11 px-8 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center hover:bg-[#2B1B12] transition-colors">
                 Shop for Her →
               </Link>
             </Reveal>

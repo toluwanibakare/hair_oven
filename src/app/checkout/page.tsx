@@ -20,7 +20,7 @@ export default function CheckoutPage() {
         {items.length === 0 ? (
           <div className="py-16 text-center border border-dashed border-[rgba(28,18,14,0.12)] mt-8">
             <p className="text-[#78716C]">{t.checkout.empty}</p>
-            <Link href="/shop" className="mt-4 inline-flex h-10 px-6 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center font-semibold">{t.checkout.continue}</Link>
+            <Link href="/#shop" className="mt-4 inline-flex h-10 px-6 bg-[#2B1B12] text-white text-[11px] tracking-[0.16em] uppercase items-center font-semibold">{t.checkout.continue}</Link>
           </div>
         ) : (
           <div className="mt-8 grid lg:grid-cols-12 gap-8">

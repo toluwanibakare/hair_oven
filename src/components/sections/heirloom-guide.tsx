@@ -10,20 +10,20 @@ const categories = [
     title: "Hair Quality",
     items: [
       { q: "What is Raw Reserve?", a: "Single-donor, unprocessed hair with fully intact cuticles. Never chemically altered. The closest to hair in its natural state." },
-      { q: "Difference between Signature and Essentials?", a: "Signature is high-density virgin hair for 2–3+ years. Essentials is everyday human hair optimized for effortless rotation and value." },
+      { q: "Difference between Sapphire and Essence?", a: "Sapphire is high-density virgin hair for 2–3+ years. Essence is everyday human hair optimized for effortless rotation and value." },
     ],
   },
   {
     title: "Care & Longevity",
     items: [
       { q: "How do I make it last?", a: "Gentle wash, condition, air-dry, store on a stand or silk bag. Avoid heavy heat. Your Heirloom Guide card ships with every unit." },
-      { q: "Can I colour it?", a: "Private & Signature are virgin and can be coloured by a professional. Essentials is best kept at its crafted colour." },
+      { q: "Can I colour it?", a: "Private & Sapphire are virgin and can be coloured by a professional. Essence is best kept at its crafted colour." },
     ],
   },
   {
-    title: "Fit & Bespoke",
+    title: "Fit & Atelier",
     items: [
-      { q: "How do I find my cap size?", a: "Measure circumference around hairline. S (54cm), M (56cm), L (58cm). Bespoke uses full cranial mapping." },
+      { q: "How do I find my cap size?", a: "Measure circumference around hairline. S (54cm), M (56cm), L (58cm). Atelier uses full cranial mapping." },
       { q: "What is Oven Veil™?", a: "Our ultra-sheer HD lace that mimics skin texture - pre-plucked, single-knots, bleached where needed for an invisible hairline." },
     ],
   },
@@ -31,7 +31,7 @@ const categories = [
     title: "Shipping & Exchange",
     items: [
       { q: "Do you ship worldwide?", a: "Yes. Lagos dispatch, global delivery. Duties/taxes calculated at checkout where applicable." },
-      { q: "Exchange policy?", a: "Unworn, unaltered units with intact hygiene seal within 7 days. Bespoke is made for you and not exchangeable." },
+      { q: "Exchange policy?", a: "Unworn, unaltered units with intact hygiene seal within 7 days. Atelier is made for you and not exchangeable." },
     ],
   },
 ];

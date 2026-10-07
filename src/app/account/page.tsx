@@ -19,7 +19,7 @@ export default function AccountPage() {
           <div className="text-center text-xs text-[#78716C]">{t.account.noAccount} <a href="#" className="underline">{t.account.create}</a> • <a href="#" className="underline">{t.account.forgot}</a></div>
         </div>
         <div className="mt-8 text-center">
-          <Link href="/shop" className="text-[11px] tracking-[0.14em] uppercase underline decoration-[#C2A47A]">{t.account.guest}</Link>
+          <Link href="/#shop" className="text-[11px] tracking-[0.14em] uppercase underline decoration-[#C2A47A]">{t.account.guest}</Link>
         </div>
       </div>
     </div>

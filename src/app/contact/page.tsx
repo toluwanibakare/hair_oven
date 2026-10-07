@@ -29,28 +29,28 @@ export default function ContactPage() {
 
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
-      {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <img
-            src="/founder.jpeg"
-            alt="Client Concierge Support"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-transparent to-transparent" />
+      {/* Hero Image: shown clean, with no text over it */}
+      <section className="relative w-full overflow-hidden bg-[#2B1B12] h-[42svh] sm:h-[52vh] lg:h-[62vh] max-h-[680px]">
+        <img
+          src="/client-care-hero.jpg"
+          alt="HAIR OVEN client care concierge"
+          className="w-full h-full object-cover object-[60%_20%] sm:object-[center_22%]"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(61,35,20,0.45)_0%,transparent_65%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/40 via-[#2B1B12]/10 to-transparent pointer-events-none" />
+      </section>
 
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center">
-          <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
-            {t.contact.heroEyebrow}
-          </span>
-          <h1 className="font-serif text-[42px] sm:text-[60px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
-            {t.contact.heroTitle}
-          </h1>
-          <p className="mt-4 text-xs sm:text-sm tracking-[0.16em] uppercase text-[#E8DDC9]/70 font-medium max-w-[600px] mx-auto">
-            {t.contact.heroSub}
-          </p>
-        </div>
+      {/* Hero Header */}
+      <section className="bg-[#FFFCF8] px-6 lg:px-10 pt-12 sm:pt-16 text-center">
+        <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold">
+          {t.contact.heroEyebrow}
+        </span>
+        <h1 className="font-serif text-[40px] sm:text-[60px] lg:text-[76px] leading-[0.95] tracking-[-0.02em] text-[#2B1B12] mt-4 font-light">
+          {t.contact.heroTitle}
+        </h1>
+        <p className="mt-4 text-xs sm:text-sm tracking-[0.16em] uppercase text-[#57534E] font-medium max-w-[600px] mx-auto">
+          {t.contact.heroSub}
+        </p>
       </section>
 
       {/* Main Support Options Grid */}

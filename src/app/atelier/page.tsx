@@ -198,7 +198,7 @@ export default function AtelierPage() {
                         </div>
                         <h4 className="font-serif text-base mt-2">Private Founder Consultation</h4>
                         <p className={`text-[11px] mt-1 leading-relaxed ${consultationType === "hannah" ? "text-white/80" : "text-[#57534E]"}`}>
-                          Exclusive 1-on-1 private session directly with Hannah for bespoke heirloom curation.
+                          Exclusive 1-on-1 private session directly with Hannah for atelier heirloom curation.
                         </p>
                       </div>
                       <div className={`mt-3 pt-2 border-t text-[9px] tracking-[0.14em] uppercase font-semibold ${
@@ -297,7 +297,7 @@ export default function AtelierPage() {
                       <option value="Private Collection (RAW Reserve)">Private Collection (RAW Reserve)</option>
                       <option value="Sapphire Collection (Virgin)">Sapphire Collection (Virgin)</option>
                       <option value="Essence Collection">Essence Collection</option>
-                      <option value="Atelier Collection (Bespoke)">Atelier Collection (Bespoke)</option>
+                      <option value="Atelier Collection">Atelier Collection</option>
                     </select>
                   </div>
                 </div>

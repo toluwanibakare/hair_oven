@@ -22,7 +22,7 @@ export function BeautyWithoutElitism() {
           <div className="lg:col-span-6 lg:border-l lg:border-[rgba(28,18,14,0.08)] lg:pl-10">
             <Reveal delay={0.14}>
               <p className="text-[16px] leading-7 text-[#2B1B12] font-light max-w-[52ch]">
-                We created three collections not to rank women, but to respect them. The same lace. The same construction care. The same respect - whether Private, Signature or Essentials.
+                We created our collections not to rank women, but to respect them. The same lace. The same construction care. The same respect - whether Private, Sapphire or Essence.
               </p>
               <p className="text-sm leading-6 text-[#57534E] mt-4 max-w-[52ch]">
                 Premium should never mean exclusion. If she saves, if she splurges, if she rotates - she should still feel she bought from a house that sees her.
@@ -34,12 +34,12 @@ export function BeautyWithoutElitism() {
                   <div className="text-xs mt-2">For the heirloom mindset.</div>
                 </div>
                 <div className="p-4 bg-[#FDF8F0] border border-[rgba(28,18,14,0.06)]">
-                  <div className="font-serif text-lg">Signature</div>
+                  <div className="font-serif text-lg">Sapphire</div>
                   <div className="text-[10px] tracking-[0.14em] uppercase text-[#78716C] mt-1">2–3+ Years</div>
                   <div className="text-xs mt-2">For long-term luxury.</div>
                 </div>
                 <div className="p-4 bg-[#FDF8F0] border border-[rgba(28,18,14,0.06)]">
-                  <div className="font-serif text-lg">Essentials</div>
+                  <div className="font-serif text-lg">Essence</div>
                   <div className="text-[10px] tracking-[0.14em] uppercase text-[#78716C] mt-1">Effortless</div>
                   <div className="text-xs mt-2">For everyday beauty.</div>
                 </div>

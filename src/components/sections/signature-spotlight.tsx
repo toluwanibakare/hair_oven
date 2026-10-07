@@ -11,7 +11,7 @@ const signatureUnits = [
   {
     id: "signature-caramel-wave-24",
     title: "THE SIGNATURE CARAMEL WAVE",
-    subtitle: "Signature Collection",
+    subtitle: "Sapphire Collection",
     tagline: "DIMENSIONAL ARTISTRY",
     description:
       "A masterclass in dimensional artistry, THE CARAMEL WAVE introduces warm, hand-painted golden highlights over a deep espresso foundation. Designed to frame the face with radiant warmth, it delivers dynamic movement and unmistakable allure.",
@@ -27,12 +27,12 @@ const signatureUnits = [
     image: "/products/caramel-wave.jpeg",
     link: "/product/signature-caramel-wave-24",
     whatsappText:
-      "Hi HAIR OVEN, I would like to enquire about acquiring The Signature Caramel Wave.",
+      "Hi HAIR OVEN, I would like to enquire about acquiring The Caramel Wave.",
   },
   {
     id: "signature-velmorea-24",
     title: "THE VELMORÉA",
-    subtitle: "Signature Collection",
+    subtitle: "Sapphire Collection",
     tagline: "POLISHED GLAMOUR",
     description:
       "A study in polished glamour, THE VELMORÉA is designed for an unmistakably luxurious presence. Engineered to capture effortless sophistication without appearing overworked, this unit transitions seamlessly from high-profile occasions to modern statement dressing.",
@@ -41,7 +41,7 @@ const signatureUnits = [
       "Rich espresso-black finish",
       "Refined centre-part styling",
       "Full, luxurious density",
-      "Signature Collection",
+      "Sapphire Collection",
       "Fluid, Tangle-Free Movement with High Silhouette Retention",
     ],
     image: "/products/velmorea.jpeg",
@@ -52,7 +52,7 @@ const signatureUnits = [
   {
     id: "signature-adunni-26",
     title: "THE ÀDUNNĪ",
-    subtitle: "Signature Collection",
+    subtitle: "Sapphire Collection",
     tagline: "REFINED VOLUME",
     description:
       "A dramatic expression of natural texture and refined volume, THE ÀDUNNĪ is designed for those who want presence without compromise.",
@@ -63,7 +63,7 @@ const signatureUnits = [
       "Exceptional fullness and density",
       "Softly framed hairline",
       "Rich, glossy texture",
-      "Statement Signature Collection piece",
+      "Statement Sapphire Collection piece",
     ],
     image: "/products/adunni.png",
     link: "/product/signature-adunni-26",
@@ -73,7 +73,7 @@ const signatureUnits = [
   {
     id: "signature-aurelia-barrel-curl-24",
     title: "AURELIA BARREL CURL",
-    subtitle: "Signature Collection",
+    subtitle: "Sapphire Collection",
     tagline: "STATEMENT BARREL CURLS",
     description:
       "Elevate your style with this high-end, statement-making lace front wig. Designed for a flawless, natural appearance, it is the ultimate protective style for photoshoots, special events, or everyday glam.",
@@ -91,7 +91,7 @@ const signatureUnits = [
   {
     id: "signature-honey-ash-bronzed-wave-24",
     title: "THE HONEY-ASH BRONZED WAVE",
-    subtitle: "Signature Collection",
+    subtitle: "Sapphire Collection",
     tagline: "DIMENSIONAL SOPHISTICATION",
     description:
       "A seamless blend of warm honey and ash blonde tones, styled in effortless Hollywood waves.",
@@ -100,7 +100,7 @@ const signatureUnits = [
       "Masterfully toned ash and golden-honey blonde highlights woven over a dark root for maximum depth.",
       "Long, luxurious length",
       "Soft, cascading S-waves engineered to maintain bounce, body, and high-shine fluid movement.",
-      "Private Signature Collection",
+      "Private Collection",
     ],
     image: "/products/honey-ash-bronzed-wave.jpeg",
     link: "/product/signature-honey-ash-bronzed-wave-24",

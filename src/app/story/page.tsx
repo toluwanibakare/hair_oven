@@ -10,33 +10,31 @@ export default function HousePage() {
   const { t } = useLanguage();
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
-      {/* Hero Header with Autoplay Loop Video */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-28 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 opacity-80">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover pointer-events-none"
-          >
-            <source src="/story_video.mp4" type="video/mp4" />
-            <source src="/story_video" type="video/mp4" />
-          </video>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/30 to-[#2B1B12]/45" />
+      {/* Hero Video: shown clean, with no text over it */}
+      <section className="relative w-full overflow-hidden bg-[#2B1B12] h-[56svh] sm:h-[70vh] lg:h-[82vh] max-h-[960px]">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover pointer-events-none"
+        >
+          <source src="/story_video.mp4" type="video/mp4" />
+          <source src="/story_video" type="video/mp4" />
+        </video>
+      </section>
 
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center z-10">
-          <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
-            {t.story.manifesto}
-          </span>
-          <h1 className="font-serif text-[42px] sm:text-[64px] lg:text-[84px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light max-w-[1000px] mx-auto">
-            {t.story.title}
-          </h1>
-          <p className="mt-6 text-sm sm:text-base tracking-[0.16em] uppercase text-[#E8DDC9]/80 font-medium max-w-[800px] mx-auto">
-            {t.story.tagline}
-          </p>
-        </div>
+      {/* Manifesto */}
+      <section className="bg-[#FFFCF8] px-6 lg:px-10 pt-12 sm:pt-16 text-center">
+        <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold">
+          {t.story.manifesto}
+        </span>
+        <h1 className="font-serif text-[36px] sm:text-[56px] lg:text-[72px] leading-[0.95] tracking-[-0.02em] text-[#2B1B12] mt-4 font-light max-w-[1000px] mx-auto">
+          {t.story.title}
+        </h1>
+        <p className="mt-6 text-xs sm:text-base tracking-[0.16em] uppercase text-[#57534E] font-medium max-w-[800px] mx-auto">
+          {t.story.tagline}
+        </p>
       </section>
 
       {/* Chapters Section */}

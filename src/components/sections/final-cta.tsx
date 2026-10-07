@@ -30,7 +30,7 @@ export function FinalCta() {
           </h2>
           <p className="text-white/70 text-sm lg:text-base max-w-[48ch] mx-auto mt-6 leading-6">{t.finalCta.body}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="/shop" className="h-[52px] px-10 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
+            <Link href="/#shop" className="h-[52px] px-10 bg-white text-[#2B1B12] inline-flex items-center text-[11px] tracking-[0.16em] uppercase font-medium hover:bg-[#E8DDC9] transition-colors">
               {t.finalCta.primary}
             </Link>
             <Link href="/collections/private" className="h-[52px] px-10 border border-white/30 text-white inline-flex items-center text-[11px] tracking-[0.16em] uppercase backdrop-blur hover:bg-white hover:text-[#2B1B12] hover:border-white transition-colors">

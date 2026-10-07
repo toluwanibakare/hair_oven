@@ -15,7 +15,7 @@ export default function OvenVeilPage() {
         <div className="absolute inset-0 opacity-30">
           <img
             src="/products/essential_collection.jpeg"
-            alt="Oven Veil Philosophy"
+            alt="Oven Veil™ Philosophy"
             className="w-full h-full object-cover"
           />
         </div>
@@ -100,7 +100,7 @@ export default function OvenVeilPage() {
             <div className="border border-[#2B1B12]/10 p-4 bg-[#EDE6D6]/20">
               <WatermarkImage
                 src="/products/editorial-model.jpg"
-                alt="Oven Veil Finishing Detail"
+                alt="Oven Veil™ Finishing Detail"
                 containerClassName="w-full aspect-[4/5]"
                 imageClassName="w-full h-full object-cover"
                 watermarkSize="lg"

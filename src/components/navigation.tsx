@@ -31,7 +31,7 @@ function ComingSoonTooltip({ children }: { children: React.ReactNode }) {
 type NavKey = "shop" | "story" | "atelier" | "journal" | "clientCare";
 
 const navItems: { key: NavKey; label: string; href: string }[] = [
-  { key: "shop", label: "SHOP", href: "/shop" },
+  { key: "shop", label: "SHOP", href: "/" },
   { key: "story", label: "THE HOUSE", href: "/story" },
   { key: "atelier", label: "ATELIER", href: "/atelier" },
   { key: "journal", label: "JOURNAL", href: "/heirloom-guide" },
@@ -43,6 +43,7 @@ const megaMenuData: Record<
   {
     col1: { title: string; links: { label: string; href: string }[] };
     col2: { title: string; links: { label: string; href: string }[] };
+    col3?: { title: string; links: { label: string; href: string }[] };
     cards: { title: string; subtitle: string; href: string; image: string }[];
   }
 > = {
@@ -57,13 +58,24 @@ const megaMenuData: Record<
       ],
     },
     col2: {
-      title: "By Category & Edit",
+      title: "By Category",
       links: [
-        { label: "Luxury Wigs", href: "/shop?cat=Wigs" },
-        { label: "Raw Hair Bundles", href: "/shop?cat=Bundles" },
-        { label: "Closures & Frontals", href: "/shop?cat=Closures%20%26%20Frontals" },
-        { label: "Hair Tools & Care", href: "/shop?cat=tools" },
+        { label: "Wigs", href: "/categories/wigs" },
+        { label: "Bundles", href: "/categories/bundles" },
+        { label: "Closures & Frontals", href: "/categories/closures-frontals" },
+        { label: "Tools & Care", href: "/categories/tools-care" },
         { label: "The Trade Edit (Wholesale)", href: "/wholesale" },
+      ],
+    },
+    col3: {
+      title: "By Texture",
+      links: [
+        { label: "Straight", href: "/textures/straight" },
+        { label: "Body Wave", href: "/textures/body-wave" },
+        { label: "Loose Wave", href: "/textures/loose-wave" },
+        { label: "Deep Wave", href: "/textures/deep-wave" },
+        { label: "Curly", href: "/textures/curly" },
+        { label: "Kinky", href: "/textures/kinky" },
       ],
     },
     cards: [
@@ -71,7 +83,7 @@ const megaMenuData: Record<
         title: "PRIVATE COLLECTION",
         subtitle: "Reserved for the Exceptional",
         href: "/collections/private",
-        image: "/products/private_collection.PNG",
+        image: "/nav_drop.jpg",
       },
       {
         title: "SAPPHIRE COLLECTION",
@@ -102,7 +114,7 @@ const megaMenuData: Record<
         title: "READ OUR STORY",
         subtitle: "Begun with a Calling",
         href: "/story",
-        image: "/products/adunni.png",
+        image: "/founder.jpeg",
       },
       {
         title: "THE HOUSE ETHOS",
@@ -180,7 +192,7 @@ const megaMenuData: Record<
         { label: "Shipping & Delivery", href: "/heirloom-guide#fit-policies" },
         { label: "Returns & Exchanges", href: "/heirloom-guide#fit-policies" },
         { label: "Frequently Asked Questions", href: "/contact" },
-        { label: "Contact Concierge", href: "/contact" },
+        { label: "Contact Client Care", href: "/contact" },
       ],
     },
     col2: {
@@ -193,7 +205,7 @@ const megaMenuData: Record<
     },
     cards: [
       {
-        title: "CONTACT CONCIERGE",
+        title: "CONTACT CLIENT CARE",
         subtitle: "Client Care & Assistance",
         href: "/contact",
         image: "/products/caramel-wave.jpeg",
@@ -215,7 +227,7 @@ export function Navigation() {
   const [openMobileNavKey, setOpenMobileNavKey] = useState<NavKey | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const { cartCount, setDrawerOpen, wishlist } = useCart();
-  const { t } = useLanguage();
+  const { t, tr } = useLanguage();
   const { scrollY } = useScroll();
   const pathname = usePathname();
 
@@ -239,12 +251,12 @@ export function Navigation() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2 sm:py-2.5 px-3 sm:px-4 text-[10px] sm:text-xs tracking-[0.14em] sm:tracking-[0.18em] uppercase font-medium border-b border-[#E8DDC9]/10 overflow-hidden">
-        <span className="sm:hidden block truncate whitespace-nowrap">
-          <span className="font-semibold text-[#D4AF37]">{BRAND.house}</span> • {t.nav.announcement.toUpperCase()}
+      <div className="relative z-[60] bg-[#2B1B12] text-[#E8DDC9] text-center py-2 sm:py-2.5 px-3 sm:px-4 text-[9px] sm:text-xs tracking-[0.12em] sm:tracking-[0.18em] uppercase font-medium border-b border-[#E8DDC9]/10 overflow-hidden">
+        <span className="sm:hidden block">
+          {t.nav.announcement.toUpperCase()}
         </span>
         <span className="hidden sm:block">
-          <span className="font-semibold text-[#D4AF37]">{BRAND.house}</span> • {t.nav.announcement}
+          {t.nav.announcement}
         </span>
       </div>
 
@@ -388,7 +400,7 @@ export function Navigation() {
               {navItems.map((item) => {
                 const pageActive =
                   item.key === "shop"
-                    ? ["/shop", "/collections", "/product", "/extensions"].some((p) => pathname === p || pathname.startsWith(p + "/"))
+                    ? pathname === "/" || ["/collections", "/categories", "/textures", "/product", "/extensions"].some((p) => pathname === p || pathname.startsWith(p + "/"))
                     : item.key === "story"
                     ? pathname === "/story"
                     : item.key === "atelier"
@@ -409,7 +421,7 @@ export function Navigation() {
                       pageActive || isHovered ? "text-[#B8860B]" : "text-[#2B1B12] hover:text-[#B8860B]"
                     }`}
                   >
-                    <span>{item.label}</span>
+                    <span>{tr(item.label)}</span>
                     <span
                       className={`absolute -bottom-0.5 left-0 right-0 h-[2px] transition-transform duration-300 ease-out origin-left ${
                         pageActive
@@ -434,20 +446,20 @@ export function Navigation() {
                 >
                   <div className="max-w-[1600px] mx-auto grid grid-cols-12 gap-8 lg:gap-12 items-start">
                     {/* Left Section Links (Col 1 & Col 2) */}
-                    <div className="col-span-6 grid grid-cols-2 gap-8 lg:gap-12">
+                    <div className={`col-span-6 grid gap-6 lg:gap-8 ${megaMenuData[activeNav].col3 ? "grid-cols-3" : "grid-cols-2 gap-8 lg:gap-12"}`}>
                       <div>
                         <h4 className="font-serif text-[18px] sm:text-[20px] text-[#2B1B12] pb-1.5 border-b border-[#2B1B12]/20 font-normal mb-5 inline-block">
-                          {megaMenuData[activeNav].col1.title}
+                          {tr(megaMenuData[activeNav].col1.title)}
                         </h4>
                         <div className="space-y-3">
                           {megaMenuData[activeNav].col1.links.map((link) => (
                             <Link
-                              key={link.label}
+                              key={tr(link.label)}
                               href={link.href}
                               onClick={() => setActiveNav(null)}
                               className="text-[11px] tracking-[0.14em] uppercase text-[#57534E] hover:text-[#B8860B] hover:translate-x-1 transition-all duration-200 block font-medium"
                             >
-                              {link.label}
+                              {tr(link.label)}
                             </Link>
                           ))}
                         </div>
@@ -455,21 +467,41 @@ export function Navigation() {
 
                       <div>
                         <h4 className="font-serif text-[18px] sm:text-[20px] text-[#2B1B12] pb-1.5 border-b border-[#2B1B12]/20 font-normal mb-5 inline-block">
-                          {megaMenuData[activeNav].col2.title}
+                          {tr(megaMenuData[activeNav].col2.title)}
                         </h4>
                         <div className="space-y-3">
                           {megaMenuData[activeNav].col2.links.map((link) => (
                             <Link
-                              key={link.label}
+                              key={tr(link.label)}
                               href={link.href}
                               onClick={() => setActiveNav(null)}
                               className="text-[11px] tracking-[0.14em] uppercase text-[#57534E] hover:text-[#B8860B] hover:translate-x-1 transition-all duration-200 block font-medium"
                             >
-                              {link.label}
+                              {tr(link.label)}
                             </Link>
                           ))}
                         </div>
                       </div>
+
+                      {megaMenuData[activeNav].col3 && (
+                        <div>
+                          <h4 className="font-serif text-[18px] sm:text-[20px] text-[#2B1B12] pb-1.5 border-b border-[#2B1B12]/20 font-normal mb-5 inline-block">
+                            {tr(megaMenuData[activeNav].col3.title)}
+                          </h4>
+                          <div className="space-y-3">
+                            {megaMenuData[activeNav].col3.links.map((link) => (
+                              <Link
+                                key={tr(link.label)}
+                                href={link.href}
+                                onClick={() => setActiveNav(null)}
+                                className="text-[11px] tracking-[0.14em] uppercase text-[#57534E] hover:text-[#B8860B] hover:translate-x-1 transition-all duration-200 block font-medium"
+                              >
+                                {tr(link.label)}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Middle Vertical Separator Line */}
@@ -490,17 +522,17 @@ export function Navigation() {
                             src={card.image}
                             alt={card.title}
                             containerClassName="absolute inset-0 w-full h-full"
-                            imageClassName="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                            imageClassName="w-full h-full object-cover object-top origin-top group-hover:scale-105 transition-transform duration-700"
                             watermarkSize="sm"
                             showWatermark={false}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-[#2B1B12]/20 to-transparent z-10" />
                           <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                             <div className="text-[9px] tracking-[0.18em] uppercase text-[#D4AF37] font-semibold mb-0.5">
-                              {card.subtitle}
+                              {tr(card.subtitle)}
                             </div>
                             <div className="font-serif text-white text-xs sm:text-sm tracking-[0.04em] flex items-center justify-between">
-                              <span>{card.title}</span>
+                              <span>{tr(card.title)}</span>
                               <span className="text-xs group-hover:translate-x-1 transition-transform">→</span>
                             </div>
                           </div>
@@ -535,7 +567,7 @@ export function Navigation() {
                 className="fixed inset-y-0 left-0 w-[88%] max-w-[380px] bg-[#FFFCF8] z-[100] flex flex-col lg:hidden border-r border-[#2B1B12]/10"
               >
                 <div className="h-[64px] flex items-center justify-between px-6 border-b border-[#2B1B12]/10">
-                  <Image src="/brand_logo.PNG" alt="Hair Oven" width={130} height={38} className="object-contain" />
+                  <Image src="/brand_logo.PNG" alt="HAIR OVEN" width={130} height={38} className="object-contain" />
                   <button
                     onClick={() => setMobileOpen(false)}
                     className="w-10 h-10 grid place-items-center rounded-full hover:bg-[#2B1B12]/5"
@@ -558,7 +590,7 @@ export function Navigation() {
                           }`}
                         >
                           <span className="font-serif text-[20px] sm:text-[22px] text-[#2B1B12] font-normal tracking-[0.14em] uppercase">
-                            {item.label}
+                            {tr(item.label)}
                           </span>
                           <ChevronDown
                             className={`w-4 h-4 text-[#2B1B12]/70 transition-transform duration-300 ${
@@ -580,17 +612,17 @@ export function Navigation() {
                                 {/* Section 1 Links */}
                                 <div>
                                   <div className="text-[10px] tracking-[0.2em] text-[#B8860B] uppercase font-semibold mb-3">
-                                    {data.col1.title}
+                                    {tr(data.col1.title)}
                                   </div>
                                   <div className="space-y-2.5">
                                     {data.col1.links.map((link) => (
                                       <Link
-                                        key={link.label}
+                                        key={tr(link.label)}
                                         href={link.href}
                                         onClick={() => setMobileOpen(false)}
                                         className="block text-xs text-[#2B1B12] hover:text-[#B8860B] font-medium tracking-wide"
                                       >
-                                        {link.label}
+                                        {tr(link.label)}
                                       </Link>
                                     ))}
                                   </div>
@@ -599,21 +631,41 @@ export function Navigation() {
                                 {/* Section 2 Links */}
                                 <div>
                                   <div className="text-[10px] tracking-[0.2em] text-[#B8860B] uppercase font-semibold mb-3">
-                                    {data.col2.title}
+                                    {tr(data.col2.title)}
                                   </div>
                                   <div className="space-y-2.5">
                                     {data.col2.links.map((link) => (
                                       <Link
-                                        key={link.label}
+                                        key={tr(link.label)}
                                         href={link.href}
                                         onClick={() => setMobileOpen(false)}
                                         className="block text-xs text-[#2B1B12] hover:text-[#B8860B] font-medium tracking-wide"
                                       >
-                                        {link.label}
+                                        {tr(link.label)}
                                       </Link>
                                     ))}
                                   </div>
                                 </div>
+
+                                {data.col3 && (
+                                  <div>
+                                    <div className="text-[10px] tracking-[0.2em] text-[#B8860B] uppercase font-semibold mb-3">
+                                      {tr(data.col3.title)}
+                                    </div>
+                                    <div className="space-y-2.5">
+                                      {data.col3.links.map((link) => (
+                                        <Link
+                                          key={tr(link.label)}
+                                          href={link.href}
+                                          onClick={() => setMobileOpen(false)}
+                                          className="block text-xs text-[#2B1B12] hover:text-[#B8860B] font-medium tracking-wide"
+                                        >
+                                          {tr(link.label)}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
 
                                 {/* Feature Image Card inside Mobile Accordion */}
                                 {data.cards[0] && (
@@ -626,17 +678,17 @@ export function Navigation() {
                                       src={data.cards[0].image}
                                       alt={data.cards[0].title}
                                       containerClassName="absolute inset-0 w-full h-full"
-                                      imageClassName="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                      imageClassName="w-full h-full object-cover object-top origin-top group-hover:scale-105 transition-transform duration-700"
                                       watermarkSize="sm"
                                       showWatermark={false}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/80 via-[#2B1B12]/20 to-transparent z-10" />
                                     <div className="absolute bottom-0 left-0 right-0 p-3.5 z-20">
                                       <div className="text-[9px] tracking-[0.18em] uppercase text-[#D4AF37] font-semibold mb-0.5">
-                                        {data.cards[0].subtitle}
+                                        {tr(data.cards[0].subtitle)}
                                       </div>
                                       <div className="font-serif text-white text-xs sm:text-sm tracking-[0.04em] flex items-center justify-between">
-                                        <span>{data.cards[0].title}</span>
+                                        <span>{tr(data.cards[0].title)}</span>
                                         <span className="text-xs">→</span>
                                       </div>
                                     </div>

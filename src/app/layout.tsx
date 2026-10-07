@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     template: "%s - HAIR OVEN",
   },
   description:
-    "Born in Africa, crafted without compromise. Luxury human hair - Raw Reserve, Signature & Essentials. Oven Veil™ invisible hairline. Bespoke atelier. Where beauty meets the art of hair.",
+    "Born in Africa, crafted without compromise. Luxury human hair - Private, Sapphire, Essence & Atelier. Oven Veil™ invisible hairline. Atelier. Where beauty meets the art of hair.",
   keywords: ["hair", "wigs", "raw hair", "virgin hair", "lace frontal", "hair oven", "bespoke wig", "luxury hair"],
   openGraph: {
     title: "HAIR OVEN - Exceptional Hair. Extraordinary You.",
-    description: "Born in Africa, crafted without compromise. Luxury human hair and bespoke atelier. Where beauty meets the art of hair.",
+    description: "Born in Africa, crafted without compromise. Luxury human hair and the Atelier. Where beauty meets the art of hair.",
     url: "https://hairoven.com",
     siteName: "HAIR OVEN",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "HAIR OVEN - Exceptional Hair. Extraordinary You.",
-    description: "Born in Africa, crafted without compromise. Luxury human hair and bespoke atelier. Where beauty meets the art of hair.",
+    description: "Born in Africa, crafted without compromise. Luxury human hair and the Atelier. Where beauty meets the art of hair.",
     images: ["/og-image.png"],
   },
 };

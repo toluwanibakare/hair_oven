@@ -8,7 +8,7 @@ import { WatermarkImage } from "@/components/watermark-image";
 import { useLanguage } from "@/context/language-context";
 
 export default function CollectionPage() {
-  const { t } = useLanguage();
+  const { t, tr } = useLanguage();
   const params = useParams<{ slug: string }>();
   const rawSlug = params.slug;
   const slug = rawSlug === "signature" ? "sapphire" : rawSlug === "essentials" ? "essence" : rawSlug;
@@ -17,9 +17,7 @@ export default function CollectionPage() {
 
   const list = products.filter((p) => {
     if (p.collection === slug) return true;
-    if (slug === "sapphire" && p.collection === "signature") return true;
-    if (slug === "essence" && p.collection === "essentials") return true;
-    if (slug === "atelier" && (p.collection === "atelier" || p.category === "Bespoke Hair" || p.id.includes("bespoke") || p.id.includes("bridal"))) return true;
+    if (slug === "atelier" && p.collection === "atelier") return true;
     return false;
   });
 
@@ -33,50 +31,41 @@ export default function CollectionPage() {
 
   return (
     <div className="bg-[#FFFCF8]">
-      {/* Collection Hero Header */}
-      <div className={`relative overflow-hidden ${theme.bg} ${theme.text} min-h-[460px] sm:min-h-[520px] flex items-end`}>
-        <div className="absolute inset-0 opacity-60 sm:opacity-50">
-          {"video" in col && col.video ? (
-            <video
-              src={col.video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover object-center"
-            />
-          ) : (
-            <WatermarkImage
-              src={col.image}
-              alt={col.name}
-              containerClassName="w-full h-full"
-              imageClassName="w-full h-full object-cover object-[center_20%] sm:object-center"
-              watermarkSize="lg"
-              showWatermark={false}
-            />
-          )}
-        </div>
-        {/* Subtle dark gradient backing for flawless text legibility without blocking model imagery */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/60 to-[#2B1B12]/20" />
+      {/* Collection Image: shown clean, with no text over it */}
+      <div className="relative w-full overflow-hidden bg-[#2B1B12] h-[60svh] sm:h-[70vh] max-h-[760px]">
+        {"video" in col && col.video ? (
+          <video
+            src={col.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover object-center"
+          />
+        ) : (
+          <WatermarkImage
+            src={col.image}
+            alt={tr(col.name)}
+            containerClassName="w-full h-full"
+            imageClassName="w-full h-full object-cover object-[center_20%] sm:object-center"
+            watermarkSize="lg"
+            showWatermark={false}
+          />
+        )}
+      </div>
 
-        <div className="relative z-10 max-w-[1600px] mx-auto px-6 lg:px-10 pt-28 pb-10 sm:py-20 lg:py-24 w-full">
+      {/* Collection Header */}
+      <div className={`${theme.bg} ${theme.text}`}>
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-10 py-10 sm:py-14 lg:py-16 w-full">
           <div className="max-w-[720px]">
             <div className="text-[10px] sm:text-[11px] tracking-[0.24em] uppercase text-[#D4AF37] font-semibold">
-              {slug === "private"
-                ? "PRIVATE COLLECTION"
-                : slug === "signature"
-                ? "SIGNATURE COLLECTION"
-                : "ESSENTIALS COLLECTION"}
+              {tr(col.name).toUpperCase()}
             </div>
-            <h1 className="font-serif text-[32px] sm:text-[48px] lg:text-[58px] leading-[1.05] tracking-[-0.02em] mt-2 font-light text-white">
-              {slug === "private"
-                ? col.tagline
-                : slug === "signature"
-                ? "Meticulously selected. Expertly finished to HAIR OVEN standards."
-                : col.tagline}
+            <h1 className="font-serif text-[32px] sm:text-[48px] lg:text-[58px] leading-[1.05] tracking-[-0.02em] mt-2 font-light">
+              {tr(col.tagline)}
             </h1>
-            <p className="mt-3 sm:mt-4 text-xs sm:text-base leading-6 sm:leading-7 text-white/90 font-serif italic max-w-[54ch]">
-              {col.description}
+            <p className="mt-3 sm:mt-4 text-xs sm:text-base leading-6 sm:leading-7 opacity-90 font-serif italic max-w-[54ch]">
+              {tr(col.description)}
             </p>
             {"poeticText" in col &&
               col.poeticText &&
@@ -88,15 +77,15 @@ export default function CollectionPage() {
               ) && (
                 <div className="mt-4 sm:mt-5 space-y-1 text-[11px] sm:text-xs tracking-[0.14em] uppercase text-[#D4AF37] font-medium border-l-2 border-[#D4AF37]/50 pl-4">
                   {col.poeticText.map((line, idx) => (
-                    <div key={idx}>{line}</div>
+                    <div key={idx}>{tr(line)}</div>
                   ))}
                 </div>
               )}
             <div className="mt-6 sm:mt-8 flex flex-wrap gap-4 items-center">
               <span className="bg-white text-[#2B1B12] px-4 py-2 text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-semibold">
-                {col.years}
+                {tr(col.years)}
               </span>
-              <span className="text-[10px] sm:text-[11px] tracking-[0.14em] uppercase opacity-80 text-white/80">
+              <span className="text-[10px] sm:text-[11px] tracking-[0.14em] uppercase opacity-80">
                 {t.collectionPage.from}{" "}
                 {new Intl.NumberFormat("en-NG", {
                   style: "currency",
@@ -113,10 +102,10 @@ export default function CollectionPage() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10 py-12 lg:py-16">
         <div className="flex items-center justify-between border-b border-[#2B1B12]/10 pb-4 mb-8">
           <h2 className="font-serif text-2xl lg:text-3xl text-[#2B1B12] font-light">
-            Collection Selection ({list.length} {list.length === 1 ? "Piece" : "Pieces"})
+            {tr("Collection Selection")} ({list.length} {tr(list.length === 1 ? "Piece" : "Pieces")})
           </h2>
-          <Link href="/shop" className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#B8860B] hover:underline">
-            View All House Pieces →
+          <Link href="/#shop" className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#B8860B] hover:underline">
+            {tr("View All House Pieces →")}
           </Link>
         </div>
 
@@ -144,15 +133,15 @@ export default function CollectionPage() {
               }`}
             >
               <div className="text-[10px] tracking-[0.16em] uppercase opacity-60">
-                {c.tagline}
+                {tr(c.tagline)}
               </div>
-              <div className="font-serif text-lg mt-2">{c.name}</div>
+              <div className="font-serif text-lg mt-2">{tr(c.name)}</div>
               <div
                 className={`text-xs mt-2 ${
                   c.slug === slug ? "text-white/60" : "text-[#57534E]"
                 }`}
               >
-                {c.description}
+                {tr(c.description)}
               </div>
               <div className="text-[11px] tracking-[0.14em] uppercase mt-4 underline underline-offset-4">
                 {c.slug === slug ? t.collectionPage.viewing : t.collectionPage.explore}

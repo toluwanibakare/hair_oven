@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { dictionaries, type Dictionary, type Locale } from "@/lib/i18n";
+import { dictionaries, translate, type Dictionary, type Locale } from "@/lib/i18n";
 
 const STORAGE_KEY = "hair-oven-locale";
 
@@ -9,6 +9,7 @@ type LanguageContextValue = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: Dictionary;
+  tr: (text: string) => string;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -30,7 +31,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const setLocale = useCallback((next: Locale) => setLocaleState(next), []);
 
   const value = useMemo<LanguageContextValue>(
-    () => ({ locale, setLocale, t: dictionaries[locale] }),
+    () => ({ locale, setLocale, t: dictionaries[locale], tr: (text: string) => translate(locale, text) }),
     [locale, setLocale]
   );
 

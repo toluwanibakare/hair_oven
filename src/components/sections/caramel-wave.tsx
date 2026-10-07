@@ -25,7 +25,7 @@ export function CaramelWave() {
             <div className="aspect-[4/5] sm:aspect-[1.05] relative rounded-sm overflow-hidden border border-[#2B1B12]/10 shadow-2xl group bg-[#2B1B12]">
               <WatermarkImage
                 src="/products/caramel-wave.jpeg"
-                alt="The Signature Caramel Wave"
+                alt="The Caramel Wave"
                 containerClassName="w-full h-full"
                 imageClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 watermarkSize="lg"
@@ -92,7 +92,7 @@ export function CaramelWave() {
                 ACQUIRE THIS UNIT <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="https://wa.me/2348051332551?text=Hi%20HAIR%20OVEN%2C%20I%20would%20like%20to%20enquire%20about%20The%20Signature%20Caramel%20Wave."
+                href="https://wa.me/2348051332551?text=Hi%20HAIR%20OVEN%2C%20I%20would%20like%20to%20enquire%20about%20The%20Caramel%20Wave."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-[52px] px-8 border border-[#2B1B12]/20 text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center hover:bg-[#2B1B12] hover:text-[#FFFCF8] transition-colors"

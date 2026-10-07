@@ -54,7 +54,7 @@ export function SplashScreen() {
           >
             <Image
               src="/brand_logo.PNG"
-              alt="Hair Oven"
+              alt="HAIR OVEN"
               fill
               priority
               loading="eager"
