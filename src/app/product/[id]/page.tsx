@@ -294,7 +294,7 @@ export default function ProductPage() {
                 </div>
                 <div>
                   <span className="text-[10px] tracking-[0.12em] uppercase text-[#78716C] block">Hair Styling</span>
-                  <span className="font-medium text-xs">{product.modelSpecs?.styling || "Signature Custom Finish"}</span>
+                  <span className="font-medium text-xs">{product.modelSpecs?.styling || "Oven Veil™ Custom Finish"}</span>
                 </div>
               </div>
             </div>

@@ -8,7 +8,7 @@ import { useLanguage } from "@/context/language-context";
 
 const baseCards = [
   {
-    title: "PRIVATE COLLECTION",
+    title: "PRIVATE",
     link: "/collections/private",
     video: "/private.MP4",
     image: "/products/private_collection.PNG",
@@ -16,21 +16,21 @@ const baseCards = [
     objectFit: "object-cover",
   },
   {
-    title: "SAPPHIRE COLLECTION",
+    title: "SAPPHIRE",
     link: "/collections/sapphire",
     image: "/products/signature_collection.jpg",
     objectPos: "object-top",
     objectFit: "object-cover",
   },
   {
-    title: "ESSENCE COLLECTION",
+    title: "ESSENCE",
     link: "/collections/essence",
     image: "/products/essential_collection.jpeg",
     objectPos: "object-top",
     objectFit: "object-cover",
   },
   {
-    title: "ATELIER COLLECTION",
+    title: "ATELIER",
     link: "/collections/atelier",
     image: "/products/ATELIER.PNG",
     objectPos: "object-top",

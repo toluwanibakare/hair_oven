@@ -245,16 +245,16 @@ export function Footer() {
               </div>
               <div className="space-y-3 text-xs text-[#2B1B12]/80 font-medium">
                 <Link href="/collections/private" className="block hover:text-[#2B1B12] transition-colors">
-                  {tr("Private Collection")}
+                  {tr("Private")}
                 </Link>
                 <Link href="/collections/sapphire" className="block hover:text-[#2B1B12] transition-colors">
-                  {tr("Sapphire Collection")}
+                  {tr("Sapphire")}
                 </Link>
                 <Link href="/collections/essence" className="block hover:text-[#2B1B12] transition-colors">
-                  {tr("Essence Collection")}
+                  {tr("Essence")}
                 </Link>
                 <Link href="/collections/atelier" className="block hover:text-[#2B1B12] transition-colors">
-                  {tr("Atelier Collection")}
+                  {tr("Atelier")}
                 </Link>
               </div>
             </div>

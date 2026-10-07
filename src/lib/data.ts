@@ -39,7 +39,7 @@ export type Product = {
 export const collections = [
   {
     slug: "private",
-    name: "Private Collection",
+    name: "Private",
     subtitle: "Raw Reserve",
     tagline: "Reserved for the Exceptional.",
     description:
@@ -59,7 +59,7 @@ export const collections = [
   },
   {
     slug: "sapphire",
-    name: "Sapphire Collection",
+    name: "Sapphire",
     subtitle: "Sapphire",
     tagline: "Quietly distinctive.",
     description:
@@ -77,7 +77,7 @@ export const collections = [
   },
   {
     slug: "essence",
-    name: "Essence Collection",
+    name: "Essence",
     subtitle: "Essence",
     tagline: "ESSENCE",
     description:
@@ -94,7 +94,7 @@ export const collections = [
   },
   {
     slug: "atelier",
-    name: "Atelier Collection",
+    name: "Atelier",
     subtitle: "Atelier",
     tagline: "MADE FOR ONE.",
     description:
@@ -110,7 +110,7 @@ export const collections = [
 
 export const products: Product[] = [
   {
-    id: "signature-adewunmi",
+    id: "sapphire-adewunmi",
     name: "The Adewunmi",
     collection: "sapphire",
     category: "Wigs",
@@ -179,7 +179,7 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "signature-argentine-bob",
+    id: "sapphire-argentine-bob",
     name: "The Argentine Bob",
     collection: "sapphire",
     category: "Wigs",
@@ -210,7 +210,7 @@ export const products: Product[] = [
       "Finish: High-shine, glass-smooth",
       "Density: Full, natural-looking density",
       "Appearance: Soft, polished, and exceptionally refined",
-      "Collection: Sapphire Collection",
+      "Collection: Sapphire",
     ],
     modelSpecs: {
       closureType: "Customised Thin HD Lace Closure 5x5",
@@ -225,7 +225,7 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "signature-caramel-wave-24",
+    id: "sapphire-caramel-wave-24",
     name: "The Caramel Wave",
     collection: "sapphire",
     category: "Wigs",
@@ -271,7 +271,7 @@ export const products: Product[] = [
     bestseller: true,
   },
   {
-    id: "signature-velmorea-24",
+    id: "sapphire-velmorea-24",
     name: "The Velmoréa",
     collection: "sapphire",
     category: "Wigs",
@@ -298,7 +298,7 @@ export const products: Product[] = [
       "Rich espresso-black finish",
       "Refined centre-part styling",
       "Density: 385g",
-      "Sapphire Collection",
+      "Sapphire",
       "Fluid, Tangle-Free Movement with High Silhouette Retention",
     ],
     modelSpecs: {
@@ -315,7 +315,7 @@ export const products: Product[] = [
     bestseller: true,
   },
   {
-    id: "signature-adunni-26",
+    id: "sapphire-adunni-26",
     name: "The Àdunnī",
     collection: "sapphire",
     category: "Wigs",
@@ -346,7 +346,7 @@ export const products: Product[] = [
       "Density: 500g",
       "Softly framed hairline",
       "Rich, glossy texture",
-      "Statement Sapphire Collection piece",
+      "Statement Sapphire piece",
     ],
     modelSpecs: {
       closureType: "Customised Thin HD Lace Closure 5x5",
@@ -361,7 +361,7 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "signature-aurelia-barrel-curl-24",
+    id: "sapphire-aurelia-barrel-curl-24",
     name: "Aurelia Barrel Curl",
     collection: "sapphire",
     category: "Wigs",
@@ -390,7 +390,7 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "signature-honey-ash-bronzed-wave-24",
+    id: "sapphire-honey-ash-bronzed-wave-24",
     name: "The Honey-Ash Bronzed Wave",
     collection: "sapphire",
     category: "Wigs",
@@ -413,7 +413,7 @@ export const products: Product[] = [
       "Masterfully toned ash and golden-honey blonde highlights woven over a dark root for maximum depth.",
       "Long, luxurious length",
       "Soft, cascading S-waves engineered to maintain bounce, body, and high-shine fluid movement.",
-      "Private Collection",
+      "Private",
     ],
     inStock: true,
     stockCount: 2,
@@ -504,7 +504,7 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "signature-the-essential",
+    id: "sapphire-the-essential",
     name: "The Essential",
     collection: "sapphire",
     category: "Wigs",
@@ -543,7 +543,7 @@ export const products: Product[] = [
       "Closure: 6x6 HD Lace Closure",
       "Texture: Sculpted Waves",
       "Density: Full Precision Volume (385g)",
-      "Collection: Sapphire Collection",
+      "Collection: Sapphire",
       "Available Lengths: 24″, 26″, 28″, 30″",
     ],
     modelSpecs: {
@@ -559,7 +559,7 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "signature-precision-bob",
+    id: "sapphire-precision-bob",
     name: "The Essential Precision Bob",
     collection: "sapphire",
     category: "Wigs",
@@ -702,7 +702,7 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    id: "signature-bundles-trio",
+    id: "sapphire-bundles-trio",
     name: "Sapphire Raw Bundles Set",
     collection: "sapphire",
     category: "Bundles",
@@ -723,7 +723,7 @@ export const products: Product[] = [
     stockCount: 4,
   },
   {
-    id: "signature-tapeins",
+    id: "sapphire-tapeins",
     name: "Sapphire Seamless Tape-Ins",
     collection: "sapphire",
     category: "Bundles",
@@ -744,7 +744,7 @@ export const products: Product[] = [
     stockCount: 3,
   },
   {
-    id: "signature-bespoke-atelier",
+    id: "atelier-bespoke",
     name: "Atelier Unit",
     collection: "atelier",
     category: "Wigs",
@@ -806,7 +806,7 @@ export const products: Product[] = [
     stockCount: 4,
   },
   {
-    id: "signature-hd-frontal",
+    id: "sapphire-hd-frontal",
     name: "Sapphire 13×4 HD Frontal",
     collection: "sapphire",
     category: "Closures & Frontals",
@@ -832,7 +832,7 @@ export const testimonials = [
   {
     name: "Amara O.",
     location: "Lagos, NG",
-    text: "The Private Collection is unlike anything I have owned. Three years in, no tangling at all, it still flows like brand new hair. Worth every single kobo.",
+    text: "My Private piece is unlike anything I have owned. Three years in, no tangling at all, it still flows like brand new hair. Worth every single kobo.",
     product: "Raw Bone Straight 20″",
     rating: 5,
   },

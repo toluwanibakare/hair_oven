@@ -51,10 +51,10 @@ const megaMenuData: Record<
     col1: {
       title: "Explore Collections",
       links: [
-        { label: "Private Collection", href: "/collections/private" },
-        { label: "Sapphire Collection", href: "/collections/sapphire" },
-        { label: "Essence Collection", href: "/collections/essence" },
-        { label: "Atelier Collection", href: "/collections/atelier" },
+        { label: "Private", href: "/collections/private" },
+        { label: "Sapphire", href: "/collections/sapphire" },
+        { label: "Essence", href: "/collections/essence" },
+        { label: "Atelier", href: "/collections/atelier" },
       ],
     },
     col2: {
@@ -80,13 +80,13 @@ const megaMenuData: Record<
     },
     cards: [
       {
-        title: "PRIVATE COLLECTION",
+        title: "PRIVATE",
         subtitle: "Reserved for the Exceptional",
         href: "/collections/private",
         image: "/nav_drop.jpg",
       },
       {
-        title: "SAPPHIRE COLLECTION",
+        title: "SAPPHIRE",
         subtitle: "Quietly Distinctive",
         href: "/collections/sapphire",
         image: "/products/signature_collection.jpg",

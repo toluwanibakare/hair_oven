@@ -7,11 +7,11 @@ import { ArrowRight } from "lucide-react";
 import { WatermarkImage } from "@/components/watermark-image";
 import { useLanguage } from "@/context/language-context";
 
-const signatureUnits = [
+const sapphireUnits = [
   {
-    id: "signature-caramel-wave-24",
-    title: "THE SIGNATURE CARAMEL WAVE",
-    subtitle: "Sapphire Collection",
+    id: "sapphire-caramel-wave-24",
+    title: "THE CARAMEL WAVE",
+    subtitle: "Sapphire",
     tagline: "DIMENSIONAL ARTISTRY",
     description:
       "A masterclass in dimensional artistry, THE CARAMEL WAVE introduces warm, hand-painted golden highlights over a deep espresso foundation. Designed to frame the face with radiant warmth, it delivers dynamic movement and unmistakable allure.",
@@ -25,14 +25,14 @@ const signatureUnits = [
       "Sophisticated, Timeless & Effortlessly Glamorous",
     ],
     image: "/products/caramel-wave.jpeg",
-    link: "/product/signature-caramel-wave-24",
+    link: "/product/sapphire-caramel-wave-24",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring The Caramel Wave.",
   },
   {
-    id: "signature-velmorea-24",
+    id: "sapphire-velmorea-24",
     title: "THE VELMORÉA",
-    subtitle: "Sapphire Collection",
+    subtitle: "Sapphire",
     tagline: "POLISHED GLAMOUR",
     description:
       "A study in polished glamour, THE VELMORÉA is designed for an unmistakably luxurious presence. Engineered to capture effortless sophistication without appearing overworked, this unit transitions seamlessly from high-profile occasions to modern statement dressing.",
@@ -41,18 +41,18 @@ const signatureUnits = [
       "Rich espresso-black finish",
       "Refined centre-part styling",
       "Full, luxurious density",
-      "Sapphire Collection",
+      "Sapphire",
       "Fluid, Tangle-Free Movement with High Silhouette Retention",
     ],
     image: "/products/velmorea.jpeg",
-    link: "/product/signature-velmorea-24",
+    link: "/product/sapphire-velmorea-24",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring The Velmoréa.",
   },
   {
-    id: "signature-adunni-26",
+    id: "sapphire-adunni-26",
     title: "THE ÀDUNNĪ",
-    subtitle: "Sapphire Collection",
+    subtitle: "Sapphire",
     tagline: "REFINED VOLUME",
     description:
       "A dramatic expression of natural texture and refined volume, THE ÀDUNNĪ is designed for those who want presence without compromise.",
@@ -63,17 +63,17 @@ const signatureUnits = [
       "Exceptional fullness and density",
       "Softly framed hairline",
       "Rich, glossy texture",
-      "Statement Sapphire Collection piece",
+      "Statement Sapphire piece",
     ],
     image: "/products/adunni.png",
-    link: "/product/signature-adunni-26",
+    link: "/product/sapphire-adunni-26",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring The Àdunnī.",
   },
   {
-    id: "signature-aurelia-barrel-curl-24",
+    id: "sapphire-aurelia-barrel-curl-24",
     title: "AURELIA BARREL CURL",
-    subtitle: "Sapphire Collection",
+    subtitle: "Sapphire",
     tagline: "STATEMENT BARREL CURLS",
     description:
       "Elevate your style with this high-end, statement-making lace front wig. Designed for a flawless, natural appearance, it is the ultimate protective style for photoshoots, special events, or everyday glam.",
@@ -84,14 +84,14 @@ const signatureUnits = [
       "Precision coloring meets defined volume for an uncompromised luxury look.",
     ],
     image: "/products/aurelia-barrel-curl.jpeg",
-    link: "/product/signature-aurelia-barrel-curl-24",
+    link: "/product/sapphire-aurelia-barrel-curl-24",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring Aurelia Barrel Curl.",
   },
   {
-    id: "signature-honey-ash-bronzed-wave-24",
+    id: "sapphire-honey-ash-bronzed-wave-24",
     title: "THE HONEY-ASH BRONZED WAVE",
-    subtitle: "Sapphire Collection",
+    subtitle: "Sapphire",
     tagline: "DIMENSIONAL SOPHISTICATION",
     description:
       "A seamless blend of warm honey and ash blonde tones, styled in effortless Hollywood waves.",
@@ -100,18 +100,18 @@ const signatureUnits = [
       "Masterfully toned ash and golden-honey blonde highlights woven over a dark root for maximum depth.",
       "Long, luxurious length",
       "Soft, cascading S-waves engineered to maintain bounce, body, and high-shine fluid movement.",
-      "Private Collection",
+      "Private",
     ],
     image: "/products/honey-ash-bronzed-wave.jpeg",
-    link: "/product/signature-honey-ash-bronzed-wave-24",
+    link: "/product/sapphire-honey-ash-bronzed-wave-24",
     whatsappText:
       "Hi HAIR OVEN, I would like to enquire about acquiring The Honey-Ash Bronzed Wave.",
   },
 ];
 
-export function SignatureSpotlight() {
+export function SapphireSpotlight() {
   const { t } = useLanguage();
-  const units = signatureUnits.map((u, i) => ({ ...u, ...t.spotlight.units[i] }));
+  const units = sapphireUnits.map((u, i) => ({ ...u, ...t.spotlight.units[i] }));
   const [activeTab, setActiveTab] = useState(0);
   const current = units[activeTab];
 
@@ -233,7 +233,7 @@ export function SignatureSpotlight() {
                   {current.description}
                 </p>
 
-                {/* Signature Details Section */}
+                {/* Sapphire Details Section */}
                 <div className="mt-8 border-t border-[#2B1B12]/10 pt-6">
                   <h4 className="text-[11px] tracking-[0.22em] uppercase text-[#2B1B12] font-semibold mb-4">
                     {t.spotlight.detailsTitle}

@@ -36,14 +36,14 @@ export function CaramelWave() {
               <div className="absolute bottom-6 left-6 right-6 p-5 bg-[#2B1B12]/85 backdrop-blur-md border border-white/10 flex items-center justify-between text-white z-20">
                 <div>
                   <span className="text-[10px] tracking-[0.22em] uppercase text-[#D4AF37] font-semibold block">
-                    FEATURED SIGNATURE UNIT
+                    FEATURED SAPPHIRE UNIT
                   </span>
                   <span className="font-serif text-lg text-white font-light mt-0.5 block">
                     The Caramel Wave
                   </span>
                 </div>
                 <Link
-                  href="/product/signature-caramel-wave-24"
+                  href="/product/sapphire-caramel-wave-24"
                   className="h-10 px-5 bg-[#D4AF37] text-[#2B1B12] text-[10px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-1.5 hover:bg-white transition-colors"
                 >
                   VIEW UNIT <ArrowRight className="w-3.5 h-3.5" />
@@ -55,21 +55,21 @@ export function CaramelWave() {
           {/* Copy Side */}
           <div className="lg:col-span-6">
             <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold block mb-3">
-              SIGNATURE COLLECTION
+              SAPPHIRE
             </span>
 
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B1B12] leading-tight tracking-tight font-light">
-              THE SIGNATURE CARAMEL WAVE
+              THE CARAMEL WAVE
             </h2>
 
             <p className="mt-6 text-sm sm:text-base text-[#57534E] leading-relaxed font-normal">
               A masterclass in dimensional artistry, THE CARAMEL WAVE introduces warm, hand-painted golden highlights over a deep espresso foundation. Designed to frame the face with radiant warmth, it delivers dynamic movement and unmistakable allure.
             </p>
 
-            {/* Signature Details Section */}
+            {/* Sapphire Details Section */}
             <div className="mt-8 border-t border-[#2B1B12]/10 pt-6">
               <h3 className="text-[11px] tracking-[0.22em] uppercase text-[#2B1B12] font-semibold mb-4">
-                THE SIGNATURE DETAILS
+                THE SAPPHIRE DETAILS
               </h3>
 
               <div className="grid sm:grid-cols-2 gap-3">
@@ -86,7 +86,7 @@ export function CaramelWave() {
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
-                href="/product/signature-caramel-wave-24"
+                href="/product/sapphire-caramel-wave-24"
                 className="h-[52px] px-9 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors shadow-md"
               >
                 ACQUIRE THIS UNIT <ArrowRight className="w-4 h-4" />

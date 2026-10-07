@@ -1,7 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { ShopCollection } from "@/components/sections/shop-collection";
 import { Collections } from "@/components/sections/collections";
-import { SignatureSpotlight } from "@/components/sections/signature-spotlight";
+import { SapphireSpotlight } from "@/components/sections/sapphire-spotlight";
 import { BrandIntro } from "@/components/sections/brand-intro";
 import { AtelierVideo } from "@/components/sections/atelier-video";
 import { Founder } from "@/components/sections/founder";
@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <ShopCollection />
       <Collections />
-      <SignatureSpotlight />
+      <SapphireSpotlight />
       <BrandIntro />
       <AtelierVideo />
       <Founder />
