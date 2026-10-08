@@ -64,7 +64,7 @@ export function CartDrawer() {
                   {items.map((item) => (
                     <div key={item.product.id} className="p-6 flex gap-4">
                       <div className="w-[96px] h-[120px] bg-[#F5EFE6] overflow-hidden shrink-0">
-                        <WatermarkImage src={item.product.image} alt={item.product.name} containerClassName="w-full h-full" imageClassName="w-full h-full object-cover" watermarkSize="sm" />
+                        <WatermarkImage src={item.product.image} alt={item.product.name} containerClassName="w-full h-full" imageClassName="w-full h-full object-cover object-top" watermarkSize="sm" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-[10px] tracking-[0.16em] uppercase text-[#A68B5B]">{item.product.collection} • {item.product.category}</div>

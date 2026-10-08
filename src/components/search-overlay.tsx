@@ -61,7 +61,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                   <div className="space-y-3">
                     {results.map((p) => (
                       <Link key={p.id} href={`/product/${p.id}`} onClick={onClose} className="flex gap-4 p-3 hover:bg-[#F5EFE6] transition-colors border border-transparent hover:border-[rgba(28,18,14,0.06)]">
-                        <WatermarkImage src={p.image} alt={p.name} containerClassName="w-16 h-20 bg-[#F5EFE6] shrink-0" imageClassName="w-full h-full object-cover" watermarkSize="sm" />
+                        <WatermarkImage src={p.image} alt={p.name} containerClassName="w-16 h-20 bg-[#F5EFE6] shrink-0" imageClassName="w-full h-full object-cover object-top" watermarkSize="sm" />
                         <div>
                           <div className="flex items-center gap-2">
                             <span className="text-[10px] tracking-[0.14em] uppercase text-[#A68B5B] font-semibold">{p.collection}</span>

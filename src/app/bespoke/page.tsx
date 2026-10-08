@@ -30,42 +30,37 @@ export default function BridalConsultationPage() {
 
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
+      {/* Hero Image: shown clean, with no text over it */}
+      <section className="relative w-full overflow-hidden bg-[#2B1B12] h-[52svh] sm:h-[64vh] lg:h-[78vh] max-h-[900px]">
+        <img
+          src="/products/bridal_consultation.jpeg"
+          alt="Bridal Consultation"
+          className="w-full h-full object-cover object-[center_18%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/30 via-transparent to-transparent pointer-events-none" />
+      </section>
+
       {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-45 lg:opacity-55">
-          <WatermarkImage
-            src="/products/bridal_consultation.jpeg"
-            alt="Bridal Consultation"
-            containerClassName="w-full h-full"
-            imageClassName="w-full h-full object-cover object-top"
-            showWatermark={false}
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/50 to-transparent" />
-
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10">
-          <div className="max-w-[800px]">
-            <span className="text-[10px] tracking-[0.24em] uppercase text-[#D4AF37] font-semibold">
-              YOUR DAY. YOUR VISION.
-            </span>
-            <h1 className="font-serif text-[44px] sm:text-[64px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
-              BRIDAL CONSULTATION
-            </h1>
-            <p className="mt-6 text-sm lg:text-base text-[#E8DDC9]/90 leading-7 max-w-[60ch] font-serif italic">
-              A private consultation to discover the perfect hair for your bridal look.
-            </p>
-
-            <div className="mt-8">
-              <a
-                href="#bridal-form"
-                className="h-[52px] px-10 bg-[#D4AF37] text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white transition-colors shadow-lg"
-              >
-                Book Your Consultation
-              </a>
-            </div>
-          </div>
+      <section className="bg-[#FFFCF8] px-6 lg:px-10 pt-12 sm:pt-16 text-center">
+        <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
+          YOUR DAY. YOUR VISION.
+        </span>
+        <h1 className="font-serif text-[40px] sm:text-[60px] lg:text-[76px] leading-[0.95] tracking-[-0.02em] text-[#2B1B12] mt-4 font-light">
+          BRIDAL CONSULTATION
+        </h1>
+        <p className="mt-4 text-sm lg:text-base text-[#57534E] leading-7 max-w-[60ch] mx-auto font-serif italic">
+          A private consultation to discover the perfect hair for your bridal look.
+        </p>
+        <div className="mt-8">
+          <a
+            href="#bridal-form"
+            className="h-[52px] px-10 bg-[#2B1B12] text-[#FFFCF8] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors shadow-lg"
+          >
+            Book Your Consultation
+          </a>
         </div>
       </section>
+
 
       {/* Editorial Content */}
       <section className="max-w-[1600px] mx-auto px-6 lg:px-10 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 items-center">

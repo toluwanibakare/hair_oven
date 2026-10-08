@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     { source: "/product/signature-precision-bob", destination: "/product/sapphire-precision-bob", permanent: true },
     { source: "/product/signature-bundles-trio", destination: "/product/sapphire-bundles-trio", permanent: true },
     { source: "/product/signature-tapeins", destination: "/product/sapphire-tapeins", permanent: true },
-    { source: "/product/signature-hd-frontal", destination: "/product/sapphire-hd-frontal", permanent: true },
+    { source: "/product/signature-hd-frontal", destination: "/", permanent: true },
     { source: "/product/signature-bespoke-atelier", destination: "/product/atelier-bespoke", permanent: true },
     { source: "/collections/signature", destination: "/collections/sapphire", permanent: true },
   ];

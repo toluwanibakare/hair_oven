@@ -24,7 +24,7 @@ export function ProductCard({ product, variant = "default" }: { product: Product
             src={product.image}
             alt={product.name}
             containerClassName="absolute inset-0 w-full h-full"
-            imageClassName="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+            imageClassName="w-full h-full object-cover object-top group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
             watermarkSize="sm"
           />
           <button
@@ -65,7 +65,7 @@ export function ProductCard({ product, variant = "default" }: { product: Product
           src={product.image}
           alt={product.name}
           containerClassName="absolute inset-0 w-full h-full"
-          imageClassName="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+          imageClassName="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
           watermarkSize="sm"
         />
         <button

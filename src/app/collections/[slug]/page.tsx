@@ -44,10 +44,10 @@ export default function CollectionPage() {
           />
         ) : (
           <WatermarkImage
-            src={col.image}
+            src={"heroImage" in col && col.heroImage ? col.heroImage : col.image}
             alt={tr(col.name)}
             containerClassName="w-full h-full"
-            imageClassName="w-full h-full object-cover object-[center_20%] sm:object-center"
+            imageClassName={`w-full h-full object-cover ${"heroImage" in col ? "object-[center_22%]" : "object-[center_20%] sm:object-center"}`}
             watermarkSize="lg"
             showWatermark={false}
           />

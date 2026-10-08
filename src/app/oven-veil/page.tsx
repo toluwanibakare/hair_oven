@@ -10,46 +10,43 @@ export default function OvenVeilPage() {
   const { t } = useLanguage();
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
-      {/* Editorial Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-24 lg:py-36 overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <img
-            src="/products/essential_collection.jpeg"
-            alt="Oven Veil™ Philosophy"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/60 to-transparent" />
+      {/* Hero Image: shown clean, with no text over it */}
+      <section className="relative w-full overflow-hidden bg-[#2B1B12] h-[48svh] sm:h-[58vh] lg:h-[70vh] max-h-[820px]">
+        <img
+          src="/products/essential_collection.jpeg"
+          alt="Oven Veil™ Philosophy"
+          className="w-full h-full object-cover object-[center_25%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/30 via-transparent to-transparent pointer-events-none" />
+      </section>
 
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10">
-          <div className="max-w-[800px]">
-            <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
-              {t.ovenVeilPage.heroEyebrow}
-            </span>
-            <h1 className="font-serif text-[44px] sm:text-[64px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
-              OVEN VEIL™
-            </h1>
-            <p className="mt-6 text-base sm:text-lg text-[#E8DDC9]/90 leading-8 max-w-[62ch]">
-              {t.ovenVeilPage.heroBody}
-            </p>
-            
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/atelier#consultation-form"
-                className="h-[50px] px-8 bg-[#D4AF37] text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white transition-colors"
-              >
-                {t.ovenVeilPage.ctaA}
-              </Link>
-              <Link
-                href="/heirloom-guide"
-                className="h-[50px] px-8 border border-white/20 text-white text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white hover:text-[#2B1B12] transition-colors"
-              >
-                {t.ovenVeilPage.ctaB}
-              </Link>
-            </div>
-          </div>
+      {/* Editorial Hero Header */}
+      <section className="bg-[#FFFCF8] px-6 lg:px-10 pt-12 sm:pt-16 text-center">
+        <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold">
+          {t.ovenVeilPage.heroEyebrow}
+        </span>
+        <h1 className="font-serif text-[40px] sm:text-[60px] lg:text-[76px] leading-[0.95] tracking-[-0.02em] text-[#2B1B12] mt-4 font-light">
+          OVEN VEIL™
+        </h1>
+        <p className="mt-6 text-base sm:text-lg text-[#57534E] leading-8 max-w-[65ch] mx-auto">
+          {t.ovenVeilPage.heroBody}
+        </p>
+        <div className="mt-8 flex flex-wrap gap-4 justify-center">
+          <Link
+            href="/atelier#consultation-form"
+            className="h-[50px] px-8 text-[11px] tracking-[0.18em] uppercase bg-[#2B1B12] text-[#FFFCF8] font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors"
+          >
+            {t.ovenVeilPage.ctaA}
+          </Link>
+          <Link
+            href="/heirloom-guide"
+            className="h-[50px] px-8 text-[11px] tracking-[0.18em] uppercase font-semibold border border-[#2B1B12]/25 text-[#2B1B12] inline-flex items-center hover:bg-[#2B1B12] hover:text-[#FFFCF8] transition-colors"
+          >
+            {t.ovenVeilPage.ctaB}
+          </Link>
         </div>
       </section>
+
 
       {/* Editorial Content Breakdown */}
       <section className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-28">

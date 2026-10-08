@@ -33,43 +33,40 @@ export default function AtelierPage() {
 
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
+      {/* Hero Image: shown clean, with no text over it */}
+      <section className="relative w-full overflow-hidden bg-[#2B1B12] h-[48svh] sm:h-[58vh] lg:h-[70vh] max-h-[820px]">
+        <img
+          src="/atlier_hero.jpg"
+          alt="The Atelier"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/30 via-transparent to-transparent pointer-events-none" />
+      </section>
+
       {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] pt-10 lg:pt-14 pb-20 lg:pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-45 lg:opacity-55">
-          <img
-            src="/atlier_hero.jpg"
-            alt="The Atelier"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/30 to-transparent" />
-
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10">
-          <div className="max-w-[800px]">
-            <span className="text-[10px] tracking-[0.24em] uppercase text-[#D4AF37] font-semibold">
-              {t.atelier.heroEyebrow}
-            </span>
-            <h1 className="font-serif text-[44px] sm:text-[64px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light">
-              {t.atelier.heroTitle}
-            </h1>
-            <p className="mt-6 text-sm lg:text-base text-[#E8DDC9]/80 leading-7 max-w-[60ch]">
-              {t.atelier.heroA}
-            </p>
-            <p className="mt-4 text-xs lg:text-sm text-[#E8DDC9]/60 leading-6 max-w-[58ch]">
-              {t.atelier.heroB}
-            </p>
-
-            <div className="mt-8">
-              <a
-                href="#consultation-form"
-                className="h-[52px] px-10 bg-[#D4AF37] text-[#2B1B12] text-[11px] tracking-[0.18em] uppercase font-semibold inline-flex items-center gap-2 hover:bg-white transition-colors"
-              >
-                {t.atelier.heroCta}
-              </a>
-            </div>
-          </div>
+      <section className="bg-[#FFFCF8] px-6 lg:px-10 pt-12 sm:pt-16 text-center">
+        <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
+          {t.atelier.heroEyebrow}
+        </span>
+        <h1 className="font-serif text-[40px] sm:text-[60px] lg:text-[76px] leading-[0.95] tracking-[-0.02em] text-[#2B1B12] mt-4 font-light">
+          {t.atelier.heroTitle}
+        </h1>
+        <p className="mt-6 text-sm lg:text-base text-[#57534E] leading-7 max-w-[65ch] mx-auto">
+          {t.atelier.heroA}
+        </p>
+        <p className="mt-4 text-xs lg:text-sm text-[#78716C] leading-6 max-w-[65ch] mx-auto">
+          {t.atelier.heroB}
+        </p>
+        <div className="mt-8">
+          <a
+            href="#consultation-form"
+            className="h-[52px] px-10 text-[11px] tracking-[0.18em] uppercase bg-[#2B1B12] text-[#FFFCF8] font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors"
+          >
+            {t.atelier.heroCta}
+          </a>
         </div>
       </section>
+
 
       {/* The Atelier Process */}
       <section className="max-w-[1600px] mx-auto px-6 lg:px-10 py-20 lg:py-28">

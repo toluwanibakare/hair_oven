@@ -27,29 +27,29 @@ export default function HeirloomGuidePage() {
 
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
-      {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] pt-10 lg:pt-14 pb-20 lg:pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-30 lg:opacity-35">
-          <img
-            src="/vitaly-gariev-x27-edtdfio-unsplash.jpg"
-            alt="The Heirloom Guide Header"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-[#2B1B12]/40 to-transparent" />
-
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10 text-center">
-          <span className="text-[10px] tracking-[0.26em] uppercase text-[#D4AF37] font-semibold">
-            {t.heirloom.heroEyebrow}
-          </span>
-          <h1 className="font-serif text-[42px] sm:text-[60px] lg:text-[76px] leading-[0.9] tracking-[-0.02em] text-white mt-4 font-light max-w-[900px] mx-auto">
-            {t.heirloom.heroTitle}
-          </h1>
-          <p className="mt-4 text-xs sm:text-sm tracking-[0.18em] uppercase text-[#E8DDC9]/80 font-medium">
-            {t.heirloom.heroSub}
-          </p>
-        </div>
+      {/* Hero Image: shown clean, with no text over it */}
+      <section className="relative w-full overflow-hidden bg-[#2B1B12] h-[48svh] sm:h-[58vh] lg:h-[70vh] max-h-[820px]">
+        <img
+          src="/vitaly-gariev-x27-edtdfio-unsplash.jpg"
+          alt="The Heirloom Guide"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/30 via-transparent to-transparent pointer-events-none" />
       </section>
+
+      {/* Hero Header */}
+      <section className="bg-[#FFFCF8] px-6 lg:px-10 pt-12 sm:pt-16 text-center">
+        <span className="text-[10px] tracking-[0.26em] uppercase text-[#B8860B] font-semibold">
+          {t.heirloom.heroEyebrow}
+        </span>
+        <h1 className="font-serif text-[40px] sm:text-[60px] lg:text-[76px] leading-[0.95] tracking-[-0.02em] text-[#2B1B12] mt-4 font-light max-w-[900px] mx-auto">
+          {t.heirloom.heroTitle}
+        </h1>
+        <p className="mt-4 text-xs sm:text-sm tracking-[0.18em] uppercase text-[#57534E] font-medium">
+          {t.heirloom.heroSub}
+        </p>
+      </section>
+
 
       {/* Guide Content Architecture */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-16 lg:py-24">

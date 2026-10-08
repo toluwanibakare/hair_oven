@@ -186,7 +186,7 @@ export default function ProductPage() {
                 src={product.images[activeImg] || product.image}
                 alt={product.name}
                 containerClassName="absolute inset-0 w-full h-full"
-                imageClassName="w-full h-full object-cover"
+                imageClassName="w-full h-full object-cover object-top"
                 watermarkSize="lg"
               />
               <button
@@ -195,15 +195,6 @@ export default function ProductPage() {
               >
                 <Heart className={`w-4 h-4 ${wished ? "fill-[#B8860B] text-[#B8860B]" : "text-[#2B1B12]"}`} />
               </button>
-              {(!product.inStock || product.stockCount === 0) ? (
-                <div className="absolute top-5 left-5 bg-[#2B1B12] text-[#FFFCF8] border border-[#D4AF37]/40 text-[9px] tracking-[0.2em] uppercase font-semibold px-3 py-1.5 z-20 shadow-lg">
-                  OUT OF STOCK
-                </div>
-              ) : (
-                <div className="absolute top-5 left-5 bg-[#2B1B12]/90 backdrop-blur text-[#D4AF37] border border-[#D4AF37]/40 text-[9px] tracking-[0.2em] uppercase font-semibold px-3 py-1.5 z-20">
-                  IN STOCK
-                </div>
-              )}
             </div>
 
             {/* Thumbnail Selection */}
@@ -229,12 +220,6 @@ export default function ProductPage() {
             <div>
               <div className="flex flex-wrap items-center gap-2 text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
                 <span>{product.collection.toUpperCase()} COLLECTION</span>
-                <span>•</span>
-                {(!product.inStock || product.stockCount === 0) ? (
-                  <span className="text-[#991B1B] bg-[#FEF2F2] px-2 py-0.5 border border-[#FCA5A5]/30">OUT OF STOCK • REQUEST ONLY</span>
-                ) : (
-                  <span>IN STOCK</span>
-                )}
               </div>
               <h1 className="font-serif text-[36px] sm:text-[46px] leading-[0.95] text-[#2B1B12] mt-2 font-light">
                 {product.name}

@@ -198,7 +198,7 @@ export function ShopCollection() {
               src="/products/editorial-blowdry.jpg"
               alt="Editorial hair styling"
               containerClassName="absolute inset-0 w-full h-full"
-              imageClassName="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
+              imageClassName="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
               watermarkSize="lg"
               showWatermark={false}
             />

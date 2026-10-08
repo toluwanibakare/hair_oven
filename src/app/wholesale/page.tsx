@@ -84,46 +84,43 @@ export default function WholesalePage() {
 
   return (
     <div className="bg-[#FFFCF8] text-[#2B1B12] min-h-screen">
-      {/* Hero Header */}
-      <section className="relative bg-[#2B1B12] text-[#E8DDC9] py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <img
-            src="/products/signature_collection.jpg"
-            alt="Wholesale Supply"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12] via-transparent to-transparent" />
-        
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-10">
-          <div className="max-w-[760px]">
-            <span className="text-[10px] tracking-[0.24em] uppercase text-[#D4AF37] font-semibold">
-              {t.wholesale.heroEyebrow}
-            </span>
-            <h1 className="font-serif text-[42px] sm:text-[56px] lg:text-[68px] leading-[0.92] tracking-[-0.02em] text-white mt-4 font-light">
-              {t.wholesale.heroTitle}
-            </h1>
-            <p className="mt-6 text-sm lg:text-base text-[#E8DDC9]/80 leading-7 max-w-[58ch]">
-              {t.wholesale.heroBody}
-            </p>
+      {/* Hero Image: shown clean, with no text over it */}
+      <section className="relative w-full overflow-hidden bg-[#2B1B12] h-[48svh] sm:h-[58vh] lg:h-[70vh] max-h-[820px]">
+        <img
+          src="/products/signature_collection.jpg"
+          alt="Wholesale Supply"
+          className="w-full h-full object-cover object-[center_20%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B12]/30 via-transparent to-transparent pointer-events-none" />
+      </section>
 
-            <div className="mt-8 flex flex-wrap gap-4 items-center text-xs tracking-[0.14em] uppercase">
-              <a
-                href="#enquiry-form"
-                className="h-[48px] px-8 bg-[#D4AF37] text-[#2B1B12] font-semibold inline-flex items-center gap-2 hover:bg-white transition-colors"
-              >
-                {t.wholesale.ctaA} <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#categories"
-                className="h-[48px] px-8 border border-white/20 text-white inline-flex items-center hover:bg-white/10 transition-colors"
-              >
-                {t.wholesale.ctaB}
-              </a>
-            </div>
-          </div>
+      {/* Hero Header */}
+      <section className="bg-[#FFFCF8] px-6 lg:px-10 pt-12 sm:pt-16 text-center">
+        <span className="text-[10px] tracking-[0.24em] uppercase text-[#B8860B] font-semibold">
+          {t.wholesale.heroEyebrow}
+        </span>
+        <h1 className="font-serif text-[40px] sm:text-[56px] lg:text-[68px] leading-[0.95] tracking-[-0.02em] text-[#2B1B12] mt-4 font-light">
+          {t.wholesale.heroTitle}
+        </h1>
+        <p className="mt-6 text-sm lg:text-base text-[#57534E] leading-7 max-w-[65ch] mx-auto">
+          {t.wholesale.heroBody}
+        </p>
+        <div className="mt-8 flex flex-wrap gap-4 items-center justify-center text-xs tracking-[0.14em] uppercase">
+          <a
+            href="#enquiry-form"
+            className="h-[48px] px-8 bg-[#2B1B12] text-[#FFFCF8] font-semibold inline-flex items-center gap-2 hover:bg-[#B8860B] transition-colors"
+          >
+            {t.wholesale.ctaA} <ArrowRight className="w-4 h-4" />
+          </a>
+          <a
+            href="#categories"
+            className="h-[48px] px-8 border border-[#2B1B12]/25 text-[#2B1B12] inline-flex items-center hover:bg-[#2B1B12] hover:text-[#FFFCF8] transition-colors"
+          >
+            {t.wholesale.ctaB}
+          </a>
         </div>
       </section>
+
 
       {/* Key Wholesale Pillars - Clean Editorial Numbering */}
       <section className="py-12 border-b border-[#2B1B12]/10 bg-[#EDE6D6]/40">

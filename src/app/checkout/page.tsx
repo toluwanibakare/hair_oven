@@ -45,7 +45,7 @@ export default function CheckoutPage() {
               <div className="mt-4 space-y-3">
                 {items.map((i) => (
                   <div key={i.product.id} className="flex gap-3 text-sm">
-                    <WatermarkImage src={i.product.image} alt={i.product.name} containerClassName="w-16 h-20 bg-white shrink-0" imageClassName="w-full h-full object-cover" watermarkSize="sm" />
+                    <WatermarkImage src={i.product.image} alt={i.product.name} containerClassName="w-16 h-20 bg-white shrink-0" imageClassName="w-full h-full object-cover object-top" watermarkSize="sm" />
                     <div className="flex-1">
                       <div className="font-serif text-base text-[#2B1B12]">{i.product.name}</div>
                       <div className="text-xs text-[#78716C]">{i.length} • {i.color} • {t.checkout.qty} {i.qty}</div>
